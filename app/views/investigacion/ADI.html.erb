@@ -111,7 +111,11 @@ font-family: 'Junge', serif;
           <h3>Áreas</h3>
           <ul>
           <% @areas_disciplinarias.each do |i| %>
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
           <li><p><a href="ver/<%= i.id %>"><%= i.nombre %>-><%= link_to "Editar", editar_area_path(i) %>-><%= link_to "Eliminar", eliminar_area_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></a></p></li>
+=======
+          <li><p><a href="ver/<%= i.id %>"><%= i.nombre %>-><%= link_to "Editar", editar_area_path(i) %></a></p></li>
+>>>>>>> inicio funcional completo
           <% end %>
           </ul>
           <%= link_to "Nueva Área", new_area_path %>

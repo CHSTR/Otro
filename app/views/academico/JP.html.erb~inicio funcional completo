@@ -7,8 +7,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">    
-    <style type="text/css">
+    <meta charset="utf-8">    <style type="text/css">
     .centrado{
       display:block;
       margin-left: auto;
@@ -52,20 +51,20 @@ font-family: 'Junge', serif;
         <div class="container-fluid">
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
-                <li class="nav-item" href="/inicio">
-                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+                <li class="nav-item" href="/inicio.html">
+                    <a class="nav-link" href="departamento.html" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/academico"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="academicos.html"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
+                    <a class="nav-link" href="investigacion.html"  style="color: #ffffff;">Investigación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/organizacion"  style="color: #ffffff;">Organización</a>
+                    <a class="nav-link" href="organizacion.html"  style="color: #ffffff;">Organización</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contactod"  style="color: #ffffff;">Contacto</a>
+                    <a class="nav-link" href="contactod.html"  style="color: #ffffff;">Contacto</a>
                 </li>
             </ul>
           </div>
@@ -87,14 +86,10 @@ font-family: 'Junge', serif;
                 <li>
                 <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
-                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-=======
->>>>>>> inicio funcional completo
                 </li>
               <% else %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %> -> <span class="badge badge-danger">inactivo</span></a>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-danger">inactivo</span></a>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 </li>
               <% end %>
@@ -107,7 +102,6 @@ font-family: 'Junge', serif;
 
           <% end %>
           </div>
-          <%= link_to "Nueva Casilla", new_casilla_path %>
         </div>
       </div>
       <div class="col-md-9">
@@ -117,7 +111,7 @@ font-family: 'Junge', serif;
             <div class="margen">
               <ul>
                 <% @academicos.each do |i|%>
-                <li><p><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %> -> <%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p></li>
+                <li><p><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %></p></li>
                 <% end %>
               </ul>
             </div>

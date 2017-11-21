@@ -134,9 +134,15 @@ font-family: 'Junge', serif;
         <div class="container-fluid margen">
           <div class="margen">
             <p>
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
               <%= raw i.nombre %>
               <br>
               <%= raw i.descripcion %>
+=======
+              <%= i.nombre %>
+              <br>
+              <%= i.descripcion %>
+>>>>>>> inicio funcional completo
             </p>
             <ul>
               <li>Académicos-Investigadores</li>
@@ -150,7 +156,10 @@ font-family: 'Junge', serif;
               </ul>
             </ul>
           </div>
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
           <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+=======
+>>>>>>> inicio funcional completo
         </div>
         <% end %>
         <%= link_to "Nuevo Proyecto", new_proyecto_path %>

@@ -15,11 +15,18 @@ class InvestigacionController < ApplicationController
   def new
   	@areas_disciplinarias = AreasDisciplinaria.new
   end
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
 
   def createa
     @areas_disciplinarias = AreasDisciplinaria.new(area_params)
     if @areas_disciplinarias.save
       redirect_to investigacion_adi_path
+=======
+  def createa
+    @areas_disciplinarias = AreasDisciplinaria.new(area_params)
+    if @areas_disciplinarias.save
+      redirect_to investigacion_url
+>>>>>>> inicio funcional completo
     else
       render action: 'new'
     end
@@ -41,6 +48,7 @@ class InvestigacionController < ApplicationController
       render action: 'editar'
     end
   end
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
 
   def eliminar
     @areas_disciplinarias = AreasDisciplinaria.find(params[:id])
@@ -49,11 +57,17 @@ class InvestigacionController < ApplicationController
       format.html {redirect_to investigacion_adi_url, notice:'fue eliminado'}
     end  
   end
+=======
+>>>>>>> inicio funcional completo
    #---------------------comienza el area de proyectos-----------------------------
 
    def pro
    	@proyectos = Proyecto.all
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
    	@proyectos_academicos = Academico.joins(:academicos_proyectos,:proyectos).where("proyectos.id = 1") #solucionar problema!
+=======
+   	@proyectos_academicos = Academico.joins(:academicos_proyectos,:proyectos).where("proyectos.id = 1")
+>>>>>>> inicio funcional completo
    end
 
    def newp
@@ -69,6 +83,7 @@ class InvestigacionController < ApplicationController
     end
    end
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
    def eliminarp
     @proyectos = Proyecto.find(params[:id])
     @proyectos.destroy
@@ -77,6 +92,8 @@ class InvestigacionController < ApplicationController
     end  
   end
 
+=======
+>>>>>>> inicio funcional completo
   #def newr
   #	@academicos_proyectos = AcademicoProyecto.new
   #end

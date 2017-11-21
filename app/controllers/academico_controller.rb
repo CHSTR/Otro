@@ -102,6 +102,7 @@ class AcademicoController < ApplicationController
     end
   end
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
   def eliminarc
     @casillas = Casilla.find(params[:id])
     @casillas.destroy
@@ -110,6 +111,8 @@ class AcademicoController < ApplicationController
     end  
   end
 
+=======
+>>>>>>> inicio funcional completo
   def user_params
     params.require(:academico).permit(:nombre,:apellido,:titulo_profesional,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
   end

@@ -99,11 +99,16 @@ font-family: 'Junge', serif;
       <%= form_for(@areas_disciplinarias, :url => {:action => :createa}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
               <%= f.label :nombre_del_área %>
+=======
+              <%= f.label :nombre %>
+>>>>>>> inicio funcional completo
               <%= f.text_field :nombre %>
             </h3>
             <br>
             <h3 class="text-left">
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
               <%= f.label :descripcion_del_área %>
               <%= f.cktext_area :descripcion %>
             </h3>
@@ -111,6 +116,15 @@ font-family: 'Junge', serif;
             <h3 class="text-left">
               <%= f.label :Campos_de_investigación_por_área_disciplinaria %>
               <%= f.cktext_area :descripcion2 %>
+=======
+              <%= f.label :descripcion %>
+              <%= f.text_area :descripcion %>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.label :descripcion2 %>
+              <%= f.text_area :descripcion2 %>
+>>>>>>> inicio funcional completo
             </h3>
             <br>
             <div class="actions">

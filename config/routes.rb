@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
 
+=======
+>>>>>>> inicio funcional completo
   get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
   post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
@@ -11,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'iniciodepto/eliminarpde'
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
   get 'iniciodepto/editarinicio'
 
   get 'iniciodepto/editarhistoria'
@@ -18,6 +22,31 @@ Rails.application.routes.draw do
   get 'iniciodepto/editarmisionvision'
 
   get 'iniciodepto/editarpde'
+=======
+  get 'iniciodepto/editarinicio', to: 'iniciodepto#editarinicio', as: 'iniciodepto_editarinicio'
+
+  put 'iniciodepto/editarinicio', to: 'iniciodepto#updateinicio'
+
+  patch 'iniciodepto/editarinicio', to: 'iniciodepto#updateinicio'
+
+  get 'iniciodepto/editarhistoria', to:'iniciodepto#editarhistoria', as: 'iniciodepto_editarhistoria'
+
+  put 'iniciodepto/editarhistoria', to: 'iniciodepto#updatehistoria'
+
+  patch 'iniciodepto/editarhistoria', to: 'iniciodepto#updatehistoria'
+
+  get 'iniciodepto/editarmisionvision', to: 'iniciodepto#editarmisionvision', as: 'iniciodepto_editarmisionvision'
+
+  put 'iniciodepto/editarmisionvision', to: 'iniciodepto#updatemisionvision'
+
+  patch 'iniciodepto/editarmisionvision', to: 'iniciodepto#updatemisionvision'
+
+  get 'iniciodepto/editarpde', to: 'iniciodepto#editarpde', as: 'iniciodepto_editarpde'
+
+  put 'iniciodepto/editarpde', to: 'iniciodepto#updatepde'
+
+  patch 'iniciodepto/editarpde', to: 'iniciodepto#updatepde'
+>>>>>>> inicio funcional completo
 
   get 'iniciodepto/index'
 
@@ -86,8 +115,11 @@ Rails.application.routes.draw do
 
   patch 'investigacion/ADI/:id', to: 'investigacion#update'
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
   delete 'investigacion/ADI/:id', to: 'investigacion#eliminar', as:'eliminar_area'
 
+=======
+>>>>>>> inicio funcional completo
   #-----------------comienzan los proyectos --------------------------------
 
   get 'investigacion/PRO', to: 'investigacion#pro', as:'investigacion_pro'
@@ -100,8 +132,11 @@ Rails.application.routes.draw do
 
   post 'investigacion/PRO/newr', to: 'investigacion#creater'
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
   delete 'investigacion/PRO/:id', to: 'investigacion#eliminarp', as:'eliminar_proyecto'
 
+=======
+>>>>>>> inicio funcional completo
   #------------------terminan los proyectos-----------------------------
 
   get 'tipo_texto/index'
@@ -128,8 +163,11 @@ Rails.application.routes.draw do
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
 
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
   delete 'academico/:id', to: 'academico#eliminarc', as:'eliminar_casilla'
 
+=======
+>>>>>>> inicio funcional completo
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
   put 'academico/:id', to: 'academico#update'
@@ -145,7 +183,10 @@ Rails.application.routes.draw do
   post 'academico/new', to: 'academico#academicocreate'
 
   delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
 
+=======
+>>>>>>> inicio funcional completo
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

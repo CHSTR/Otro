@@ -3,11 +3,16 @@ class IniciodeptoController < ApplicationController
       if params[:search]
         @textos = Texto.where("nombre like ?", "#{params[:search]}%")
       else
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
         @textos = Texto.where("id != 1 and nombre like ?", "Inicio")
+=======
+        @textos = Texto.where("id != 1 and nombre like ?", "inicio")
+>>>>>>> inicio funcional completo
       end
   end
 
   def pde
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     @academicos = Academico.where("id != 1 and nombre like ?", "PDE").first
   end
 
@@ -39,24 +44,69 @@ class IniciodeptoController < ApplicationController
     @textos = Texto.find(params[:id])
     if @textos.update_attributes(user_params)
       redirect_to academico_url
+=======
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+  end
+
+  def inicio
+    @textos = Texto.where("nombre like ?", "inicio").first
+  end
+
+  def historia
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+  end
+
+  def misionvision
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+  end
+
+  def editarinicio
+    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
+  end
+
+  def editarhistoria
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+  end
+
+  def editarmisionvision
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+  end
+
+  def updatehistoria
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+    if @textos.update_attributes(user_params)
+      redirect_to iniciodepto_historia_url
+>>>>>>> inicio funcional completo
     else
       render action: 'editarhistoria'
     end
   end
 
   def updateinicio
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     @textos = Texto.find(params[:id])
     if @textos.update_attributes(user_params)
       redirect_to academico_url
+=======
+    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
+    if @textos.update_attributes(user_params)
+      redirect_to iniciodepto_inicio_url
+>>>>>>> inicio funcional completo
     else
       render action: 'editarinicio'
     end
   end
 
   def updatemisionvision
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     @textos = Texto.find(params[:id])
     if @textos.update_attributes(user_params)
       redirect_to academico_url
+=======
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+    if @textos.update_attributes(user_params)
+      redirect_to iniciodepto_misionvision_url
+>>>>>>> inicio funcional completo
     else
       render action: 'editarmisionvision'
     end
@@ -64,6 +114,19 @@ class IniciodeptoController < ApplicationController
 
 
   def editarpde
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
+=======
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+  end
+
+  def updatepde
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+    if @textos.update_attributes(user_params)
+      redirect_to iniciodepto_pde_url
+    else
+      render action: 'editarpde'
+    end
+>>>>>>> inicio funcional completo
   end
 
   def nuevotexto
@@ -73,7 +136,11 @@ class IniciodeptoController < ApplicationController
   def textocreate
     @textos = Texto.new(user_params)
     if @textos.save
+<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       redirect_to iniciodepto_url
+=======
+      redirect_to iniciodepto_inicio_url
+>>>>>>> inicio funcional completo
     else
       render action: 'nuevotexto'
     end
