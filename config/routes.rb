@@ -143,7 +143,7 @@ Rails.application.routes.draw do
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
 
-  delete 'academico/:id', to: 'academico#eliminarc', as:'eliminar_casilla'
+  delete 'academico/:id/ecasilla', to: 'academico#eliminarc', as:'eliminar_casilla'
 
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
@@ -161,6 +161,6 @@ Rails.application.routes.draw do
 
   delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
 
-
+  #Falta toda escual y contacto...
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
