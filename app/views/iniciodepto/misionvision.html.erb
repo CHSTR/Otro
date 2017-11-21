@@ -58,7 +58,7 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="/inicio.html">
-            <a class="nav-link active" href="../departamento.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link active" href="../departamento/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../academico.html"  style="color: #ffffff;">Académicos</a>
@@ -101,7 +101,7 @@
         <h2><%= @textos.nombre%></h2>
         <br>
         <p class="text-justify" >
-          <%= @textos.descripcion%>
+          <%= raw @textos.descripcion%>
         </p>
         <br>
         <%= @textos.imagen%>

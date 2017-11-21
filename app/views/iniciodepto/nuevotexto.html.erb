@@ -47,10 +47,10 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="/inicio">
-            <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link active" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../academico"  style="color: #ffffff;">Académicos</a>
+            <a class="nav-link" href="../academico"  style="color: #ffffff;">Académicos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -96,7 +96,7 @@
               <br>
               <h3 class="text-left">
                 <%= f.label :descripcion %>
-                <%= f.text_field :descripcion %>
+                <%= f.cktext_area :descripcion %>
               </h3>
               <br>
               <h3 class="text-left">

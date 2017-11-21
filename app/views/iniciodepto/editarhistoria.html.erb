@@ -47,10 +47,10 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="/inicio">
-            <a class="nav-link active" href="/departamento" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link active" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/academicos"  style="color: #ffffff;">Académicos</a>
+            <a class="nav-link" href="/academico"  style="color: #ffffff;">Académicos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -77,11 +77,11 @@
       <div class="container-fluid margen">
         <div class="list-group">
           <a href="inicio.html" class="list-group-item list-group-item-action">Inicio</a>
-          <a href="historia.html" class="list-group-item list-group-item-action">
+          <a href="historia.html" class="list-group-item list-group-item-action active">
             Historia
           </a>
           <a href="misionvision.html" class="list-group-item list-group-item-action">Misión y Visión</a>
-          <a href="pde.html" class="list-group-item list-group-item-action active">PDE</a>
+          <a href="pde.html" class="list-group-item list-group-item-action">PDE</a>
         </div>
       </div>
     </div>
@@ -92,8 +92,8 @@
 
 
               <h3 class="text-left">
-                <%= f.label :descripcion %>
-                <%= f.text_field :descripcion %>
+                <%= f.label :Texto %>
+                <%= f.cktext_area :descripcion %>
               </h3>
               <br>
               <h3 class="text-left">
