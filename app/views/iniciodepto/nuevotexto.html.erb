@@ -91,7 +91,7 @@
             <div class="col-md-9 margen">
               <h3 class="text-left">
                 <%= f.label :nombre %>
-                <%= f.text_field :nombre %>
+                <%= f.select(:nombre, options_for_select([['Inicio','inicio'], ['Historia','historia'], ['Mision/Vision','mision/vision'], ['PDE','pde']])) %>
               </h3>
               <br>
               <h3 class="text-left">

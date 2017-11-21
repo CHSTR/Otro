@@ -47,10 +47,10 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="/inicio">
-            <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link active" href="/departamento" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
+            <a class="nav-link" href="/academicos"  style="color: #ffffff;">Académicos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -69,58 +69,31 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-          <li class="breadcrumb-item active">Escuela</li>
+          <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+          <li class="breadcrumb-item active">Departamento</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/academico/" class="list-group-item active">
-            Jornada Completa
+          <a href="inicio.html" class="list-group-item list-group-item-action">Inicio</a>
+          <a href="historia.html" class="list-group-item list-group-item-action">
+            Historia
           </a>
-          <a href="/academico/MJ" class="list-group-item list-group-item-action">Media Jornada</a>
-          <a href="/academico/JP" class="list-group-item list-group-item-action">Jornada Parcial</a>
+          <a href="misionvision.html" class="list-group-item list-group-item-action">Misión y Visión</a>
+          <a href="pde.html" class="list-group-item list-group-item-action active">PDE</a>
         </div>
       </div>
     </div>
     <div class="col-md-9">
       <div class="row">
-        <%= form_for(@academicos, :url => {:action => :update}) do |f| %>
+        <%= form_for(@textos, :url => {:action => :updatemisionvision}) do |f| %>
             <div class="col-md-9 margen">
+
+
               <h3 class="text-left">
-                <%= f.label :nombre %>
-                <%= f.text_field :nombre %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :apellido %>
-                <%= f.text_field :apellido %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :titulo_profesional %>
-                <%= f.text_field :titulo_profesional %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :grado %>
-                <%= f.text_field :grado %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :area_interes %>
-                <%= f.text_field :area_interes %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :correo %>
-                <%= f.text_field :correo %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :jornada %>
-                <%= f.select(:jornada, options_for_select([['Jornada Completa','JC'], ['Media Jornada','MJ'], ['Jornada Parcial','JP']])) %>
+                <%= f.label :descripcion %>
+                <%= f.text_field :descripcion %>
               </h3>
               <br>
               <h3 class="text-left">
@@ -129,23 +102,8 @@
               </h3>
               <br>
               <h3 class="text-left">
-                <%= f.label :link1 %>
-                <%= f.text_field :link1 %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :link2 %>
-                <%= f.text_field :link2 %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :link3 %>
-                <%= f.text_field :link3 %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :descripcion %>
-                <%= f.text_field :descripcion %>
+                <%= f.label :descripcion_imagen %>
+                <%= f.text_field :descripcion_imagen %>
               </h3>
               <br>
               <div class="actions">
@@ -153,7 +111,7 @@
               </div>
         <% end %>
         <br>
-        <%= link_to 'Volver', academico_path , :class => 'btn btn-outline-primary margen1' %>
+        <%= link_to 'Volver', iniciodepto_misionvision_path , :class => 'btn btn-outline-primary margen1' %>
         <br>
         </div>
       </div>

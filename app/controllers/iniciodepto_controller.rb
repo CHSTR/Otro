@@ -3,60 +3,60 @@ class IniciodeptoController < ApplicationController
       if params[:search]
         @textos = Texto.where("nombre like ?", "#{params[:search]}%")
       else
-        @textos = Texto.where("id != 1 and nombre like ?", "Inicio")
+        @textos = Texto.where("id != 1 and nombre like ?", "inicio")
       end
   end
 
   def pde
-    @academicos = Academico.where("id != 1 and nombre like ?", "PDE").first
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
   end
 
   def inicio
-    @textos = Texto.where("nombre like ?", "Inicio")
+    @textos = Texto.where("nombre like ?", "inicio").first
   end
 
   def historia
-    @textos = Texto.where("id != 1 and nombre like ?", "Historia").first
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
   end
 
   def misionvision
-    @textos = Texto.where("id != 1 and nombre like ?", "Mision/Vision")
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
   end
 
   def editarinicio
-    @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
   end
 
   def editarhistoria
-    @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
   end
 
   def editarmisionvision
-      @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
   end
 
   def updatehistoria
-    @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
     if @textos.update_attributes(user_params)
-      redirect_to academico_url
+      redirect_to iniciodepto_historia_url
     else
       render action: 'editarhistoria'
     end
   end
 
   def updateinicio
-    @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
     if @textos.update_attributes(user_params)
-      redirect_to academico_url
+      redirect_to iniciodepto_inicio_url
     else
       render action: 'editarinicio'
     end
   end
 
   def updatemisionvision
-    @textos = Texto.find(params[:id])
+    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
     if @textos.update_attributes(user_params)
-      redirect_to academico_url
+      redirect_to iniciodepto_misionvision_url
     else
       render action: 'editarmisionvision'
     end
@@ -64,6 +64,16 @@ class IniciodeptoController < ApplicationController
 
 
   def editarpde
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+  end
+
+  def updatepde
+    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+    if @textos.update_attributes(user_params)
+      redirect_to iniciodepto_pde_url
+    else
+      render action: 'editarpde'
+    end
   end
 
   def nuevotexto
@@ -73,7 +83,7 @@ class IniciodeptoController < ApplicationController
   def textocreate
     @textos = Texto.new(user_params)
     if @textos.save
-      redirect_to iniciodepto_url
+      redirect_to iniciodepto_inicio_url
     else
       render action: 'nuevotexto'
     end

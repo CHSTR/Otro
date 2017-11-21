@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
   post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
@@ -11,13 +10,29 @@ Rails.application.routes.draw do
 
   get 'iniciodepto/eliminarpde'
 
-  get 'iniciodepto/editarinicio'
+  get 'iniciodepto/editarinicio', to: 'iniciodepto#editarinicio', as: 'iniciodepto_editarinicio'
 
-  get 'iniciodepto/editarhistoria'
+  put 'iniciodepto/editarinicio', to: 'iniciodepto#updateinicio'
 
-  get 'iniciodepto/editarmisionvision'
+  patch 'iniciodepto/editarinicio', to: 'iniciodepto#updateinicio'
 
-  get 'iniciodepto/editarpde'
+  get 'iniciodepto/editarhistoria', to:'iniciodepto#editarhistoria', as: 'iniciodepto_editarhistoria'
+
+  put 'iniciodepto/editarhistoria', to: 'iniciodepto#updatehistoria'
+
+  patch 'iniciodepto/editarhistoria', to: 'iniciodepto#updatehistoria'
+
+  get 'iniciodepto/editarmisionvision', to: 'iniciodepto#editarmisionvision', as: 'iniciodepto_editarmisionvision'
+
+  put 'iniciodepto/editarmisionvision', to: 'iniciodepto#updatemisionvision'
+
+  patch 'iniciodepto/editarmisionvision', to: 'iniciodepto#updatemisionvision'
+
+  get 'iniciodepto/editarpde', to: 'iniciodepto#editarpde', as: 'iniciodepto_editarpde'
+
+  put 'iniciodepto/editarpde', to: 'iniciodepto#updatepde'
+
+  patch 'iniciodepto/editarpde', to: 'iniciodepto#updatepde'
 
   get 'iniciodepto/index'
 

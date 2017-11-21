@@ -89,34 +89,20 @@
         </div>
       </div>
     </div>
-    <div class="col-md-9 margen">
-      <div class="container-fluid text-left">
-        <h2>OBJETIVOS ESTRATEGICOS</h2>
-        <div class="margen">
-          <p class="text-justify">
-            El DIC ha formulado un modelo de Sistema de Calidad  (Fig.1) que representa y reúne los elementos fundamentales de su desarrollo  y orienta su Plan de Desarrollo Estratégico y permite establecer un marco desarrollo en el contexto de Calidad y Mejoramiento continuo, desarrollo que sólo puede lograrse con una visión mancomunada de una Unidad Informática conformada por la Escuela de Informática, como ente de gestión docente y por el Departamento de Informática y Computación, encargado de la producción académica y del desarrollo y cultivo del conocimiento científico aplicado.
-          </p>
-        </div>
-        <div class="margen text-center">
-          <p>Figura 1 – Modelo del Sistema de Calidad
-            Unidad de Informática
-            Facultad de Ingeniería – UTEM
-          </p>
-          <img src="../imagenes/pde.jpg" class="img-fluid rounded mx-auto d-block">
-        </div>
-        <div class="margen text-justify">
-          <p>La base del Modelo de Sistema de Calidad planteado, lo constituye los siguientes cuatro pilares de desarrollo:</p>
-          <ul>
-            <li><p>Propiciar iniciativas de mejoramiento y desarrollo en los ámbitos de organización, procesos, en los recursos de infraestructura y tecnología, en la oferta y en especial en el capital humano, con el fin de fortalecer el posicionamiento, pertinencia y desarrollo de la Unidad, sus disciplinas y sus actores (desarrollo de competencias en los estudiantes, académicos y colaboradores).</p></li>
-            <li><p>Visibilidad de la Unidad (a nivel de identidad, control y evaluación, sistema de indicadores y metas, Extensión y Vinculación con el Medio y colaboradores internos y externos).</p> </li>
-            <li><p>Fortalecimiento de la Investigación y desarrollo del posgrado en conjunto con la construcción de capacidades e iniciativas que potencien la Investigación, Innovación, Emprendimiento y Sustentabilidad, una vinculación preferentemente con los sectores productivos y una extensión con la sociedad.</p></li>
-            <li><p>Propender hacia una Infraestructura física y tecnológica moderna, acorde a las necesidades actuales y futura. </p></li>
-          </ul>
-        </div>
-        <div>
-          TEXTO 2 PENDIENTE....
-        </div>
+    <div class="col-md-6 margen">
+      <div class="container">
+        <h2><%= @textos.nombre%></h2>
+        <br>
+        <p class="text-justify" >
+          <%= @textos.descripcion%>
+        </p>
+        <br>
+        <%= @textos.imagen%>
+        <p class="text-justify">
+          <%= @textos.descripcion_imagen%>
+        </p>
       </div>
+    </div>
     </div>
     <br>
     <br>
