@@ -1,2 +1,0 @@
-class AdminDepto < ApplicationRecord
-end

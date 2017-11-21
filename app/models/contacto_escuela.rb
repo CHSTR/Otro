@@ -1,2 +1,0 @@
-class ContactoEscuela < ApplicationRecord
-end

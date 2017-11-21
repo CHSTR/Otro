@@ -1,2 +1,0 @@
-class PdeEscuela < ApplicationRecord
-end

@@ -1,2 +1,0 @@
-class MensajeDepto < ApplicationRecord
-end

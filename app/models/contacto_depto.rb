@@ -1,2 +1,0 @@
-class ContactoDepto < ApplicationRecord
-end

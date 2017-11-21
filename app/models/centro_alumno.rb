@@ -1,2 +1,0 @@
-class CentroAlumno < ApplicationRecord
-end

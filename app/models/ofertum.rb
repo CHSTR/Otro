@@ -1,2 +1,0 @@
-class Ofertum < ApplicationRecord
-end

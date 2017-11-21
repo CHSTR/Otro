@@ -1,2 +1,0 @@
-class AreasDisciplinaria < ApplicationRecord
-end
