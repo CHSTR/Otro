@@ -1,0 +1,2 @@
+class AdminDepto < ApplicationRecord
+end

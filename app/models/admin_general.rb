@@ -1,0 +1,2 @@
+class AdminGeneral < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anio: 
+  presidente: MyString
+  vicepresidente: MyString
+  otros: MyString
+  pagweb: MyString
+  imagen: MyString
+  programa: MyString
+
+two:
+  anio: 
+  presidente: MyString
+  vicepresidente: MyString
+  otros: MyString
+  pagweb: MyString
+  imagen: MyString
+  programa: MyString

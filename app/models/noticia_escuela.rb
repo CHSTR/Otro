@@ -1,0 +1,2 @@
+class NoticiaEscuela < ApplicationRecord
+end

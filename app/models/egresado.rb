@@ -1,0 +1,2 @@
+class Egresado < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class FuncionarioEscuela < ApplicationRecord
+end

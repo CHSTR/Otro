@@ -1,0 +1,2 @@
+class ContactoEscuela < ApplicationRecord
+end

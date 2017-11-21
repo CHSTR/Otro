@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  perfil_egreso: MyString
+  campo_ocupacional: MyString
+  link: MyString
+  descripcion: MyString
+  link_malla: MyString
+
+two:
+  nombre: MyString
+  perfil_egreso: MyString
+  campo_ocupacional: MyString
+  link: MyString
+  descripcion: MyString
+  link_malla: MyString

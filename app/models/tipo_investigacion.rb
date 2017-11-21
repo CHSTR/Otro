@@ -1,0 +1,2 @@
+class TipoInvestigacion < ApplicationRecord
+end

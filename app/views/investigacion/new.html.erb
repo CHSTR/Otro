@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+    <style type="text/css">
+    .centrado{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body {padding: 1.5em} 
+    div img {
+      margin-top: .8em;
+      margin-bottom: .5em;
+      margin-left: 1em;
+      margin-right: .5em;
+    }
+    .margen{
+      margin-top: 2em;
+    }
+    .margen3{
+      margin-top: 5em;
+    }
+    body {padding: 1.5em;
+font-family: 'Junge', serif;
+}
+        p{
+      font-size: 18px;
+    }
+    .margen1{
+      margin-top: 0.5em;
+    }
+    .margen2{
+      margin-top: 18em;
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container-fluid">
+            <br>
+            <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
+                <li class="nav-item" href="/inicio.html">
+                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/academico"  style="color: #ffffff;">Académicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/investigacion"  style="color: #ffffff;">Investigación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/organizacion"  style="color: #ffffff;">Organización</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactod"  style="color: #ffffff;">Contacto</a>
+                </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="container-fluid">
+          <ol class="breadcrumb margen">
+            <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+            <li class="breadcrumb-item active">Departamento</li>
+          </ol>
+          <hr>
+        </div>
+        <div class="container-fluid margen">
+          <div class="list-group">
+            <a href="ADI" class="list-group-item list-group-item-action active">Áreas disciplinarias</a>
+            <a href="PRO" class="list-group-item list-group-item-action">Proyectos</a>
+            <a href="#" class="list-group-item list-group-item-action">Otros</a>
+          </div>
+              <form class="margen" id="">
+                  <input class="form-control mr-sm-1 text-left" type="text" placeholder="Buscar Académico">
+                  <button class="btn btn-outline-success margen1" type="submit">Buscar</button>
+              </form>
+        </div>
+      </div>
+      <div class="col-md-9 margen">
+      <%= form_for(@areas_disciplinarias, :url => {:action => :createa}) do |f| %>
+          <div class="col-md-9 margen">
+            <h3 class="text-left">
+              <%= f.label :nombre_del_área %>
+              <%= f.text_field :nombre %>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.label :descripcion_del_área %>
+              <%= f.cktext_area :descripcion %>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.label :Campos_de_investigación_por_área_disciplinaria %>
+              <%= f.cktext_area :descripcion2 %>
+            </h3>
+            <br>
+            <div class="actions">
+              <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
+            </div>
+            <% end %>
+            <br>
+            <%= link_to 'Volver', investigacion_adi_path, :class => 'btn btn-outline-primary margen1' %>
+            <br>
+      </div>
+        <div class="col-md-12 margen2"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <center>
+              <a href=""><img src="../imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="../imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="../imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="../imagenes/m4.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="../imagenes/m5.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="../imagenes/m6.jpg" class="text-center mx-auto float-center"></a>
+            </center>
+            <h6 class="text-center">Dirección: José Pedro Alessandri 1242, Ñuñoa. Teléfono: ...</h6>
+            <h6 class="text-center">2017 © UTEM - Todos los derechos reservados.</h6>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</div>
+</html>

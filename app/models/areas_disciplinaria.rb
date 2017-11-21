@@ -1,0 +1,2 @@
+class AreasDisciplinaria < ApplicationRecord
+end

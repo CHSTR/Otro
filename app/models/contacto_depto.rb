@@ -1,0 +1,2 @@
+class ContactoDepto < ApplicationRecord
+end

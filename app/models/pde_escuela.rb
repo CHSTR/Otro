@@ -1,0 +1,2 @@
+class PdeEscuela < ApplicationRecord
+end

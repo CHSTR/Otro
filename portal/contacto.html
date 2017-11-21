@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <style type="text/css">
+    .centrado{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body {padding: 1.5em} 
+    div img {
+      margin-top: .8em;
+      margin-bottom: .5em;
+      margin-left: 1em;
+      margin-right: .5em;
+    }
+    .margen{
+      margin-top: 2em;
+    }
+    .margen2{
+      margin-top: 18em;
+    }
+    .margen3{
+      margin-top: 8em;
+    }
+    </style>
+    <script type="text/javascript">
+    function mostrar(id) {
+        if (id == "0") {
+            $("#LOCAL").show();
+            $("#DOM").hide();
+            $("#DOM1").hide();
+            $("#DOM2").show();
+            document.getElementById("p1").innerHTML = "Mensaje";
+        }
+        if(id == "1"){
+            $("#LOCAL").hide();
+            $("#DOM").show();
+            $("#DOM1").show();
+            $("#DOM2").show();
+            document.getElementById("p1").innerHTML = "Oferta Laboral";
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-5"><img src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container-fluid">
+            <br>
+            <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
+                <li class="nav-item" href="inicio.html">
+                    <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+                </li>
+                <li class="nav-item" href="">
+                    <a class="nav-link" href="noticias.html" style="color: #ffffff;">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="estudiantes.html"  style="color: #ffffff;">Estudiantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="programas.html"  style="color: #ffffff;">Programas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="egresados.html"  style="color: #ffffff;">Egresados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="laboral.html"  style="color: #ffffff;">Laboral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="organizacione.html"  style="color: #ffffff;">Organización</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href=""  style="color: #ffffff;">Contacto</a>
+                </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="margen">
+            <h4>Escuela de informática</h4>
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d699.7005120016598!2d-70.59784027403448!3d-33.466099071778224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cfc270900eb7%3A0x330e0d87329f4a5f!2sUniversidad+Tecnol%C3%B3gica+Metropolitana+-+Campus+Macul!5e0!3m2!1ses-419!2scl!4v1507604787839" style="border:0" allowfullscreen="" frameborder="0" height="250" width="100%"></iframe>
+            </div>
+            <strong>Contactenos</strong><br><strong>Oficina:</strong> ...
+            <hr>
+        </div>
+        <div class="container">
+            <form role="form" id="Formulario" action="../php/contacto2.php" method="POST">
+                <div class="form-group">
+                    <label class="control-label" for="Nombre">Nombres</label>
+                    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
+                </div>            
+                <label class="control-label" for="Motivo">Motivo de Contacto</label>
+                <br>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label"required>
+                    <input class="form-check-input" onChange="mostrar(0);" type="radio" name="envio" id="0" required value="0"> Consulta</input>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input class="form-check-input" onChange="mostrar(1);" type="radio" name="envio" id="1" value="1"> Oferta Laboral</input>
+                  </label>
+                </div>
+                <div class="form-group" id="DOM">
+                    <label class="control-label" id="DOM" for="Empresa">Empresa</label>
+                    <input type="text" class="form-control" id="Empresa" name="Empresa" placeholder="Introduzca el nombre de su empresa" required />
+                </div>
+                <div class="form-group" id="DOM1">
+                    <label class="control-label" id="DOM" for="Empresa">Cargo</label>
+                    <input type="text" class="form-control" id="Empresa" name="Empresa" placeholder="Introduzca el nombre del cargo" required />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                    <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
+                    <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="Mensaje" placeholder="Introduzca su mensaje" required ></textarea>
+                </div>
+                <div class="form-group">                
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <input type="reset" class="btn btn-default" value="Limpiar">                
+                </div>
+                <div id="respuesta" style="display: none;"></div>
+            </form>
+        </div>       
+    </div>
+      <div class="col-md-12 margen3"></div>
+      <div class="col-md-4 "></div>
+        <div class="col-md-4">
+            <center>
+              <a href=""><img src="imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="imagenes/m4.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="imagenes/m5.jpg" class="text-center mx-auto float-center"></a>
+              <a href=""><img src="imagenes/m6.jpg" class="text-center mx-auto float-center"></a>
+            </center>
+            <h6 class="text-center">Dirección: José Pedro Alessandri 1242, Ñuñoa. Teléfono: ...</h6>
+            <h6 class="text-center">2017 © UTEM - Todos los derechos reservados.</h6>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</div>
+</html>

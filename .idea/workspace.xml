@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <list default="true" id="75061cdc-bd9c-465d-ad4b-47594435aabd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb" />
@@ -14,9 +13,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
-=======
-    <list default="true" id="75061cdc-bd9c-465d-ad4b-47594435aabd" name="Default" comment="" />
->>>>>>> inicio funcional completo
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -34,91 +30,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="tipo_texto.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/tipo_texto.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
               <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-=======
-      <file leaf-file-name="misionvision.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/misionvision.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
               <caret line="40" column="95" lean-forward="false" selection-start-line="40" selection-start-column="95" selection-end-line="40" selection-end-column="95" />
-=======
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="historia.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/historia.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
               <caret line="92" column="10" lean-forward="true" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
-=======
-      <file leaf-file-name="investigacion_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/investigacion_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
               <caret line="155" column="45" lean-forward="false" selection-start-line="155" selection-start-column="45" selection-end-line="155" selection-end-column="45" />
-=======
-      <file leaf-file-name="iniciodepto_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/investigacion/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="530">
               <caret line="141" column="7" lean-forward="true" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
-=======
-      <file leaf-file-name="editar.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/investigacion/editar.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="92" column="57" lean-forward="true" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
@@ -127,69 +83,28 @@
       <file leaf-file-name="nuevotexto.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/nuevotexto.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
             <state relative-caret-position="18">
               <caret line="89" column="12" lean-forward="true" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-=======
-            <state relative-caret-position="502">
-              <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="iniciodepto_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="530">
               <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-=======
-      <file leaf-file-name="editarhistoria.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarhistoria.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="84" column="14" lean-forward="true" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editarinicio.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarinicio.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="118" column="41" lean-forward="true" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
->>>>>>> inicio funcional completo
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <file leaf-file-name="texto.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/texto.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
               <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-=======
-      <file leaf-file-name="editarmisionvision.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarmisionvision.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="120" column="26" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editarpde.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarpde.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="121" column="14" lean-forward="true" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
->>>>>>> inicio funcional completo
               <folding />
             </state>
           </provider>
@@ -205,10 +120,6 @@
       <find>@academicos</find>
       <find>i</find>
       <find>path</find>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
-=======
-      <find>update</find>
->>>>>>> inicio funcional completo
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,7 +141,6 @@
         <option value="$PROJECT_DIR$/app/views/inicio/misionvision.html.erb" />
         <option value="$PROJECT_DIR$/app/views/inicio/pde.html.erb" />
         <option value="$PROJECT_DIR$/app/views/inicio/inicio.html.erb" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
         <option value="$PROJECT_DIR$/app/views/iniciodepto/inicio.html.erb" />
         <option value="$PROJECT_DIR$/app/views/iniciodepto/misionvision.html.erb" />
         <option value="$PROJECT_DIR$/app/views/iniciodepto/pde.html.erb" />
@@ -244,21 +154,6 @@
         <option value="$PROJECT_DIR$/app/views/iniciodepto/nuevotexto.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/iniciodepto/historia.html.erb" />
-=======
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/nuevotexto.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/texto.rb" />
-        <option value="$PROJECT_DIR$/app/models/tipo_texto.rb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/historia.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/inicio.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/misionvision.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/pde.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/editarhistoria.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/editarinicio.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/editarmisionvision.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/iniciodepto/editarpde.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
->>>>>>> inicio funcional completo
       </list>
     </option>
   </component>
@@ -269,17 +164,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <option name="x" value="372" />
     <option name="y" value="-4" />
     <option name="width" value="649" />
     <option name="height" value="764" />
-=======
-    <option name="x" value="715" />
-    <option name="y" value="-4" />
-    <option name="width" value="651" />
-    <option name="height" value="772" />
->>>>>>> inicio funcional completo
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -298,10 +186,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="Scratches" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
-=======
-      <pane id="RailsProjectView" />
->>>>>>> inicio funcional completo
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,7 +227,6 @@
             <path>
               <item name="Otro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Otro" type="462c0819:PsiDirectoryNode" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="tipo_texto" type="462c0819:PsiDirectoryNode" />
@@ -351,8 +234,6 @@
             <path>
               <item name="Otro" type="b2602c69:ProjectViewProjectNode" />
               <item name="Otro" type="462c0819:PsiDirectoryNode" />
-=======
->>>>>>> inicio funcional completo
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -364,10 +245,7 @@
           <select />
         </subPane>
       </pane>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <pane id="RailsProjectView" />
-=======
->>>>>>> inicio funcional completo
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,29 +411,17 @@
       <workItem from="1510855819338" duration="2715000" />
       <workItem from="1511122906999" duration="4518000" />
       <workItem from="1511127483989" duration="9692000" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
-=======
-      <workItem from="1511213238058" duration="8829000" />
->>>>>>> inicio funcional completo
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <option name="totallyTimeSpent" value="27330000" />
-=======
-    <option name="totallyTimeSpent" value="36159000" />
->>>>>>> inicio funcional completo
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33625498" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18406375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> inicio funcional completo
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -585,7 +451,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/models/admin_depto.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -607,8 +472,6 @@
         </state>
       </provider>
     </entry>
-=======
->>>>>>> inicio funcional completo
     <entry file="file://$PROJECT_DIR$/app/models/areas_disciplinaria.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -795,10 +658,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
           <folding />
-=======
->>>>>>> inicio funcional completo
         </state>
       </provider>
     </entry>
@@ -806,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
           <folding />
         </state>
       </provider>
@@ -847,290 +706,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="7" />
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/academico/editar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="101" column="47" lean-forward="false" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/academico_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/academico/mostrar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/investigacion/pro.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="168" column="16" lean-forward="true" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/investigacion/ver.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="118" column="21" lean-forward="true" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/investigacion/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="83" column="8" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/investigacion/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2538">
-          <caret line="141" column="7" lean-forward="false" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarpde.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="178" column="7" lean-forward="false" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/models/texto.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/academico/mostrar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/models/tipo_texto.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/investigacion/pro.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="168" column="16" lean-forward="true" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/inicio.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/investigacion/ver.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="118" column="21" lean-forward="true" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/historia.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="105" column="10" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="105" selection-end-column="10" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/investigacion/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="83" column="8" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/models/texto.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/pde.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="104" column="10" lean-forward="false" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/controllers/investigacion_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/misionvision.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/nuevotexto.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarhistoria.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/controllers/investigacion_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/models/tipo_texto.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/investigacion/editar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="92" column="57" lean-forward="true" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="155" column="45" lean-forward="false" selection-start-line="155" selection-start-column="45" selection-end-line="155" selection-end-column="45" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/controllers/iniciodepto_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarhistoria.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="84" column="14" lean-forward="true" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
->>>>>>> inicio funcional completo
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/investigacion/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="141" column="7" lean-forward="true" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarinicio.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="118" column="41" lean-forward="true" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/nuevotexto.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="89" column="12" lean-forward="true" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarmisionvision.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="120" column="26" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="40" column="95" lean-forward="false" selection-start-line="40" selection-start-column="95" selection-end-line="40" selection-end-column="95" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/editarpde.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="121" column="14" lean-forward="true" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< 9efd67fea3b07829bd8b997fd15a4bddb79923e5
     <entry file="file://$PROJECT_DIR$/app/views/iniciodepto/historia.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="92" column="10" lean-forward="true" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
-=======
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> inicio funcional completo
           <folding />
         </state>
       </provider>

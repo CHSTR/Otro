@@ -1,0 +1,2 @@
+class AdminEscuela < ApplicationRecord
+end
