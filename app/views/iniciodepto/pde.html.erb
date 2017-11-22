@@ -91,16 +91,18 @@
     </div>
     <div class="col-md-6 margen">
       <div class="container">
-        <h2><%=@textos.nombre%></h2>
-        <br>
-        <p class="text-justify" >
-          <%= raw @textos.descripcion%>
-        </p>
-        <br>
-        <%= @textos.imagen%>
-        <p class="text-justify">
-          <%= @textos.descripcion_imagen%>
-        </p>
+        <% unless @textos.nil?%>
+            <h2><%= @textos.nombre%></h2>
+            <br>
+            <p class="text-justify" >
+              <%= raw @textos.descripcion%>
+            </p>
+            <br>
+            <%= @textos.imagen%>
+            <p class="text-justify">
+              <%= @textos.descripcion_imagen%>
+            </p>
+        <% end %>
       </div>
     </div>
     </div>

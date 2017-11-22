@@ -22,9 +22,9 @@ Rails.application.routes.draw do
 
   get 'noticias/mostrare/:id', to: 'noticias#nostrare'
 
-  get 'noticias/editare', to: 'noticias#editare', as: 'noticias_editare'
-  put 'noticias/editare', to: 'noticias#updatee'
-  patch 'noticias/editare', to: 'noticias#updatee'
+  get 'noticias/:id/editare', to: 'noticias#editare', as: 'noticias_editare'
+  put 'noticias/:id/editare', to: 'noticias#updatee'
+  patch 'noticias/:id/editare', to: 'noticias#updatee'
 
   get 'noticias/nuevoe', to: 'noticias#nuevoe', as: 'noticias_nuevoe'
   post 'noticias/nuevoe', to: 'noticias#eventocreate'

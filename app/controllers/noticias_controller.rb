@@ -1,6 +1,10 @@
 class NoticiasController < ApplicationController
   def inicio
-    @noticia_escuelas = NoticiaEscuela.all
+    if params[:search]
+      @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
+    else
+      @noticia_escuelas = NoticiaEscuela.all
+  end
   end
 
   def mostrarn
@@ -24,7 +28,11 @@ class NoticiasController < ApplicationController
   end
 
   def eventos
-    @evento_escuelas = EventoEscuela.all
+    if params[:search]
+      @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%")
+    else
+      @evento_escuelas = EventoEscuela.all
+    end
   end
 
   def mostrare
@@ -96,10 +104,10 @@ class NoticiasController < ApplicationController
   end
 
   def user_paramsn
-    params.require(:noticias_escuela).permit(:nombre,:cuerpo,:imagen,:fecha) #retorna un hash con todos los valores del academico...
+    params.require(:noticia_escuela).permit(:nombre,:cuerpo,:imagen,:fecha,:descripcion) #retorna un hash con todos los valores del academico...
   end
 
   def user_paramse
-    params.require(:eventos_escuela).permit(:nombre,:lugar,:descripcion,:imagen,:fecha) #retorna un hash con todos los valores del academico...
+    params.require(:evento_escuela).permit(:nombre,:lugar,:descripcion,:imagen,:fecha,:hora) #retorna un hash con todos los valores del academico...
   end
 end

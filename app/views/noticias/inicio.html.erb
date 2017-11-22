@@ -56,19 +56,19 @@
             <a class="nav-link active" href="noticias.html" style="color: #ffffff;">Noticias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="estudiantes.html"  style="color: #ffffff;">Estudiantes</a>
+            <a class="nav-link " href="../estudiante.html"  style="color: #ffffff;">Estudiantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="programas.html"  style="color: #ffffff;">Programas</a>
+            <a class="nav-link" href="../programas.html"  style="color: #ffffff;">Programas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="egresados.html"  style="color: #ffffff;">Egresados</a>
+            <a class="nav-link" href="../egresados.html"  style="color: #ffffff;">Egresados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="laboral.html"  style="color: #ffffff;">Laboral</a>
+            <a class="nav-link " href="../laboral.html"  style="color: #ffffff;">Laboral</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="organizacione.html"  style="color: #ffffff;">Organización</a>
+            <a class="nav-link" href="../organizacione.html"  style="color: #ffffff;">Organización</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=""  style="color: #ffffff;">Contacto</a>
@@ -110,49 +110,28 @@
       </div>
       <br>
       <hr>
+      <% @noticia_escuelas.each do |i|%>
       <div class="container-fluid">
         <div class="row">
-          <% @noticia_escuelas.each do |i|%>
           <div class="col-md-2 margen3">
-            <%= @textos.imagen%>
+            <%= i.imagen%>
           </div>
           <div class="col-md-10 margen3">
-            <h4><a href="noticia/noticia1.html"><%= @textos.nombre%></h4></a>
-            <h6>Cinco horas de competencia vivieron cerca de 150 estudiantes de las carreras a fines a informática y computación de todo el país en el Torneo Chileno de Programación, instancia de competencia que permitió a los participantes poner a prueba sus conocimientos computacionales y habilidades de programación, ofreciendo la posibilidad de practicar a quienes apuestan por conseguir un cupo en la versión 41 de la Competición Internacional Universitaria ACM de Programación (ACM-ICPC), cuya final se realizará el próximo año en Beijing, China, del 15 al 20 de abril.</h6>
+            <h4><a href="mostrarn/<%=i.id%>"><%= i.nombre%></h4></a>
+            <h6><%= i.descripcion%></h6>
+            <br>
+            <%= link_to "Eliminar", eliminar_noticia_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
+            <br>
+            <%= link_to "Editar", noticias_editarn_path(i) %>
+            <br>
+            <br>
           </div>
-          <% end %>
+
         </div>
       </div>
-      <hr>
-    </div>
+      <% end %>
     <div class="col-md-3"></div>
     <div class="col-md-9">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2 margen3">
-            <a href=""><img src="https://noticias.utem.cl/wp-content/uploads/2017/07/Ingenier%C3%ADa-Inform%C3%A1tica-UTEM-realiz%C3%B3-redise%C3%B1o-curricular-de-su-Perfil-de-Egreso-1.jpg" class="img-fluid"></a>
-          </div>
-          <div class="col-md-10 margen3">
-            <h4><a href="">Ingeniería Informática UTEM realizó rediseño curricular de su Perfil de Egreso</h4></a>
-            <h6>El seminario "Competencias Claves en la Era Digital: Oportunidades y Desafíos" congregó a estudiantes, egresados y titulados de la carrera de Ingeniería en Informática en torno a las actuales necesidades del mercado laboral.</h6>
-          </div>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-9">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2 margen3">
-            <a href=""><img src="https://noticias.utem.cl/wp-content/uploads/2017/07/portada-_MG_6130.jpg" class="img-fluid"></a>
-          </div>
-          <div class="col-md-10 margen3">
-            <h4><a href="">Titulados y egresados de Ingeniería Informática UTEM participaron en seminario de competencias profesionales</h4></a>
-            <h6>En la Facultad de Ingeniería de la Universidad Tecnológica Metropolitana se realizó el encuentro entre académicos y estudiantes de Ingeniería Informática para la validación del Perfil de Egreso interno de esta carrera.</h6>
-          </div>
-        </div>
-      </div>
       <br>
       <br>
       <nav aria-label="Page navigation">
@@ -165,6 +144,7 @@
           </li>
         </ul>
       </nav>
+    </div>
     </div>
     <hr>
     <br>
