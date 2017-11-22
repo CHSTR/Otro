@@ -1,5 +1,78 @@
 Rails.application.routes.draw do
   
+  get 'noticias/buscarnoticia', to: 'noticias#buscarnoticia', as: 'noticias_buscarnoticia'
+
+  get 'noticias/buscarevento', to: 'noticias#buscarevento', as: 'noticias_buscarevento'
+
+  get 'noticias/inicio', to: 'noticias#inicio'
+
+  get 'noticias/mostrarn/:id', to:'noticias#mostrarn'
+
+  get 'noticias/:id/editarn', to: 'noticias#editarn', as: 'noticias_editarn'
+  put 'noticias/:id', to: 'noticias#updaten'
+  patch 'noticias/:id', to: 'noticias#updaten'
+
+  get 'noticias/eliminarn'
+  delete 'noticias/eliminarn/:id', to: 'noticias#eliminarn', as:'eliminar_noticia'
+
+  get 'noticias/nuevon', to: 'noticias#nuevon', as: 'noticias_nuevon'
+  post 'noticias/nuevon', to: 'noticias#noticiacreate'
+
+  get 'noticias/eventos', to:'noticias#eventos'
+
+  get 'noticias/mostrare/:id', to: 'noticias#nostrare'
+
+  get 'noticias/editare', to: 'noticias#editare', as: 'noticias_editare'
+  put 'noticias/editare', to: 'noticias#updatee'
+  patch 'noticias/editare', to: 'noticias#updatee'
+
+  get 'noticias/nuevoe', to: 'noticias#nuevoe', as: 'noticias_nuevoe'
+  post 'noticias/nuevoe', to: 'noticias#eventocreate'
+
+  get 'noticias/eliminare'
+  delete 'noticias/eliminare/:id', to: 'noticias#eliminare', as:'eliminar_evento'
+
+  #--------------------------------------------------------------------
+
+  get 'inicioe/editarhistoria', to: 'inicioe#editarhistoria', as: 'inicioe_editarhistoria'
+
+  put 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
+
+  patch 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
+
+  get 'inicioe/editarinicio', to: 'inicioe#editarinicio', as: 'inicioe_editarinicio'
+
+  put 'inicioe/editarinicio', to: 'inicioe#updateinicio'
+
+  patch 'inicioe/editarinicio', to: 'inicioe#updateinicio'
+
+  get 'inicioe/editarmisionvision', to: 'inicioe#editarmisionvision', as: 'inicioe_editarmisionvision'
+
+  put 'inicioe/editarmisionvision', to: 'inicioe#updatemisionvision'
+
+  patch 'inicioe/editarmisionvision', to: 'inicioe#updatemisionvision'
+
+  get 'inicioe/editarpde', to: 'inicioe#editarpde', as: 'inicioe_editarpde'
+
+  put 'inicioe/editarpde', to: 'inicioe#updatepde'
+
+  patch 'inicioe/editarpde', to: 'inicioe#updatepde'
+
+  get 'inicioe/historia', to: 'inicioe#historia', as: 'inicioe_historia'
+
+  get 'inicioe/inicio', to: 'inicioe#inicio', as: 'inicioe_inicio'
+
+  get 'inicioe/misionvision', to: 'inicioe#misionvision', as: 'inicioe_misionvision'
+
+  get 'inicioe/pde', to: 'inicioe#pde', as: 'inicioe_pde'
+
+  get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as: 'inicioe_nuevotexto'
+
+  post 'inicioe/nuevotexto', to: 'inicioe#textocreate'
+
+
+#---------------------------------------------
+  
   #-------------------------comienza contacto---------------------
 
   get 'contactod/', to:'contactod#index', as:'contacto'
