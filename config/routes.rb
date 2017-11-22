@@ -79,7 +79,19 @@ Rails.application.routes.draw do
   get 'inicio/misionvision'
   #--------------------comienza organizacion------------------------------
 
-  get 'organizacion/', to: 'organizacion#index'
+  get 'organizacion/', to: 'organizacion#index', as:'organizacion'
+
+  get 'organizacion/new', to:'organizacion#new', as:'new_funcionario'
+
+  post 'organizacion/new', to:'organizacion#crear'
+
+  get'organizacion/:id/editar', to:'organizacion#editar', as:'editar_funcionario'
+
+  put 'organizacion/:id', to:'organizacion#update'
+
+  patch 'organizacion/:id', to:'organizacion#update'
+
+  delete 'organizacion/:id', to: 'organizacion#eliminar', as:'eliminar_organizacion'
 
   #-----------------------------comienza investigacion inicio ---------------------
   

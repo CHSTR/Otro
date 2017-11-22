@@ -51,20 +51,20 @@ font-family: 'Junge', serif;
         <div class="container-fluid">
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
-                <li class="nav-item" href="/inicio.html">
-                    <a class="nav-link" href="departamento.html" style="color: #ffffff;">Inicio</a>
+                <li class="nav-item" href="/inicio">
+                    <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="academicos.html"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="investigacion.html"  style="color: #ffffff;">Investigación</a>
+                    <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="organizacion.html"  style="color: #ffffff;">Organización</a>
+                    <a class="nav-link" href="/organizacion"  style="color: #ffffff;">Organización</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactod.html"  style="color: #ffffff;">Contacto</a>
+                    <a class="nav-link" href="/contactod"  style="color: #ffffff;">Contacto</a>
                 </li>
             </ul>
           </div>
@@ -103,6 +103,7 @@ font-family: 'Junge', serif;
 
           <% end %>
           </div>
+          <%= link_to "Nueva Casilla", new_casilla_path %>
         </div>
       </div>
       <div class="col-md-9">

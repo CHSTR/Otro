@@ -49,7 +49,7 @@ font-family: 'Junge', serif;
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
                 <li class="nav-item" href="/inicio.html">
-                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+                    <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/academico"  style="color: #ffffff;">Académicos</a>
@@ -87,17 +87,19 @@ font-family: 'Junge', serif;
           <div class="container margen">
             <h2>Administrativos</h2>
             <% @funcionario_deptos.each do |i| %>
-            <hr>
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left"><%= i.cargo %></h4>
-              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
-              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
-              <br>
-              <br>
-              <br>
-            <hr>
+            <% if i.funcion == 0 %>
+              <hr>
+                <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+                <br>
+                <br>
+                <h4 class="text-left"><%= raw i.cargo %></h4>
+                <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+                <h4 class="text-left lead">Correo: <%= i.correo %></h4>
+                <br>
+                <br>
+                <%= link_to "Editar", editar_funcionario_path(i) %>
+                <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
             <% end %>
           </div>
       </div>
@@ -106,17 +108,19 @@ font-family: 'Junge', serif;
           <div class="container margen">
             <h2>Grupos de apoyo</h2>
             <% @funcionario_deptos.each do |i| %>
+            <% if i.funcion == 1 %>
             <hr>
               <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
               <br>
               <br>
-              <h4 class="text-left"><%= i.cargo%></h4>
+              <h4 class="text-left"><%= raw i.cargo%></h4>
               <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
               <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
-              <br>
-            <hr>
+              <%= link_to "Editar", editar_funcionario_path(i) %>
+              <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
             <% end %>
           </div>
       </div>
@@ -125,19 +129,22 @@ font-family: 'Junge', serif;
           <div class="container margen">
             <h2>Académicos</h2>
             <% @funcionario_deptos.each do |i| %>
+            <% if i.funcion == 2 %>
             <hr>
               <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
               <br>
               <br>
-              <h4 class="text-left"><%= i.cargo%></h4>
+              <h4 class="text-left"><%= raw i.cargo%></h4>
               <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
               <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
-              <br>
-            <hr>
+              <%= link_to "Editar", editar_funcionario_path(i) %>
+              <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
             <% end %>
           </div>
+          <%= link_to "Nuevo", new_funcionario_path %>
       </div>
       <br>
       <br>

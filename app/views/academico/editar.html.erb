@@ -47,7 +47,7 @@ font-family: 'Junge', serif;
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
                 <li class="nav-item" href="/inicio">
-                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+                    <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
@@ -74,22 +74,13 @@ font-family: 'Junge', serif;
           </ol>
           <hr>
         </div>
-        <div class="container-fluid margen">
-          <div class="list-group">
-            <a href="/academico/" class="list-group-item active">
-              Jornada Completa
-            </a>
-            <a href="/academico/MJ" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="/academico/JP" class="list-group-item list-group-item-action">Jornada Parcial</a>
-          </div>
-        </div>
       </div>
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@academicos, :url => {:action => :update}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
-              <%= f.label :nombre %>
+              <%= f.label :nombre_academico %>
               <%= f.text_field :nombre %>
             </h3>
             <br>
@@ -110,7 +101,7 @@ font-family: 'Junge', serif;
             <br>
             <h3 class="text-left">
               <%= f.label :area_interes %>
-              <%= f.text_field :area_interes %>
+              <%= f.cktext_area :area_interes %>
             </h3>
             <br>
             <h3 class="text-left">
@@ -145,7 +136,7 @@ font-family: 'Junge', serif;
             <br>
             <h3 class="text-left">
               <%= f.label :descripcion %>
-              <%= f.text_field :descripcion %>
+              <%= f.cktext_area :descripcion %>
             </h3>
             <br>
             <div class="actions">

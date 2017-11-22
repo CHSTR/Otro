@@ -48,7 +48,7 @@ font-family: 'Junge', serif;
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
                 <li class="nav-item" href="/inicio">
-                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
+                    <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
@@ -75,43 +75,35 @@ font-family: 'Junge', serif;
           </ol>
           <hr>
         </div>
-        <div class="container-fluid margen">
-          <div class="list-group">
-            <a href="/academico/" class="list-group-item active">
-              Jornada Completa
-            </a>
-            <a href="/academico/MJ" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="/academico/JP" class="list-group-item list-group-item-action">Jornada Parcial</a>
-          </div>
-        </div>
       </div>
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
-              <p><%= f.label :nombre %></p>
+              <p><%= f.label :nombre_de_la_casilla %></p>
               <p><%= f.text_field :nombre %></p>
             </h3>
             <br>
             <h3 class="text-left">
-              <p><%= f.label :activo %></p>
+              <p><%= f.label :activo_? %></p>
               <p><%= f.number_field :activo, {:max=>"1",:min=>"0"}%></p>
             </h3>
             <br>
             <h3 class="text-left">
-              <p><%= f.label :link %></p>
-              <p><%= f.text_field :link %></p>
+              <p><%= f.label :Donde_redireccionará_? %></p>
+              <p><%= f.select(:link, options_for_select([['Jornada Completa','/academico'], ['Media Jornada','MJ'],['Jornada Parcial','JP']])) %></p>
             </h3>
             <br>
            <h3 class="text-left">
               <p><%= f.label :ver %></p>
-              <p><%= f.text_field :ver %></p>
+              <p><%= f.number_field :ver, {:max=>"1",:min=>"0"} %></p>
             </h3>
             <br>
             <h3 class="text-left">
               <p><%= f.label :ubicacion %></p>
-              <p><%= f.text_field :ubicacion %></p>
+              <p><%= f.select(:ubicacion, options_for_select([['Ubicación en académico','academico']])) %>
+              </p>
             </h3>
             <div class="actions">
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
