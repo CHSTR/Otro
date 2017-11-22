@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  #-------------------------comienza contacto---------------------
+
+  get 'contactod/', to:'contactod#index', as:'contacto'
+
+  post 'contactod/', to:'contactod#crear'
+
+  #--------------------------termina contato----------------------
+
   get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
   post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
