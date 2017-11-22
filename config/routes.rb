@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
   
+  # -------- comienza estudinte-------------
+
+  get 'estudiante/', to:'estudiante#index', as:'centro'
+
+  get 'estudiante/crear', to:'estudiante#crear', as:'nuevo'
+
+  post 'estudiante/crear', to: 'estudiante#crearcentro'
+
+  get 'estudiante/:id/editar', to: 'estudiante#editar', as:'editar'
+
+  put 'estudiante/:id/editar', to: 'estudiante#update'
+
+  patch 'estudiante/:id/editar', to: 'estudiante#update'
+
+  delete 'estudiante/:id', to:'estudiante#eliminar', as:'eliminar'
+
+  #---------------------------segunda pestaña-----------------------
+
+  get 'estudiante/reglamento', to:'estudiante#reglamento', as:'reglamento'
+
+  get 'estudiante/reglamento/crear', to:'estudiante#crearregla', as:'nuevo_reglamento'
+
+  post 'estudiante/reglamento/crear', to: 'estudiante#crearreglamento'
+
+  get 'estudiante/reglamento/:id', to: 'estudiante#editarregla', as:'editar_reglamento'
+
+  put 'estudiante/reglamento/:id', to: 'estudiante#updateregla'
+
+  patch 'estudiante/reglamento/:id', to: 'estudiante#updateregla', as:'eliminar_regla'
+
+  delete 'estudiante/reglamento/:id', to:'estudiante#eliminarregla'
+
   #-------------------------comienza contacto---------------------
 
   get 'contactod/', to:'contactod#index', as:'contacto'
