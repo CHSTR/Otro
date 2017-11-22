@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-<<<<<<< HEAD
+
   # -------- comienza estudinte-------------
 
   get 'estudiante/', to:'estudiante#index', as:'centro'
@@ -33,7 +33,6 @@ Rails.application.routes.draw do
 
   delete 'estudiante/reglamento/:id', to:'estudiante#eliminarregla'
 
-=======
   get 'noticias/buscarnoticia', to: 'noticias#buscarnoticia', as: 'noticias_buscarnoticia'
 
   get 'noticias/buscarevento', to: 'noticias#buscarevento', as: 'noticias_buscarevento'
@@ -103,11 +102,9 @@ Rails.application.routes.draw do
   get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as: 'inicioe_nuevotexto'
 
   post 'inicioe/nuevotexto', to: 'inicioe#textocreate'
-
-
 #---------------------------------------------
   
->>>>>>> 91ee6366aad22238f65704fe9a8e2389f7620b23
+
   #-------------------------comienza contacto---------------------
 
   get 'contactod/', to:'contactod#index', as:'contacto'
