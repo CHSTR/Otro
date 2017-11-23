@@ -53,22 +53,22 @@
             <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
-            <a class="nav-link active" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
+            <a class="nav-link" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="../estudiante.html"  style="color: #ffffff;">Estudiantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="programas.html"  style="color: #ffffff;">Programas</a>
+            <a class="nav-link active" href="../programas.html"  style="color: #ffffff;">Programas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="egresados.html"  style="color: #ffffff;">Egresados</a>
+            <a class="nav-link" href="../egresados.html"  style="color: #ffffff;">Egresados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="laboral.html"  style="color: #ffffff;">Laboral</a>
+            <a class="nav-link " href="../laboral.html"  style="color: #ffffff;">Laboral</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="organizacione.html"  style="color: #ffffff;">Organización</a>
+            <a class="nav-link" href="../organizacione.html"  style="color: #ffffff;">Organización</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=""  style="color: #ffffff;">Contacto</a>
@@ -81,43 +81,40 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
-        <h4 class="lead">Más Noticias</h4>
         <div class="list-group">
-          <a href="" class="list-group-item list-group-item-action">Ingeniería Informática UTEM realizó rediseño curricular de su Perfil de Egreso</a>
-          <a href="https://ret.utem.cl/"  target="_blank" class="list-group-item list-group-item-action">Titulados y egresados de Ingeniería Informática UTEM participaron en seminario de competencias profesionales</a>
-          <a href="https://ret.utem.cl/"  target="_blank" class="list-group-item list-group-item-action">Organización Regional Student Group dicta cursos de Bioinformática y Biología Computacional a estudiantes de la UTEM</a>
-          <a href="https://ret.utem.cl/"  target="_blank" class="list-group-item list-group-item-action">TEstudiantes de Ingeniería en Informática de la UTEM obtienen primer lugar en la Primera Hackathon Solar del país</a>
-          <a href="https://ret.utem.cl/"  target="_blank" class="list-group-item list-group-item-action">UTEM inició clínicas de asesoría empresarial en la Facultad de Ingeniería</a>
+          <a href="/programas/pregrado" class="list-group-item list-group-item-action">Pregrado</a>
+          <a href="/programas/postgrado"  class="list-group-item list-group-item-action">Postgrado</a>
+          <a href="/programas/otros"  class="list-group-item list-group-item-action active">Otros</a>
         </div>
       </div>
     </div>
-    <div class="col-md-7">
-      <div class="container margen">
-        <div class="display-4" style="color: #0275d8;">
-          <%= @noticia_escuelas.nombre %>
+    <div class="col-md-9 margen">
+      <h1>Otros tipos de programas</h1>
+      <div class="row">
+        <div class="col-md-12 .hidden-xs-down margen col-sm-12">
+          <div class="">
+            <ul>
+              <% @programas.each do |i|%>
+                  <li><p><a href="mostrar/<%=i.id%>" target="_blank"><%=i.nombre%></a></p></li>
+                  <br>
+                  <%= link_to "Eliminar", eliminar_programas_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
+                  <br>
+                  <%= link_to "Editar", programas_editar_path(i) %>
+                  <br>
+                  <br>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-      <br>
-      <hr>
-      <div class="container-fluid">
-        <h5 class="inter">
-          <%= raw @noticia_escuelas.cuerpo %>
-        </h5>
-      </div>
-      <br>
-      <div class="col-md-2 margen">
-        <%= @noticia_escuelas.imagen %>
-      </div>
-      <hr>
-      <a href="../inicio.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>
     </div>
-    <div class="col-md-12 margen4"></div>
+    <div class="col-md-12 margen2"></div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <center>
@@ -133,6 +130,5 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <div style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website_portalprueba1&utm_content=footer_img"><img src="https://cloud.githubusercontent.com/assets/23024110/20663010/9968df22-b55e-11e6-941d-edbc894c2b78.png"  alt="www.000webhost.com"></a></div></body>
 </div>
 </html>

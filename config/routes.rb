@@ -12,6 +12,28 @@ Rails.application.routes.draw do
 
   get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar'
 
+  get 'programas/', to: 'programas#inicio', as:'programas'
+
+  get 'programas/mostrar/:id', to: 'programas#mostrar'
+
+  get 'programas/editar', to: 'programas#editar', as: 'programas_editar'
+  put 'programas/:id', to: 'programas#updatep'
+  patch 'programas/:id', to: 'programas#updatep'
+
+  get 'programas/eliminar'
+  delete 'programas/eliminar/:id', to: 'programas#eliminar', as:'eliminar_programas'
+
+  get 'programas/nuevo', to: 'programas#nuevo', as: 'programas_nuevo'
+  post 'programas/nuevo', to: 'programas#create'
+
+  get 'programas/buscar'
+
+  get 'programas/pregrado', to:'programas#pregrado', as: 'programas_pregrado'
+
+  get 'programas/postgrado', to:'programas#postgrado', as: 'programas_postgrado'
+
+  get 'programas/otros', to: 'programas#otros', as: 'programas_otros'
+
   # -------- comienza estudinte-------------
 
   get 'estudiante/', to:'estudiante#index', as:'centro'
@@ -43,6 +65,8 @@ Rails.application.routes.draw do
   patch 'estudiante/reglamento/:id', to: 'estudiante#updateregla', as:'eliminar_regla'
 
   delete 'estudiante/reglamento/:id', to:'estudiante#eliminarregla'
+
+  #----------------------------------------------------------------
 
   get 'noticias/buscarnoticia', to: 'noticias#buscarnoticia', as: 'noticias_buscarnoticia'
 
