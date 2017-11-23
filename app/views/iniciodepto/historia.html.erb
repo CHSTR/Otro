@@ -93,13 +93,13 @@
     <div class="col-md-6 margen">
       <div class="container">
         <% unless @textos.nil?%>
-        <h2><%= @textos.nombre%></h2>
+        <h2>Historia</h2>
         <br>
         <p class="text-justify" >
           <%= raw @textos.descripcion%>
         </p>
         <br>
-        <%= @textos.imagen%>
+            <img  src="<%= @textos.imagen%>" class="img-fluid">
         <p class="text-justify">
           <%= @textos.descripcion_imagen%>
         </p>
