@@ -56,7 +56,7 @@
             <a class="nav-link" href="../academico.html"  style="color: #ffffff;">Académicos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="investigacion.html"  style="color: #ffffff;">Investigación</a>
+            <a class="nav-link" href="../investigacion.html"  style="color: #ffffff;">Investigación</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../organizacion.html"  style="color: #ffffff;">Organización</a>
@@ -98,16 +98,18 @@
     <div class="col-md-9 margen">
       <div class="col-md-6 margen">
         <div class="container">
-          <h2><%= @textos.nombre%></h2>
-          <br>
-          <p class="text-justify" >
-            <%= raw @textos.descripcion%>
-          </p>
-          <br>
-          <%= @textos.imagen%>
-          <p class="text-justify">
-            <%= @textos.descripcion_imagen%>
-          </p>
+          <% unless @textos.nil?%>
+              <h2><%= @textos.nombre%></h2>
+              <br>
+              <p class="text-justify" >
+                <%= raw @textos.descripcion%>
+              </p>
+              <br>
+              <%= @textos.imagen%>
+              <p class="text-justify">
+                <%= @textos.descripcion_imagen%>
+              </p>
+          <% end %>
         </div>
       </div>
     </div>

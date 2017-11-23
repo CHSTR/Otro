@@ -44,7 +44,7 @@
     <div class="col-md-12"></div>
   </div>
   <div class="row">
-    <div class="col-md-5"><img  width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -92,6 +92,7 @@
     </div>
     <div class="col-md-6 margen">
       <div class="container">
+        <% unless @textos.nil?%>
         <h2><%= @textos.nombre%></h2>
         <br>
         <p class="text-justify" >
@@ -102,6 +103,7 @@
         <p class="text-justify">
           <%= @textos.descripcion_imagen%>
         </p>
+            <% end %>
       </div>
     </div>
     <div class="col-md-3 margen3">

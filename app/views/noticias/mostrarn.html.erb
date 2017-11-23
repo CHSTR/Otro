@@ -107,14 +107,15 @@
       <hr>
       <div class="container-fluid">
         <h5 class="inter">
-          <%= @noticia_escuelas.cuerpo %>
+          <%= raw @noticia_escuelas.cuerpo %>
         </h5>
       </div>
+      <br>
+      <div class="col-md-2 margen">
+        <%= @noticia_escuelas.imagen %>
+      </div>
       <hr>
-      <a href="../noticias/inicio.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>
-    </div>
-    <div class="col-md-2 margen">
-      <%= @noticia_escuelas.imagen %>
+      <a href="../inicio.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>
     </div>
     <div class="col-md-12 margen4"></div>
     <div class="col-md-4"></div>
