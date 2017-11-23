@@ -1,0 +1,2 @@
+class OfertaLaboral < ApplicationRecord
+end

@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  get 'laboral/', to:'laboral#index', as:'inicio_laboral'
+
+  get 'laboral/mostrar/:id', to:'laboral#mostrar', as:'mostrar_laboral'
+
+  get 'aceptar_oferta/', to:'aceptar_oferta#index', as:'inicio'
+
+  delete 'aceptar_oferta/eliminar/:id', to:'aceptar_oferta#eliminar', as:'eliminar_oferta'
+
+  get 'aceptar_oferta/cambiar/:id', to:'aceptar_oferta#cambiar', as:'cambiar'
+
+  get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar'
+
   # -------- comienza estudinte-------------
 
   get 'estudiante/', to:'estudiante#index', as:'centro'

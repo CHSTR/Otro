@@ -1,11 +1,11 @@
 class ContactodController < ApplicationController
   def index
-  	@mensaje_deptos = MensajeDepto.new
+  	@oferta_laborals = OfertaLaboral.new
   end
 
   def crear
-  	@mensaje_deptos = MensajeDepto.new(contacto_params)
-  	if @mensaje_deptos.update_attributes(contacto_params)
+  	@oferta_laborals = OfertaLaboral.new(contacto_params)
+  	if @oferta_laborals.update_attributes(contacto_params)
       redirect_to contacto_url
     else
       render action: 'index'
@@ -14,6 +14,6 @@ class ContactodController < ApplicationController
   end
 
   def contacto_params
-    params.require(:mensaje_depto).permit(:nombre,:empresa,:cargo,:correo,:descripcion) #retorna un hash con todos los valores del academico...
+    params.require(:oferta_laboral).permit(:nombre,:empresa,:cargo,:correo,:descripcion,:aceptado) #retorna un hash con todos los valores del academico...
   end
 end
