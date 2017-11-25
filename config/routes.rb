@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  
+
+
+  get 'portal/', to: 'portal#inicio', as:'portal'
+
+  get 'portal/nuevo'
+
+  get 'portal/editar'
+
+  get 'portal/eliminar'
+
+
+#----------------------------------------------------------------
+
+
   get 'laboral/', to:'laboral#index', as:'inicio_laboral'
 
   get 'laboral/mostrar/:id', to:'laboral#mostrar', as:'mostrar_laboral'
@@ -11,6 +24,8 @@ Rails.application.routes.draw do
   get 'aceptar_oferta/cambiar/:id', to:'aceptar_oferta#cambiar', as:'cambiar'
 
   get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar'
+
+  #--------------------------------------------------------------------------
 
   get 'programas/', to: 'programas#inicio', as:'programas'
 
