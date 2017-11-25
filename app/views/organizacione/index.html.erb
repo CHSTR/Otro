@@ -21,7 +21,7 @@
       margin-left: 1em;
       margin-right: .5em;
     }
-      body {padding: 1.5em;
+body {padding: 1.5em;
 font-family: 'Junge', serif;
 }
 	.margen1{
@@ -32,9 +32,6 @@ font-family: 'Junge', serif;
     }
     .margen2{
       margin-top: 18em;
-    }
-    .margen3{
-      margin-top: 8em;
     }
     </style>
 </head>
@@ -67,20 +64,19 @@ font-family: 'Junge', serif;
             <a class="nav-link" href="/egresados"  style="color: #ffffff;">Egresados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/laboral"  style="color: #ffffff;">Laboral</a>
+            <a class="nav-link" href="/laboral"  style="color: #ffffff;">Laboral</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/organizacione"  style="color: #ffffff;">Organización</a>
+            <a class="nav-link active" href="/organizacione"  style="color: #ffffff;">Organización</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contacto"  style="color: #ffffff;">Contacto</a>
           </li>
         </ul>
       </div>
-      	</div>
       </div>
-      </div>
-     <div class="row">
+    </div>
+        <div class="row">
       <div class="col-md-3">
         <div class="container-fluid">
           <ol class="breadcrumb margen">
@@ -90,63 +86,72 @@ font-family: 'Junge', serif;
           <hr>
         </div>
       </div>
-      <div class="col-md-9 margen">
-        <h2>Ofertas Laborales</h2>
+       <div class="col-md-9">
+          <div class="container margen">
+            <h2>Administrativos</h2>
+            <% @funcionario_escuelas.each do |i| %>
+            <% if i.funcion == 0 %>
+              <hr>
+                <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+                <br>
+                <br>
+                <h4 class="text-left"><%= raw i.cargo %></h4>
+                <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+                <h4 class="text-left lead">Correo: <%= i.correo %></h4>
+                <br>
+                <br>
+                <%= link_to "Editar", editar_funcionarioe_path(i) %>
+                <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
+            <% end %>
+          </div>
       </div>
-      <div class="col-md-3">
-        <div class="container-fluid">
-          <div class="form-check ">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Full-Time
-            </label>
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+          <div class="container margen">
+            <h2>Grupos de apoyo</h2>
+            <% @funcionario_escuelas.each do |i| %>
+            <% if i.funcion == 1 %>
+            <hr>
+              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+              <br>
+              <br>
+              <h4 class="text-left"><%= raw i.cargo%></h4>
+              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
+              <br>
+              <br>
+              <%= link_to "Editar", editar_funcionarioe_path(i) %>
+              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
+            <% end %>
           </div>
-          <div class="form-check ">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Part-Time
-            </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Practica
-            </label>
-          </div>
-          <button type="button" class="btn btn-outline-success">Filtrar</button>
-        </div>
-        <hr>
-          <%= form_tag inicio_laboral_path,:class =>'margen' ,:method => :get do %>
-
-            <%= text_field_tag :search %>
-
-            <%= submit_tag "Buscar", :class => 'btn btn-outline-success margen1'%>
-
-          <% end %>
       </div>
-	    <div class="col-md-9">
-	    	<div class="container">
-          <table class="table table-bordered margen1">
-            <thead>
-              <tr>
-                <th>FECHA</th>
-                <th>CARGO</th>
-                <th>EMPRESA</th>
-              </tr>
-            </thead>
-            <tbody>
-            <% unless @oferta_laborals.nil?%>
-              <% @oferta_laborals.each do |i| %>
-              <tr>
-                <th scope="row"><%= i.created_at %></th>
-                <td><a href="laboral/mostrar/<%= i.id %>"><%= i.cargo %></a></td>
-                <td><%= i.empresa %></td>
-              </tr>
-              <% end %>
-            <% end %>  
-            </tbody>
-          </table>
-      	</div>
-      	</div>
-      <div class="col-md-4 "></div>
-        <div class="col-md-4 margen2">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+          <div class="container margen">
+            <h2>Académicos</h2>
+            <% @funcionario_escuelas.each do |i| %>
+            <% if i.funcion == 2 %>
+            <hr>
+              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+              <br>
+              <br>
+              <h4 class="text-left"><%= raw i.cargo%></h4>
+              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
+              <br>
+              <br>
+              <%= link_to "Editar", editar_funcionarioe_path(i) %>
+              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+            <% end %>
+            <% end %>
+          </div>
+          <%= link_to "Nuevo", nuevo_funcionario_path %>
+      </div>
+        <div class="col-md-12 margen2"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
             <center>
               <a href=""><img src="imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
               <a href=""><img src="imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
@@ -161,4 +166,5 @@ font-family: 'Junge', serif;
         <div class="col-md-4"></div>
     </div>
 </body>
+</div>
 </html>
