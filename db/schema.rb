@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20171125191429) do
+=======
 ActiveRecord::Schema.define(version: 20171123005518) do
+>>>>>>> 7d834f06a6281795c21e56812ae72c389fd88922
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,6 +194,7 @@ ActiveRecord::Schema.define(version: 20171123005518) do
     t.string "imagen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "funcion"
   end
 
   create_table "funcionario_tipo_deptos", force: :cascade do |t|

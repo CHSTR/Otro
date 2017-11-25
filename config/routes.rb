@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   get 'portal/', to: 'portal#inicio', as:'portal'
 
   get 'portal/nuevo'
@@ -8,9 +9,27 @@ Rails.application.routes.draw do
   get 'portal/editar'
 
   get 'portal/eliminar'
-
-
 #----------------------------------------------------------------
+
+
+  
+  get 'contacto/', to:'contacto#index', as:'contactoe'
+
+  post 'contacto/', to:'contacto#crear'
+
+  get 'organizacione/', to:'organizacione#index', as:'organizacion_escuela'
+
+  get 'organizacione/new', to:'organizacione#new', as:'nuevo_funcionario'
+
+  post 'organizacione/new', to:'organizacione#crear'
+
+  get'organizacione/:id/editar', to:'organizacione#editar', as:'editar_funcionarioe'
+
+  put 'organizacione/:id', to:'organizacione#update'
+
+  patch 'organizacione/:id', to:'organizacione#update'
+
+  delete 'organizacione/:id', to: 'organizacione#eliminare', as:'organizacione_eliminar'
 
 
   get 'laboral/', to:'laboral#index', as:'inicio_laboral'
@@ -156,7 +175,7 @@ Rails.application.routes.draw do
 
   #-------------------------comienza contacto---------------------
 
-  get 'contactod/', to:'contactod#index', as:'contacto'
+  get 'contactod/', to:'contactod#index', as:'contactod'
 
   post 'contactod/', to:'contactod#crear'
 
