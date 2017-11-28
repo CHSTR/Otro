@@ -93,13 +93,18 @@
     </div>
     <div class="col-md-9">
       <div class="container-fluid margen">
-        <h1 class="text-left">
-          Nuestros Programas
-        </h1>
-      </div>
-      <div class="container-fluid">
-        <br>
-        <p class="text-justify" >La escuela de informática...</p>
+        <% unless @textos.nil?%>
+            <h2>Programas</h2>
+            <br>
+            <p class="text-justify" >
+              <%= raw @textos.descripcion%>
+            </p>
+            <br>
+            <img  src="<%= @textos.imagen%>" class="img-fluid">
+            <p class="text-justify">
+              <%= @textos.descripcion_imagen%>
+            </p>
+        <% end %>
       </div>
     </div>
     <br>

@@ -82,57 +82,51 @@
       <div class="container-fluid">
         <ol class="breadcrumb margen">
           <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-          <li class="breadcrumb-item">Escuela</li>
+          <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/programas/pregrado" class="list-group-item list-group-item-action">Pregrado</a>
-          <a href="/programas/postgrado"  class="list-group-item list-group-item-action">Postgrado</a>
-          <a href="/programas/otros"  class="list-group-item list-group-item-action">Otros</a>
+          <a href="#" class="list-group-item list-group-item-action">Pregrado</a>
+          <a href="#"  class="list-group-item list-group-item-action">Postgrado</a>
+          <a href="#"  class="list-group-item list-group-item-action">Otros</a>
         </div>
       </div>
     </div>
-      <div class="col-md-7">
-        <div class="container margen">
-          <div class="display-4" style="color: #0275d8;">
-            <%= @programas.nombre %>
-          </div>
-        </div>
+    <div class="col-md-9">
+      <div class="row">
+        <%= form_for(@textos, :url => {:action => :createinicio})  do |f| %>
+            <div class="col-md-9 margen">
+              <h3 class="text-left">
+                <%= f.label :nombre %>
+                <%= f.select(:nombre, options_for_select([['Inicio','programa']])) %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :descripcion %>
+                <%= f.cktext_area :descripcion %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :imagen %>
+                <%= f.text_field :imagen %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :descripcion_imagen %>
+                <%= f.text_area :descripcion_imagen %>
+              </h3>
+              <br>
+              <div class="actions">
+                <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
+              </div>
+        <% end %>
         <br>
-        <hr>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.perfil_egreso %>
-          </h5>
-        </div>
+        <%= link_to 'Volver', programas_path, :class => 'btn btn-outline-primary margen1' %>
         <br>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.campo_ocupacional %>
-          </h5>
         </div>
-        <br>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.descripcion %>
-          </h5>
-        </div>
-        <br>
-        <div class="container-fluid">
-
-            <li><p><a href="<%=@programas.link%>" target="_blank">Link programa</a></p></li>
-
-        </div>
-        <br>
-        <div class="container-fluid">
-
-            <li><p><a href="../<%=@programas.link_malla%>" target="_blank">Malla</a></p></li>
-
-        </div>
-        <hr>
-        <a href="../.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>
+      </div>
     </div>
     <div class="col-md-12 margen2"></div>
     <div class="col-md-4"></div>
