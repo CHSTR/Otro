@@ -1,4 +1,5 @@
 class AcademicoController < ApplicationController
+load_and_authorize_resource
 
   def index
     if params[:search]
@@ -43,6 +44,7 @@ class AcademicoController < ApplicationController
   end
 
   def new
+    authorize! :new, @academicos
     @academicos = Academico.new
   end
   

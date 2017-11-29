@@ -34,6 +34,9 @@ gem 'jquery-rails'
 gem 'ckeditor', '4.1.3'
 gem 'paperclip'
 
+gem 'devise'
+gem 'cancancan'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

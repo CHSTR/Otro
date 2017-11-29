@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :roles
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  root :to => "portal#inicio"
 
 
   get 'portal/', to: 'portal#inicio', as:'portal'
