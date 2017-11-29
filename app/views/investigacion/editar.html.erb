@@ -98,6 +98,16 @@ font-family: 'Junge', serif;
       <div class="col-md-9 margen">
         <div class="row">
         <%= form_for(@areas_disciplinarias, :url => {:action => :update}) do |f| %>
+        <% if @areas_disciplinarias.errors.any? %>
+          <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            <% @areas_disciplinarias.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </div>
+          <% end %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre %>

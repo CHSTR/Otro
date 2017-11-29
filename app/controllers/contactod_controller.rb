@@ -14,6 +14,6 @@ class ContactodController < ApplicationController
   end
 
   def contacto_params
-    params.require(:oferta_laboral).permit(:nombre,:empresa,:cargo,:correo,:descripcion,:aceptado) #retorna un hash con todos los valores del academico...
+    params.require(:oferta_laboral).permit(:nombre,:empresa,:cargo,:correo,:descripcion,:aceptado,:oferta_d,:consulta_d) #retorna un hash con todos los valores del academico...
   end
 end
