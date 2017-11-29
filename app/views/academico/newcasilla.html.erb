@@ -51,7 +51,7 @@ font-family: 'Junge', serif;
                     <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academico"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -70,8 +70,8 @@ font-family: 'Junge', serif;
       <div class="col-md-3">
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-            <li class="breadcrumb-item active">Escuela</li>
+            <li class="breadcrumb-item"><a href="/portal">Portal</a></li>
+            <li class="breadcrumb-item active">Departamento</li>
           </ol>
           <hr>
         </div>
@@ -79,6 +79,16 @@ font-family: 'Junge', serif;
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
+        <% if @casillas.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @casillas.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </div>
+        <% end %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <p><%= f.label :nombre_de_la_casilla %></p>

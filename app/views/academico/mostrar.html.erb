@@ -53,7 +53,7 @@ font-family: 'Junge', serif;
                     <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academico"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -72,7 +72,7 @@ font-family: 'Junge', serif;
       <div class="col-md-3">
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
+            <li class="breadcrumb-item"><a href="/portal">Portal</a></li>
             <li class="breadcrumb-item active">Departamento</li>
           </ol>
           <hr>
@@ -83,12 +83,12 @@ font-family: 'Junge', serif;
       <table class="table table-bordered margen table-responsive">
           <tbody>
             <tr>
-                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" src=""<%= @academicos.imagen %>""></td>
-                <td><%= @academicos.titulo_profesional %>
+                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" src="<%= @academicos.imagen %>"></td>
+                <td><%= raw @academicos.titulo_profesional %>
                 </td>
             </tr>
             <tr>
-                <td><%= @academicos.grado %></td>
+                <td><%= raw @academicos.grado %></td>
             </tr>
             <tr>
               <td><%= raw @academicos.area_interes %></td>

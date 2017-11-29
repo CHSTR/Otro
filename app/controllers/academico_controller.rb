@@ -47,8 +47,8 @@ class AcademicoController < ApplicationController
   end
   
   def academicocreate
-    @academico = Academico.new(user_params)
-    if @academico.save
+    @academicos = Academico.new(user_params)
+    if @academicos.save
       redirect_to academico_url
     else
       render action: 'new'

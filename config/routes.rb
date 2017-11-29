@@ -300,6 +300,12 @@ Rails.application.routes.draw do
 
   get 'investigacion/PRO', to: 'investigacion#pro', as:'investigacion_pro'
 
+  get 'investigacion/PRO/:id/editar', to: 'investigacion#editarp', as:'editar_proyecto'
+
+  put 'investigacion/PRO/:id', to: 'investigacion#updatep'
+
+  patch 'investigacion/PRO/:id', to: 'investigacion#updatep'
+
   get 'investigacion/PRO/newp', to: 'investigacion#newp', as:'new_proyecto'
 
   post 'investigacion/PRO/newp', to: 'investigacion#createp'

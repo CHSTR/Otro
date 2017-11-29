@@ -81,7 +81,7 @@ font-family: 'Junge', serif;
       <div class="col-md-3">
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+            <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
             <li class="breadcrumb-item active">Departamento</li>
           </ol>
           <hr>
@@ -134,23 +134,22 @@ font-family: 'Junge', serif;
         <div class="container-fluid margen">
           <div class="margen">
             <p>
-              <%= raw i.nombre %>
+              <%= raw i['nombre_proyecto'] %>
               <br>
-              <%= raw i.descripcion %>
+              <%= raw i['descripcion'] %>
             </p>
             <ul>
               <li>Académicos-Investigadores</li>
             <ul>
               <ul>
               <li>Investigadores: 
-              <% @proyectos_academicos.each do |i| %>  
-                <a href="/academico/mostrar/<%= i.id %>" class="marginr"><%= i.nombre %></a> 
-              <% end %> 
+                <a href="/academico/mostrar/<%= i['id_academico'] %>" class="marginr"><%= i['nombre_academico'] %></a>
               </li>
               </ul>
             </ul>
           </div>
-          <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+          <%= link_to "Editar", editar_proyecto_path(i) %>
+          <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre_proyecto}, seguro?"} %>
         </div>
         <% end %>
         <%= link_to "Nuevo Proyecto", new_proyecto_path %>

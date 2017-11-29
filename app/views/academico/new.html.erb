@@ -50,7 +50,7 @@ font-family: 'Junge', serif;
                     <a class="nav-link" href="/iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academico"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
@@ -69,8 +69,8 @@ font-family: 'Junge', serif;
       <div class="col-md-3">
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-            <li class="breadcrumb-item active">Escuela</li>
+            <li class="breadcrumb-item"><a href="/portal">Portal</a></li>
+            <li class="breadcrumb-item active">Departamento</li>
           </ol>
           <hr>
         </div>
@@ -78,6 +78,16 @@ font-family: 'Junge', serif;
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@academicos, :url => {:action => :academicocreate}) do |f| %>
+        <% if @academicos.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @academicos.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </div>
+        <% end %> 
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre %>
@@ -91,12 +101,12 @@ font-family: 'Junge', serif;
             <br>
             <h3 class="text-left">
               <%= f.label :titulo_profesional %>
-              <%= f.text_field :titulo_profesional %>
+              <%= f.cktext_area :titulo_profesional %>
             </h3>
             <br>
             <h3 class="text-left">
               <%= f.label :grado %>
-              <%= f.text_field :grado %>
+              <%= f.cktext_area :grado %>
             </h3>
             <br>
             <h3 class="text-left">
@@ -137,6 +147,10 @@ font-family: 'Junge', serif;
             <h3 class="text-left">
               <%= f.label :descripcion_del_academico %>
               <%= f.cktext_area :descripcion %>
+            </h3>
+            <h3 class="text-left">
+              <%= f.label :link_a_curriculum   %>
+              <%= f.text_field :curriculum %>
             </h3>
             <br>
             <div class="actions">

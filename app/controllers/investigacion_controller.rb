@@ -4,7 +4,7 @@ class InvestigacionController < ApplicationController
 
   def buscar
   	if params[:search]
-      @proyectos = Proyecto.where("descripcion like ?", "#{params[:search]}%")
+      @proyectos = Proyecto.where("nombre LIKE ?","%#{params[:search]}%")
     end
   end
 
@@ -52,8 +52,9 @@ class InvestigacionController < ApplicationController
    #---------------------comienza el area de proyectos-----------------------------
 
    def pro
-   	@proyectos = Proyecto.all
-   	@proyectos_academicos = Academico.joins(:academicos_proyectos,:proyectos).where("proyectos.id = 1") #solucionar problema!
+   	@proyectos = Proyecto.find_by_sql("SELECT proyectos.id, proyectos.nombre as nombre_proyecto,proyectos.descripcion, academicos.id as id_academico ,academicos.nombre as nombre_academico FROM proyectos INNER JOIN academicos_proyectos on proyectos.id = academicos_proyectos.proyecto_id INNER JOIN academicos on academicos.id = academicos_proyectos.academico_id WHERE proyectos.id = 1")
+    #@academicos_proyectos = ProyectoAcademico.all
+    #@proyectos = Proyecto.joins(:academicos, :proyectos_academicos).where("proyectos.id = 1") #solucionar problema!
    end
 
    def newp
@@ -75,6 +76,19 @@ class InvestigacionController < ApplicationController
     respond_to do |format|
       format.html {redirect_to investigacion_pro_url, notice:'fue eliminado'}
     end  
+  end
+
+  def editarp
+    @proyectos = Proyecto.find(params[:id])
+  end
+
+  def updatep
+    @proyectos = Proyecto.find(params[:id])
+    if @proyectos.update_attributes(proyecto_params)
+      redirect_to investigacion_pro_url
+    else
+      render action: 'editarp'
+    end
   end
 
   #def newr
