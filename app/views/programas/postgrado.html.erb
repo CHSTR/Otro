@@ -101,7 +101,7 @@
           <div class="">
             <ul>
               <% @programas.each do |i|%>
-                  <li><p><a href="mostrar/<%=i.id%>" target="_blank"><%=i.nombre%></a></p></li>
+                  <li><p><a href="mostrar/<%=i.id%>"><%=i.nombre%></a></p></li>
                   <br>
                   <%= link_to "Eliminar", eliminar_programas_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
                   <br>

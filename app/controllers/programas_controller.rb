@@ -1,5 +1,6 @@
 class ProgramasController < ApplicationController
   def inicio
+    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
   end
 
   def mostrar
@@ -57,5 +58,34 @@ class ProgramasController < ApplicationController
 
   def user_params
     params.require(:programa).permit(:nombre,:perfil_egreso,:campo_ocupacional,:link,:descripcion,:link_malla,:tipo)
+  end
+
+  def editarinicio
+    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
+  end
+
+  def updateinicio
+    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
+    if @textos.update_attributes(user_paramsi)
+      redirect_to programas_url
+    else
+      render action: 'editarinicio'
+    end
+  end
+
+  def nuevoinicio
+    @textos = Texto.new
+  end
+
+  def createinicio
+    @textos = Texto.new(user_paramsi)
+    if @textos.save
+      redirect_to programas_url
+    else
+      render action: 'nuevoinicio'
+    end
+  end
+  def user_paramsi
+    params.require(:texto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 end

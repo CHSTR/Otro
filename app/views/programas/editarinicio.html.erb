@@ -50,25 +50,25 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="inicio.html">
-            <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link" href="/inicioe/inicio.html" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
-            <a class="nav-link" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
+            <a class="nav-link" href="/noticias/inicio.html" style="color: #ffffff;">Noticias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../estudiante.html"  style="color: #ffffff;">Estudiantes</a>
+            <a class="nav-link " href="/estudiante.html"  style="color: #ffffff;">Estudiantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../programas.html"  style="color: #ffffff;">Programas</a>
+            <a class="nav-link active" href="/programas.html"  style="color: #ffffff;">Programas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../egresados.html"  style="color: #ffffff;">Egresados</a>
+            <a class="nav-link" href="/egresados.html"  style="color: #ffffff;">Egresados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../laboral.html"  style="color: #ffffff;">Laboral</a>
+            <a class="nav-link " href="/laboral.html"  style="color: #ffffff;">Laboral</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../organizacione.html"  style="color: #ffffff;">Organización</a>
+            <a class="nav-link" href="/organizacione.html"  style="color: #ffffff;">Organización</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=""  style="color: #ffffff;">Contacto</a>
@@ -81,74 +81,64 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-          <li class="breadcrumb-item">Escuela</li>
+          <li class="breadcrumb-item"><a href="/portal">Portal</a></li>
+          <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/programas/pregrado" class="list-group-item list-group-item-action">Pregrado</a>
-          <a href="/programas/postgrado"  class="list-group-item list-group-item-action">Postgrado</a>
-          <a href="/programas/otros"  class="list-group-item list-group-item-action">Otros</a>
+          <a href="#" class="list-group-item list-group-item-action">Pregrado</a>
+          <a href="#"  class="list-group-item list-group-item-action">Postgrado</a>
+          <a href="#"  class="list-group-item list-group-item-action">Otros</a>
         </div>
       </div>
     </div>
-      <div class="col-md-7">
-        <div class="container margen">
-          <div class="display-4" style="color: #0275d8;">
-            <%= @programas.nombre %>
-          </div>
-        </div>
+    <div class="col-md-9">
+      <div class="row">
+        <%= form_for(@textos, :url => {:action => :updateinicio}) do |f| %>
+            <div class="col-md-9 margen">
+              <h3 class="text-left">
+                <%= f.label :Texto %>
+                <%= f.cktext_area :descripcion %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :imagen %>
+                <%= f.text_field :imagen %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :descripcion_imagen %>
+                <%= f.text_field :descripcion_imagen %>
+              </h3>
+              <br>
+              <div class="actions">
+                <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
+              </div>
+        <% end %>
         <br>
-        <hr>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.perfil_egreso %>
-          </h5>
-        </div>
+        <%= link_to 'Volver', programas_path , :class => 'btn btn-outline-primary margen1' %>
         <br>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.campo_ocupacional %>
-          </h5>
         </div>
-        <br>
-        <div class="container-fluid">
-          <h5 class="inter">
-            <%= raw @programas.descripcion %>
-          </h5>
-        </div>
-        <br>
-        <div class="container-fluid">
-
-            <li><p><a href="<%=@programas.link%>" target="_blank">Link programa</a></p></li>
-
-        </div>
-        <br>
-        <div class="container-fluid">
-
-            <li><p><a href="../<%=@programas.link_malla%>" target="_blank">Malla</a></p></li>
-
-        </div>
-        <hr>
-        <a href="../.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>
+      </div>
     </div>
     <div class="col-md-12 margen2"></div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <center>
-        <a href=""><img src="../imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m4.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m5.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m6.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m4.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m5.jpg" class="text-center mx-auto float-center"></a>
+        <a href=""><img src="imagenes/m6.jpg" class="text-center mx-auto float-center"></a>
       </center>
       <h6 class="text-center">Dirección: José Pedro Alessandri 1242, Ñuñoa. Teléfono: ...</h6>
       <h6 class="text-center">2017 © UTEM - Todos los derechos reservados.</h6>
     </div>
     <div class="col-md-4"></div>
   </div>
+</body>
 </div>
 </html>

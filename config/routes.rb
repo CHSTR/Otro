@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   put 'organizacione/:id', to:'organizacione#update'
 
+
   patch 'organizacione/:id', to:'organizacione#update'
 
   delete 'organizacione/:id', to: 'organizacione#eliminare', as:'organizacione_eliminar'
@@ -50,7 +51,11 @@ Rails.application.routes.draw do
 
   get 'programas/mostrar/:id', to: 'programas#mostrar'
 
-  get 'programas/editar', to: 'programas#editar', as: 'programas_editar'
+  get 'programas/editarinicio', to: 'programas#editarinicio', as: 'programas_editarinicio'
+  put 'programas/editarinicio', to: 'programas#updateinicio'
+  patch 'programas/editarinicio', to: 'programas#updateinicio'
+
+  get 'programas/:id/editar', to: 'programas#editar', as: 'programas_editar'
   put 'programas/:id', to: 'programas#updatep'
   patch 'programas/:id', to: 'programas#updatep'
 
@@ -67,6 +72,11 @@ Rails.application.routes.draw do
   get 'programas/postgrado', to:'programas#postgrado', as: 'programas_postgrado'
 
   get 'programas/otros', to: 'programas#otros', as: 'programas_otros'
+
+  get 'programas/nuevoinicio', to: 'programas#nuevoinicio', as: 'programas_nuevoinicio'
+  post 'programas/nuevoinicio', to: 'programas#createinicio'
+
+
 
   # -------- comienza estudinte-------------
 
