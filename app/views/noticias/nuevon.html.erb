@@ -50,7 +50,7 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="inicio.html">
-            <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link" href="../inicioe/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
             <a class="nav-link active" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
@@ -81,7 +81,7 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
@@ -105,6 +105,16 @@
     <div class="col-md-9">
       <div class="row">
         <%= form_for(@noticia_escuelas, :url => {:action => :noticiacreate}) do |f| %>
+            <% if @noticia_escuelas.errors.any? %>
+                <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <% @noticia_escuelas.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </div>
+                  <%end%>
             <div class="col-md-9 margen">
               <h3 class="text-left">
                 <%= f.label :nombre %>
@@ -119,11 +129,6 @@
               <h3 class="text-left">
                 <%= f.label :imagen %>
                 <%= f.text_field :imagen %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :fecha %>
-                <%= f.text_field :fecha %>
               </h3>
               <br>
               <h3 class="text-left">

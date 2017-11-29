@@ -2,10 +2,11 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <style type="text/css">
@@ -14,33 +15,24 @@
       margin-left: auto;
       margin-right: auto;
     }
-    body {padding: 1.5em;
-      font-family: 'Junge', serif;
-    }
-
+    body {padding: 1.5em}
     div img {
       margin-top: .8em;
       margin-bottom: .5em;
       margin-left: 1em;
       margin-right: .5em;
     }
-    .margen1{
-      margin-top: 1em;
+    body {padding: 1.5em;
+      font-family: 'Junge', serif;
     }
     .margen{
       margin-top: 2em;
     }
     .margen2{
-      margin-top: 10em;
-    }
-    .margen3{
-      margin-top: 8em;
-    }
-    .destacado {
-      margin-left: 2em;
+      margin-top: 18em;
     }
     p{
-      font-size: 18px;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -78,14 +70,14 @@
   </div>
   <div class="row">
     <div class="col-md-3">
-      <div class="">
+      <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Departamento</li>
         </ol>
         <hr>
       </div>
-      <div class=" margen">
+      <div class="container-fluid margen">
         <div class="list-group">
           <a href="inicio.html" class="list-group-item list-group-item-action">Inicio</a>
           <a href="historia.html" class="list-group-item list-group-item-action">
@@ -99,6 +91,7 @@
     <div class="col-md-9 margen">
       <div class="">
         <% unless @textos.nil?%>
+            <h2>Mision y Vision</h2>
             <br>
             <p class="text-justify" >
               <%= raw @textos.descripcion%>
@@ -110,6 +103,7 @@
             </p>
         <% end %>
       </div>
+      <%= link_to "Editar", iniciodepto_editarmisionvision_url %>
     </div>
     <br>
     <br>

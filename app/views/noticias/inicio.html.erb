@@ -50,7 +50,7 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="inicio.html">
-            <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link" href="../inicioe/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
             <a class="nav-link active" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
@@ -81,7 +81,7 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
@@ -120,6 +120,8 @@
             <h4><a href="mostrarn/<%=i.id%>"><%= i.nombre%></h4></a>
             <h6><%= i.descripcion%></h6>
             <br>
+            <h6><%= i.created_at%></h6>
+            <br>
             <%= link_to "Eliminar", eliminar_noticia_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
             <br>
             <%= link_to "Editar", noticias_editarn_path(i) %>
@@ -130,6 +132,7 @@
         </div>
       </div>
       <% end %>
+      <%= link_to "Nuevo", noticias_nuevon_url %>
     <div class="col-md-3"></div>
     <div class="col-md-9">
       <br>

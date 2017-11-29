@@ -50,10 +50,10 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="inicio.html">
-            <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link" href="../inicioe/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
-            <a class="nav-link active" href="../noticias/iniciio.html" style="color: #ffffff;">Noticias</a>
+            <a class="nav-link active" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="../estudiante.html"  style="color: #ffffff;">Estudiantes</a>
@@ -79,6 +79,13 @@
   </div>
   <div class="row">
     <div class="col-md-3">
+      <div class="container-fluid">
+        <ol class="breadcrumb margen">
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item active">Escuela</li>
+        </ol>
+        <hr>
+      </div>
       <div class="container-fluid margen">
         <div class="list-group">
           <a href="../noticias/inicio.html" class="list-group-item list-group-item-action">Noticias</a>
@@ -129,6 +136,7 @@
         </div>
       </div>
       <% end %>
+      <%= link_to "Nuevo", noticias_nuevon_url %>
       <div class="col-md-3"></div>
       <div class="col-md-9">
         <br>
