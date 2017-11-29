@@ -42,7 +42,7 @@
     <div class="col-md-12"></div>
   </div>
   <div class="row">
-    <div class="col-md-5"><img src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -81,16 +81,16 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/programas/pregrado" class="list-group-item list-group-item-action">Pregrado</a>
-          <a href="/programas/postgrado"  class="list-group-item list-group-item-action active">Postgrado</a>
-          <a href="/programas/otros"  class="list-group-item list-group-item-action">Otros</a>
+          <a href="../programas/pregrado" class="list-group-item list-group-item-action">Pregrado</a>
+          <a href="../programas/postgrado"  class="list-group-item list-group-item-action active">Postgrado</a>
+          <a href="../programas/otros"  class="list-group-item list-group-item-action">Otros</a>
         </div>
       </div>
     </div>
@@ -109,6 +109,7 @@
                   <br>
                   <br>
               <% end %>
+              <%= link_to "Nuevo", programas_nuevo_url %>
             </ul>
           </div>
         </div>

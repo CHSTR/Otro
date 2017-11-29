@@ -99,6 +99,16 @@ font-family: 'Junge', serif;
           La unidad de Informática, pone a disposición de los estudiantes las normas que deben regir dentro de la Universidad:
         </h5>
          <%= form_for(@reglamentos, :url => {:action => :updateregla}) do |f| %>
+            <% if @reglamentos.errors.any? %>
+                <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <% @reglamentos.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </div>
+            <% end %>
             <h3 class="text-left">
               <%= f.label :nombre_del_reglamento %>
               <%= f.text_field :nombre %>

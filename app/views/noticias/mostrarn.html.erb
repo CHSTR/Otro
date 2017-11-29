@@ -50,7 +50,7 @@
         <br>
         <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
           <li class="nav-item" href="inicio.html">
-            <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+            <a class="nav-link" href="../inicioe/inicio" style="color: #ffffff;">Inicio</a>
           </li>
           <li class="nav-item" href="">
             <a class="nav-link active" href="../noticias/inicio.html" style="color: #ffffff;">Noticias</a>
@@ -81,7 +81,7 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="../index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
@@ -113,6 +113,12 @@
       <br>
       <div class="col-md-2 margen">
         <%= @noticia_escuelas.imagen %>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <h5 class="inter">
+      <h6><%= @noticia_escuelas.created_at%></h6>
+        </h5>
       </div>
       <hr>
       <a href="../inicio.html"><button type="button" class="btn btn-outline-primary">Volver</button></a>

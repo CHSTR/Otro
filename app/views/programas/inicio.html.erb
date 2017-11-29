@@ -39,7 +39,7 @@
     <div class="col-md-12"></div>
   </div>
   <div class="row">
-    <div class="col-md-5"><img src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -78,16 +78,16 @@
     <div class="col-md-3">
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
+          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="programas/pregrado.html" class="list-group-item list-group-item-action">Pregrado</a>
-          <a href="programas/postgrado.html"  class="list-group-item list-group-item-action">Postgrado</a>
-          <a href="programas/otros.html"  class="list-group-item list-group-item-action">Otros</a>
+          <a href="/programas/pregrado.html" class="list-group-item list-group-item-action">Pregrado</a>
+          <a href="/programas/postgrado.html"  class="list-group-item list-group-item-action">Postgrado</a>
+          <a href="/programas/otros.html"  class="list-group-item list-group-item-action">Otros</a>
         </div>
       </div>
     </div>
@@ -105,6 +105,7 @@
               <%= @textos.descripcion_imagen%>
             </p>
         <% end %>
+        <%= link_to "Editar", programas_editarinicio_url %>
       </div>
     </div>
     <br>
@@ -113,6 +114,7 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <center>
+
         <a href=""><img src="imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
         <a href=""><img src="imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
         <a href=""><img src="imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
