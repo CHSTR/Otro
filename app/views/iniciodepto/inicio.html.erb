@@ -152,7 +152,7 @@
         <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="index2.html">Portal</a></li>
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
             <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
           </ol>
           <hr>
@@ -177,25 +177,20 @@
       <div class="col-md-4">
       </div>
       <div class=" col-sm-12 col-md-8 margen">
-      asdasd
-      <% unless @textos.nil?%>
         <center class="margen">
           <h1 style="font-family: 'Junge', serif;">Departamento de Informática y Computación</h1>
         </center>
-        </div>
         <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-          <p>
-          <%= raw @textos.descripcion%>
-          asdasda
-          </p>a
-          asdasdasdas
-          <%= @textos.descripcion_imagen%>
-        <% end %>
+          texto aca
         </div>
         <center>
         <%= link_to "Editar", iniciodepto_editarinicio_url %>
         </center>
       </div>
+    </div>
+ <!-- Fin Noticias -->
+ <!-- Inicio Agenda -->
+ <!-- Fin Agenda -->
  <!-- Inicio Limpiar flotante -->
  <div class="limpiar"></div>
  <!-- Fin Limpiar flotante -->
