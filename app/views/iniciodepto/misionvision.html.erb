@@ -1,128 +1,329 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="iso-8859-1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="keywords" content="utem, universidad, tecnologica, metropolitana, chile, tecnologia, sustentabilidad, responsabilidad, social, talento, ingenieria, ciencias, territorial, construccion" />
+  <meta name="author" content="Comunicaciones - www.utem.cl" />
+  <meta name="title" content="Universidad Tecnologica Metropolitana" />
+  <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/00_estilos_utem.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond-master/src/respond.js"></script>
+  <![endif]-->
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script type="text/javascript">
+      document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
+      document.body.style.fontSize = '1.6rem';
+  </script>
+  <script src="js/jquery-migrate-1.3.0.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/utem-corp.js"></script>
+  <meta charset="utf-8">
+  <title>Universidad Tecnol&oacute;gica Metropolitana</title>
+</head>
+
+<body class="clr-cor">
+
+<!-- INICIO CABECERA -->
+<header id="cabecera" class="envoltura" >
+  <div class="envoltura-16 posicion-relativa-cabecera">
+    <!-- Inicio Corporativo -->
+    <div class="row">
+      <div class="col-md-5 utem-log"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    </div>
+    <div id="top-gob-escritorio"><div class="azul"></div></div>
+    <!-- Fin Corporativo -->
+    <!--
+    <div id="buscador">
+     <form method="get" id="form-buscador" action="https://www.utem.cl/">
+      <input type="text" name="s" id="s" value="Buscar..." onFocus="if (this.value == 'Buscar...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Buscar...';}" />
+      <input type="submit" id="buscar"  value="Ir" />
+     </form>
+    </div> -->
+    <!-- Inicio Barra Perfiles -->
+    <!-- Fin Barra Perfiles -->
+  </div>
   <style type="text/css">
-    .centrado{
-      display:block;
-      margin-left: auto;
-      margin-right: auto;
+    a:link, li {
+      text-decoration:none;
+      margin-bottom: -5px;
     }
-    body {padding: 1.5em}
-    div img {
-      margin-top: .8em;
-      margin-bottom: .5em;
-      margin-left: 1em;
-      margin-right: .5em;
-    }
-    body {padding: 1.5em;
+    body {
       font-family: 'Junge', serif;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size:
     }
-    .margen{
-      margin-top: 2em;
+    .margen {
+      margin-top: 1.5em;
     }
-    .margen2{
-      margin-top: 18em;
+
+    .utem-log{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 2em;
+      margin-right: 1em;
     }
-    p{
-      font-size: 20px;
+
+    a:hover{
+      background-color: transparent;
     }
   </style>
-</head>
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="container-fluid">
-        <br>
-        <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
-          <li class="nav-item" href="/inicio.html">
-            <a class="nav-link active" href="../iniciodepto/inicio" style="color: #ffffff;">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../academico.html"  style="color: #ffffff;">Académicos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../investigacion.html"  style="color: #ffffff;">Investigación</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../organizacion.html"  style="color: #ffffff;">Organización</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../contactod.html"  style="color: #ffffff;">Contacto</a>
-          </li>
-        </ul>
+</header>
+<!-- FIN CABECERA -->
+
+<!-- INICIO MENU PRINCIPAL ESCRITORIO -->
+<section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
+  <nav id="nav-escritorio" class="envoltura-16">
+    <div id="utem-toggle-escrt"></div>
+    <ul id="menu-escritorio">
+      <li><a href="../iniciodepto/inicio">INICIO</a></li>
+      <li><a href="../academico">ACADÉMICOS</a>
+      <li><a href="../investigacion">INVESTIGACIÓN</a>
+      <li><a href="../organizacion">ORGANIZACIÓN</a>
+      <li><a href="../contactod">CONTACTO</a>
+    </ul>
+  </nav>
+</section>
+<!-- FIN MENU PRINCIPAL ESCRITORIO-->
+
+<!-- Inicio Limpiar flotante -->
+<div class="limpiar"></div>
+<!-- Fin Limpiar flotante -->
+
+<!-- INICIO MENU PRINCIPAL RESPONSIVO -->
+<div class="envoltura bg-menursp" style="background-color: #044f8e;">
+  <section id="menu-principal-rsp" class="envoltura-16" style="background-color: #044f8e;">
+    <div id="contenedor-principal-rsp" >
+      <header id="top-acordeon-rsp">
+        <div id="top-gob-rsp"><div class="azul"></div></div>
+        <div id="utem-logo-rsp"><a href="">&nbsp;</a><h1>Universidad Tecnológica Metropolitana</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contenedor-menu-rsp">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="utem-toggle-rsp"></div>
+      </header>
+      <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
+        <nav id="nav-rsp">
+          <ul>
+            <li class="nivel-01"><a href="../iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+            <li class="nivel-01"><a href="../academico">ACADÉMICOS</a>
+            <li class="nivel-01"><a href="../investigacion">INVESTIGACIÓN</a>
+            <li class="nivel-01"><a href="../organizacion">ORGANIZACIÓN</a>
+            <li class="nivel-01"><a href="../contactod">CONTACTO</a>
+              <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
+          </ul>
+          <div id="perfiles-rsp" class="envoltura">
+            <h5>PERFILES</h5>
+            <ul>
+              <li><a href="">UTEM</a></li>
+              <li><a href="">Futuros Estudiantes</a></li>
+              <li><a href="">Estudiantes</a></li>
+              <li><a href="">Ex Alumnos</a></li>
+              <li><a href="">Funcionarios</a></li>
+              <li><a href="">Empresa</a></li>
+            </ul>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </nav>
       </div>
     </div>
-  </div>
+  </section>
+</div>
+<!-- FIN MENU PRINCIPAL RESPONSIVO -->
+
+<!-- INICIO CONTENIDO PRINCIPAL -->
+<main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
-    <div class="col-md-3">
+    <div class=" col-sm-12 col-md-3">
+      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item"><a href="../portal">Portal</a></li>
-          <li class="breadcrumb-item active">Departamento</li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
         </ol>
         <hr>
       </div>
-      <div class="container-fluid margen">
+      <div class="container-fluid margen" id="menu-escritorio">
         <div class="list-group">
-          <a href="inicio.html" class="list-group-item list-group-item-action">Inicio</a>
-          <a href="historia.html" class="list-group-item list-group-item-action">
-            Historia
+          <a href="../iniciodepto/inicio" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
+          <a href="../iniciodepto/historia" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Historia</h4></a>
           </a>
-          <a href="misionvision.html" class="list-group-item list-group-item-action active">Misión y Visión</a>
-          <a href="pde.html" class="list-group-item list-group-item-action">PDE</a>
+          <a href="../iniciodepto/misionvision" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
+          <a href="../iniciodepto/pde" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
         </div>
       </div>
+      <!-- HASTA ACA -->
     </div>
-    <div class="col-md-9 margen">
-      <div class="">
+
+    <div class=" col-sm-12 col-md-9 margen">
+      <h1 style="font-family: 'Junge', serif;">Mision y Vision</h1>
+      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
         <% unless @textos.nil?%>
-            <h2>Mision y Vision</h2>
-            <br>
-            <p class="text-justify" >
-              <%= raw @textos.descripcion%>
-            </p>
-            <br>
-            <img  src="<%= @textos.imagen%>" class="img-fluid">
-            <p class="text-justify">
+            <center class="margen">
+
+            </center>
+            </div>
+            <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+              <p>
+                <%= raw @textos.descripcion%>
+              </p>
               <%= @textos.descripcion_imagen%>
-            </p>
         <% end %>
-      </div>
+        </div>
+        </div>
+    <center>
       <%= link_to "Editar", iniciodepto_editarmisionvision_url %>
-    </div>
-    <br>
-    <br>
-    <div class="col-md-12 margen2"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <center>
-        <a href=""><img src="../imagenes/m1.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m2.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m3.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m4.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m5.jpg" class="text-center mx-auto float-center"></a>
-        <a href=""><img src="../imagenes/m6.jpg" class="text-center mx-auto float-center"></a>
-      </center>
-      <h6 class="text-center">Dirección: José Pedro Alessandri 1242, Ñuñoa. Teléfono: ...</h6>
-      <h6 class="text-center">2017 © UTEM - Todos los derechos reservados.</h6>
-    </div>
-    <div class="col-md-4"></div>
+    </center>
   </div>
-</div>
+  </div>
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+
+<!-- INICIO REDES -->
+<aside id="redes">
+  <div class="contenedor-redes envoltura-16">
+    <nav class="menu-redes">
+      <ul>
+        <li id="linkcat-12" class="linkcat">
+          <h2>S&Iacute;GUENOS EN REDES SOCIALES:</h2>
+          <ul class='xoxo blogroll'>
+            <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/facebook.png" alt="Twitter"  title="Twitter UTEM" /></a></li>
+            <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/twitter.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
+            <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/instagram.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
+            <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/linkedin.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
+            <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/youtube.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="acreditacion"><img src="images/00_comunes/00_portales/ico_cna.png" alt="Acreditaci?"></div>
+  </div>
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
+</aside>
+<!-- FIN REDES -->
+
+<!-- INICIO PIE -->
+<footer id="pie-pagina" class="envoltura">
+  <div class="linea-inf-oscura">
+    <div id="menu-pie-pagina" class="envoltura-16">
+      <ul>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTROS SITIOS:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>SERVICIOS:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="">Web Mail</a></li>
+                <li><a href="">Intranet</a></li>
+                <li><a href="">Reko</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTRO SITIO:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="">Acerca del Sitio</a></li>
+                <li><a href="">Pol&iacute;ticas de Privacidad</a></li>
+                <li><a href="">Mapa del sitio</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>ACCESO INTRANET:</h3>
+            </header>
+            <div id="intranet">
+              <form id="form-intranet" action="http://www.utem.cl/login.php" method="post">
+                <div class="campo"><input type="text" name="usuario" id="usuario" value="" onFocus="clearField('')" onBlur="setField('', 'o')"/></div>
+                <div class="campo"><input type="password" name="pwd" id="clave" value="" onFocus="clearField('')" onBlur="setField('', '')"/></div>
+                <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Entrar"></div>
+              </form>
+            </div>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+      </ul>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Inicio Corporativo Pie Pagina -->
+  <div id="corporativo-pie-pagina">
+    <div class="contenedor-crpvo-pie-pagina envoltura-16">
+      <div class="meta-autor">
+        <div class="copyright">
+          <p>Dieciocho 161 - Santiago, Chile. Metro Moneda - Fono: 2787 7500<br>Sitio dise&ntilde;ado y desarrollado por el <a href="http://www.utem.cl/actualidad/programa-de-comunicacion/" target="_blank">Programa de Comunicaci&oacute;n y Asuntos P&uacute;blicos - UTEM</a><br>Soporte Inform&aacute;tico <a href="http://www.utem.cl/funcionarios/sistema-de-servicios-de-informatica-%E2%80%93-sisei/" target="_blank">SISEI</a></p>
+          <p class="cp">? 2016 Universidad Tecnol?ica Metropolitana. - Todos los derechos reservados.<p>
+        </div>
+      </div>
+      <div class="gob-pie"><img src="images/00_comunes/00_portales/gob_ch.jpg" alt="Gobierno de Chile"></div>
+    </div>
+    <div class="borde-sup-crpvo-ppag">
+      <div id="logos-pie-rsp" class="envoltura-16">
+        <div class="acreditacion-rsp"><img src="images/00_comunes/00_portales/ico_cna_768.png" alt=""></div>
+        <div class="gob-pie-rsp"><img src="images/00_comunes/00_portales/gob_ch_768.jpg" alt=""></div>
+      </div>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Fin Corporativo Pie Pagina -->
+</footer>
+<!-- FIN PIE -->
+
 </body>
+
 </html>

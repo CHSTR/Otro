@@ -1,6 +1,6 @@
 class InicioeController < ApplicationController
   def editarhistoria
-    @etextos = Etexto.where("id != 1 and nombre like ?", "historia").first
+    @etextos = Etexto.where("nombre like ?", "historia").first
   end
 
   def editarinicio
@@ -8,15 +8,15 @@ class InicioeController < ApplicationController
   end
 
   def editarmisionvision
-    @etextos = Etexto.where("id != 1 and nombre like ?", "mision/vision").first
+    @etextos = Etexto.where("nombre like ?", "mision/vision").first
   end
 
   def editarpde
-    @etextos = Etexto.where("id != 1 and nombre like ?", "pde").first
+    @etextos = Etexto.where("nombre like ?", "pde").first
   end
 
   def historia
-    @etextos = Etexto.where("id != 1 and nombre like ?", "historia").first
+    @etextos = Etexto.where("nombre like ?", "historia").first
   end
 
   def inicio
@@ -24,11 +24,11 @@ class InicioeController < ApplicationController
   end
 
   def misionvision
-    @etextos = Etexto.where("id != 1 and nombre like ?", "mision/vision").first
+    @etextos = Etexto.where("nombre like ?", "mision/vision").first
   end
 
   def pde
-    @etextos = Etexto.where("id != 1 and nombre like ?", "pde").first
+    @etextos = Etexto.where("nombre like ?", "pde").first
   end
 
   def nuevotexto
@@ -36,7 +36,7 @@ class InicioeController < ApplicationController
   end
 
   def updatehistoria
-    @etextos = Etexto.where("id != 1 and nombre like ?", "historia").first
+    @etextos = Etexto.where("nombre like ?", "historia").first
     if @etextos.update_attributes(user_params)
       redirect_to inicioe_historia_url
     else
@@ -45,7 +45,7 @@ class InicioeController < ApplicationController
   end
 
   def updateinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "inicio").first
+    @etextos = Etexto.where("nombre like ?", "inicio").first
     if @etextos.update_attributes(user_params)
       redirect_to inicioe_inicio_url
     else
@@ -54,7 +54,7 @@ class InicioeController < ApplicationController
   end
 
   def updatemisionvision
-    @etextos = Etexto.where("id != 1 and nombre like ?", "mision/vision").first
+    @etextos = Etexto.where("nombre like ?", "mision/vision").first
     if @etextos.update_attributes(user_params)
       redirect_to inicioe_misionvision_url
     else
@@ -63,7 +63,7 @@ class InicioeController < ApplicationController
   end
 
   def updatepde
-    @etextos = Etexto.where("id != 1 and nombre like ?", "pde").first
+    @etextos = Etexto.where("nombre like ?", "pde").first
     if @etextos.update_attributes(user_params)
       redirect_to inicioe_pde_url
     else

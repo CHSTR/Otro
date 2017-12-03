@@ -85,11 +85,11 @@
  <nav id="nav-escritorio" class="envoltura-16">
   <div id="utem-toggle-escrt"></div>
   <ul id="menu-escritorio">
-   <li><a href="">INICIO</a></li>
-   <li><a href="">ACADÉMICOS</a>
-   <li><a href="">INVESTIGACIÓN</a>
-   <li><a href="">ORGANIZACIÓN</a>
-   <li><a href="">CONTACTO</a>
+   <li><a href="../iniciodepto/inicio">INICIO</a></li>
+   <li><a href="../academico">ACADÉMICOS</a>
+   <li><a href="../investigacion">INVESTIGACIÓN</a>
+   <li><a href="../organizacion">ORGANIZACIÓN</a>
+   <li><a href="../contactod">CONTACTO</a>
   </ul>
  </nav>
 </section>
@@ -117,11 +117,11 @@
    <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
     <nav id="nav-rsp">
      <ul>
-      <li class="nivel-01"><a href="" class="nodesplegable">INICIO</a></li>
-      <li class="nivel-01"><a href="">ACADÉMICOS</a>
-      <li class="nivel-01"><a href="">INVESTIGACIÓN</a>
-      <li class="nivel-01"><a href="">ORGANIZACIÓN</a>
-      <li class="nivel-01"><a href="">CONTACTO</a>
+      <li class="nivel-01"><a href="../iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+      <li class="nivel-01"><a href="../academico">ACADÉMICOS</a>
+      <li class="nivel-01"><a href="../investigacion">INVESTIGACIÓN</a>
+      <li class="nivel-01"><a href="../organizacion">ORGANIZACIÓN</a>
+      <li class="nivel-01"><a href="../contactod">CONTACTO</a>
        <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
      </ul>
      <div id="perfiles-rsp" class="envoltura">
@@ -147,55 +147,56 @@
 
 <!-- INICIO CONTENIDO PRINCIPAL -->
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
-    <div class="row">
-      <div class=" col-sm-12 col-md-4">
-        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
-        <div class="container-fluid">
-          <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="index2.html">Portal</a></li>
-            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
-          </ol>
-          <hr>
-        </div>
-        <div class="container-fluid margen" id="menu-escritorio">
-          <div class="list-group">
-            <a href="" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
-            <a href="inicioD/historia.html" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;">
-              <h4>Historia</h4>
-            </a>
-            <a href="inicioD/mision.html" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
-            <a href="inicioD/PDE.html" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
-          </div>
-        </div>
-        <!-- HASTA ACA -->
+  <div class="row">
+    <div class=" col-sm-12 col-md-3">
+      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+      <div class="container-fluid">
+        <ol class="breadcrumb margen">
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+        </ol>
+        <hr>
       </div>
-      <div class="col-sm-12 col-md-8">
-        <div class="container margen">
-          <img class="d-block img-fluid mx-auto rounded" src="https://document-export.canva.com/DACj9N8Jfl8/3/preview/0001-421854468.png">
+      <div class="container-fluid margen" id="menu-escritorio">
+        <div class="list-group">
+          <a href="../iniciodepto/inicio" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
+          <a href="../iniciodepto/historia" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;">
+            <h4>Historia</h4>
+          </a>
+          <a href="../iniciodepto/misionvision" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
+          <a href="../iniciodepto/pde" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
         </div>
       </div>
-      <div class="col-md-4">
+      <!-- HASTA ACA -->
+    </div>
+    <div class="col-sm-12 col-md-9">
+      <div class="container margen">
+        <img class="d-block img-fluid mx-auto rounded" src="https://document-export.canva.com/DACj9N8Jfl8/3/preview/0001-421854468.png">
       </div>
-      <div class=" col-sm-12 col-md-8 margen">
-      asdasd
-      <% unless @textos.nil?%>
-        <center class="margen">
-          <h1 style="font-family: 'Junge', serif;">Departamento de Informática y Computación</h1>
-        </center>
-        </div>
-        <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-          <p>
-          <%= raw @textos.descripcion%>
-          asdasda
-          </p>a
-          asdasdasdas
-          <%= @textos.descripcion_imagen%>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class=" col-sm-12 col-md-9 margen">
+        <h1 style="font-family: 'Junge', serif;">Departamento de Informática y Computación</h1>
+      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% unless @textos.nil?%>
+            <center class="margen">
+
+            </center>
+            </div>
+            <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+              <p>
+                <%= raw @textos.descripcion%>
+              </p>
+              <%= @textos.descripcion_imagen%>
         <% end %>
         </div>
-        <center>
-        <%= link_to "Editar", iniciodepto_editarinicio_url %>
-        </center>
-      </div>
+        </div>
+    <center>
+      <%= link_to "Editar", iniciodepto_editarinicio_url %>
+    </center>
+  </div>
+  </div>
  <!-- Inicio Limpiar flotante -->
  <div class="limpiar"></div>
  <!-- Fin Limpiar flotante -->

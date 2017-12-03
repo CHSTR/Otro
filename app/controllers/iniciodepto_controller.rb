@@ -3,12 +3,12 @@ class IniciodeptoController < ApplicationController
       if params[:search]
         @textos = Texto.where("nombre like ?", "#{params[:search]}%")
       else
-        @textos = Texto.where("id != 1 and nombre like ?", "inicio")
+        @textos = Texto.where("nombre like ?", "inicio").first
       end
   end
 
   def pde
-    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+    @textos = Texto.where("nombre like ?", "pde").first
   end
 
   def inicio
@@ -16,27 +16,27 @@ class IniciodeptoController < ApplicationController
   end
 
   def historia
-    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+    @textos = Texto.where("nombre like ?", "historia").first
   end
 
   def misionvision
-    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+    @textos = Texto.where("nombre like ?", "mision/vision").first
   end
 
   def editarinicio
-    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
+    @textos = Texto.where("nombre like ?", "inicio").first
   end
 
   def editarhistoria
-    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+    @textos = Texto.where("nombre like ?", "historia").first
   end
 
   def editarmisionvision
-    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+    @textos = Texto.where("nombre like ?", "mision/vision").first
   end
 
   def updatehistoria
-    @textos = Texto.where("id != 1 and nombre like ?", "historia").first
+    @textos = Texto.where("nombre like ?", "historia").first
     if @textos.update_attributes(user_params)
       redirect_to iniciodepto_historia_url
     else
@@ -45,7 +45,7 @@ class IniciodeptoController < ApplicationController
   end
 
   def updateinicio
-    @textos = Texto.where("id != 1 and nombre like ?", "inicio").first
+    @textos = Texto.where("nombre like ?", "inicio").first
     if @textos.update_attributes(user_params)
       redirect_to iniciodepto_inicio_url
     else
@@ -54,7 +54,7 @@ class IniciodeptoController < ApplicationController
   end
 
   def updatemisionvision
-    @textos = Texto.where("id != 1 and nombre like ?", "mision/vision").first
+    @textos = Texto.where("nombre like ?", "mision/vision").first
     if @textos.update_attributes(user_params)
       redirect_to iniciodepto_misionvision_url
     else
@@ -64,11 +64,11 @@ class IniciodeptoController < ApplicationController
 
 
   def editarpde
-    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+    @textos = Texto.where("nombre like ?", "pde").first
   end
 
   def updatepde
-    @textos = Texto.where("id != 1 and nombre like ?", "pde").first
+    @textos = Texto.where("nombre like ?", "pde").first
     if @textos.update_attributes(user_params)
       redirect_to iniciodepto_pde_url
     else
