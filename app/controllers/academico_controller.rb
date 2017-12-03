@@ -1,11 +1,11 @@
 class AcademicoController < ApplicationController
-load_and_authorize_resource
+#load_and_authorize_resource
 
   def index
     if params[:search]
-      @academicos = Academico.where("nombre like ?", "#{params[:search]}%")
+      @academicos = Academico.where("nombre like ? or apellido like ?", "#{params[:search]}%", "#{params[:search]}%")
     else
-      @academicos = Academico.where("id != 1 and jornada like ?", "JC") 
+      @academicos = Academico.where("jornada like ?", "JC") 
     end
     @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
     @casillas.each do |i|   #Redirecciona bien
@@ -36,6 +36,7 @@ load_and_authorize_resource
   end
 
   def mostrar
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
     @academicos = Academico.find(params[:id])
   end
 
