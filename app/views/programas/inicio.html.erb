@@ -177,16 +177,18 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Programas</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% unless @textos.nil?%>
+        <% unless @etextos.nil?%>
             <br>
             <p class="text-justify" >
-              <%= raw @textos.descripcion%>
+              <%= raw @etextos.descripcion%>
             </p>
             <br>
 
         <% end %>
         <center>
+          <% if can? :manage, Etexto %>
         <%= link_to "Editar", programas_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
+          <% end %>
         </center>
     </div>
   </div>

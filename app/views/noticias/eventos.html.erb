@@ -183,8 +183,10 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Eventos</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, EventoEscuela %>
         <br>
         <%= link_to "Nuevo", noticias_nuevoe_url,:class => 'btn btn-outline-primary margen1'  %>
+            <% end %>
         <hr>
         <% @evento_escuelas.each do |i|%>
             <div class="container-fluid">
@@ -201,11 +203,13 @@
                       <li>Fecha: <%=i.fecha %></li>
                       <li>Hora: <%=i.hora %></li>
                       <br>
+                      <% if can? :manage, EventoEscuela %>
                       <%= link_to "Editar", noticias_editare_path(i),:class => 'btn btn-outline-primary margen1'%>
                       <br>
                       <br>
                       <%= link_to "Eliminar", eliminar_evento_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
                       <br>
+                          <% end %>
                       <br>
                     </ul>
                   </h6>

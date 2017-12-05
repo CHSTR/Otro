@@ -198,13 +198,16 @@
               <img src="<%= i.imagen%>" width="150" height="150">
             </div>
           </div>
+          <% if can? :manage, CentroAlumno %>
             <%= link_to "Editar", editar_path(i), :class => 'btn btn-outline-primary margen1' %>
             <%= link_to "Eliminar", eliminar_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará, seguro?"} %>
-
-      <% end %>
+              <% end %>
+          <%end%>
       <br>
       <br>
+      <% if can? :manage, CentroAlumno %>
       <%= link_to "Nuevo", nuevo_path, :class => 'btn btn-outline-primary margen1' %>
+          <% end %>
     </div>
   </div>
   </div>

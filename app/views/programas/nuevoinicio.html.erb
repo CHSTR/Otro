@@ -177,13 +177,13 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Programas</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <%= form_for(@textos, :url => {:action => :createinicio})  do |f| %>
-            <% if @textos.errors.any? %>
+        <%= form_for(@etextos, :url => {:action => :createinicio})  do |f| %>
+            <% if @etextos.errors.any? %>
                 <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                  <% @textos.errors.full_messages.each do |msg| %>
+                  <% @etextos.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
                   <% end %>
                 </div>
