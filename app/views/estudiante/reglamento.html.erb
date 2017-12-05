@@ -182,13 +182,16 @@
       <br>
       <% @reglamentos.each do |i| %>
           <p><h2><a href="<%= i.link %>"><%= i.nombre %></h2></p>
+          <% if can? :manage, Reglamento %>
           <%= link_to "Editar", editar_reglamento_path(i), :class => 'btn btn-outline-primary margen1' %>
           <%= link_to "Eliminar", eliminar_regla_path(i), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará, seguro?"} %>
       <% end %>
+          <% end %>
       <br>
       <br>
+      <% if can? :manage, Reglamento %>
       <%= link_to "Nuevo", nuevo_reglamento_path, :class => 'btn btn-outline-primary margen1' %>  </div>
-
+          <% end %>
   </div>
     </div>
   <!-- Inicio Limpiar flotante -->

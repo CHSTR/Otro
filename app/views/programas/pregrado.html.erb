@@ -177,16 +177,20 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Carreras de Pregrado</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, Programa %>
         <%= link_to "Nuevo", programas_nuevo_url,:class => 'btn btn-outline-primary margen1' %>
         <br>
+            <% end %>
         <br>
         <% @programas.each do |i|%>
             <li><a href="mostrar/<%=i.id%>"><%=i.nombre%></a></li>
             <br>
+            <% if can? :manage, Programa %>
             <%= link_to "Editar", programas_editar_path(i),:class => 'btn btn-outline-primary margen1' %>
             <br>
             <%= link_to "Eliminar", eliminar_programas_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
             <br>
+                <% end %>
             <br>
         <% end %>
       </div>

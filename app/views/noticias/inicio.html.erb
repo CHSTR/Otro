@@ -183,8 +183,10 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Noticias</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, NoticiaEscuela %>
         <br>
         <%= link_to "Nuevo", noticias_nuevon_url,:class => 'btn btn-outline-primary margen1'  %>
+            <% end %>
         <hr>
         <% @noticia_escuelas.each do |i|%>
             <div class="container-fluid">
@@ -199,10 +201,12 @@
                   <h5><%= i.created_at%></h5>
                   <br>
                   <br>
+                  <% if can? :manage, NoticiaEscuela %>
                   <%= link_to "Editar", noticias_editarn_path(i),:class => 'btn btn-outline-primary margen1'%>
                   <br>
                   <%= link_to "Eliminar", eliminar_noticia_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %>
                   <br>
+                      <% end %>
                   <br>
                 </div>
 

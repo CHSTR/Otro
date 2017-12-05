@@ -2,7 +2,7 @@ class ProgramasController < ApplicationController
   load_and_authorize_resource :class => Programa
   skip_authorize_resource :only => [:inicio,:mostrar,:pregrado,:postgrado,:otros]
   def inicio
-    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
+    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
   end
 
   def mostrar
@@ -63,12 +63,12 @@ class ProgramasController < ApplicationController
   end
 
   def editarinicio
-    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
+    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
   end
 
   def updateinicio
-    @textos = Texto.where("id != 1 and nombre like ?", "programa").first
-    if @textos.update_attributes(user_paramsi)
+    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
+    if @etextos.update_attributes(user_paramsi)
       redirect_to programas_url
     else
       render action: 'editarinicio'
@@ -76,18 +76,18 @@ class ProgramasController < ApplicationController
   end
 
   def nuevoinicio
-    @textos = Texto.new
+    @etextos = Etexto.new
   end
 
   def createinicio
-    @textos = Texto.new(user_paramsi)
-    if @textos.save
+    @etextos = Etexto.new(user_paramsi)
+    if @etextos.save
       redirect_to programas_url
     else
       render action: 'nuevoinicio'
     end
   end
   def user_paramsi
-    params.require(:texto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
+    params.require(:etexto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 end

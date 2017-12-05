@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  belongs_to :role
+   belongs_to :role
   
   def admin?
   	self.role.nombre == "admin"
