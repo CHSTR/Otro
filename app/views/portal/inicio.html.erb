@@ -81,7 +81,7 @@
       <ol class="">
         <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
       </ol>
-      <% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto %>
+      <% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto  %>
       <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
 
       <% flash.each do |name, msg| %>
