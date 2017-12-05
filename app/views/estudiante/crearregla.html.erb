@@ -81,18 +81,21 @@
 <!-- FIN CABECERA -->
 
 <!-- INICIO MENU PRINCIPAL ESCRITORIO -->
+<% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto %>
+    <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
+<% end %>
 <section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
   <nav id="nav-escritorio" class="envoltura-16">
     <div id="utem-toggle-escrt"></div>
     <ul id="menu-escritorio">
-      <li><a href="../inicioe/inicio">INICIO</a></li>
-      <li><a href="../noticias/inicio">NOTICIAS</a>
-      <li><a href="../estudiante">ESTUDIANTES</a>
-      <li><a href="../programas">PROGRAMAS</a>
-      <li><a href="../egresados">EGRESADOS</a>
-      <li><a href="../laboral">LABORAL</a>
-      <li><a href="../organizacione">ORGANIZACION</a>
-      <li><a href="../contacto">CONTACTO</a>
+      <li><a href="/inicioe/inicio">INICIO</a></li>
+      <li><a href="/noticias/inicio">NOTICIAS</a>
+      <li><a href="/estudiante">ESTUDIANTES</a>
+      <li><a href="/programas">PROGRAMAS</a>
+      <li><a href="/egresados">EGRESADOS</a>
+      <li><a href="/laboral">LABORAL</a>
+      <li><a href="/organizacione">ORGANIZACION</a>
+      <li><a href="/contacto">CONTACTO</a>
     </ul>
   </nav>
 </section>
@@ -120,14 +123,14 @@
       <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
         <nav id="nav-rsp">
           <ul>
-            <li class="nivel-01"><a href="../inicioe/inicio" class="nodesplegable">INICIO</a></li>
-            <li class="nivel-01"><a href="../noticias/inicio">NOTICIAS</a>
-            <li class="nivel-01"><a href="../estudiante">ESTUDIANTES</a>
-            <li class="nivel-01"><a href="../programas">PROGRAMAS</a>
-            <li class="nivel-01"><a href="../egresados">EGRESADOS</a>
-            <li class="nivel-01"><a href="../laboral">LABORAL</a>
-            <li class="nivel-01"><a href="../organizacione">ORGANIZACION</a>
-            <li class="nivel-01"><a href="../contacto">CONTACTO</a>
+            <li class="nivel-01"><a href="/inicioe/inicio" class="nodesplegable">INICIO</a></li>
+            <li class="nivel-01"><a href="/noticias/inicio">NOTICIAS</a>
+            <li class="nivel-01"><a href="/estudiante">ESTUDIANTES</a>
+            <li class="nivel-01"><a href="/programas">PROGRAMAS</a>
+            <li class="nivel-01"><a href="/egresados">EGRESADOS</a>
+            <li class="nivel-01"><a href="/laboral">LABORAL</a>
+            <li class="nivel-01"><a href="/organizacione">ORGANIZACION</a>
+            <li class="nivel-01"><a href="/contacto">CONTACTO</a>
               <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
           </ul>
           <div id="perfiles-rsp" class="envoltura">
@@ -158,15 +161,15 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal">Portal</a></li>
           <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen" id="menu-escritorio">
         <div class="list-group">
-          <a href="../estudiante" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Centro de alumnos</h4></a>
-          <a href="../estudiante/reglamento" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;">
+          <a href="/estudiante" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Centro de alumnos</h4></a>
+          <a href="/estudiante/reglamento" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;">
             <h4>Reglamento</h4>
           </a>
         </div>

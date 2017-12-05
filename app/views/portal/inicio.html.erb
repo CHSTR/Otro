@@ -80,9 +80,7 @@ font-family: 'Junge', serif;
         <h3 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h3>
       </ol>
       <% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto %>
-      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "btn btn-warning"%>
-
-      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-warning"%>
+      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
 
       <% flash.each do |name, msg| %>
         <div class="pad margin no-print">
