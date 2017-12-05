@@ -179,10 +179,10 @@
                 <h4 class="text-left lead">Correo: <%= i.correo %></h4>
                 <br>
                 <br>
-
+                  <% if can? :manage, FuncionarioDepto %>
                 <%= link_to "Editar", editar_funcionario_path(i) %>
                 <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
-
+                      <% end %>
             <% end %>
             <% end %>
           </div>
@@ -202,10 +202,10 @@
               <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
-
+                    <% if can? :manage, FuncionarioDepto %>
               <%= link_to "Editar", editar_funcionario_path(i) %>
               <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
-
+                        <% end %>
             <% end %>
             <% end %>
           </div>
@@ -225,16 +225,16 @@
               <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
-
+                    <% if can? :manage, FuncionarioDepto %>
               <%= link_to "Editar", editar_funcionario_path(i) %>
               <p class="text-right"><%= link_to "Eliminar", eliminar_organizacion_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
-
+                        <% end %>
             <% end %>
             <% end %>
           </div>
-
+        <% if can? :manage, FuncionarioDepto %>
           <%= link_to "Nuevo", new_funcionario_path %>
-
+            <% end %>
       </div>
     </div>
  <!-- Fin Noticias -->

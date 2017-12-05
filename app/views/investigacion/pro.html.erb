@@ -212,11 +212,15 @@
               </li>
               </ul>
             </ul>
+              <% if can? :manage, Proyecto  %>
           <%= link_to "Editar", editar_proyecto_path(i) %>
           <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará un proyecto, seguro?"} %>
+                  <% end %>
         <% end %>
         <br>
+        <% if can? :manage, Proyecto  %>
         <%= link_to "Nuevo Proyecto", new_proyecto_path %>
+            <% end %>
       </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->

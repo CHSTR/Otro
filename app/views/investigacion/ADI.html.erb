@@ -187,11 +187,13 @@
           <h3>Áreas</h3>
           <ul style="font-size: 16px;">
           <% @areas_disciplinarias.each do |i| %>
-          <li><a href="ver/<%= i.id %>"><%= i.nombre %>-><%= link_to "Editar", editar_area_path(i) %>-><%= link_to "Eliminar", eliminar_area_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></a></li>
+          <li><a href="ver/<%= i.id %>"><%= i.nombre %><% if can? :manage, AreasDisciplinaria  %>-><%= link_to "Editar", editar_area_path(i) %>-><%= link_to "Eliminar", eliminar_area_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %><% end %></a></li>
           <br>
           <% end %>
           </ul>
+          <% if can? :manage, AreasDisciplinaria  %>
           <%= link_to "Nueva Área", new_area_path %>
+              <% end %>
         </div>
       </div>
  <!-- Fin Noticias -->

@@ -46,6 +46,7 @@ class Ability
             can :manage, Academico #listo
             can :manage, [Proyecto,AreasDisciplinaria] #listo
             can :manage, FuncionarioDepto #listo
+            can :manage, Casilla
         else
           can :read, :all
         end

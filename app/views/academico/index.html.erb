@@ -166,14 +166,18 @@
             <% @casillas.each do |i|%>
               <% if i.activo ==  1 %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %><% if can? :manage, Casilla %> -> <span class="badge badge-success">activo</span> <% end %></a>
+                  <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                      <% end %>
                 </li>
               <% else %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %> -> <span class="badge badge-danger">inactivo</span></a>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %><% if can? :manage, Casilla %> -> <span class="badge badge-danger">inactivo</span> <% end %></a>
+                  <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                      <% end %>
                 </li>
               <% end %>
             <% end %>
@@ -185,7 +189,11 @@
 
           <% end %>
           </div>
+            <% if can? :manage, Casilla %>
+
           <%= link_to "Nueva Casilla", new_casilla_path %>
+
+                <% end %>
         </div>
         <!-- HASTA ACA -->
       </div>

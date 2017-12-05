@@ -185,7 +185,9 @@
         <% end %>
         </div>
         <center>
+          <% if can? :manage, Texto %>
         <%= link_to "Editar", iniciodepto_editarpde_url, :class => 'btn btn-outline-success margen1' %>
+              <% end %>
       </center>
         </div>
 

@@ -167,13 +167,17 @@
               <% if i.activo ==  1 %>
                 <li>
                 <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
+                  <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                      <% end %>
                 </li>
               <% else %>
                 <li>
                 <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %> -> <span class="badge badge-danger">inactivo</span></a>
+                  <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                      <% end %>
                 </li>
               <% end %>
             <% end %>
@@ -185,7 +189,9 @@
 
           <% end %>
           </div>
+          <% if can? :manage, Casilla %>
           <%= link_to "Nueva Casilla", new_casilla_path %>
+              <% end %>
         </div>
         <!-- HASTA ACA -->
       </div>
@@ -202,7 +208,9 @@
                 
                 <% end %>
               </ul>
+            <% if can? :manage, Academico %>
           <h4 class="text-left"><%= link_to "Nuevo Academico", new_academico_path %></h4>
+                <% end %>
         </div>
       </div>
     </div>
