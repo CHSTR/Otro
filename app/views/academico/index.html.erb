@@ -166,27 +166,39 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-             <% @casillas.each do |i|%>
+        <% if can? :manage, :all %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
+                <li>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%end%>
+                </li>
+              <% else %>
+                <li>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
               <% if i.activo ==  1 %>
                 <li>
                 <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                   <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                      <% end %>
-                </li>
-              <% else %>
-                <% if can? :manage, :all and (i.activo == 0 or i.activo == 1)%>
-                <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %> -> <span class="badge badge-danger">inactivo</span></a>
-                  <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                      <% end %>
-                </li>
                 <% end %>
+                </li>
               <% end %>
-            <% end %>
+            <%end%>
+        <%end%>
           <%= form_tag academico_path,:class =>'margen' ,:method => :get do %>
 
             <%= text_field_tag :search %>
@@ -317,7 +329,7 @@
       <div id="intranet">
       <% unless current_user %>
        <a href="users/sign_in">
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Inicias Sesión"></div>
+        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
        </a>
        <% else %>
        <a href="#">

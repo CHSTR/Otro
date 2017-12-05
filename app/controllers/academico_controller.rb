@@ -9,7 +9,7 @@ class AcademicoController < ApplicationController
     else
       @academicos = Academico.where("jornada like ?", "JC") 
     end
-    @casillas = Casilla.where("ubicacion = 'academico' and activo = 1").order(:id)
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
     @casillas.each do |i|   #Redirecciona bien
       if i.link != "academico"
         i.link="academico/"+i.link 
