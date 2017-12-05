@@ -1,5 +1,6 @@
 class AcademicoController < ApplicationController
-  load_and_authorize_resource :class => Academico
+  authorize_resource :class => Academico
+  authorize_resource :class => Casilla
   skip_authorize_resource :only => [:index,:MJ,:JP,:mostrar]
 
   def index
