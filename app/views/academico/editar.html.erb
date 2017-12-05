@@ -168,6 +168,7 @@
       <div class=" col-sm-12 col-md-9 margen">
       <h2>Agregando un nuevo académico</h2>
       <br>
+        <% if can? :manage, Academico %>
           <%= form_for(@academicos, :url => {:action => :update}) do |f| %>
         <% if @academicos.errors.any? %>
         <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -247,6 +248,15 @@
             <div class="actions">
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
+            <% end %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
             <% end %>
             <br>
             <%= link_to 'Volver', academico_path, :class => 'btn btn-outline-primary btn-lg margen1' %>

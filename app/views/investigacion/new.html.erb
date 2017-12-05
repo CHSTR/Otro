@@ -168,6 +168,7 @@
       </div>
       <div class="col-sm-12 col-md-9">
       <h2>Creando una nueva área</h2>
+        <% if can? :manage, AreasDisciplinaria  %>
           <%= form_for(@areas_disciplinarias, :url => {:action => :createa}) do |f| %>
           <% if @areas_disciplinarias.errors.any? %>
           <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -198,6 +199,16 @@
             <div class="actions">
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
+            <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
             <% end %>
             <br>
             <%= link_to 'Volver', investigacion_adi_path, :class => 'btn btn-outline-primary btn-lg margen1' %>

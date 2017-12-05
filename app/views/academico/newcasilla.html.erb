@@ -167,6 +167,7 @@
       </div>
       <div class=" col-sm-12 col-md-9 margen">
       <h2>Agregando un nuevo académico</h2>
+        <% if can? :manage, Casilla %>
       <br>
           <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
         <% if @casillas.errors.any? %>
@@ -209,7 +210,19 @@
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
             <% end %>
+            <% else %>
             <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+
+        <% end %>
+            <br>
+
             <%= link_to 'Volver', academico_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
       </div>
     </div>

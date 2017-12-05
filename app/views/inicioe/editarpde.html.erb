@@ -181,6 +181,7 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">PDE</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, Etexto %>
         <%= form_for(@etextos, :url => {:action => :updatepde}) do |f| %>
             <% if @etextos.errors.any? %>
                 <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -202,6 +203,16 @@
                 <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
               </div>
         <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+            <% end %>
         <br>
         <%= link_to 'Volver', inicioe_pde_path , :class => 'btn btn-outline-primary margen1' %>
         <br>
