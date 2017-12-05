@@ -1,4 +1,5 @@
 class AceptarOfertaController < ApplicationController
+  load_and_authorize_resource :class => OfertaLaboral
   def index
   	@oferta_laborals = OfertaLaboral.where("aceptado = 0")
   end

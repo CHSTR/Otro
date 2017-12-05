@@ -1,4 +1,7 @@
 class InvestigacionController < ApplicationController
+  load_and_authorize_resource :class =>  Proyecto  
+  load_and_authorize_resource :class =>  AreasDisciplinaria
+  skip_authorize_resource :only => [:ADI,:ver,:pro,:buscar]
   def index
   end
 

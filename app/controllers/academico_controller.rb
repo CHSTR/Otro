@@ -1,5 +1,6 @@
 class AcademicoController < ApplicationController
-load_and_authorize_resource
+  load_and_authorize_resource :class => Academico
+  skip_authorize_resource :only => [:index,:MJ,:JP,:mostrar]
 
   def index
     if params[:search]
@@ -45,7 +46,6 @@ load_and_authorize_resource
   end
 
   def new
-    authorize! :new, @academicos
     @academicos = Academico.new
   end
   

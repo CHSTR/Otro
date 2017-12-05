@@ -40,7 +40,10 @@ class Ability
             can :manage, OfertaLaboral          # toda la    #
             can :manage, FuncionarioEscuela     # escuela    #
         elsif user.secretaria2?                 ##############
-            can :manage, :all
+            can :manage, Texto     #no
+            can :manage, Academico #listo
+            can :manage, [Proyecto,AreasDisciplinaria] #listo
+            can :manage, FuncionarioDepto #listo
         else
           can :read, :all
         end

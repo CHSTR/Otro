@@ -1,4 +1,6 @@
 class OrganizacionController < ApplicationController
+  load_and_authorize_resource :class =>  FuncionarioDepto
+  skip_authorize_resource :only => [:index]
   def index
     @funcionario_deptos = FuncionarioDepto.all
   end

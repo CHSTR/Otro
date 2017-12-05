@@ -11,8 +11,8 @@ class User < ApplicationRecord
   	self.role.nombre == "secretaria"
   end
 
-  def depa?
-  	self.role.nombre == "depa"
+  def secretaria2?
+  	self.role.nombre == "secretaria2"
   end
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

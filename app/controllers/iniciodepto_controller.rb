@@ -1,4 +1,7 @@
 class IniciodeptoController < ApplicationController
+  #load_and_authorize_resource :class => Texto
+  #skip_authorize_resource :only => [:inicio,:pde,:historia,:misionvision]
+  
   def index
       if params[:search]
         @textos = Texto.where("nombre like ?", "#{params[:search]}%")
