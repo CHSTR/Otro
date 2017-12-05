@@ -61,6 +61,9 @@ font-family: 'Junge', serif;
       <br>
       <br>
       <nav class="nav flex-column margen">
+      <% if can? :manage, :all %> <!-- SOLO PARA EL ADMINISTRADORGENERAL -->
+        <h6 class="nav-link text-left"><a href="aceptar_oferta">Ofertas Laborales <span class="badge badge-default"><%= @oferta_laborals %></span></a></h6>
+        <% end %>
         <a class="nav-link text-left" href="iniciodepto/inicio">Departamento de Informática y Computación</a>
         <a class="nav-link text-left" href="inicioe/inicio">Escuela de Informática</a>
         <a class="nav-link text-left" href="noticias/inicio.html">Noticias</a>
@@ -74,10 +77,10 @@ font-family: 'Junge', serif;
     </div>
     <div class="col-md-9">
       <ol class="">
-        <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
+        <h3 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h3>
       </ol>
 
-      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "btn btn-warning"%>
+      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-warning"%>
       <% flash.each do |name, msg| %>
         <div class="pad margin no-print">
           <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
