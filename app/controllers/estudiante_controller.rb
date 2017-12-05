@@ -1,4 +1,6 @@
 class EstudianteController < ApplicationController
+  load_and_authorize_resource :class => CentroAlumno
+  skip_authorize_resource :only => [:index,:reglamento]
   def index
     @centro_alumnos = CentroAlumno.order('centro_alumnos.anio DESC').all
   end

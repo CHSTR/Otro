@@ -1,4 +1,6 @@
 class ProgramasController < ApplicationController
+  load_and_authorize_resource :class => Programa
+  skip_authorize_resource :only => [:inicio,:mostrar,:pregrado,:postgrado,:otros]
   def inicio
     @textos = Texto.where("id != 1 and nombre like ?", "programa").first
   end

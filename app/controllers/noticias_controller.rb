@@ -1,4 +1,7 @@
 class NoticiasController < ApplicationController
+load_and_authorize_resource :class => NoticiaEscuela
+skip_authorize_resource :only => [:inicio,:mostrarn]
+  
   def inicio
     if params[:search]
       @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
@@ -25,6 +28,7 @@ class NoticiasController < ApplicationController
 
   def nuevon
     @noticia_escuelas = NoticiaEscuela.new
+    authorize! :nuevon, @noticia_escuelas
   end
 
   def eventos

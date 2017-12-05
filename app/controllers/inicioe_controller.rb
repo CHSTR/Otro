@@ -1,4 +1,7 @@
 class InicioeController < ApplicationController
+  #authorize_resource :class => Etexto
+  #skip_authorize_resource :only => [:inicio, :misionvision, :pde, :historia]
+
   def editarhistoria
     @etextos = Etexto.where("nombre like ?", "historia").first
   end
@@ -32,7 +35,7 @@ class InicioeController < ApplicationController
   end
 
   def nuevotexto
-    @etextos = Etexto.new
+      @etextos = Etexto.new
   end
 
   def updatehistoria

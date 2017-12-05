@@ -178,6 +178,7 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Escuela de Informática</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+      <% if can? :nuevotexto, @user %>
         <%= form_for(@etextos, :url => {:action => :textocreate})  do |f| %>
             <% if @etextos.errors.any? %>
                 <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -207,6 +208,7 @@
         <br>
         <%= link_to 'Volver', inicioe_inicio_path, :class => 'btn btn-outline-primary margen1' %>
         <br>
+      <% end %>
   </div>
   </div>
   <!-- Inicio Limpiar flotante -->
