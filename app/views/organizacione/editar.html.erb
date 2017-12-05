@@ -169,6 +169,7 @@
         <!-- HASTA ACA -->
       </div>
       <div class=" col-sm-12 col-md-9">
+        <% if can? :manage, FuncionarioEscuela %>
         <%= form_for(@funcionario_escuelas, :url => {:action => :update}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
@@ -199,6 +200,16 @@
             <div class="actions">
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
+            <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
             <% end %>
             <br>
             <%= link_to 'Volver', organizacion_escuela_path, :class => 'btn btn-outline-primary btn-lg margen1' %>

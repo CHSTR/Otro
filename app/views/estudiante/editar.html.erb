@@ -180,6 +180,7 @@
       <h2>Centros de alumnos</h2>
       <div class="container-fluid margen">
         <h4 class="margen text-left">Los centros de alumnos son muy importantes para la escuela, gracias a ellos, los estudiantes tienen un espacio válido y son la voz de nuestros estudiantes.</h4>
+        <% if can? :manage, CentroAlumno %>
       <%= form_for(@centro_alumnos, :url => {:action => :update}) do |f| %>
           <% if @centro_alumnos.errors.any? %>
               <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -227,6 +228,16 @@
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
             </div>
       <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+            <% end %>
       <br>
       <%= link_to 'Volver', centro_path, :class => 'btn btn-outline-primary margen1' %>
     </div>
