@@ -6,7 +6,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
     if params[:search]
       @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
     else
-      @noticia_escuelas = NoticiaEscuela.all.paginate(page: params[:page], per_page: 1)
+      @noticia_escuelas = NoticiaEscuela.all.order('fecha DESC').paginate(page: params[:page], per_page: 5)
   end
   end
 
@@ -35,7 +35,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
     if params[:search]
       @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%")
     else
-      @evento_escuelas = EventoEscuela.all.paginate(page: params[:page], per_page: 1)
+      @evento_escuelas = EventoEscuela.all.paginate(page: params[:page], per_page: 5)
     end
   end
 
