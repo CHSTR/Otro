@@ -84,7 +84,7 @@
 <!-- FIN CABECERA -->
 
 <!-- INICIO MENU PRINCIPAL ESCRITORIO -->
-<% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto %>
+<% if current_user  %>
     <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
 <% end %>
 <section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
