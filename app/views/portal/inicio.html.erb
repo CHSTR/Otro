@@ -81,8 +81,8 @@
       <ol class="">
         <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
       </ol>
-      <% if can? :manage, Casilla,NoticiaEscuela,FuncionarioDepto %>
-      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
+      <% if current_user%>
+      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
 
       <% flash.each do |name, msg| %>
         <div class="pad margin no-print">
