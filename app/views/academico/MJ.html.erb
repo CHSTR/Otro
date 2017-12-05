@@ -202,14 +202,17 @@
           <div class="margen">
               <ul style="font-size: 16px; text-decoration-color: black;">
                 <% @academicos.each do |i|%>
-                <li ><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %> -> <%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                <li ><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>
+                <% if can? :manage, Academico %>
+                <%= link_to "Editar", editar_academico_path(i) %> -> <%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                <% end %>
                 <br>
                 
                 <% end %>
               </ul>
             <% if can? :manage, Academico %>
           <h4 class="text-left"><%= link_to "Nuevo Academico", new_academico_path %></h4>
-                <% end %>
+            <% end %>
         </div>
       </div>
     </div>
