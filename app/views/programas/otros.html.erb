@@ -291,11 +291,15 @@
               <h3>ACCESO INTRANET:</h3>
             </header>
             <div id="intranet">
-              <form id="form-intranet" action="http://www.utem.cl/login.php" method="post">
-                <div class="campo"><input type="text" name="usuario" id="usuario" value="" onFocus="clearField('')" onBlur="setField('', 'o')"/></div>
-                <div class="campo"><input type="password" name="pwd" id="clave" value="" onFocus="clearField('')" onBlur="setField('', '')"/></div>
-                <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Entrar"></div>
-              </form>
+              <% unless current_user %>
+       <a href="/users/sign_in">
+        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Inicias Sesión"></div>
+       </a>
+       <% else %>
+       <a href="#">
+        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+       </a>
+       <%end%>
             </div>
           </div>
           <!-- Inicio Limpiar flotante -->

@@ -43,7 +43,7 @@ class Ability
             can :manage, FuncionarioEscuela     # escuela    #
         elsif user.secretaria2?                 ##############
             can :manage, Texto     #no
-            can :manage, Academico #listo
+            can :manage, [Academico,Casilla] #listo
             can :manage, [Proyecto,AreasDisciplinaria] #listo
             can :manage, FuncionarioDepto #listo
             can :manage, Casilla
