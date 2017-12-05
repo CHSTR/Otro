@@ -28,10 +28,32 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  if user.admin?
-      can :manage, :all
+    #user ||= User.new # guest user (not logged in
+    if user.present?
+        if user.admin?
+          can :manage, :all
+        elsif user.secretaria?
+            can :manage, NoticiaEscuela
+            can :manage, Etexto                 ##############
+            can :manage, CentroAlumno           # Secretaria #
+            can :manage, Programa               # modifica   #
+            can :manage, OfertaLaboral          # toda la    #
+            can :manage, FuncionarioEscuela     # escuela    #
+        elsif user.secretaria2?                 ##############
+            can :manage, :all
+        else
+          can :read, :all
+        end
     else
-      can :read, :all
+        can :read, :all
     end
+    #if user.present?
+    #    if user.admin?
+    #        can :manage, :all
+    #    end
+    #else
+    #  can :read, :all
+    #end
+
   end
 end

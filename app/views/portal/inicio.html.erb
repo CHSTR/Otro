@@ -76,6 +76,7 @@ font-family: 'Junge', serif;
       <ol class="">
         <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
       </ol>
+
       <% if can? :manage, User %>
       <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "btn btn-warning"%>
       <% flash.each do |name, msg| %>
