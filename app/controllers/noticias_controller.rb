@@ -1,12 +1,12 @@
 class NoticiasController < ApplicationController
 load_and_authorize_resource :class => NoticiaEscuela
-skip_authorize_resource :only => [:inicio,:mostrarn]
+skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
   
   def inicio
     if params[:search]
       @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
     else
-      @noticia_escuelas = NoticiaEscuela.all
+      @noticia_escuelas = NoticiaEscuela.all.paginate(page: params[:page], per_page: 1)
   end
   end
 
@@ -35,7 +35,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn]
     if params[:search]
       @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%")
     else
-      @evento_escuelas = EventoEscuela.all
+      @evento_escuelas = EventoEscuela.all.paginate(page: params[:page], per_page: 1)
     end
   end
 
