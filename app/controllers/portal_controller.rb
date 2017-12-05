@@ -8,7 +8,7 @@ class PortalController < ApplicationController
 
   def inicio
     @oferta_laborals = OfertaLaboral.where(:aceptado => 0).count
-    @noticia_escuelas = NoticiaEscuela.all.limit(4)
+    @noticia_escuelas = NoticiaEscuela.all.order('fecha DESC').limit(4)
     @evento_escuelas=EventoEscuela.all.limit(4)
   end
 
