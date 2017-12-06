@@ -234,7 +234,18 @@
        </a>
        <%end%>
             </div>
+
+            <% if can? :manage, :all %>
+            <header class="cabecera-nav-pie-pagina">
+              <h3>REGISTRAR USUARIO:</h3>
+            </header>
+            <div id="intranet">
+              <a href="users/sign_up">
+                <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Resgistrar"></div>
+              </a>
           </div>
+                <% end %>
+
           <!-- Inicio Limpiar flotante -->
           <div class="limpiar"></div>
           <!-- Fin Limpiar flotante -->

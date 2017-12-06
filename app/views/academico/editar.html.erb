@@ -249,6 +249,7 @@
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
             <% end %>
+            <% else %>
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -350,24 +351,38 @@
      <!-- Inicio Limpiar flotante -->
      <div class="limpiar"></div>
      <!-- Fin Limpiar flotante -->
-    </li>
-    <li class="col-4-pie">
-     <div class="borde-menu-pie-pagina">
-      <header class="cabecera-nav-pie-pagina">
-       <h3>ACCESO INTRANET:</h3>
-      </header>
-      <div id="intranet">
-       <form id="form-intranet" action="http://www.utem.cl/login.php" method="post">
-        <div class="campo"><input type="text" name="usuario" id="usuario" value="" onFocus="clearField('')" onBlur="setField('', 'o')"/></div>
-        <div class="campo"><input type="password" name="pwd" id="clave" value="" onFocus="clearField('')" onBlur="setField('', '')"/></div>
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Entrar"></div>
-       </form>
-      </div>
-     </div>
-     <!-- Inicio Limpiar flotante -->
-     <div class="limpiar"></div>
-     <!-- Fin Limpiar flotante -->
-    </li>
+     <li class="col-4-pie">
+       <div class="borde-menu-pie-pagina">
+         <header class="cabecera-nav-pie-pagina">
+           <h3>ACCESO INTRANET:</h3>
+         </header>
+         <div id="intranet">
+           <% unless current_user %>
+               <a href="users/sign_in">
+                 <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+               </a>
+           <% else %>
+               <a href="#">
+                 <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+               </a>
+           <%end%>
+         </div>
+
+         <% if can? :manage, :all %>
+             <header class="cabecera-nav-pie-pagina">
+               <h3>REGISTRAR USUARIO:</h3>
+             </header>
+             <div id="intranet">
+               <a href="/users/sign_up">
+                 <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Resgistrar"></div>
+               </a>
+             </div>
+         <% end %>
+
+         <!-- Inicio Limpiar flotante -->
+         <div class="limpiar"></div>
+         <!-- Fin Limpiar flotante -->
+     </li>
    </ul>
    <!-- Inicio Limpiar flotante -->
    <div class="limpiar"></div>
