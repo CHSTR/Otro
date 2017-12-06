@@ -6,7 +6,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
     if params[:search]
       @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
     else
-      @noticia_escuelas = NoticiaEscuela.all.order('fecha DESC').paginate(page: params[:page], per_page: 5)
+      @noticia_escuelas = NoticiaEscuela.all.order('id DESC').paginate(page: params[:page], per_page: 5)
   end
   end
 

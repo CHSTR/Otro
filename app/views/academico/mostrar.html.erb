@@ -70,6 +70,10 @@
       margin-top: 1em;
     }
 
+    .margenl{
+      margin-left: 1em;
+      margin-right: 1em;
+    }
     .utem-log{
       margin-top: 1em;
       margin-bottom: 1em;
@@ -166,24 +170,39 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <% @casillas.each do |i|%>
-              <% if i.activo ==  1 %>
+            <% if can? :manage, :all %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
-                  <% if can? :manage, Casilla %>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                      <% end %>
+                <%end%>
                 </li>
               <% else %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <%= i.ubicacion %> -> <span class="badge badge-danger">inactivo</span></a>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                   <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-                      <% end%>
+                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <% end %>
                 </li>
               <% end %>
-            <% end %>
+            <%end%>
+        <%end%>
           <%= form_tag academico_path,:class =>'margen' ,:method => :get do %>
 
             <%= text_field_tag :search %>
@@ -221,7 +240,7 @@
             </tr>
             <tr >
               <td class="text-center"><%= @academicos.apellido %>, <%= @academicos.nombre %></td>
-                      <th><a href="<%= @academicos.link1 %>"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid flot-left" width="30" height="30"></a><a href="<%= @academicos.link2 %>"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid flot-left" width="30" height="30"></a><a href="<%= @academicos.link3 %>"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid flot-left" width="30" height="30"></a></th>
+                      <th><a href="<%= @academicos.link1 %>"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid margenl " width="30" height="30"></a><a href="<%= @academicos.link2 %>">&nbsp;&nbsp;&nbsp;<img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid margenl " width="30" height="30"></a><a href="<%= @academicos.link3 %>">&nbsp;&nbsp;&nbsp;<img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid margenl " width="30" height="30"></a></th>
             </tr>
             <tr>
               <td></td>

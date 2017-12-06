@@ -5,9 +5,9 @@ class AcademicoController < ApplicationController
 
   def index
     if params[:search]
-      @academicos = Academico.where("nombre like ? or apellido like ?", "#{params[:search]}%", "#{params[:search]}%")
+      @academicos = Academico.where("nombre like ? or apellido like ?", "#{params[:search]}%", "#{params[:search]}%").order('apellido ASC')
     else
-      @academicos = Academico.where("jornada like ?", "JC") 
+      @academicos = Academico.where("jornada like ?", "JC").order('apellido ASC') 
     end
     @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
     @casillas.each do |i|   #Redirecciona bien
@@ -22,7 +22,7 @@ class AcademicoController < ApplicationController
   end
 
   def MJ
-    @academicos = Academico.where("id != 1 and jornada like ?", "MJ")
+    @academicos = Academico.where("id != 1 and jornada like ?", "MJ").order('apellido ASC')
     @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
       @casillas.each do |i|   #Redirecciona bien
         if i.link == "academico"
@@ -32,7 +32,7 @@ class AcademicoController < ApplicationController
   end
 
   def JP
-    @academicos = Academico.where("id != 1 and jornada like ?", "JP")
+    @academicos = Academico.where("id != 1 and jornada like ?", "JP").order('apellido ASC')
     @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
       @casillas.each do |i|   #Redirecciona bien
         if i.link == "academico"
