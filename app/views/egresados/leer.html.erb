@@ -55,7 +55,6 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
-      list-style: none;
     }
     body {
     font-family: 'Junge', serif;
@@ -65,9 +64,6 @@
     }
     .margen {
       margin-top: 1.5em;
-    }
-    .margen1 {
-      margin-top: 1em;
     }
 
     .utem-log{
@@ -92,11 +88,14 @@
  <nav id="nav-escritorio" class="envoltura-16">
   <div id="utem-toggle-escrt"></div>
   <ul id="menu-escritorio">
-   <li><a href="/iniciodepto/inicio">INICIO</a></li>
-   <li><a href="/academico">ACADÉMICOS</a>
-   <li><a href="/investigacion">INVESTIGACIÓN</a>
-   <li><a href="/organizacion">ORGANIZACIÓN</a>
-   <li><a href="/contactod">CONTACTO</a>
+   <li><a href="/inicioe/inicio">INICIO</a></li>
+   <li><a href="/noticias/inicio">NOTICIAS</a>
+   <li><a href="/estudiante">ESTUDIANTES</a>
+   <li><a href="/programas">PROGRAMAS</a>
+   <li><a href="/egresados">EGRESADOS</a>
+   <li><a href="/laboral">LABORAL</a>
+   <li><a href="/organizacione">ORGANIZACIÓN</a>
+   <li><a href="/contacto">CONTACTO</a>
   </ul>
  </nav>
 </section>
@@ -124,11 +123,14 @@
    <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
     <nav id="nav-rsp">
      <ul>
-      <li class="nivel-01"><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
-      <li class="nivel-01"><a href="/academico">ACADÉMICOS</a>
-      <li class="nivel-01"><a href="/investigacion">INVESTIGACIÓN</a>
-      <li class="nivel-01"><a href="/organizacion">ORGANIZACIÓN</a>
-      <li class="nivel-01"><a href="/contactod">CONTACTO</a>
+      <li class="nivel-01"><a href="/inicioe/inicio" class="nodesplegable">INICIO</a></li>
+      <li class="nivel-01"><a href="/noticias/inicio">NOTICIAS</a>
+      <li class="nivel-01"><a href="/estudiante">ESTUDIANTES</a>
+      <li class="nivel-01"><a href="/programas">PROGRAMAS</a>
+      <li class="nivel-01"><a href="/egresados">EGRESADOS</a>
+      <li class="nivel-01"><a href="/laboral">LABORAL</a>
+      <li class="nivel-01"><a href="/organizacione">ORGANIZACION</a>
+      <li class="nivel-01"><a href="/contacto">CONTACTO</a>
        <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
      </ul>
      <div id="perfiles-rsp" class="envoltura">
@@ -160,74 +162,41 @@
         <div class="container-fluid">
           <ol class="breadcrumb margen">
             <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
-            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
           </ol>
           <hr>
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-             <% if can? :manage, :all %>
-          <% @casillas.each do |i|%>
-              <% if i.activo == 1 %>
-                <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <%end%>
-                </li>
-              <% else %>
-                <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                </li>
-                <% end %>
-              <% end %>
-          <% end %>
-        <% else %>
-          <% @casillas.each do |i|%>
-              <% if i.activo ==  1 %>
-                <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <% end %>
-                </li>
-              <% end %>
-            <%end%>
-        <%end%>
+            <a href="#" class="list-group-item list-group-item-action active">Titulados y graduados</a>
+            <a href="https://ret.utem.cl/"  target="_blank"  class="list-group-item list-group-item-action">Portal de Egresados</a>
+            <a href="#" class="list-group-item list-group-item-action">Egresados Destacados</a>
           </div>
-          <% if can? :manage, Casilla %>
-          <%= link_to "Nueva Casilla", new_casilla_path %>
-              <% end %>
         </div>
         <!-- HASTA ACA -->
       </div>
-      <div class="col-sm-12 col-md-9">
-        <div class="container margen">
-          <h2>Lista de académicos</h2>
-        </div>
-      <div class=" col-sm-12 col-md-8 margen">
-          <div class="margen">
-              <ul style="font-size: 16px; text-decoration-color: black;">
-                <% @academicos.each do |i|%>
-                <li ><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>
-                <% if can? :manage, Academico %>
-                <%= link_to "Editar", editar_academico_path(i) %> -> <%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
-                <% end %>
-                <br>
-                <br>
-                
-                <% end %>
-              </ul>
-            <% if can? :manage, Academico %>
-          <h4 class="text-left"><%= link_to "Nuevo Academico", new_academico_path %></h4>
-            <% end %>
-        </div>
-      </div>
+      <div class=" col-sm-12 col-md-9">
+      <table class="table table-hover margen">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Año Titulación</th>
+              <th>Contacto empresa</th>
+              <th>Correo</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%  @egresados.each do |i| %>
+            <tr>
+              <td><%= i.nombre %></td>
+              <td><%= i.anio %></td>
+              <td><%= i.contacto_empresa %></td>
+              <td><%= i.correo %></td>
+            </tr>
+          <%end%>
+          </tbody>
+        </table>
+        <a href="/egresados/tituygradua"><button type="button" class="btn btn-outline-primary">Volver</button></a>
     </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->
@@ -325,7 +294,7 @@
       </header>
       <div id="intranet">
        <% unless current_user %>
-       <a href="/users/sign_in">
+       <a href="users/sign_in">
         <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
        </a>
        <% else %>
@@ -333,7 +302,6 @@
         <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
        </a>
        <%end%>
-       </form>
       </div>
      </div>
      <!-- Inicio Limpiar flotante -->
@@ -372,4 +340,5 @@
 <!-- FIN PIE -->
 
 </body>
+
 </html>

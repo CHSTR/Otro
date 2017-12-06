@@ -1,7 +1,7 @@
 class InvestigacionController < ApplicationController
-  load_and_authorize_resource :class =>  Proyecto  
+  #load_and_authorize_resource :class =>  Proyecto  
   load_and_authorize_resource :class =>  AreasDisciplinaria
-  skip_authorize_resource :only => [:ADI,:ver,:pro,:buscar]
+  skip_authorize_resource :only => [:ADI,:ver_area,:pro,:buscar]
   def index
   end
 
@@ -28,7 +28,7 @@ class InvestigacionController < ApplicationController
     end
   end
 
-  def ver
+  def ver_area
   	@areas_disciplinarias = AreasDisciplinaria.find(params[:id])
   end
 

@@ -60,7 +60,10 @@
       font-family: 'Junge', serif;
       margin-top: 1em;
       margin-bottom: 1em;
-      font-size:
+    }
+
+    h1 {
+      font-size: 18px;
     }
     .margen {
       margin-top: 1.5em;
@@ -183,23 +186,17 @@
       </div>
       <!-- HASTA ACA -->
     </div>
-    <div class=" col-sm-12 col-md-9 margen">
+    <div class=" col-sm-12 col-md-9">
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
         <hr>
-        <div class="col-md-7">
-          <div class="container margen">
+        <div class="col-md-12">
             <div class="display-4" style="color: #0275d8;">
               <%= @noticia_escuelas.nombre %>
             </div>
-          </div>
           <hr>
           <br>
-          <div class="col-md-2 margen">
-            <%= @noticia_escuelas.imagen %>
-          </div>
-          <br>
-          <div class="container-fluid">
-            <h1 class="inter">
+          <div class="">
+            <h1 class="img-fluid" style="font-size: 18px;"">
               <%= raw @noticia_escuelas.cuerpo %>
             </h1>
           </div>

@@ -1,5 +1,27 @@
 Rails.application.routes.draw do
 
+  get 'egresados/', to: 'egresados#index', as:'inicio_egresados'
+
+  get 'egresados/tituygradua'
+
+  get 'egresados/tituygradua/:id', to:'egresados#leer'
+
+  get 'egresados/egredesta'
+
+  get 'egresados/nuevo', to:'egresados#nuevo', as:'nuevo_egresado'
+
+  post 'egresados/nuevo', to:'egresados#crear'
+
+  get 'egresados/todos', to:'egresados#todos', as:'todos_egresados'
+
+  get 'egresados/todos/:id', to:'egresados#editar', as:'editar_egresado'
+
+  put 'egresados/todos/:id', to:'egresados#update'
+
+  patch 'egresados/todos/:id', to:'egresados#update'
+
+  delete 'egresados/todos/:id', to:'egresados#eliminar', as:'eliminar_egresado'
+
   resources :roles
   devise_for :users, :controllers => { registrations: 'registrations' }
   root :to => "portal#inicio"
@@ -299,7 +321,7 @@ Rails.application.routes.draw do
 
   post 'investigacion/ADI/new', to: 'investigacion#createa'
 
-  get 'investigacion/ver/:id', to: 'investigacion#ver'
+  get 'investigacion/ver/:id', to: 'investigacion#ver_area'
 
   get 'investigacion/ADI/:id/editar', to: 'investigacion#editar', as:'editar_area'
 
