@@ -186,10 +186,13 @@
            <% end %>
           </ol>
           </div>
+
          <% end %>
+          <% if can? :manage, Egresado %>
          <%= link_to "Nuevo Egresado", nuevo_egresado_path %>
          <br>
          <%= link_to "Ver todos los egresados", todos_egresados_path %>
+              <% end %>
     </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->

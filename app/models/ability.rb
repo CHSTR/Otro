@@ -34,6 +34,7 @@ class Ability
           can :manage, :all
         elsif user.secretaria?
             can :manage, NoticiaEscuela
+            can :manage, Egresado
             can :manage, EventoEscuela
             can :manage, Reglamento
             can :manage, Etexto                 ##############
