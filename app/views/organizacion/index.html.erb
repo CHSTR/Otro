@@ -174,7 +174,11 @@
             <% @funcionario_deptos.each do |i| %>
             <% if i.funcion == 0 %>
               <hr>
-                <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
+              <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
+                <%= image_tag("thumb/missing.png", :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% else %>
+              <%= image_tag i.photo.url(:thumb, :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% end %>
                 <br>
                 <br>
                 <h4 class="text-left"><%= raw i.cargo %></h4>
@@ -197,7 +201,11 @@
             <% @funcionario_deptos.each do |i| %>
             <% if i.funcion == 1 %>
             <hr>
-              <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
+            <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
+              <% image_tag("thumb/missing.png", :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% else %>
+              <%= image_tag i.photo.url(:thumb, :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% end %>
               <br>
               <br>
               <h4 class="text-left"><%= raw i.cargo%></h4>
@@ -220,7 +228,11 @@
             <% @funcionario_deptos.each do |i| %>
             <% if i.funcion == 2 %>
             <hr>
-              <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
+            <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
+              <% image_tag("thumb/missing.png", :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% else %>
+              <%= image_tag i.photo.url(:thumb, :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
+            <% end %>
               <br>
               <br>
               <h4 class="text-left"><%= raw i.cargo%></h4>

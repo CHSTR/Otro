@@ -134,9 +134,15 @@
             <h3 class="text-left">NOTICIAS</h3>
             <% @noticia_escuelas.each do |i|%>
             <div class="row">
+              <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
               <div class="col-md-3 margen">
-                <%= image_tag i.photo.url(:thumb) %>
+                <%= image_tag("thumb/missing.png", :class => "img-fluid") %>
               </div>
+              <% else %>
+              <div class="col-md-3 margen">
+                <%= image_tag i.photo.url(:thumb, :class => "img-fluid") %>
+              </div>
+              <% end %>
               <div class="col-md-8 margen">
                 <h4><a href="../noticias/mostrarn/<%=i.id%>"><%= i.nombre%></a></h4>
               </div>
