@@ -10,7 +10,7 @@ class PortalController < ApplicationController
     @oferta_laborals = OfertaLaboral.where(:aceptado => 0, :oferta_d => 0).count
     @consulta = OfertaLaboral.where(:aceptado => 0, :oferta_d => 1).count
     @noticia_escuelas = NoticiaEscuela.all.order('fecha DESC').limit(4)
-    @evento_escuelas=EventoEscuela.all.limit(4)
+    @evento_escuelas=EventoEscuela.order('id DESC').all.limit(4)
   end
 
   def nuevo

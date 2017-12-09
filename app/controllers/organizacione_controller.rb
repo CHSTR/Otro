@@ -40,7 +40,7 @@ class OrganizacioneController < ApplicationController
   end
 
   def escuela_params
-    params.require(:funcionario_escuela).permit(:nombre,:cargo,:correo,:imagen,:funcion)
+    params.require(:funcionario_escuela).permit(:nombre,:cargo,:correo,:imagen,:funcion,:photo)
   end
 
 end
