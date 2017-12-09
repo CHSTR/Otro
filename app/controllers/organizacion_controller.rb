@@ -43,6 +43,6 @@ class OrganizacionController < ApplicationController
   end
 
   def funcionario_params
-    params.require(:funcionario_depto).permit(:nombre,:cargo,:correo,:imagen,:funcion)
+    params.require(:funcionario_depto).permit(:nombre,:cargo,:correo,:imagen,:funcion,:photo)
   end
 end

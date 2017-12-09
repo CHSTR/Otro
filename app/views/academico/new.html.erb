@@ -169,7 +169,7 @@
       <h2>Agregando un nuevo académico</h2>
       <br>
         <% if can? :manage, Academico %>
-          <%= form_for(@academicos, :url => {:action => :academicocreate}) do |f| %>
+          <%= form_for(@academicos, html: { multipart: true }, :url => {:action => :academicocreate}) do |f| %>
         <% if @academicos.errors.any? %>
         <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -217,8 +217,8 @@
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :imagen %>
-              <%= f.text_field :imagen %>
+              <%= f.label :Imagen%>
+              <%= f.file_field :photo %>
             </h3>
             <br>
             <h3 class="text-left">

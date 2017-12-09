@@ -119,7 +119,7 @@ class AcademicoController < ApplicationController
   end
 
   def user_params
-    params.require(:academico).permit(:nombre,:apellido,:titulo_profesional,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
+    params.require(:academico).permit(:nombre,:apellido,:titulo_profesional,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion,:photo) #retorna un hash con todos los valores del academico...
   end
 
   def casilla_params

@@ -161,7 +161,7 @@
         <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
             <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
           </ol>
           <hr>
@@ -180,7 +180,7 @@
             <% @funcionario_escuelas.each do |i| %>
             <% if i.funcion == 0 %>
               <hr>
-                <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+                <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
                 <br>
                 <br>
                 <h4 class="text-left"><%= raw i.cargo %></h4>
@@ -203,7 +203,7 @@
             <% @funcionario_escuelas.each do |i| %>
             <% if i.funcion == 1 %>
             <hr>
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+              <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
               <br>
               <br>
               <h4 class="text-left"><%= raw i.cargo%></h4>
@@ -226,7 +226,7 @@
             <% @funcionario_escuelas.each do |i| %>
             <% if i.funcion == 2 %>
             <hr>
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
+              <img class="rounded-circle" width="130" height="130" align="left" <%= image_tag i.photo.url(:thumb) %>>
               <br>
               <br>
               <h4 class="text-left"><%= raw i.cargo%></h4>

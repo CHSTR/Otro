@@ -38,7 +38,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
     if params[:search]
       @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%").paginate(page: params[:page], per_page: 5)
     else
-      @evento_escuelas = EventoEscuela.all.paginate(page: params[:page], per_page: 5)
+      @evento_escuelas = EventoEscuela.all.order('id DESC').paginate(page: params[:page], per_page: 5)
     end
   end
 
@@ -111,10 +111,10 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
   end
 
   def user_paramsn
-    params.require(:noticia_escuela).permit(:nombre,:cuerpo,:imagen,:fecha,:descripcion) #retorna un hash con todos los valores del academico...
+    params.require(:noticia_escuela).permit(:nombre,:cuerpo,:imagen,:fecha,:descripcion,:photo)
   end
 
   def user_paramse
-    params.require(:evento_escuela).permit(:nombre,:lugar,:descripcion,:imagen,:fecha,:hora) #retorna un hash con todos los valores del academico...
+    params.require(:evento_escuela).permit(:nombre,:lugar,:descripcion,:imagen,:fecha,:hora,:photo)
   end
 end

@@ -163,7 +163,7 @@
         <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
             <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
           </ol>
           <hr>
@@ -225,7 +225,7 @@
           <table class="table table-bordered margen table-responsive">
           <tbody>
             <tr>
-                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" src="<%= @academicos.imagen %>"></td>
+                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" <%= image_tag @academicos.photo.url(:medium) %>></td>
                 <td><%= raw @academicos.titulo_profesional %>
                 </td>
             </tr>

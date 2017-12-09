@@ -198,7 +198,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-2">
-                  <%=i.imagen%>
+                  <%= image_tag i.photo.url(:thumb) %>
                 </div>
                 <div class="col-md-10 margen3">
                   <h1 style="color: #0275d8;"><%=i.nombre %></h1>

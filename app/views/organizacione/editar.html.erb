@@ -170,7 +170,7 @@
       </div>
       <div class=" col-sm-12 col-md-9">
         <% if can? :manage, FuncionarioEscuela %>
-        <%= form_for(@funcionario_escuelas, :url => {:action => :update}) do |f| %>
+        <%= form_for(@funcionario_escuelas, html: { multipart: true }, :url => {:action => :update}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre_del_funcionario %>
@@ -188,8 +188,8 @@
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :imagen_del_funcionario %>
-              <%= f.text_field :imagen %>
+              <%= f.label :Imagen_Funcionario%>
+              <%= f.file_field :photo %>
             </h3>
             <br>
             <h3 class="text-left">

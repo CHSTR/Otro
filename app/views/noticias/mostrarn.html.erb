@@ -164,7 +164,7 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal">Portal</a></li>
           <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
@@ -193,8 +193,14 @@
             <div class="display-4" style="color: #0275d8;">
               <%= @noticia_escuelas.nombre %>
             </div>
-          <hr>
           <br>
+          <hr>
+          <div class="col-md-12">
+            <div class="display-4" style="color: #0275d8;">
+              <%= image_tag @noticia_escuelas.photo.url(:medium) %>
+            </div>
+            <hr>
+            <br>
           <div class="">
             <h1 class="img-fluid" style="font-size: 18px;"">
               <%= raw @noticia_escuelas.cuerpo %>
