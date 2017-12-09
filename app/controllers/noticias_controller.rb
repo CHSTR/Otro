@@ -4,7 +4,10 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
   
   def inicio
     if params[:search]
-      @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%")
+      t = Time.now
+      t.to_s
+      t.strftime "%d-%m-%Y"
+      @noticia_escuelas = NoticiaEscuela.where("nombre like ?", "#{params[:search]}%").order('id DESC').paginate(page: params[:page], per_page: 5)
     else
       @noticia_escuelas = NoticiaEscuela.all.order('id DESC').paginate(page: params[:page], per_page: 5)
   end
@@ -33,7 +36,7 @@ skip_authorize_resource :only => [:inicio,:mostrarn,:eventos]
 
   def eventos
     if params[:search]
-      @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%")
+      @evento_escuelas = EventoEscuela.where("nombre like ?", "#{params[:search]}%").paginate(page: params[:page], per_page: 5)
     else
       @evento_escuelas = EventoEscuela.all.paginate(page: params[:page], per_page: 5)
     end

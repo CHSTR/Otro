@@ -151,7 +151,9 @@
             <% @evento_escuelas.each do |j|%>
             <div class="row">
               <div class="col-md-3 margen">
-                <h4 class="text-center"><%= j.fecha%></h4>
+                <h4 class="text-center"><%= t = j.fecha
+                      t.to_s
+                      t.strftime "%d-%m-%Y"%></h4>
               </div>
               <div class="col-md-9 margen">
                 <h4 class="text-left"><%= j.nombre%></h4>
@@ -164,8 +166,10 @@
       </div>
     </div>
     <br>
+    <br>
+    <br>
     <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>
@@ -266,12 +270,12 @@
           <p class="cp">? 2016 Universidad Tecnol?ica Metropolitana. - Todos los derechos reservados.<p>
         </div>
       </div>
-      <div class="gob-pie"><img src="images/00_comunes/00_portales/gob_ch.jpg" alt="Gobierno de Chile"></div>
+      <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
     </div>
     <div class="borde-sup-crpvo-ppag">
       <div id="logos-pie-rsp" class="envoltura-16">
-        <div class="acreditacion-rsp"><img src="images/00_comunes/00_portales/ico_cna_768.png" alt=""></div>
-        <div class="gob-pie-rsp"><img src="images/00_comunes/00_portales/gob_ch_768.jpg" alt=""></div>
+        <div class="acreditacion-rsp"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+        <div class="gob-pie-rsp"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
       </div>
       <!-- Inicio Limpiar flotante -->
       <div class="limpiar"></div>

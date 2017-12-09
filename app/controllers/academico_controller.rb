@@ -9,7 +9,7 @@ class AcademicoController < ApplicationController
     else
       @academicos = Academico.where("jornada like ?", "JC").order('apellido ASC') 
     end
-    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
     @casillas.each do |i|   #Redirecciona bien
       if i.link != "academico"
         i.link="academico/"+i.link 
@@ -18,12 +18,12 @@ class AcademicoController < ApplicationController
   end
 
   def ver
-    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)  
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)  
   end
 
   def MJ
     @academicos = Academico.where("id != 1 and jornada like ?", "MJ").order('apellido ASC')
-    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
       @casillas.each do |i|   #Redirecciona bien
         if i.link == "academico"
           i.link="/"+i.link 
@@ -33,7 +33,7 @@ class AcademicoController < ApplicationController
 
   def JP
     @academicos = Academico.where("id != 1 and jornada like ?", "JP").order('apellido ASC')
-    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
       @casillas.each do |i|   #Redirecciona bien
         if i.link == "academico"
           i.link="/"+i.link 

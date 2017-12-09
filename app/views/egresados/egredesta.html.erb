@@ -206,34 +206,11 @@
  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
-
-<!-- INICIO REDES -->
-<aside id="redes">
- <div class="contenedor-redes envoltura-16">
-  <nav class="menu-redes">
-   <ul>
-    <li id="linkcat-12" class="linkcat">
-     <h2>S&Iacute;GUENOS EN REDES SOCIALES:</h2>
-     <ul class='xoxo blogroll'>
-      <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/facebook.png" alt="Twitter"  title="Twitter UTEM" /></a></li>
-      <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/twitter.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
-      <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/instagram.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
-      <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/linkedin.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
-      <li><a href="" title="" target="_blank"><img src="images/00_comunes/02_redes_sociales/youtube.png"  alt="Twitter"  title="Twitter UTEM" /></a></li>
-     </ul>
-    </li>
-   </ul>
-  </nav>
-  <div class="acreditacion"><img src="images/00_comunes/00_portales/ico_cna.png" alt="Acreditaci?"></div>
- </div>
- <!-- Inicio Limpiar flotante -->
- <div class="limpiar"></div>
- <!-- Fin Limpiar flotante -->
-</aside>
-<!-- FIN REDES -->
-
+<br>
+<br>
+<br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
  <div class="linea-inf-oscura">
   <div id="menu-pie-pagina" class="envoltura-16">
    <ul>
@@ -294,7 +271,7 @@
       </header>
       <div id="intranet">
        <% unless current_user %>
-       <a href="users/sign_in">
+       <a href="../users/sign_in">
         <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
        </a>
        <% else %>
@@ -323,7 +300,7 @@
      <p class="cp">? 2016 Universidad Tecnol?ica Metropolitana. - Todos los derechos reservados.<p>
     </div>
    </div>
-   <div class="gob-pie"><img src="images/00_comunes/00_portales/gob_ch.jpg" alt="Gobierno de Chile"></div>
+   <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
   </div>
   <div class="borde-sup-crpvo-ppag">
    <div id="logos-pie-rsp" class="envoltura-16">

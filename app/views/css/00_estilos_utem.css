@@ -358,7 +358,8 @@ li.nivel-01 a.nodesplegable,
 /* -- Gobierno de Chile Pie Escritorio ---------------------------- */
 /* ---------------------------------------------------------------- */
 
-.gob-pie { bottom: 0; height: 120px; position: absolute; right: 20px; width: 120px; }
+.gob-pie { bottom: 0; height: 120px; position: absolute; right: 20px; width: 120px; 
+			background-image: url(../images/00_portales/gob_ch_768.jpg)}
 
 /* -- Gobierno de Chile Pie Responsivo ---------------------------- */
 /* ---------------------------------------------------------------- */
