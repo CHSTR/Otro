@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'consulta/', to:'consulta#index', as:'consulta_index'
+
+  get 'consulta/ver/:id', to:'consulta#ver', as:'ver_consulta'
+
+  get 'consulta/crear/:id', to: 'consulta#crear', as:'nueva_consulta'
+
+  post 'consulta/crear/:id', to: 'consulta#crearconsu'
+
+  #patch 'consulta/crear/:id', to: 'consulta#crearconsu'
+
   get 'egresados/', to: 'egresados#index', as:'inicio_egresados'
 
-  get 'egresados/tituygradua'
+  get 'egresados/tituygradua', as:'tituygradua_egresados'
 
   get 'egresados/tituygradua/:id', to:'egresados#leer'
 
@@ -69,6 +79,12 @@ Rails.application.routes.draw do
   get 'aceptar_oferta/cambiar/:id', to:'aceptar_oferta#cambiar', as:'cambiar'
 
   get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar'
+
+  get 'aceptar_oferta/editar/:id', to:'aceptar_oferta#editar', as:'editar_oferta'
+
+  put 'aceptar_oferta/editar/:id', to:'aceptar_oferta#update'
+
+  patch 'aceptar_oferta/editar/:id', to:'aceptar_oferta#update'
 
   #--------------------------------------------------------------------------
 
@@ -213,6 +229,8 @@ Rails.application.routes.draw do
   get 'contactod/', to:'contactod#index', as:'contactod'
 
   post 'contactod/', to:'contactod#crear'
+
+  post 'contactod/', to:'contactod#crear_consulta'
 
   #--------------------------termina contato----------------------
 
@@ -367,13 +385,13 @@ Rails.application.routes.draw do
 
   #-----------------------comienza academicos------------------------------
 
-  get 'academico/', to: 'academico#index', as:'academico'
+  get 'academico/JC', to: 'academico#index', as:'academico'
 
   get 'academico/mostrar/:id', to: 'academico#mostrar'
 
   get 'academico/MJ/', to: 'academico#MJ'
 
-  get 'academico/JP/', to: 'academico#JP'
+  get 'academico/JP/', to: 'academico#JP', as: 'academico_jp'
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
 

@@ -196,21 +196,22 @@
             <br>
             <h3 class="text-left">
               <%= f.label :Programa %>
-              <%= f.select(:programa, options_for_select([['Ingenieria en Informática','1'], ['Ingeniería Civil en Computación mencion en informática','2']])) %>
+               <%= f.select :programa, options_for_select(Programa.all.collect { |progra|
+                  [progra.nombre, progra.id] }, 0), {}, { id: 'id' } %>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :contacto_empresa %>
+              <%= f.label :Empresa %>
               <%= f.text_field :contacto_empresa %>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :correo %>
+              <%= f.label :correo_electrónico %>
               <%= f.text_field :correo %>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :anio %>
+              <%= f.label :año_de_egreso %>
               <%= f.number_field :anio %>
             </h3>
             <br>

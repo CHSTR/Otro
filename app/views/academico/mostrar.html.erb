@@ -97,7 +97,7 @@
   <div id="utem-toggle-escrt"></div>
   <ul id="menu-escritorio">
    <li><a href="/iniciodepto/inicio">INICIO</a></li>
-   <li><a href="/academico">ACADÉMICOS</a>
+   <li><a href="/academico/JC">ACADÉMICOS</a>
    <li><a href="/investigacion">INVESTIGACIÓN</a>
    <li><a href="/organizacion">ORGANIZACIÓN</a>
    <li><a href="/contactod">CONTACTO</a>
@@ -129,7 +129,7 @@
     <nav id="nav-rsp">
      <ul>
       <li class="nivel-01"><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
-      <li class="nivel-01"><a href="/academico">ACADÉMICOS</a>
+      <li class="nivel-01"><a href="/academico/JC">ACADÉMICOS</a>
       <li class="nivel-01"><a href="/investigacion">INVESTIGACIÓN</a>
       <li class="nivel-01"><a href="/organizacion">ORGANIZACIÓN</a>
       <li class="nivel-01"><a href="/contactod">CONTACTO</a>
@@ -174,15 +174,15 @@
           <% @casillas.each do |i|%>
               <% if i.activo == 1 %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                  <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <%end%>
                 </li>
               <% else %>
                 <li>
-                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                 <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>

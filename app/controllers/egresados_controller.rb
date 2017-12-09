@@ -5,21 +5,27 @@ class EgresadosController < ApplicationController
 
   def tituygradua
   	@egresados = Egresado.find_by_sql("select anio from egresados group by anio order by anio DESC")
-  	@programas = Programa.where("tipo like ?", "pregrado")
+    @programas = Programa.where("tipo like ?", "pregrado")
+
+  	# hacer una consulta con find_by_sql, para filtrar solo las carreras que tengan egresados.
   end
 
   def egredesta
-  	@egresados = Egresado.where("destacado like ? ", "1")
+  	@egresados = Egresado.where("destacado like ? ", "1").order("anio DESC")
   end
 
   def leer
   	v =[]
   	v = params[:id]
   	@egresados = Egresado.find_by_sql("select distinct (egresados.id), egresados.* from egresados, programas where egresados.anio = #{v.to(3)} and egresados.programa = '#{v[-1]}'")
+    if @egresados.empty?
+      redirect_to tituygradua_egresados_url
+    end
   end
 
   def nuevo
   	@egresados = Egresado.new
+  	#@programas = Programa(:all)
   end
 
   def crear
@@ -59,5 +65,5 @@ class EgresadosController < ApplicationController
       format.html {redirect_to todos_egresados_url, notice:'fue eliminado'}
     end 
   end
-  
+
 end

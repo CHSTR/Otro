@@ -65,6 +65,7 @@
       <nav class="nav flex-column margen">
       <% if can? :manage, :all %> <!-- SOLO PARA EL ADMINISTRADORGENERAL -->
         <h4 class="nav-link text-left"><a href="aceptar_oferta">Ofertas Laborales <span class="badge badge-default"><%= @oferta_laborals %></span></a></h4>
+        <h4 class="nav-link text-left"><a href="consulta">Consultas <span class="badge badge-default"><%= @consulta %></span></a></h4>
         <% end %>
         <a class="nav-link text-left" href="iniciodepto/inicio">Departamento de Informática y Computación</a>
         <a class="nav-link text-left" href="inicioe/inicio">Escuela de Informática</a>
@@ -134,7 +135,7 @@
             <% @noticia_escuelas.each do |i|%>
             <div class="row">
               <div class="col-md-3 margen">
-                <img <%= i.imagen%> >
+                <img src="<%= i.imagen%>" class="img-fluid">
               </div>
               <div class="col-md-8 margen">
                 <h4><a href="../noticias/mostrarn/<%=i.id%>"><%= i.nombre%></a></h4>

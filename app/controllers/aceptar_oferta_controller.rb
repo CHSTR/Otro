@@ -1,7 +1,7 @@
 class AceptarOfertaController < ApplicationController
   load_and_authorize_resource :class => OfertaLaboral
   def index
-  	@oferta_laborals = OfertaLaboral.where("aceptado = 0")
+  	@oferta_laborals = OfertaLaboral.where("oferta_d = 0 and aceptado = 0")
   end
 
   def eliminar
@@ -24,4 +24,22 @@ class AceptarOfertaController < ApplicationController
   def mostrar
   	@oferta_laborals = OfertaLaboral.find(params[:id])
   end
+
+  def editar
+    @oferta_laborals = OfertaLaboral.find(params[:id])
+  end
+
+  def update
+    @oferta_laborals = OfertaLaboral.find(params[:id])
+    if @oferta_laborals.update_attributes(oferta_params)
+      redirect_to inicio_url
+    else
+      render action: 'editar'
+    end
+  end
+
+  def oferta_params
+    params.require(:oferta_laboral).permit(:empresa,:cargo,:descripcion) #retorna un hash con todos los valores del academico...
+  end
+
 end
