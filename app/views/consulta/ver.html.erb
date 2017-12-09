@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -93,7 +94,7 @@
   <div id="utem-toggle-escrt"></div>
   <ul id="menu-escritorio">
    <li><a href="/iniciodepto/inicio">INICIO</a></li>
-   <li><a href="/academico/JC">ACADÉMICOS</a>
+   <li><a href="/academico">ACADÉMICOS</a>
    <li><a href="/investigacion">INVESTIGACIÓN</a>
    <li><a href="/organizacion">ORGANIZACIÓN</a>
    <li><a href="/contactod">CONTACTO</a>
@@ -125,7 +126,7 @@
     <nav id="nav-rsp">
      <ul>
       <li class="nivel-01"><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
-      <li class="nivel-01"><a href="/academico/JC">ACADÉMICOS</a>
+      <li class="nivel-01"><a href="/academico">ACADÉMICOS</a>
       <li class="nivel-01"><a href="/investigacion">INVESTIGACIÓN</a>
       <li class="nivel-01"><a href="/organizacion">ORGANIZACIÓN</a>
       <li class="nivel-01"><a href="/contactod">CONTACTO</a>
@@ -166,64 +167,41 @@
         </div>
       </div>
       <div class=" col-sm-12 col-md-9 margen">
-      <h2>Agregando un nuevo académico</h2>
-        <% if can? :manage, Casilla %>
-      <br>
-          <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
-        <% if @casillas.errors.any? %>
-        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-          <% @casillas.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </div>
-        <% end %>
-          <div class="col-md-9 margen">
-            <h3 class="text-left">
-              <p><%= f.label :nombre_de_la_casilla %></p>
-              <p><%= f.text_field :nombre %></p>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <p><%= f.label :activo_? %></p>
-              <p><%= f.number_field :activo, {:max=>"1",:min=>"0"}%></p>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <p><%= f.label :Donde_redireccionará_? %></p>
-              <p><%= f.select(:link, options_for_select([['Jornada Completa','JC'], ['Media Jornada','MJ'],['Jornada Parcial','JP']])) %></p>
-            </h3>
-            <br>
-           <h3 class="text-left">
-              <p><%= f.label :ver %></p>
-              <p><%= f.number_field :ver, {:max=>"1",:min=>"0"} %></p>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <p><%= f.label :ubicacion %></p>
-              <p><%= f.select(:ubicacion, options_for_select([['Ubicación en académico','academico']])) %>
-              </p>
-            </h3>
-            <div class="actions">
-              <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
+      <div class="container-fluid">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h2><%= @consultas.nombre %></h2>
+                  <p class="margen">
+                  <%= raw @consultas.descripcion%>
+                  </p>
+              </div>
             </div>
-            <% end %>
-            <% else %>
-            <br>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
-            </div>
-            <br>
-
-        <% end %>
-            <br>
-
-            <%= link_to 'Volver', academico_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
+          <%= form_for(@consultas1, :url => {:action => :crear}) do |f|%>
+                <% if @consultas1.errors.any? %>
+                    <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                      <% @consultas1.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                      <% end %>
+                    </div>
+                <% end %> 
+                <h3>Responder:</h3>
+                  <%= f.hidden_field :nombre, :value => @consultas.nombre  %>
+                    <%= f.hidden_field :correo, :value => @consultas.correo %>
+                <div class="form-group">
+                    <br>
+                    <%= f.cktext_area :descripcion, :value => "" %>
+                </div>
+                <%= f.hidden_field :leido, :value => 1 %>
+                <div class="actions">
+                  <%= f.submit 'Enviar', :class => 'btn btn-outline-success btn-lg margen1' %>
+                </div>
+                <hr>
+                <% end %>   
+            <%= link_to 'Volver', consulta_index_path , :class => 'btn btn-outline-primary' %>
+      </div>
       </div>
     </div>
  <!-- Fin Noticias -->
@@ -321,11 +299,15 @@
        <h3>ACCESO INTRANET:</h3>
       </header>
       <div id="intranet">
-       <form id="form-intranet" action="http://www.utem.cl/login.php" method="post">
-        <div class="campo"><input type="text" name="usuario" id="usuario" value="" onFocus="clearField('')" onBlur="setField('', 'o')"/></div>
-        <div class="campo"><input type="password" name="pwd" id="clave" value="" onFocus="clearField('')" onBlur="setField('', '')"/></div>
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Entrar"></div>
-       </form>
+       <% unless current_user %>
+       <a href="users/sign_in">
+        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Inicias Sesión"></div>
+       </a>
+       <% else %>
+       <a href="#">
+        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+       </a>
+       <%end%>
       </div>
      </div>
      <!-- Inicio Limpiar flotante -->

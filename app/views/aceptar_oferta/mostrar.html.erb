@@ -175,10 +175,13 @@
                   <%= raw @oferta_laborals.descripcion%>
                   </p>
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                   <p class="text-center"><%= link_to 'ACEPTAR', cambiar_path , :class => 'btn btn-outline-success margen1' %><p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                  <p class="text-center"><%= link_to 'EDITAR', editar_oferta_path , :class => 'btn btn-outline-primary margen1' %><p>
+                    </div>
+                    <div class="col-md-4">
                   <p class="text-center"><%= link_to "ELIMINAR", eliminar_oferta_path , method: :delete, data: {confirm: "Se eliminará la oferta de #{@oferta_laborals.empresa}, ¿seguro?"}, :class => 'btn btn-outline-danger margen1' %></p>
                     </div>
                   </div>
