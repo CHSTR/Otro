@@ -12,6 +12,9 @@
  <link rel="stylesheet" href="css/00_estilos_utem.css" />
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
  <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond-master/src/respond.js"></script>
@@ -190,7 +193,29 @@
       </div>
       <div class="">
       </div>
-      <div class=" col-sm-12 push-md-2 col-md-6 margen">
+      <div class=" col-sm-12 col-md-12 margen">
+      <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
+        <center>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+          Oferta Laboral
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalLong2">
+          Consulta
+        </button>
+        </center>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Formulario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <%= form_for(@oferta_laborals, :url => {:action => :crear}) do |f|%>
                 <% if @oferta_laborals.errors.any? %>
                     <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
@@ -207,18 +232,16 @@
                     <br>
                   <%= f.text_field :nombre %>
                 </div>            
-                <label class="control-label" for="Motivo">Motivo de Contacto</label>
-                <br>
-                <%= f.radio_button :oferta_d, 0, id: "0", name: "oferta_d", onChange: "mostrar(0);" %> Consulta
-                <%= f.radio_button :oferta_d, 1, id: 1, name: "oferta_d", onChange: "mostrar(1);", required: "required" %> Oferta Laboral
-                <br>
                 <div class="form-group margen1" id="DOM">
                     <label class="control-label margenl" id="DOM" for="Empresa">Empresa</label>
                     <br>
                     <%= f.text_field :empresa %>
                 </div>
+                <div class="form-group">
+                <%= f.hidden_field :oferta_d, :value => 0%>
+                </div>
                 <div class="form-group" id="DOM1">
-                    <label class="control-label margenl" id="DOM" for="Empresa">Cargo</label>
+                    <label class="control-label margenl" id="DOM" for="Empresa">Cargo a ofrecer</label>
                     <br>
                     <%= f.text_field :cargo %>
                 </div>
@@ -233,13 +256,74 @@
                     <%= f.cktext_area :descripcion %>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>
-                <div class="form-group">                
+                <div class="modal-footer">               
                     <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
                     <input type="reset" class="btn btn-default btn-lg" value="Limpiar">                
                 </div>
                 <div id="respuesta" style="display: none;"></div>
-            </form>
-        <% end %>  
+              </form>
+                <% end %> 
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Formulario2</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@oferta_laborals, :url => {:action => :crear}) do |f|%>
+                <% if @oferta_laborals.errors.any? %>
+                    <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                      <% @oferta_laborals.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                      <% end %>
+                    </div>
+                <% end %> 
+                <div class="form-group">
+                    <label class="control-label margenl" for="Nombre">Nombres</label>
+                    <br>
+                  <%= f.text_field :nombre %>
+                </div>         
+                <div class="form-group margen1" id="DOM">
+                    <br>
+                    <%= f.hidden_field :empresa, :value => "ninguna" %>
+                    <%= f.hidden_field :cargo, :value => "ninguna" %>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                    <br>
+                    <%= f.text_field :correo %>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
+                    <br>
+                    <%= f.cktext_area :descripcion, size: "60x6" %>
+                </div>
+                    <%= f.hidden_field :aceptado, :value => '0'%>           
+                <div class="form-group">
+                  <%= f.hidden_field :oferta_d, :value => 1%>
+                </div>
+                <div class="modal-footer">               
+                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
+                    <input type="reset" class="btn btn-default btn-lg" value="Limpiar">                
+                </div>
+                <div id="respuesta" style="display: none;"></div>
+              </form>
+                <% end %> 
+      </div> 
+    </div>
+  </div>
+</div>
       </div>
     </div>
  <!-- Fin Noticias -->

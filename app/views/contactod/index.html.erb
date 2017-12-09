@@ -232,7 +232,7 @@
                     <%= f.text_field :empresa %>
                 </div>
                 <div class="form-group">
-                <%= f.hidden_field :oferta_d, :value => 0%>
+                <%= f.hidden_field :oferta_d, :value => 0 %>
                 </div>
                 <div class="form-group" id="DOM1">
                     <label class="control-label margenl" id="DOM" for="Empresa">Cargo</label>
@@ -289,7 +289,6 @@
                   <%= f.text_field :nombre %>
                 </div>         
                 <div class="form-group margen1" id="DOM">
-                    <label class="control-label margenl" id="DOM" for="Empresa">Empresa</label>
                     <br>
                     <%= f.hidden_field :empresa, :value => "ninguna" %>
                     <%= f.hidden_field :cargo, :value => "ninguna" %>
@@ -304,14 +303,8 @@
                     <br>
                     <%= f.cktext_area :descripcion %>
                 </div>
-                    <%= f.hidden_field :aceptado, :value => '0'%>
-                <div class="form-group">                
-                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
-                    <input type="reset" class="btn btn-default btn-lg" value="Limpiar">                
-</div>            
-                <div class="form-group">
-                <%= f.hidden_field :oferta_d, :value => 1%>
-                </div>
+                    <%= f.hidden_field :aceptado, :value => '0'%>          
+                    <%= f.hidden_field :oferta_d, :value => 1%>
                 <div class="modal-footer">               
                     <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
                     <input type="reset" class="btn btn-default btn-lg" value="Limpiar">                
