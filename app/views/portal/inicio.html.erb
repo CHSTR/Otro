@@ -136,7 +136,7 @@
             <div class="row">
               <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
               <div class="col-md-3 margen">
-                <%= image_tag("thumb/missing.png", :class => "img-fluid") %>
+                <%= image_tag("thumb/missing.png", :class => "img-fluid", height: '110', width: '110') %>
               </div>
               <% else %>
               <div class="col-md-3 margen">
