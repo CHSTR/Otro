@@ -199,10 +199,12 @@
               <% end %>
             <%end%>
         <%end%>
-
           <%= form_tag academico_path,:class =>'margen' ,:method => :get do %>
+
             <%= text_field_tag :search %>
-            <%= submit_tag "Buscar", :class => 'btn btn-outline-primary btn-lg margen1', :type => 'button'%>
+
+            <%= submit_tag "Buscar", :class => 'btn btn-outline-success btn-lg margen1'%>
+
           <% end %>
           </div>
           <% if can? :manage, Casilla %>
