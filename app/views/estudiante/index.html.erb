@@ -161,7 +161,7 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal">Portal</a></li>
           <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
@@ -198,7 +198,15 @@
               </div>
             </div>
             <div class="col-md-3 margen">
-              <img src="<%= i.imagen%>" width="150" height="150">
+              <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
+                  <div class="col-md-3 margen">
+                    <%= image_tag("thumb/missing.png", :class => "img-fluid") %>
+                  </div>
+              <% else %>
+                  <div class="col-md-3 margen">
+                    <%= image_tag i.photo.url(:thumb, :class => "img-fluid") %>
+                  </div>
+              <% end %>
             </div>
           </div>
           <% if can? :manage, CentroAlumno %>

@@ -83,6 +83,6 @@ class EstudianteController < ApplicationController
   end
 
   def centro_params
-    params.require(:centro_alumno).permit(:anio,:presidente,:vicepresidente,:otros,:pagweb,:imagen,:programa) #retorna un hash con todos los valores del academico...
+    params.require(:centro_alumno).permit(:anio,:presidente,:vicepresidente,:otros,:pagweb,:imagen,:programa,:photo)
   end
 end
