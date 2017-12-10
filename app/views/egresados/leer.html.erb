@@ -168,9 +168,9 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">Titulados y graduados</a>
+            <a href="../tituygradua" class="list-group-item list-group-item-action active">Titulados y graduados</a>
             <a href="https://ret.utem.cl/"  target="_blank"  class="list-group-item list-group-item-action">Portal de Egresados</a>
-            <a href="#" class="list-group-item list-group-item-action">Egresados Destacados</a>
+            <a href="../egredesta" class="list-group-item list-group-item-action">Egresados Destacados</a>
           </div>
         </div>
         <!-- HASTA ACA -->
@@ -206,10 +206,11 @@
  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
-
-
+<br>
+<br>
+<br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
  <div class="linea-inf-oscura">
   <div id="menu-pie-pagina" class="envoltura-16">
    <ul>
@@ -270,7 +271,7 @@
       </header>
       <div id="intranet">
        <% unless current_user %>
-       <a href="users/sign_in">
+       <a href="../../users/sign_in">
         <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
        </a>
        <% else %>
