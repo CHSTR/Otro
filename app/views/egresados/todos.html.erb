@@ -12,6 +12,9 @@
  <link rel="stylesheet" href="css/00_estilos_utem.css" />
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
  <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond-master/src/respond.js"></script>
@@ -85,19 +88,20 @@
     <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
 <% end %>
 <section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
- <nav id="nav-escritorio" class="envoltura-16">
-  <div id="utem-toggle-escrt"></div>
-  <ul id="menu-escritorio">
-   <li><a href="/inicioe/inicio">INICIO</a></li>
-   <li><a href="/noticias/inicio">NOTICIAS</a>
-   <li><a href="/estudiante">ESTUDIANTES</a>
-   <li><a href="/programas">PROGRAMAS</a>
-   <li><a href="/egresados">EGRESADOS</a>
-   <li><a href="/laboral">LABORAL</a>
-   <li><a href="/organizacione">ORGANIZACIÓN</a>
-   <li><a href="/contacto">CONTACTO</a>
-  </ul>
- </nav>
+  <nav id="nav-escritorio" class="envoltura-16">
+    <div id="utem-toggle-escrt"></div>
+    <ul id="menu-escritorio">
+      <li><a href="../inicioe/inicio">INICIO</a></li>
+      <li><a href="../noticias/inicio">NOTICIAS</a>
+      <li><a href="../estudiante">ESTUDIANTES</a>
+      <li><a href="../programas">PROGRAMAS</a>
+      <li><a href="../egresados">EGRESADOS</a>
+      <li><a href="../laboral">LABORAL</a>
+      <li><a href="../organizacione">ORGANIZACION</a>
+      <li><a href="../links">LINKS</a>
+      <li><a href="../contacto">CONTACTO</a>
+    </ul>
+  </nav>
 </section>
 <!-- FIN MENU PRINCIPAL ESCRITORIO-->
 
@@ -107,50 +111,42 @@
 
 <!-- INICIO MENU PRINCIPAL RESPONSIVO -->
 <div class="envoltura bg-menursp" style="background-color: #044f8e;">
- <section id="menu-principal-rsp" class="envoltura-16" style="background-color: #044f8e;">
-  <div id="contenedor-principal-rsp" >
-   <header id="top-acordeon-rsp">
-    <div id="top-gob-rsp"><div class="azul"></div></div>    
-    <div id="utem-logo-rsp"><a href="">&nbsp;</a><h1>Universidad Tecnológica Metropolitana</h1></div>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contenedor-menu-rsp">
-     <span class="sr-only">Toggle navigation</span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-     <span class="icon-bar"></span>
-    </button>
-    <div id="utem-toggle-rsp"></div>
-   </header>
-   <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
-    <nav id="nav-rsp">
-     <ul>
-      <li class="nivel-01"><a href="/inicioe/inicio" class="nodesplegable">INICIO</a></li>
-      <li class="nivel-01"><a href="/noticias/inicio">NOTICIAS</a>
-      <li class="nivel-01"><a href="/estudiante">ESTUDIANTES</a>
-      <li class="nivel-01"><a href="/programas">PROGRAMAS</a>
-      <li class="nivel-01"><a href="/egresados">EGRESADOS</a>
-      <li class="nivel-01"><a href="/laboral">LABORAL</a>
-      <li class="nivel-01"><a href="/organizacione">ORGANIZACION</a>
-      <li class="nivel-01"><a href="/contacto">CONTACTO</a>
-       <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
-     </ul>
-     <div id="perfiles-rsp" class="envoltura">
-      <h5>PERFILES</h5>
-      <ul>
-       <li><a href="">UTEM</a></li>
-       <li><a href="">Futuros Estudiantes</a></li>
-       <li><a href="">Estudiantes</a></li>
-       <li><a href="">Ex Alumnos</a></li>
-       <li><a href="">Funcionarios</a></li>
-       <li><a href="">Empresa</a></li>
-      </ul>
-     </div>
-     <!-- Inicio Limpiar flotante -->
-     <div class="limpiar"></div>
-     <!-- Fin Limpiar flotante -->
-    </nav>
-   </div>
-  </div>
- </section>
+  <section id="menu-principal-rsp" class="envoltura-16" style="background-color: #044f8e;">
+    <div id="contenedor-principal-rsp" >
+      <header id="top-acordeon-rsp">
+        <div id="top-gob-rsp"><div class="azul"></div></div>
+        <div id="utem-logo-rsp"><a href="">&nbsp;</a><h1>Universidad Tecnológica Metropolitana</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contenedor-menu-rsp">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="utem-toggle-rsp"></div>
+      </header>
+      <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
+        <nav id="nav-rsp">
+          <div id="perfiles-rsp" class="envoltura">
+            <h5>MENÚ</h5>
+            <ul>
+            <li><a href="../inicioe/inicio">INICIO</a></li>
+            <li><a href="../noticias/inicio">NOTICIAS</a>
+            <li><a href="../estudiante">ESTUDIANTES</a>
+            <li><a href="../programas">PROGRAMAS</a>
+            <li><a href="../egresados">EGRESADOS</a>
+            <li><a href="../laboral">LABORAL</a>
+            <li><a href="../organizacione">ORGANIZACION</a>
+            <li><a href="../links">LINKS</a>
+            <li><a href="../contacto">CONTACTO</a>
+            </ul>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </nav>
+      </div>
+    </div>
+  </section>
 </div>
 <!-- FIN MENU PRINCIPAL RESPONSIVO -->
 
@@ -168,9 +164,9 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">Titulados y graduados</a>
+            <a href="tituygradua" class="list-group-item list-group-item-action active">Titulados y graduados</a>
             <a href="https://ret.utem.cl/"  target="_blank"  class="list-group-item list-group-item-action">Portal de Egresados</a>
-            <a href="#" class="list-group-item list-group-item-action">Egresados Destacados</a>
+            <a href="egredesta" class="list-group-item list-group-item-action">Egresados Destacados</a>
           </div>
         </div>
         <!-- HASTA ACA -->
