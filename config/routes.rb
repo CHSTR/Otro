@@ -1,5 +1,36 @@
 Rails.application.routes.draw do
 
+  get 'linke/', to:'linke#inicio', as:'linke'
+
+  get 'linke/:id/editar', to: 'linke#editar', as: 'linke_editar'
+  put 'linke/:id', to: 'linke#update'
+  patch 'linke/:id', to: 'linke#update'
+
+  get 'linke/nuevo', to: 'linke#nuevo', as: 'linke_nuevo'
+  post 'linke/nuevo', to: 'linke#create'
+
+  get 'linke/eliminar'
+  delete 'linke/eliminar/:id', to: 'linke#eliminar', as:'eliminar_linke'
+
+  get 'linke/mostrar/:id', to: 'linke#mostrar'
+
+  #-----------------------------------------------------
+
+  get 'links/', to:'links#inicio', as:'links'
+
+  get 'links/:id/editar', to: 'links#editar', as: 'links_editar'
+  put 'links/:id', to: 'links#update'
+  patch 'links/:id', to: 'links#update'
+
+  get 'links/nuevo', to: 'links#nuevo', as: 'links_nuevo'
+  post 'links/nuevo', to: 'links#create'
+
+  get 'links/eliminar'
+  delete 'links/eliminar/:id', to: 'links#eliminar', as:'eliminar_links'
+
+  get 'links/mostrar/:id', to: 'links#mostrar'
+
+#----------------------------------------------------------------------------
   get 'consulta/', to:'consulta#index', as:'consulta_index'
 
   get 'consulta/ver/:id', to:'consulta#ver', as:'ver_consulta'

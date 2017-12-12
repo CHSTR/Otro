@@ -34,6 +34,7 @@ class Ability
           can :manage, :all
         elsif user.secretaria?
             can :manage, NoticiaEscuela
+            can :manage, Intere
             can :manage, Egresado
             can :manage, EventoEscuela
             can :manage, Reglamento
@@ -48,6 +49,7 @@ class Ability
             can :manage, [Proyecto,AreasDisciplinaria] #listo
             can :manage, FuncionarioDepto #listo
             can :manage, Casilla
+            can :manage, Intere
         else
           can :read, :all
         end

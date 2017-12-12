@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="css/00_estilos_utem.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond-master/src/respond.js"></script>
@@ -88,14 +91,15 @@
   <nav id="nav-escritorio" class="envoltura-16">
     <div id="utem-toggle-escrt"></div>
     <ul id="menu-escritorio">
-      <li><a href="../inicioe/inicio">INICIO</a></li>
-      <li><a href="../noticias/inicio">NOTICIAS</a>
-      <li><a href="../estudiante">ESTUDIANTES</a>
-      <li><a href="../programas">PROGRAMAS</a>
-      <li><a href="../egresados">EGRESADOS</a>
-      <li><a href="../laboral">LABORAL</a>
-      <li><a href="../organizacione">ORGANIZACION</a>
-      <li><a href="../contacto">CONTACTO</a>
+      <li><a href="/inicioe/inicio">INICIO</a></li>
+      <li><a href="/noticias/inicio">NOTICIAS</a>
+      <li><a href="/estudiante">ESTUDIANTES</a>
+      <li><a href="/programas">PROGRAMAS</a>
+      <li><a href="/egresados">EGRESADOS</a>
+      <li><a href="/laboral">LABORAL</a>
+      <li><a href="/organizacione">ORGANIZACION</a>
+      <li><a href="/linke">LINKS</a>
+      <li><a href="/contacto">CONTACTO</a>
     </ul>
   </nav>
 </section>
@@ -122,26 +126,18 @@
       </header>
       <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
         <nav id="nav-rsp">
-          <ul>
-            <li class="nivel-01"><a href="../inicioe/inicio" class="nodesplegable">INICIO</a></li>
-            <li class="nivel-01"><a href="../noticias/inicio">NOTICIAS</a>
-            <li class="nivel-01"><a href="../estudiante">ESTUDIANTES</a>
-            <li class="nivel-01"><a href="../programas">PROGRAMAS</a>
-            <li class="nivel-01"><a href="../egresados">EGRESADOS</a>
-            <li class="nivel-01"><a href="../laboral">LABORAL</a>
-            <li class="nivel-01"><a href="../organizacione">ORGANIZACION</a>
-            <li class="nivel-01"><a href="../contacto">CONTACTO</a>
-              <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
-          </ul>
           <div id="perfiles-rsp" class="envoltura">
-            <h5>PERFILES</h5>
+            <h5>MENÚ</h5>
             <ul>
-              <li><a href="">UTEM</a></li>
-              <li><a href="">Futuros Estudiantes</a></li>
-              <li><a href="">Estudiantes</a></li>
-              <li><a href="">Ex Alumnos</a></li>
-              <li><a href="">Funcionarios</a></li>
-              <li><a href="">Empresa</a></li>
+              <li><a href="../../inicioe/inicio">INICIO</a></li>
+              <li><a href="../../noticias/inicio">NOTICIAS</a>
+              <li><a href="../../estudiante">ESTUDIANTES</a>
+              <li><a href="../../programas">PROGRAMAS</a>
+              <li><a href="../../egresados">EGRESADOS</a>
+              <li><a href="../../laboral">LABORAL</a>
+              <li><a href="../../organizacione">ORGANIZACION</a>
+              <li><a href="../../links">LINKS</a>
+              <li><a href="../../contacto">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -161,50 +157,85 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
           <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
       </div>
-      <div class="container-fluid margen" id="menu-escritorio">
+      <div class="container-fluid margen">
         <div class="list-group">
-          <a href="../programas/pregrado" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Pregrado</h4></a>
-          <a href="../programas/postgrado" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;">
-            <h4>Postgrado</h4>
-          </a>
-          <a href="../programas/otros" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Otros</h4></a>
+          <!--<a href="#" class="list-group-item list-group-item-action">Organigrama</a>
+          <a href="#" class="list-group-item list-group-item-action">Dependencias</a>-->
         </div>
       </div>
       <!-- HASTA ACA -->
     </div>
-    <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">Programas</h1>
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% unless @etextos.nil?%>
-            <p class="text-justify" >
-              <%= raw @etextos.descripcion%>
-            </p>
-            <br>
-            <center>
-        <% if can? :manage, Etexto %>
-            <%= link_to "Editar", programas_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
-        <% end %>
-      </center>
-
-        <% end %>
-
+    <div class=" col-sm-12 col-md-9">
+      <div class="container margen">
+        <h2>Documenos y links de interes</h2>
+        <hr>
+        <ul style="font-size: 16px; text-decoration-color: black;">
+          <% if can? :manage, Etexto %>
+              <%= form_for(@interes, :url => {:action => :create}) do |f| %>
+                  <% if @interes.errors.any? %>
+                      <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <% @interes.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                      </div>
+                  <% end %>
+                  <div class="col-md-9 margen">
+                    <h3 class="text-left">
+                      <%= f.label :Nombre %>
+                      <%= f.text_field :nombre %>
+                    </h3>
+                    <br>
+                    <h3 class="text-left">
+                      <%= f.label :Texto %>
+                      <%= f.cktext_area :texto %>
+                    </h3>
+                    <br>
+                    <h3 class="text-left">
+                      <%= f.label :Ubicacion %>
+                      <%= f.select(:tipo, options_for_select(['Escuela'])) %>
+                    </h3>
+                    <br>
+                    <div class="actions">
+                      <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
+                    </div>
+              <% end %>
+          <% else %>
+              <br>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+              </div>
+              <br>
+          <% end %>
+          <br>
+          <%= link_to 'Volver', linke_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
+          </div>
+        </ul>
+      </div>
     </div>
   </div>
-  </div>
+  <!-- Fin Noticias -->
+  <!-- Inicio Agenda -->
+  <!-- Fin Agenda -->
   <!-- Inicio Limpiar flotante -->
   <div class="limpiar"></div>
   <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
+<br>
+<br>
+<br>
 <!-- INICIO PIE -->
-<br>
-<br>
-<br>
 <footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
@@ -266,14 +297,14 @@
             </header>
             <div id="intranet">
               <% unless current_user %>
-       <a href="users/sign_in">
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
-       </a>
-       <% else %>
-       <a href="#">
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
-       </a>
-       <%end%>
+                  <a href="users/sign_in">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+                  </a>
+              <% else %>
+                  <a href="#">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+                  </a>
+              <%end%>
             </div>
           </div>
           <!-- Inicio Limpiar flotante -->

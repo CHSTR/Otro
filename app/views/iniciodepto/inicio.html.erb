@@ -192,13 +192,16 @@
                 <%= raw @textos.descripcion%>
               </p>
               <%= @textos.descripcion_imagen%>
+              <center>
+              <% if can? :manage, Texto %>
+                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
+              <% end %>
+            </center>
+        <% else %>
+            <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
         <% end %>
         </div>
-        <center>
-          <% if can? :manage, Texto %>
-        <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
-              <% end %>
-      </center>
+
         </div>
 
   </div>

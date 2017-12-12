@@ -186,13 +186,16 @@
               <%= raw @etextos.descripcion%>
             </p>
             <br>
-        <%end%>
-      </div>
-      <center>
+            <center>
         <% if can? :manage, Etexto %>
-        <%= link_to "Editar", inicioe_editarpde_url, :class => 'btn btn-outline-success margen1' %>
+            <%= link_to "Editar", inicioe_editarpde_url, :class => 'btn btn-outline-success margen1' %>
         <% end %>
       </center>
+        <% else %>
+            <%= link_to "Nuevo", inicioe_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+        <%end%>
+      </div>
+
     </div>
   </div>
   </div>

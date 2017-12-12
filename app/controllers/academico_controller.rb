@@ -50,7 +50,7 @@ class AcademicoController < ApplicationController
   end
 
   def mostrar
-    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
     @academicos = Academico.find(params[:id])
   end
 
