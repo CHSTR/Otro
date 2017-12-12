@@ -1,3 +1,4 @@
+<% if can? :manage, :all %>
 <p id="notice"><%= notice %></p>
 
 <h1>Roles</h1>
@@ -27,3 +28,6 @@
 <br>
 
 <%= link_to 'New Role', new_role_path %>
+<%else%>
+<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=/portal">
+<% end %>
