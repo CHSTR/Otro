@@ -65,6 +65,8 @@
       <nav class="nav flex-column margen">
       <% if can? :manage, :all %> <!-- SOLO PARA EL ADMINISTRADORGENERAL -->
         <h4 class="nav-link text-left"><a href="aceptar_oferta">Ofertas Laborales <span class="badge badge-default"><%= @oferta_laborals %></span></a></h4>
+      <% end %>
+      <% if current_user %>
         <h4 class="nav-link text-left"><a href="consulta">Consultas <span class="badge badge-default"><%= @consulta %></span></a></h4>
         <% end %>
         <a class="nav-link text-left" href="iniciodepto/inicio">Departamento de Informática y Computación</a>
@@ -72,10 +74,7 @@
         <a class="nav-link text-left" href="noticias/inicio.html">Noticias</a>
         <a class="nav-link text-left" href="noticias/eventos.html">Eventos</a>
         <a class="nav-link text-left" href="contacto.html">Contacto</a>
-        <form class="" id="">
-          <input class="form-control mr-sm-1 text-left" type="text" placeholder="Buscar">
-          <button class="btn btn-outline-success margen1" type="submit">Buscar</button>
-        </form>
+        <hr>
       </nav>
     </div>
     <div class="col-md-9">
@@ -136,7 +135,7 @@
             <div class="row">
               <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
               <div class="col-md-3 margen">
-                <%= image_tag("thumb/missing.png", :class => "img-fluid", height: '110', width: '110') %>
+                <%= image_tag("thumb/missing.png", :class => "img-fluid rounded mx-auto d-block", height: '110', width: '110') %>
               </div>
               <% else %>
               <div class="col-md-3 margen">

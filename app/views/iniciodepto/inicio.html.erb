@@ -9,6 +9,9 @@
   <meta name="title" content="Universidad Tecnologica Metropolitana" />
   <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
   <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/00_estilos_utem.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
@@ -65,6 +68,9 @@
     .margen {
       margin-top: 1.5em;
     }
+    .margen1 {
+      margin-top: 1em;
+    }
 
     .utem-log{
       margin-top: 1em;
@@ -92,6 +98,7 @@
       <li><a href="../academico/JC">ACADÉMICOS</a>
       <li><a href="../investigacion">INVESTIGACIÓN</a>
       <li><a href="../organizacion">ORGANIZACIÓN</a>
+      <li><a href="../links">LINKS</a>
       <li><a href="../contactod">CONTACTO</a>
     </ul>
   </nav>
@@ -119,23 +126,15 @@
       </header>
       <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
         <nav id="nav-rsp">
-          <ul>
-            <li class="nivel-01"><a href="../iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
-            <li class="nivel-01"><a href="../academico/JC">ACADÉMICOS</a>
-            <li class="nivel-01"><a href="../investigacion">INVESTIGACIÓN</a>
-            <li class="nivel-01"><a href="../organizacion">ORGANIZACIÓN</a>
-            <li class="nivel-01"><a href="../contactod">CONTACTO</a>
-              <button type="button" class="toggle" data-toggle="collapse" data-target="#ggg"></button>
-          </ul>
           <div id="perfiles-rsp" class="envoltura">
-            <h5>PERFILES</h5>
+            <h5>MENÚ</h5>
             <ul>
-              <li><a href="">UTEM</a></li>
-              <li><a href="">Futuros Estudiantes</a></li>
-              <li><a href="">Estudiantes</a></li>
-              <li><a href="">Ex Alumnos</a></li>
-              <li><a href="">Funcionarios</a></li>
-              <li><a href="">Empresa</a></li>
+            <li class=""><a href="../iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+            <li class=""><a href="../academico/JC">ACADÉMICOS</a>
+            <li class=""><a href="../investigacion">INVESTIGACIÓN</a>
+            <li class=""><a href="../organizacion">ORGANIZACIÓN</a>
+            <li class=""><a href="../links">LINKS</a>
+            <li class=""><a href="../contactod">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -303,7 +302,7 @@
           <p class="cp">? 2016 Universidad Tecnol?ica Metropolitana. - Todos los derechos reservados.<p>
         </div>
       </div>
-      <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+      <div class="gob-pie"><img src="images/00_comunes/00_portales/gob_ch.jpg" alt="Gobierno de Chile"></div>
     </div>
     <div class="borde-sup-crpvo-ppag">
       <div id="logos-pie-rsp" class="envoltura-16">
