@@ -204,19 +204,19 @@
 <br>
 <br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura margen">
+<footer id="pie-pagina" class="envoltura">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>
         <li class="col-4-pie">
           <div class="borde-menu-pie-pagina">
             <header class="cabecera-nav-pie-pagina">
-              <h3>NUESTROS SITIOS:</h3>
+              <h3>NUESTRAS REDES:</h3>
             </header>
             <nav class="nav-pie-pagina">
               <ul>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Twitter</a></li>
+                <li><a href="https://www.facebook.com/utem.cl/" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/utem" target="_blank">Twitter</a></li>
               </ul>
             </nav>
           </div>
@@ -231,9 +231,9 @@
             </header>
             <nav class="nav-pie-pagina">
               <ul>
-                <li><a href="">Web Mail</a></li>
-                <li><a href="">Intranet</a></li>
-                <li><a href="">Reko</a></li>
+                <li><a href="https://dirdoc.utem.cl/" target="_blank">Dirdoc</a></li>
+                <li><a href="http://reko.utem.cl/portal/" target="_blank">Reko</a></li>
+                <li><a href="https://mi.utem.cl/" target="_blank">Mi UTEM</a></li>
               </ul>
             </nav>
           </div>
@@ -248,9 +248,8 @@
             </header>
             <nav class="nav-pie-pagina">
               <ul>
-                <li><a href="">Acerca del Sitio</a></li>
-                <li><a href="">Pol&iacute;ticas de Privacidad</a></li>
-                <li><a href="">Mapa del sitio</a></li>
+                <li><a href="http://transparencia.utem.cl/politica-de-privacidad/" target="_blank">Pol&iacute;ticas de Privacidad</a></li>
+                <li><a href="https://www.google.cl/maps/place/Universidad+Tecnol%C3%B3gica+Metropolitana+-+Campus+Macul/@-33.466645,-70.5995255,17z/data=!4m8!1m2!2m1!1sestadio+nacional!3m4!1s0x9662cfc270900eb7:0x330e0d87329f4a5f!8m2!3d-33.4661882!4d-70.5970763" target="_blank">Mapa del sitio</a></li>
               </ul>
             </nav>
           </div>
@@ -265,14 +264,14 @@
             </header>
             <div id="intranet">
               <% unless current_user %>
-       <a href="/users/sign_in">
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
-       </a>
-       <% else %>
-       <a href="#">
-        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
-       </a>
-       <%end%>
+                  <a href="../../../users/sign_in">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+                  </a>
+              <% else %>
+                  <a href="#">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+                  </a>
+              <%end%>
             </div>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -290,8 +289,8 @@
     <div class="contenedor-crpvo-pie-pagina envoltura-16">
       <div class="meta-autor">
         <div class="copyright">
-          <p>Dieciocho 161 - Santiago, Chile. Metro Moneda - Fono: 2787 7500<br>Sitio dise&ntilde;ado y desarrollado por el <a href="http://www.utem.cl/actualidad/programa-de-comunicacion/" target="_blank">Programa de Comunicaci&oacute;n y Asuntos P&uacute;blicos - UTEM</a><br>Soporte Inform&aacute;tico <a href="http://www.utem.cl/funcionarios/sistema-de-servicios-de-informatica-%E2%80%93-sisei/" target="_blank">SISEI</a></p>
-          <p class="cp">? 2016 Universidad Tecnol?ica Metropolitana. - Todos los derechos reservados.<p>
+          <p>Av. José Pedro Alessandri 1242, Ñuñoa, Región Metropolitana<br>
+          <p class="cp">  2017 Universidad Tecnológica Metropolitana. - Todos los derechos reservados.<p>
         </div>
       </div>
       <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
@@ -309,6 +308,7 @@
   <!-- Fin Corporativo Pie Pagina -->
 </footer>
 <!-- FIN PIE -->
+
 
 </body>
 
