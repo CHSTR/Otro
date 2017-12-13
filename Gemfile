@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby "2.4.1"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -33,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'ckeditor', '4.1.3'
 gem 'paperclip'
-ruby "2.4.1"
 gem 'devise'
 gem 'cancancan'
 gem 'will_paginate-bootstrap'
@@ -62,10 +63,10 @@ end
 #group :production do
 #  gem 'rails_12factor'
 #end
-group :production do
-    gem 'pg', '~> 0.18'
-    gem 'rails_12factor'
-end
+#group :production do
+#    gem 'pg', '~> 0.18'
+#    gem 'rails_12factor'
+#end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
