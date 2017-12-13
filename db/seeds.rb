@@ -5,5 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-roles = Role.create([{ nombre: 'admin' }, {nombre: 'secretaria'}, {nombre: 'secretaria2'}])
+roles = Role.create([{ nombre: 'admin' }, {nombre: 'secretaria_escuela'}, {nombre: 'secretaria_departamento'}])
 users = User.create! :email => 'prueba@prueba.com', :password => 'contra123', :password_confirmation => 'contra123', :role_id => 1

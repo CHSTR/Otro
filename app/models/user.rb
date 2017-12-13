@@ -7,12 +7,12 @@ class User < ApplicationRecord
   	self.role.nombre == "admin"
   end
 
-  def secretaria?
-  	self.role.nombre == "secretaria"
+  def secretaria_escuela?
+  	self.role.nombre == "secretaria_escuela"
   end
 
-  def secretaria2?
-  	self.role.nombre == "secretaria2"
+  def secretaria_departamento?
+  	self.role.nombre == "secretaria_departamento"
   end
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

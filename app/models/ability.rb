@@ -32,7 +32,7 @@ class Ability
     if user.present?
         if user.admin?
           can :manage, :all
-        elsif user.secretaria?
+        elsif user.secretaria_escuela?
             can :manage, NoticiaEscuela
             can :manage, Intere
             can :manage, Egresado
@@ -43,7 +43,7 @@ class Ability
             can :manage, Programa               # modifica   #
             can :manage, OfertaLaboral          # toda la    #
             can :manage, FuncionarioEscuela     # escuela    #
-        elsif user.secretaria2?                 ##############
+        elsif user.secretaria_departamento?     ##############
             can :manage, Texto     #no
             can :manage, [Academico,Casilla] #listo
             can :manage, [Proyecto,AreasDisciplinaria] #listo
