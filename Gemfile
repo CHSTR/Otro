@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'ckeditor', '4.1.3'
 gem 'paperclip'
-
+gem 'ruby', '2.4.1'
 gem 'devise'
 gem 'cancancan'
 gem 'will_paginate-bootstrap'

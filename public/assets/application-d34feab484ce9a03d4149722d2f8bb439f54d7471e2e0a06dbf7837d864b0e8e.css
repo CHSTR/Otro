@@ -1,0 +1,2403 @@
+@import url("01_colores_utem.css");
+@import url("02_tipografia_utem.css");
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* -------------------------->>> RESET <<<------------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* line 15, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+a, abbr, acronym, address, applet, article, aside, audio, b, big,
+blockquote, body, canvas, caption, center, cite, code, dd, del, details,
+dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure,
+font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i,
+iframe, img, ins, kbd, label, legend, li, main, mark, menu, meter, nav,
+object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section,
+small, span, strike, strong, sub, summary, sup, table, tbody, td,
+tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 23, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 25, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+main, menu, nav, section {
+  display: block;
+}
+
+/* IE8 e inferiores requieren SHIV */
+/* line 28, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 29, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+  /* Para IE*/
+}
+
+/* line 30, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 31, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+li {
+  display: list-item;
+}
+
+/* Pata IF3 6 y 7 */
+/* line 32, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 33, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+th, td, caption {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* line 34, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+q {
+  quotes: none;
+}
+
+/* line 35, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 36, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+sub, sup, small {
+  font-size: 75%;
+}
+
+/* line 37, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 38, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 39, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 40, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+svg {
+  overflow: hidden;
+}
+
+/* Para IE9 */
+/* line 41, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 42, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+xmp {
+  list-style: none;
+}
+
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* ----------------------->>> CUADRICULA <<<----------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* line 50, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ================================================================ */
+/* ----------------------->>> AYUDANTES <<<------------------------ */
+/* ================================================================ */
+/* line 60, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.espacio-vinf {
+  margin-bottom: 40px;
+}
+
+/* line 61, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.espacio-vsup {
+  margin-top: 40px;
+}
+
+/* line 62, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.limpiar {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+/* line 63, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.posicion-relativa-cabecera {
+  height: 150px;
+  position: relative;
+}
+
+/* line 64, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.bg-blanco {
+  background-color: #FFF;
+}
+
+/* line 65, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.linea-inf-oscura {
+  border-bottom: solid 1px #000;
+}
+
+/* line 66, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.borde-sup-crpvo-ppag {
+  border-top: solid 1px #353535;
+  display: none;
+  padding: 30px 0;
+}
+
+/* ================================================================ */
+/* ------------------------->>> CAJAS <<<-------------------------- */
+/* ================================================================ */
+/* line 72, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.envoltura {
+  width: 100%;
+}
+
+/* line 73, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.envoltura-16 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+
+/* ================================================================ */
+/* ------------------------>>> COLUMNAS <<<------------------------ */
+/* ================================================================ */
+/* line 79, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-1, .col-2, .col-3, .col-4,
+.col-5, .col-6, .col-7, .col-8,
+.col-9, .col-10, .col-11, .col-12,
+.col-13, .col-14, .col-15, .col-16 {
+  display: inline;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 84, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-1 {
+  width: 40px;
+}
+
+/* line 84, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-2 {
+  width: 120px;
+}
+
+/* line 84, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-3 {
+  width: 200px;
+}
+
+/* line 84, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-4 {
+  width: 280px;
+}
+
+/* line 85, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-5 {
+  width: 360px;
+}
+
+/* line 85, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-6 {
+  width: 440px;
+}
+
+/* line 85, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-7 {
+  width: 520px;
+}
+
+/* line 85, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-8 {
+  width: 600px;
+}
+
+/* line 86, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-9 {
+  width: 680px;
+}
+
+/* line 86, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-10 {
+  width: 760px;
+}
+
+/* line 86, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-11 {
+  width: 840px;
+}
+
+/* line 86, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-12 {
+  width: 920px;
+}
+
+/* line 87, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-13 {
+  width: 1000px;
+}
+
+/* line 87, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-14 {
+  width: 1080px;
+}
+
+/* line 87, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-15 {
+  width: 1160px;
+}
+
+/* line 87, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-16 {
+  width: 1240px;
+}
+
+/* line 89, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-4-pie {
+  display: inline-block;
+  padding: 0 20px;
+  vertical-align: top;
+  width: 25%;
+}
+
+/* line 90, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-5-16 {
+  float: left;
+  width: 31.25%;
+}
+
+/* line 91, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.col-11-16 {
+  float: left;
+  width: 68.75%;
+}
+
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* ------------------------>>> BLOQUES <<<------------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* line 99, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+body {
+  background-color: #E6E6E6;
+  height: 100%;
+}
+
+/* ================================================================ */
+/* ---------------------->>> PERMANENTES <<<----------------------- */
+/* ================================================================ */
+/* -- CABECERA ---------------------------------------------------- */
+/* ================================================================ */
+/* line 108, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#cabecera {
+  height: 150px;
+  position: relative;
+}
+
+/* -- Menu Perfiles Escritorio ------------------------------------ */
+/* ---------------------------------------------------------------- */
+/* line 113, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav#nav-perfiles {
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+  width: auto;
+}
+
+/* line 114, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-perfiles ul li {
+  display: inline-block;
+}
+
+/* line 115, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-perfiles ul li a {
+  border-right: 1px solid #999;
+  display: block;
+  padding: 0 10px;
+}
+
+/* line 116, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-perfiles ul li:last-child a {
+  border-right: none;
+  padding: 0 0 0 10px;
+}
+
+/* -- Menu Perfiles Responsivo ------------------------------------ */
+/* ---------------------------------------------------------------- */
+/* line 121, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#perfiles-rsp {
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: none;
+  float: left;
+  width: 100%;
+}
+
+/* line 123, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp h5 {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: block;
+  float: left;
+  height: 41px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* line 133, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul {
+  border-top-style: solid;
+  border-top-width: 1px;
+  float: left;
+  width: 100%;
+}
+
+/* line 135, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul li {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: block;
+  float: left;
+  height: 41px;
+  width: 50%;
+}
+
+/* line 148, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul li:nth-child(odd) {
+  border-left: none;
+  border-right: none;
+}
+
+/* line 149, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul li:nth-child(even) {
+  border-right: none;
+}
+
+/* line 150, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul li a {
+  float: left;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* -- Buscador Escritorio ----------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 155, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#buscador {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  width: 300px;
+}
+
+/* line 156, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador {
+  height: 40px;
+  overflow: hidden;
+  width: 300px;
+}
+
+/* line 157, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s,
+#form-buscador #buscar {
+  float: left;
+}
+
+/* line 159, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s {
+  border: none;
+  border-radius: 0;
+  height: 40px;
+  padding: 5px 10px;
+  width: 250px;
+}
+
+/* line 160, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #buscar {
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+}
+
+/* line 161, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #buscar:active {
+  outline: none;
+}
+
+/* line 162, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#searchform #buscar:-moz-focus-inner {
+  border: 0;
+}
+
+/* line 163, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s {
+  background-color: #F1F1F1;
+}
+
+/* fondo gris claro */
+/* line 164, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s:focus {
+  background-color: #E9E9E9;
+}
+
+/* fondo gris oscuro */
+/* line 165, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #buscar {
+  background-color: #CCC;
+}
+
+/* fondo gris oscuro */
+/* -- Buscador Responsivo ----------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 170, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#buscador-rsp {
+  border-bottom-style: solid;
+  border-bottom-widht: 1px;
+  border-top-style: solid;
+  border-top-widht: 1px;
+  display: none;
+  float: left;
+  height: 60px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* line 182, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp {
+  float: right;
+  height: 40px;
+  overflow: hidden;
+  width: auto;
+}
+
+/* line 183, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #s,
+#form-buscador-rsp #buscar {
+  float: left;
+}
+
+/* line 186, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #s {
+  border-bottom: none;
+  border-left: none;
+  border-right-style: solid;
+  border-right-width: 1px !important;
+  border-top: none;
+  height: 40px;
+  padding: 5px 10px;
+  width: 169px;
+}
+
+/* line 197, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #buscar {
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+}
+
+/* line 198, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #buscar:active {
+  outline: none;
+}
+
+/* line 199, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #buscar:-moz-focus-inner {
+  border: 0;
+}
+
+/* -- MENU PRINCIPAL ---------------------------------------------- */
+/* ================================================================ */
+/* line 204, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+section#menu-principal-escritorio {
+  float: left;
+}
+
+/* line 205, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav#nav-escritorio {
+  padding: 0;
+}
+
+/* line 206, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+section#menu-principal-rsp {
+  display: none;
+}
+
+/* -- Escritorio -------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 211, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-escritorio ul#menu-escritorio {
+  float: left;
+  padding: 0;
+}
+
+/* line 212, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li {
+  float: left;
+  position: relative;
+  width: auto;
+}
+
+/* line 213, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:hover {
+  background-color: #FFF;
+}
+
+/* line 215, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li a {
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: block;
+  float: left;
+  height: 60px;
+  padding: 0 20px;
+  width: auto;
+}
+
+/* line 225, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:last-child a {
+  border-right: none;
+}
+
+/* line 227, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul {
+  background-color: #FFF;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  width: 300px;
+  z-index: 90;
+}
+
+/* line 237, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:last-child ul {
+  left: auto;
+  right: 0;
+}
+
+/* line 238, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:hover > ul {
+  opacity: 1;
+}
+
+/* line 239, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul li {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* line 240, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:hover > ul li {
+  height: auto;
+  overflow: visible;
+  padding: 0;
+}
+
+/* line 242, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul li a {
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  height: auto;
+  margin: 0;
+  padding: 10px 10px 10px 20px;
+  width: 300px;
+}
+
+/* line 252, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul li:last-child a {
+  border: none;
+}
+
+/* line 253, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul li a:hover {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+/* -- Responsivo -------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 258, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+header#top-acordeon-rsp {
+  display: block;
+  height: 60px;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* line 260, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+button.navbar-toggle {
+  border: none;
+  cursor: pointer;
+  cursor: hand;
+  float: right;
+  padding: 10px;
+  position: relative;
+}
+
+/* line 269, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.navbar-toggle:focus {
+  outline: none;
+}
+
+/* line 271, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 13px;
+  width: 1px;
+}
+
+/* line 283, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.icon-bar {
+  background-color: #FFF;
+  border-radius: 1px;
+  display: block;
+  height: 4px;
+}
+
+/* line 284, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.icon-bar:nth-child(2) {
+  width: 35px;
+}
+
+/* line 285, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.icon-bar:nth-child(3) {
+  width: 40px;
+}
+
+/* line 286, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.icon-bar:nth-child(4) {
+  width: 30px;
+}
+
+/* line 287, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+/* line 288, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 290, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.collapse {
+  display: none;
+}
+
+/* line 291, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.collapse.in {
+  display: block;
+}
+
+/* line 293, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: height .35s ease;
+  transition: height .35s ease;
+}
+
+/* line 304, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav#nav-rsp ul {
+  width: 100%;
+}
+
+/* line 305, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-rsp ul li.nivel-01 {
+  border-top-style: solid;
+  border-top-width: 1px;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+/* line 306, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-rsp ul li.nivel-01:last-child {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+/* line 307, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-rsp ul li ul li {
+  background-color: #EFEFEF;
+  border-top: solid 1px #FFF;
+}
+
+/* line 308, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+li.nivel-01 a.nodesplegable,
+#nav-rsp ul li ul li a {
+  display: block;
+  min-height: 40px;
+  padding: 12px 100px 12px 20px;
+  width: 100%;
+}
+
+/* line 310, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-rsp ul li ul li a:hover {
+  background-color: #FFF;
+}
+
+/* line 312, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.toggle {
+  background: url(../images/00_comunes/00_portales/flecha_toggle.png) no-repeat center center;
+  border: 1px solid transparent;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 60px;
+}
+
+/* line 322, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.toggle:focus {
+  outline: none;
+}
+
+/* line 323, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.toggle:hover,
+.toggle:focus {
+  cursor: pointer;
+}
+
+/* line 325, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.toggle a {
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+
+/* -- CORPORATIVO ------------------------------------------------- */
+/* ================================================================ */
+/* line 330, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#corporativo-pie-pagina {
+  background-color: #191919;
+  border-top: solid 1px #353535;
+  float: left;
+  padding: 40px 0 0 0;
+  width: 100%;
+}
+
+/* -- Gobierno de Chile Top Escritorio ---------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 335, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-gob-escritorio {
+  background-color: #EE4143;
+  height: 15px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 120px;
+}
+
+/* line 344, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-gob-escritorio .azul {
+  background-color: #006CB7;
+  float: left;
+  height: 15px;
+  width: 55px;
+}
+
+/* -- Gobierno de Chile Top Reponsivo ----------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 349, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-gob-rsp {
+  background-color: #EE4143;
+  display: none;
+  height: 5px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 80px;
+}
+
+/* line 359, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-gob-rsp .azul {
+  background-color: #006CB7;
+  float: left;
+  height: 5px;
+  width: 36px;
+}
+
+/* -- Gobierno de Chile Pie Escritorio ---------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 364, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.gob-pie {
+  bottom: 0;
+  height: 120px;
+  position: absolute;
+  right: 20px;
+  width: 120px;
+}
+
+/* -- Gobierno de Chile Pie Responsivo ---------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 369, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.gob-pie-rsp {
+  float: right;
+  width: 80px;
+}
+
+/* -- UTEM Top ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 374, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#cabecera #utem-logo {
+  float: left;
+  height: 70px;
+  margin-left: 20px;
+  margin-top: 40px;
+  width: 300px;
+}
+
+/* line 375, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#cabecera #utem-logo a {
+  display: block;
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 376, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#cabecera #utem-logo h1 {
+  left: -10000px;
+  position: absolute;
+}
+
+/* line 377, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-acordeon-rsp #utem-logo-rsp {
+  display: none;
+  float: left;
+  height: 40px;
+  visibility: hidden;
+  width: 140px;
+}
+
+/* line 378, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-acordeon-rsp #utem-logo-rsp a {
+  display: block;
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 379, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#top-acordeon-rsp #utem-logo-rsp h1 {
+  left: -10000px;
+  position: absolute;
+}
+
+/* -- UTEM Pie ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 384, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.contenedor-redes .acreditacion {
+  display: inline-block;
+  float: right;
+  height: 36px;
+}
+
+/* -- REDES ------------------------------------------------------- */
+/* ================================================================ */
+/* line 389, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#redes {
+  background-color: #191919;
+  border-bottom: solid 1px #000;
+}
+
+/* line 390, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#redes .contenedor-redes {
+  min-height: 80px;
+  padding: 22px 20px;
+  position: relative;
+  vertical-align: middle !important;
+}
+
+/* line 391, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul {
+  display: inline-block;
+  float: left;
+  height: 36px;
+  width: auto;
+}
+
+/* line 392, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li h2 {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 394, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li ul li {
+  float: left;
+  margin-right: 10px;
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+/* line 404, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li ul li:hover {
+  background-color: #292929;
+}
+
+/* line 405, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li ul li:last-child {
+  margin-right: 0;
+}
+
+/* -- PIE DE PAGINA ----------------------------------------------- */
+/* ================================================================ */
+/* line 410, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#pie-pagina {
+  background-color: #252525;
+  border-top: solid 1px #353535;
+  padding: 40px 0 0 0;
+}
+
+/* line 411, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#menu-pie-pagina {
+  padding-bottom: 40px;
+}
+
+/* line 413, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#corporativo-pie-pagina .contenedor-crpvo-pie-pagina {
+  display: table;
+  height: 120px;
+  padding: 0 20px 40px 20px;
+  position: relative;
+}
+
+/* line 420, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.cabecera-nav-pie-pagina {
+  height: 35px;
+}
+
+/* line 421, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.cabecera-nav-pie-pagina h3 {
+  float: left;
+  height: 18px;
+  width: 100%;
+}
+
+/* line 422, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.meta-autor {
+  display: table-cell;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+/* line 423, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.meta-autor .cp {
+  margin-top: 10px;
+}
+
+/* -- Menu pie de pagina ------------------------------------------ */
+/* ---------------------------------------------------------------- */
+/* line 428, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#menu-pie-pagina ul {
+  display: table;
+  float: left;
+  width: 100%;
+}
+
+/* line 429, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.nav-pie-pagina {
+  float: left;
+  width: 100%;
+}
+
+/* line 430, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.borde-menu-pie-pagina {
+  border-left: dotted 1px #666;
+  float: left;
+  padding-left: 15px;
+  width: 100%;
+}
+
+/* line 431, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.nav-pie-pagina ul {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+/* line 432, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.nav-pie-pagina ul li {
+  display: block;
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* line 433, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.nav-pie-pagina ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* -- Intranet ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 438, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#intranet {
+  float: left;
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* line 439, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-intranet {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 440, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-intranet .campo {
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* line 441, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-intranet .campo-alt {
+  float: left;
+  width: 100%;
+}
+
+/* line 443, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-intranet .campo #usuario, #form-intranet .campo #clave {
+  background: #191919;
+  border: none;
+  display: block;
+  float: left;
+  height: 30px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+/* line 453, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#usuario:focus, #clave:focus {
+  background-color: #000;
+}
+
+/* line 455, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#entrar {
+  background-color: #191919;
+  border: solid 0px #000;
+  cursor: pointer;
+  float: left;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 466, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#entrar:hover {
+  background-color: #000;
+}
+
+/* line 467, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#entrar:active {
+  background-color: #000;
+  outline: none;
+}
+
+/* line 468, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#entrar:-moz-focus-inner {
+  border: 0;
+}
+
+/* -- SUBIR ------------------------------------------------------- */
+/* ================================================================ */
+/* line 473, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#subir-fantasma span {
+  background: url(../images/00_comunes/00_portales/scroll_top.png) no-repeat left top;
+  bottom: 40px;
+  display: block;
+  height: 40px;
+  position: fixed;
+  right: 40px;
+  width: 40px;
+  z-index: 100;
+}
+
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* --------------------->>> MEDIA QUERIES <<<---------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* ================================================================ */
+/* ---------------------->>> 1280 > < 960 <<<---------------------- */
+/* ================================================================ */
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
+  /* -- Cuadricula y Contenedores ------------- */
+  /* line 498, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .envoltura-16, nav#nav-escritorio, #redes .contenedor-redes, div#menu-pie-pagina,
+  #corporativo-pie-pagina .contenedor-crpvo-pie-pagina, .prensa {
+    width: 960px;
+  }
+
+  /* line 501, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-1 {
+    width: 20px;
+  }
+
+  /* line 501, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-2 {
+    width: 80px;
+  }
+
+  /* line 501, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-3 {
+    width: 140px;
+  }
+
+  /* line 501, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4 {
+    width: 200px;
+  }
+
+  /* line 502, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-5 {
+    width: 260px;
+  }
+
+  /* line 502, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-6 {
+    width: 320px;
+  }
+
+  /* line 502, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-7 {
+    width: 380px;
+  }
+
+  /* line 502, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-8 {
+    width: 440px;
+  }
+
+  /* line 503, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-9 {
+    width: 500px;
+  }
+
+  /* line 503, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-10 {
+    width: 560px;
+  }
+
+  /* line 503, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-11 {
+    width: 620px;
+  }
+
+  /* line 503, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-12 {
+    width: 680px;
+  }
+
+  /* line 504, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-13 {
+    width: 740px;
+  }
+
+  /* line 504, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-14 {
+    width: 800px;
+  }
+
+  /* line 504, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-15 {
+    width: 860px;
+  }
+
+  /* line 504, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-16 {
+    width: 920px;
+  }
+}
+/* ================================================================ */
+/* ---------------------->>> 959 > < 768 <<<----------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 959px) {
+  /* -- Cuadricula y Contenedores ------------- */
+  /* line 516, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .envoltura-16, nav#nav-escritorio, #redes .contenedor-redes, div#menu-pie-pagina, .prensa {
+    width: 768px;
+  }
+
+  /* line 517, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .envoltura-16-nav-adm {
+    width: 100% !important;
+  }
+
+  /* line 519, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
+  .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16 {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  /* line 522, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-1 {
+    width: 18px;
+  }
+
+  /* line 522, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-2 {
+    width: 66px;
+  }
+
+  /* line 522, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-3 {
+    width: 114px;
+  }
+
+  /* line 522, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4 {
+    width: 162px;
+  }
+
+  /* line 523, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-5 {
+    width: 210px;
+  }
+
+  /* line 523, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-6 {
+    width: 258px;
+  }
+
+  /* line 523, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-7 {
+    width: 306px;
+  }
+
+  /* line 523, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-8 {
+    width: 354px;
+  }
+
+  /* line 524, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-9 {
+    width: 402px;
+  }
+
+  /* line 524, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-10 {
+    width: 450px;
+  }
+
+  /* line 524, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-11 {
+    width: 498px;
+  }
+
+  /* line 524, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-12 {
+    width: 546px;
+  }
+
+  /* line 525, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-13 {
+    width: 594px;
+  }
+
+  /* line 525, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-14 {
+    width: 642px;
+  }
+
+  /* line 525, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-15 {
+    width: 690px;
+  }
+
+  /* line 525, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-16 {
+    width: 738px;
+  }
+
+  /* -- Quitar y mostrar de pantalla ---------- */
+  /* line 529, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .contenedor-redes .acreditacion, #menu-principal-escritorio, .gob-pie,
+  #video-secundario ul li:last-child {
+    display: none;
+  }
+
+  /* line 531, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  section#menu-principal-rsp, .borde-sup-crpvo-ppag {
+    display: block;
+  }
+
+  /* -- Cabecera ------------------------------ */
+  /* line 535, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #cabecera #utem-logo {
+    height: 70px;
+    margin-top: 40px;
+    width: 180px;
+  }
+
+  /* line 536, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-adm #cabecera #utem-logo {
+    height: 70px;
+    margin-top: 40px;
+    width: 180px;
+  }
+
+  /* -- Redes --------------------------------- */
+  /* line 540, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  nav.menu-redes {
+    width: 738px;
+  }
+
+  /* line 541, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  nav.menu-redes ul {
+    float: none !important;
+  }
+
+  /* -- Pie ----------------------------------- */
+  /* line 545, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4-pie {
+    margin-bottom: 40px;
+    padding: 0 15px;
+    width: 50%;
+  }
+
+  /* line 546, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4-pie:nth-child(2) {
+    border-right: none;
+  }
+
+  /* line 547, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4-pie:nth-child(3),
+  .col-4-pie:nth-child(4) {
+    margin-bottom: 0;
+  }
+
+  /* line 549, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #logos-pie-rsp {
+    display: block !important;
+    padding: 0 15px 0 15px;
+  }
+
+  /* line 550, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .acreditacion-rsp {
+    float: left;
+    height: 80px;
+    padding: 0;
+    width: 199px;
+  }
+
+  /* line 551, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .meta-autor {
+    display: block !important;
+    padding: 0 15px 0 15px !important;
+    vertical-align: top;
+  }
+
+  /* line 552, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #corporativo-pie-pagina .contenedor-crpvo-pie-pagina {
+    height: auto;
+    padding: 0 15px 40px 15px;
+  }
+
+  /* -- Pie de Pagina ------------------------- */
+  /* line 556, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #pie-pagina {
+    padding: 20px 0 0 0;
+  }
+
+  /* line 557, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  div#menu-pie-pagina {
+    padding-bottom: 20px;
+  }
+}
+/* ================================================================ */
+/* ---------------------->>> 767 > < 481 <<<----------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 767px) {
+  /* line 567, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  body {
+    background-color: #E6E6E6;
+  }
+
+  /* -- Ayudantes ----------------------------- */
+  /* line 571, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .espacio-vinf {
+    margin-bottom: 20px;
+  }
+
+  /* line 572, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .espacio-vsup {
+    margin-top: 20px;
+  }
+
+  /* -- Cuadricula y Contenedores ------------- */
+  /* line 576, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .envoltura-16, nav#nav-escritorio, #redes .contenedor-redes, div#menu-pie-pagina,
+  #corporativo-pie-pagina .contenedor-crpvo-pie-pagina, .prensa {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  /* line 578, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  nav.menu-redes {
+    min-width: 270px;
+    width: 100%;
+  }
+
+  /* line 580, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
+  .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16 {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* line 583, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #redes .contenedor-redes {
+    padding: 22px 15px;
+  }
+
+  /* line 585, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-1 {
+    width: 6.25%;
+  }
+
+  /* line 585, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-2 {
+    width: 12.5%;
+  }
+
+  /* line 585, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-3 {
+    width: 18.75%;
+  }
+
+  /* line 585, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-4 {
+    width: 25%;
+  }
+
+  /* line 586, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-5 {
+    width: 31.25%;
+  }
+
+  /* line 586, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-6 {
+    width: 37.5%;
+  }
+
+  /* line 586, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-7 {
+    width: 43.75%;
+  }
+
+  /* line 586, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-8 {
+    width: 50%;
+  }
+
+  /* line 587, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-9 {
+    width: 56.25%;
+  }
+
+  /* line 587, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-10 {
+    width: 62.5%;
+  }
+
+  /* line 587, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-11 {
+    width: 68.75%;
+  }
+
+  /* line 587, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-12 {
+    width: 75%;
+  }
+
+  /* line 588, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-13 {
+    width: 81.25%;
+  }
+
+  /* line 588, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-14 {
+    width: 87.5%;
+  }
+
+  /* line 588, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-15 {
+    width: 93.75%;
+  }
+
+  /* line 588, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-16 {
+    width: 100%;
+  }
+
+  /* -- Quitar y mostrar de pantalla ---------- */
+  /* line 592, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #contenedor-cabecera, #cabecera, #gob-permanente, #btn-toggletop-rsp, #utem-toggle-rsp,
+  #video-secundario ul li:nth-child(2), #video-secundario ul li:nth-child(3) {
+    display: none !important;
+  }
+
+  /* line 594, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #buscador-rsp, #perfiles-rsp, section#menu-principal-rsp, #top-gob-rsp {
+    display: block !important;
+  }
+
+  /* -- Menu Principal ------------------------ */
+  /* line 598, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  header#top-acordeon-rsp {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    height: 80px !important;
+    padding: 20px 20px 15px 20px !important;
+  }
+
+  /* line 605, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #top-acordeon-rsp #utem-logo-rsp {
+    display: inline;
+    visibility: visible;
+  }
+
+  /* line 606, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-adm #top-acordeon-rsp #utem-logo-rsp {
+    display: inline;
+    visibility: visible;
+  }
+
+  /* line 607, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-cor header#top-acordeon-rsp,
+  .clr-fae header#top-acordeon-rsp,
+  .clr-ing header#top-acordeon-rsp,
+  .clr-cnm header#top-acordeon-rsp,
+  .clr-hum header#top-acordeon-rsp,
+  .clr-ord header#top-acordeon-rsp,
+  .clr-com header#top-acordeon-rsp {
+    background-color: #FFF;
+  }
+
+  /* line 614, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-adm header#top-acordeon-rsp {
+    background-color: #000;
+  }
+
+  /* -- Borrar bordes de secciones ------------ */
+  /* line 618, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  main, #av, .facultad, .menu-portal-2, .menu-portal-3 {
+    border-bottom: none;
+  }
+
+  /* -- Correccion de margenes verticales ----- */
+  /* line 622, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  main, #av {
+    padding: 20px 0 20px 0;
+  }
+}
+/* ================================================================ */
+/* ---------------------->>> 480 > < 300 <<<----------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 480px) {
+  /* -- Redes --------------------------------- */
+  /* line 634, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  nav.menu-redes ul li h2 {
+    float: none;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+
+  /* -- Pie ----------------------------------- */
+  /* line 638, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  li.col-4-pie {
+    border-bottom: dotted 1px #666;
+    border-left: none;
+    margin: 0;
+    padding: 20px 15px;
+    width: 100%;
+  }
+
+  /* line 646, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  li.col-4-pie:last-child {
+    border-bottom: none;
+  }
+
+  /* line 647, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .gob-pie-rsp {
+    width: 100% !important;
+  }
+
+  /* line 648, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .acreditacion-rsp {
+    margin-bottom: 20px;
+    width: 100% !important;
+  }
+
+  /* line 649, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  div#intranet, nav.nav-pie-pagina,
+  .borde-menu-pie-pagina {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 360px) {
+  /* -- Contenedores -------------------------- */
+  /* line 658, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .col-completo-video {
+    width: 100% !important;
+  }
+
+  /* -- Menu perfiles responsivo -------------- */
+  /* line 662, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #perfiles-rsp ul li {
+    width: 100%;
+  }
+
+  /* line 663, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #perfiles-rsp ul li:nth-child(even) {
+    border-left: none;
+  }
+}
+/* ================================================================ */
+/* ----------------------------- && ----------------------------- */
+/* ------------------------>>> GENERAL <<<------------------------- */
+/* ----------------------------- && ----------------------------- */
+/* ================================================================ */
+/* line 675, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+body {
+  font-size: 62.5% em;
+  line-height: 1;
+}
+
+/* line 677, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+* {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 682, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+h1, h2, h3, h4, h5, h6, strong {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 687, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+a {
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url("../fuentes/opensans-regular-webfont.eot");
+  src: url("../fuentes/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fuentes/opensans-regular-webfont.woff2") format("woff2"), url("../fuentes/opensans-regular-webfont.woff") format("woff"), url("../fuentes/opensans-regular-webfont.ttf") format("truetype"), url("../fuentes/opensans-regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url("../fuentes/opensans-semibold-webfont.eot");
+  src: url("../fuentes/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fuentes/opensans-semibold-webfont.woff2") format("woff2"), url("../fuentes/opensans-semibold-webfont.woff") format("woff"), url("../fuentes/opensans-semibold-webfont.ttf") format("truetype"), url("../fuentes/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url("../fuentes/opensans-bold-webfont.eot");
+  src: url("../fuentes/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fuentes/opensans-bold-webfont.woff2") format("woff2"), url("../fuentes/opensans-bold-webfont.woff") format("woff"), url("../fuentes/opensans-bold-webfont.ttf") format("truetype"), url("../fuentes/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url("../fuentes/opensans-italic-webfont.eot");
+  src: url("../fuentes/opensans-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fuentes/opensans-italic-webfont.woff2") format("woff2"), url("../fuentes/opensans-italic-webfont.woff") format("woff"), url("../fuentes/opensans-italic-webfont.ttf") format("truetype"), url("../fuentes/opensans-italic-webfont.svg#open_sansitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald-Regular';
+  src: url("../fuentes/oswald-regular-webfont.eot");
+  src: url("../fuentes/oswald-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fuentes/oswald-regular-webfont.woff2") format("woff2"), url("../fuentes/oswald-regular-webfont.woff") format("woff"), url("../fuentes/oswald-regular-webfont.ttf") format("truetype"), url("../fuentes/oswald-regular-webfont.svg#oswaldregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 756, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald-Regular', Arial, Helvetica, sans-serif;
+}
+
+/* line 757, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+p, ul {
+  font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
+}
+
+/* line 758, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+a {
+  font-family: 'OpenSans-Semibold', Arial, Helvetica, sans-serif;
+}
+
+/* line 759, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+time {
+  font-family: 'RobotoSlab-Regular', Arial, Helvetica, sans-serif;
+}
+
+/* ================================================================ */
+/* ----------------------------- && ----------------------------- */
+/* ------------------------>>> BLOQUES <<<------------------------- */
+/* ----------------------------- && ----------------------------- */
+/* ================================================================ */
+/* ================================================================ */
+/* ---------------------->>> PERMANENTES <<<----------------------- */
+/* ================================================================ */
+/* -- CABECERA ---------------------------------------------------- */
+/* ================================================================ */
+/* -- Menu Perfiles ----------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 777, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-perfiles ul li a {
+  color: #666;
+  font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+/* line 784, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp h5 {
+  color: #FFF;
+  font-size: 2rem;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* line 785, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#perfiles-rsp ul li a {
+  color: #FFF;
+  font-size: 1.2rem;
+  line-height: 40px;
+}
+
+/* -- Buscador ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 790, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #buscar:hover {
+  color: #FFF;
+}
+
+/* line 791, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s,
+#form-buscador-rsp #s {
+  font-family: 'OpenSans-Regular', arial, helvetica;
+  font-size: 1.2rem;
+}
+
+/* line 793, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #buscar,
+#form-buscador-rsp #buscar {
+  font-family: 'OpenSans-Bold', arial, helvetica;
+  font-size: 1.4rem;
+}
+
+/* line 795, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador #s,
+#form-buscador #buscar {
+  color: #666;
+}
+
+/* line 797, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #s {
+  color: #FFF;
+}
+
+/* line 798, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-buscador-rsp #buscar {
+  color: #FFF;
+}
+
+/* -- MENU PRINCIPAL ---------------------------------------------- */
+/* ================================================================ */
+/* line 803, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li a,
+#menu-escritorio li ul li a,
+li.nivel-01 a.nodesplegable,
+#nav-rsp ul li ul li a {
+  font-size: 1.2rem;
+}
+
+/* line 807, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li a {
+  line-height: 60px;
+}
+
+/* line 808, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li ul li a {
+  line-height: 130%;
+}
+
+/* line 809, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+li.nivel-01 a.nodesplegable,
+#nav-rsp ul li ul li a {
+  line-height: 16px;
+}
+
+/* line 811, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li a,
+#menu-escritorio li ul li a,
+li.nivel-01 a.nodesplegable {
+  color: #FFF;
+}
+
+/* line 814, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#nav-rsp ul li ul li a {
+  color: #666;
+}
+
+/* line 815, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:hover ul li a:hover,
+#menu-escritorio li:hover a:hover {
+  color: #FFF;
+}
+
+/* line 817, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#menu-escritorio li:hover a {
+  color: #666;
+}
+
+/* -- REDES Y PIE DE PAGINA --------------------------------------- */
+/* ================================================================ */
+/* line 822, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li h2 {
+  font-size: 1.4rem;
+  line-height: 36px;
+}
+
+/* line 823, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.cabecera-nav-pie-pagina h3 {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+/* line 824, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+nav.menu-redes ul li h2 {
+  color: #E6E6E6;
+}
+
+/* line 825, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.cabecera-nav-pie-pagina h3 {
+  color: #E6E6E6;
+}
+
+/* line 826, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+div#menu-pie-pagina ul {
+  font-size: 0;
+}
+
+/* line 827, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.nav-pie-pagina ul li a {
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 140%;
+}
+
+/* line 828, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.meta-autor {
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+
+/* line 829, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.meta-autor .cp {
+  font-size: 1.2rem;
+  line-height: 130%;
+}
+
+/* line 830, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.meta-autor a {
+  color: #E6E6E6;
+}
+
+/* line 831, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#form-intranet .campo #usuario,
+#form-intranet .campo #clave {
+  color: #666;
+  font-family: 'OpenSans-Regular', arial, helvetica;
+  font-size: 1.4rem;
+}
+
+/* line 833, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+#entrar {
+  color: #666;
+  font-family: 'OpenSans-Semibold', arial, helvetica;
+  font-size: 1.4rem;
+}
+
+/* line 834, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.gob-pie-rsp {
+  text-align: center;
+}
+
+/* ================================================================ */
+/* ------------------------->>> PORTAL <<<------------------------- */
+/* ================================================================ */
+/* -- NAVEGACION SECCIONES ---------------------------------------- */
+/* ================================================================ */
+/* line 843, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.cabecera-secciones-home h2 {
+  font-size: 2.8rem;
+  line-height: 4rem;
+}
+
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* --------------------->>> MEDIA QUERIES <<<---------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* ================================================================ */
+/* ----------------------->>> 959 > < 768 <<<---------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 959px) {
+  /* -- Reduccion tipografica ----------------- */
+  /* line 859, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .cabecera-secciones-home h2,
+  .cabecera-seccion-atajos h2 {
+    font-size: 2.4rem;
+    line-height: 4rem;
+  }
+
+  /* line 861, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .noticia header h1,
+  #video-destacado article header h1,
+  #video-secundario article header h1,
+  #accesos .otros-accesos ul li,
+  .nav-pie-pagina ul li a,
+  #form-intranet .campo #usuario,
+  #form-intranet .campo #clave,
+  .meta-autor,
+  .nav-fac ul li article h1,
+  .facultad-3 section ul li,
+  .facultad-2 section ul li {
+    font-size: 1.3rem !important;
+  }
+
+  /* line 872, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .otros-accesos h3 {
+    font-size: 1.6rem;
+  }
+
+  /* line 873, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .av-pres-fac ul li article header h1 {
+    font-size: 1.4rem;
+  }
+
+  /* line 874, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .facultad-2 section h2,
+  .facultad-3 section h2 {
+    font-size: 1.6rem;
+  }
+
+  /* -- Redes y Pie de Pagina ----------------- */
+  /* line 879, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  #redes .contenedor-redes, .meta-autor {
+    text-align: center !important;
+  }
+}
+/* ================================================================ */
+/* ---------------------->>> 480 > < 300 <<<----------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 480px) {
+  /* -- Pie ----------------------------------- */
+  /* line 891, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .acreditacion-rsp {
+    text-align: center;
+  }
+}
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* -------------------------->>> HOME <<<-------------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+/* ================================================================ */
+/* ------------------------>>> IMAGENES <<<------------------------ */
+/* ================================================================ */
+/* line 909, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #cabecera #utem-logo a {
+  background: url(../images/01_img_cor/00_id_corp/imagotipo_utem.png) no-repeat left top;
+}
+
+/* line 910, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #top-acordeon-rsp #utem-logo-rsp a {
+  background: url(../images/01_img_cor/00_id_corp/imagotipo_utem_767.png) no-repeat left top;
+}
+
+/* line 911, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor .bg-menursp {
+  background: url(../images/01_img_cor/bg_body_cor.png) repeat-x left top;
+}
+
+/* line 912, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor .cabecera-secciones-home h2 {
+  background: url(../images/01_img_cor/borde_inferior_cabecera_cor.png) left bottom no-repeat;
+}
+
+/* line 913, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #atajos-portal ul li article a:hover header {
+  background: url(../images/01_img_cor/flecha_atajos_cor.png) no-repeat center top;
+}
+
+/* ================================================================ */
+/* -------------------->>> COLORES PLANTILLA <<<------------------- */
+/* ================================================================ */
+/* -- Cabecera ---------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 922, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #cabecera {
+  background-color: #FFF;
+}
+
+/* -- Azul corporativo primario ----------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 927, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor section#menu-principal-escritorio,
+.clr-cor section#menu-principal-rsp, .clr-cor header#top-acordeon-rsp {
+  background-color: #021C36;
+}
+
+/* line 929, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador-rsp #s {
+  border-right-color: #021C36;
+}
+
+/* -- Azul corporativo primario - variantes ----------------------- */
+/* ---------------------------------------------------------------- */
+/* -- Claros ------------------------------------------------------ */
+/* line 935, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor div#perfiles-rsp,
+.clr-cor #perfiles-rsp ul,
+.clr-cor #nav-rsp ul li.nivel-01,
+.clr-cor div#buscador-rsp {
+  border-top-color: #1C334A;
+}
+
+/* line 939, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #perfiles-rsp ul li {
+  border-bottom-color: #1C334A;
+  border-left-color: #1C334A;
+  border-right-color: #1C334A;
+}
+
+/* line 940, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #perfiles-rsp ul li a:hover,
+.clr-cor a.nodesplegable:hover {
+  background-color: #1C334A;
+}
+
+/* -- Oscuros ----------------------------------------------------- */
+/* line 943, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #nav-rsp ul li.nivel-01:last-child,
+.clr-cor div#buscador-rsp {
+  border-bottom-color: #010B16;
+}
+
+/* line 945, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #perfiles-rsp h5 {
+  background-color: #02162B;
+  border-bottom-color: #010B16;
+}
+
+/* -- Celeste corporativo secundario ------------------------------ */
+/* ---------------------------------------------------------------- */
+/* line 950, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador-rsp #buscar,
+.clr-cor #menu-escritorio li a:hover, .clr-cor button.navbar-toggle,
+.clr-cor .toggle, .clr-cor #noticias .crsl-nav .izq:hover,
+.clr-cor #noticias .crsl-nav .der:hover, .clr-cor .ver-mas:hover,
+.clr-cor #menu-escritorio li ul li a:hover,
+.clr-cor #form-buscador-rsp #s {
+  background-color: #39C;
+}
+
+/* line 956, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #menu-escritorio li ul li a:hover {
+  border-bottom-color: #39C;
+}
+
+/* line 957, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #nav-perfiles ul li a:hover, .clr-cor #nav-rsp ul li ul li a:hover,
+.clr-cor #menu-escritorio li:hover ul li a, .clr-cor .nav-pie-pagina ul li a:hover,
+.clr-cor .meta-autor a:hover, .clr-cor .cabecera-secciones-home h2,
+.clr-cor .crsl-item .noticia a:hover header h1, .clr-cor .noticia header time,
+.clr-cor #video-secundario article a:hover header h1, .clr-cor .otros-accesos h3,
+.clr-cor .otros-accesos ul li a:hover {
+  color: #39C;
+}
+
+/* -- Celeste corporativo secundario - variantes ------------------ */
+/* ---------------------------------------------------------------- */
+/* -- Claros ------------------------------------------------------ */
+/* line 968, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador-rsp #s:focus, .clr-cor #form-buscador-rsp #buscar:hover,
+.clr-cor .navbar-toggle:hover, .clr-cor .navbar-toggle:focus,
+.clr-cor .toggle:hover, .clr-cor .toggle:focus {
+  background-color: #42B8DB;
+}
+
+/* -- Oscuros ----------------------------------------------------- */
+/* line 972, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador-rsp #buscar:active {
+  background-color: #2E8FC7;
+}
+
+/* ================================================================ */
+/* ---------------------->>> COLORES APOYO <<<--------------------- */
+/* ================================================================ */
+/* -- Gris azulado Gobierno Chile --------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 981, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #menu-escritorio li ul li a, .clr-cor .cabecera-secciones-home, .clr-cor main,
+.clr-cor #av, .clr-cor .menu-portal-3, .clr-cor .facultad, .clr-cor .menu-portal-2,
+.clr-cor .otros-accesos h3 {
+  border-bottom-color: #BDC9D1;
+}
+
+/* line 984, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #noticias .crsl-nav .izq, .clr-cor #noticias .crsl-nav .der,
+.clr-cor .ver-mas {
+  background-color: #BDC9D1;
+}
+
+/* -- Buscador Escritorio ----------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 990, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador #buscar:hover {
+  background-color: #39C;
+}
+
+/* fondo celeste complementario corporativo */
+/* line 991, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #form-buscador #buscar:active {
+  background-color: #2E8FC7;
+}
+
+/* fondo azul corporativo */
+/* -- Menu principal ---------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 996, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #menu-escritorio li a {
+  border-right-color: #235485;
+}
+
+/* -- Anaranjado -------------------------------------------------- */
+/* ---------------------------------------------------------------- */
+/* line 1001, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #video-destacado article a:hover header h1 {
+  color: #021C36;
+}
+
+/* line 1002, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+.clr-cor #atajos-portal ul li header h1 {
+  color: #635A5D;
+}
+
+/* ================================================================ */
+/* -----------------------------  &&  ----------------------------- */
+/* ----------------------->>> RESPONSIVO <<<----------------------- */
+/* -----------------------------  &&  ----------------------------- */
+/* ================================================================ */
+@media only screen and (max-width: 959px) {
+  /* == Home ================================== */
+  /* ========================================== */
+  /* line 1014, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-cor #cabecera #utem-logo a {
+    background: url(../images/01_img_cor/00_id_corp/imagotipo_utem_959.png) no-repeat left top;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* == Home ================================== */
+  /* ========================================== */
+  /* -- Azul corporativo - variante oscuro ---- */
+  /* line 1023, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-cor header#top-acordeon-rsp {
+    border-bottom-color: #010B16;
+  }
+
+  /* -- Celeste corporativo secundario -------- */
+  /* line 1025, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-cor .infoBlock h1 a .more {
+    color: #39C;
+  }
+
+  /* -- Anaranjado ---------------------------- */
+  /* line 1027, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/iniciodepto.scss */
+  .clr-cor .infoBlock h1:hover a .more {
+    color: #021C36;
+  }
+}
+/* line 1, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /home/csy5t3ms/PruebaPortal/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
