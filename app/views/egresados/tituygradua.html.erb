@@ -98,7 +98,7 @@
       <li><a href="/egresados">EGRESADOS</a>
       <li><a href="/laboral">LABORAL</a>
       <li><a href="/organizacione">ORGANIZACION</a>
-      <li><a href="/linke">LINKS</a>
+      <li><a href="/links">LINKS</a>
       <li><a href="/contacto">CONTACTO</a>
     </ul>
   </nav>
@@ -136,7 +136,7 @@
             <li><a href="/egresados">EGRESADOS</a>
             <li><a href="/laboral">LABORAL</a>
             <li><a href="/organizacione">ORGANIZACION</a>
-            <li><a href="/linke">LINKS</a>
+            <li><a href="/links">LINKS</a>
             <li><a href="/contacto">CONTACTO</a>
             </ul>
           </div>
@@ -184,12 +184,12 @@
           </div>
 
          <% end %>
-          <% if can? :manage, Egresado %>
-         <%= link_to "Nuevo Egresado", nuevo_egresado_path %>
-         <br>
-         <%= link_to "Ver todos los egresados", todos_egresados_path %>
-              <% end %>
     </div>
+    <% if can? :manage, Egresado %>
+         <%= link_to "Nuevo Egresado", nuevo_egresado_path,:class => 'btn btn-outline-primary' %>
+         <br>
+         <%= link_to "Ver todos los egresados", todos_egresados_path,:class => 'btn btn-outline-primary margen' %>
+        <% end %>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->
  <!-- Fin Agenda -->
