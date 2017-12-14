@@ -1,6 +1,6 @@
 class OrganizacioneController < ApplicationController
   load_and_authorize_resource :class => FuncionarioEscuela
-  skip_authorize_resource :only => [:index]
+  skip_authorize_resource :only => [:index, :organigrama]
   def index
   	@funcionario_escuelas = FuncionarioEscuela.all
   end
@@ -37,6 +37,42 @@ class OrganizacioneController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+  #---------------------------------------------------
+
+  def organigrama
+    @etextos = Etexto.where("nombre like ?", "organigrama").first
+  end
+
+  def editarorganigrama
+    @etextos = Etexto.where("nombre like ?", "organigrama").first
+  end
+
+  def updateorganigrama
+    @etextos = Etexto.where("nombre like ?", "organigrama").first
+    if @etextos.update_attributes(user_paramso)
+      redirect_to organizacione_organigrama_url
+    else
+      render action: 'editarorganigrama'
+    end
+  end
+
+  def nuevoorganigrama
+    @etextos = Etexto.new
+  end
+
+  def createorganigrama
+    @etextos = Etexto.new(user_paramso)
+    if @etextos.save
+      redirect_to organizacione_organigrama_url
+    else
+      render action: 'nuevoorganigrama'
+    end
+  end
+
+  def user_paramso
+    params.require(:etexto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 
   def escuela_params

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="iso-8859-1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="keywords" content="utem, universidad, tecnologica, metropolitana, chile, tecnologia, sustentabilidad, responsabilidad, social, talento, ingenieria, ciencias, territorial, construccion" />
+  <meta name="author" content="Comunicaciones - www.utem.cl" />
+  <meta name="title" content="Universidad Tecnologica Metropolitana" />
+  <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/00_estilos_utem.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond-master/src/respond.js"></script>
+  <![endif]-->
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script type="text/javascript">
+      document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
+      document.body.style.fontSize = '1.6rem';
+  </script>
+  <script src="js/jquery-migrate-1.3.0.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/utem-corp.js"></script>
+  <meta charset="utf-8">
+  <title>Universidad Tecnol&oacute;gica Metropolitana</title>
+</head>
+
+<body class="clr-cor">
+
+<!-- INICIO CABECERA -->
+<header id="cabecera" class="envoltura" >
+  <div class="envoltura-16 posicion-relativa-cabecera">
+    <!-- Inicio Corporativo -->
+    <div class="row">
+      <div class="col-md-5 utem-log"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    </div>
+    <div id="top-gob-escritorio"><div class="azul"></div></div>
+    <!-- Fin Corporativo -->
+    <!--
+    <div id="buscador">
+     <form method="get" id="form-buscador" action="https://www.utem.cl/">
+      <input type="text" name="s" id="s" value="Buscar..." onFocus="if (this.value == 'Buscar...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Buscar...';}" />
+      <input type="submit" id="buscar"  value="Ir" />
+     </form>
+    </div> -->
+    <!-- Inicio Barra Perfiles -->
+    <!-- Fin Barra Perfiles -->
+  </div>
+  <style type="text/css">
+    a:link, li {
+      text-decoration:none;
+      margin-bottom: -5px;
+    }
+    body {
+      font-family: 'Junge', serif;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size:
+    }
+    .margen {
+      margin-top: 1.5em;
+    }
+
+    .utem-log{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 2em;
+      margin-right: 1em;
+    }
+
+    a:hover{
+      background-color: transparent;
+    }
+  </style>
+</header>
+<!-- FIN CABECERA -->
+
+<!-- INICIO MENU PRINCIPAL ESCRITORIO -->
+<% if current_user  %>
+    <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
+<% end %>
+<section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
+  <nav id="nav-escritorio" class="envoltura-16">
+    <div id="utem-toggle-escrt"></div>
+    <ul id="menu-escritorio">
+      <li><a href="/inicioe/inicio">INICIO</a></li>
+      <li><a href="/noticias/inicio">NOTICIAS</a>
+      <li><a href="/estudiante">ESTUDIANTES</a>
+      <li><a href="/programas">PROGRAMAS</a>
+      <li><a href="/egresados">EGRESADOS</a>
+      <li><a href="/laboral">LABORAL</a>
+      <li><a href="/organizacione">ORGANIZACION</a>
+      <li><a href="/linke">LINKS</a>
+      <li><a href="/contacto">CONTACTO</a>
+    </ul>
+  </nav>
+</section>
+<!-- FIN MENU PRINCIPAL ESCRITORIO-->
+
+<!-- Inicio Limpiar flotante -->
+<div class="limpiar"></div>
+<!-- Fin Limpiar flotante -->
+
+<!-- INICIO MENU PRINCIPAL RESPONSIVO -->
+<div class="envoltura bg-menursp" style="background-color: #044f8e;">
+  <section id="menu-principal-rsp" class="envoltura-16" style="background-color: #044f8e;">
+    <div id="contenedor-principal-rsp" >
+      <header id="top-acordeon-rsp">
+        <div id="top-gob-rsp"><div class="azul"></div></div>
+        <div id="utem-logo-rsp"><a href="">&nbsp;</a><h1>Universidad Tecnológica Metropolitana</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contenedor-menu-rsp">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="utem-toggle-rsp"></div>
+      </header>
+      <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
+        <nav id="nav-rsp">
+          <div id="perfiles-rsp" class="envoltura">
+            <h5>MENÚ</h5>
+            <ul>
+              <li><a href="/inicioe/inicio">INICIO</a></li>
+              <li><a href="/noticias/inicio">NOTICIAS</a>
+              <li><a href="/estudiante">ESTUDIANTES</a>
+              <li><a href="/programas">PROGRAMAS</a>
+              <li><a href="/egresados">EGRESADOS</a>
+              <li><a href="/laboral">LABORAL</a>
+              <li><a href="/organizacione">ORGANIZACION</a>
+              <li><a href="/linke">LINKS</a>
+              <li><a href="/contacto">CONTACTO</a>
+            </ul>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </nav>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- FIN MENU PRINCIPAL RESPONSIVO -->
+
+<!-- INICIO CONTENIDO PRINCIPAL -->
+<main class="envoltura-16 espacio-vinf espacio-vsup ">
+  <div class="row">
+    <div class=" col-sm-12 col-md-3">
+      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+      <div class="container-fluid">
+        <ol class="breadcrumb margen">
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
+        </ol>
+        <hr>
+      </div>
+      <div class="container-fluid margen">
+        <div class="list-group">
+          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action">Organigrama</a>
+          <a href="#" class="list-group-item list-group-item-action">Dependencias</a>
+        </div>
+      </div>
+      <!-- HASTA ACA -->
+    </div>
+    <div class=" col-sm-12 col-md-9">
+      <div class="container margen">
+        <h2>Oganigrama</h2>
+        <br>
+        <hr>
+        <br>
+        <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+          <% if can? :manage, Etexto %>
+              <%= form_for(@etextos, :url => {:action => :updateorganigrama}) do |f| %>
+                  <% if @etextos.errors.any? %>
+                      <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <% @etextos.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                      </div>
+                  <% end %>
+                  <div class="col-md-9 margen">
+
+
+                    <h3 class="text-left">
+                      <%= f.label :Texto %>
+                      <%= f.cktext_area :descripcion %>
+                    </h3>
+                    <br>
+                    <div class="actions">
+                      <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
+                    </div>
+              <% end %>
+          <% else %>
+              <br>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+              </div>
+              <br>
+
+          <% end %>
+          <br>
+          <%= link_to 'Volver', organizacione_organigrama_path , :class => 'btn btn-outline-primary margen1' %>
+          <br>
+          </div>
+        </div>
+
+        <div class="col-md-3"></div>
+        </div>
+    <!-- Fin Noticias -->
+    <!-- Inicio Agenda -->
+    <!-- Fin Agenda -->
+    <!-- Inicio Limpiar flotante -->
+    <div class="limpiar"></div>
+    <!-- Fin Limpiar flotante -->
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+<br>
+<br>
+<br>
+<!-- INICIO PIE -->
+<footer id="pie-pagina" class="envoltura">
+  <div class="linea-inf-oscura">
+    <div id="menu-pie-pagina" class="envoltura-16">
+      <ul>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTRAS REDES:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="https://www.facebook.com/utem.cl/" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/utem" target="_blank">Twitter</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>SERVICIOS:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="https://dirdoc.utem.cl/" target="_blank">Dirdoc</a></li>
+                <li><a href="http://reko.utem.cl/portal/" target="_blank">Reko</a></li>
+                <li><a href="https://mi.utem.cl/" target="_blank">Mi UTEM</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTRO SITIO:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="http://transparencia.utem.cl/politica-de-privacidad/" target="_blank">Pol&iacute;ticas de Privacidad</a></li>
+                <li><a href="https://www.google.cl/maps/place/Universidad+Tecnol%C3%B3gica+Metropolitana+-+Campus+Macul/@-33.466645,-70.5995255,17z/data=!4m8!1m2!2m1!1sestadio+nacional!3m4!1s0x9662cfc270900eb7:0x330e0d87329f4a5f!8m2!3d-33.4661882!4d-70.5970763" target="_blank">Mapa del sitio</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>ACCESO INTRANET:</h3>
+            </header>
+            <div id="intranet">
+              <% unless current_user %>
+                  <a href="../../../users/sign_in">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+                  </a>
+              <% else %>
+                  <a href="#">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+                  </a>
+              <%end%>
+            </div>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+      </ul>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Inicio Corporativo Pie Pagina -->
+  <div id="corporativo-pie-pagina">
+    <div class="contenedor-crpvo-pie-pagina envoltura-16">
+      <div class="meta-autor">
+        <div class="copyright">
+          <p>Av. José Pedro Alessandri 1242, Ñuñoa, Región Metropolitana<br>
+          <p class="cp">  2017 Universidad Tecnológica Metropolitana. - Todos los derechos reservados.<p>
+        </div>
+      </div>
+      <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+    </div>
+    <div class="borde-sup-crpvo-ppag">
+      <div id="logos-pie-rsp" class="envoltura-16">
+        <div class="acreditacion-rsp"><img src="images/00_comunes/00_portales/ico_cna_768.png" alt=""></div>
+        <div class="gob-pie-rsp"><img src="images/00_comunes/00_portales/gob_ch_768.jpg" alt=""></div>
+      </div>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Fin Corporativo Pie Pagina -->
+</footer>
+<!-- FIN PIE -->
+
+
+</body>
+
+</html>

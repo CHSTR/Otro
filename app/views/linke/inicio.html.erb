@@ -170,24 +170,31 @@
       </div>
       <!-- HASTA ACA -->
     </div>
-    <div class=" col-sm-12 col-md-9">
+    <div class="col-sm-12 col-md-9">
       <div class="container margen">
-        <h2>Documenos y links de interes</h2>
-        <hr>
-        <ul style="font-size: 16px; text-decoration-color: black;">
-          <% @interes.each do |i|%>
-              <li ><a href="/links/mostrar/<%=i.id %>"><%=i.nombre %></a>
-                <% if can? :manage, Etexto %>
-                    <%= link_to "Editar", linke_editar_path(i) %> -> <%= link_to "Eliminar", eliminar_linke_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
-                <%end%>
-                <br>
-                <br>
-          <% end %>
-        </ul>
-        <% if can? :manage, Etexto %>
-            <h4 class="text-left"><%= link_to "Nuevo", linke_nuevo_path %></h4>
-        <% end %>
-        </ul>
+        <h2>Documentos y links de interes</h2>
+      </div>
+      <div class=" col-sm-12 col-md-8 margen">
+        <div class="margen">
+          <ul style="font-size: 16px; text-decoration-color: black;">
+            <% if can? :manage, Etexto %>
+                <%= link_to "Nuevo", linke_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
+            <% end %>
+            <hr>
+            <ul style="font-size: 16px; text-decoration-color: black;">
+              <% @interes.each do |i|%>
+                  <h3><li ><a href="/linke/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
+                  <br>
+                  <% if can? :manage, Etexto %>
+                      <%= link_to "Editar", linke_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_linke_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                  <%end%>
+                  <br>
+                  <br>
+                  <hr>
+              <% end %>
+            </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

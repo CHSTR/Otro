@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20171214165452) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "academicos_proyectos", id: false, force: :cascade do |t|
@@ -244,6 +248,10 @@ ActiveRecord::Schema.define(version: 20171214165452) do
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "investigacions", force: :cascade do |t|
@@ -330,6 +338,18 @@ ActiveRecord::Schema.define(version: 20171214165452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tipo"
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
+    t.string "document2_file_name"
+    t.string "document2_content_type"
+    t.integer "document2_file_size"
+    t.datetime "document2_updated_at"
+    t.string "document3_file_name"
+    t.string "document3_content_type"
+    t.integer "document3_file_size"
+    t.datetime "document3_updated_at"
   end
 
   create_table "proyecto_academicos", force: :cascade do |t|

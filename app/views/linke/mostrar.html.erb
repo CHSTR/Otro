@@ -180,6 +180,11 @@
               <h1> <%= @interes.nombre %> </h1>
               <hr>
               <%= raw @interes.texto %>
+              <br>
+              <br>
+              <% if  @interes.document.url != "/documents/original/missing.png"%>
+                  <a href="<%=  @interes.document.url %>">Documento</a>
+              <%end%>
             </ul>
           </div>
           <br>
