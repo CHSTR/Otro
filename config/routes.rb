@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
 
+  get 'organizacione/nuevoorganigrama', to: 'organizacione#nuevoorganigrama', as:'organizacione_nuevoorganigrama'
+  post 'organizacione/nuevoorganigrama', to: 'organizacione#createorganigrama'
+
+  get 'organizacione/organigrama', to: 'organizacione#organigrama', as:'organizacione_organigrama'
+
+  get 'organizacione/editarorganigrama', to: 'organizacione#editarorganigrama', as: 'organizacione_editarorganigrama'
+  put 'organizacione/editarorganigrama', to: 'organizacione#updateorganigrama'
+  patch 'organizacione/editarorganigrama', to: 'organizacione#updateorganigrama'
+
+
+  #------------------------------------------------------
+
+  get 'organizacion/nuevoorganigrama', to: 'organizacion#nuevoorganigrama', as:'organizacion_nuevoorganigrama'
+  post 'organizacion/nuevoorganigrama', to: 'organizacion#createorganigrama'
+
+  get 'organizacion/organigrama', to: 'organizacion#organigrama', as:'organizacion_organigrama'
+
+  get 'organizacion/editarorganigrama', to: 'organizacion#editarorganigrama', as: 'organizacion_editarorganigrama'
+  put 'organizacion/editarorganigrama', to: 'organizacion#updateorganigrama'
+  patch 'organizacion/editarorganigrama', to: 'organizacion#updateorganigrama'
+
+
+  #------------------------------------------------------
+
   get 'linke/', to:'linke#inicio', as:'linke'
 
   get 'linke/:id/editar', to: 'linke#editar', as: 'linke_editar'
