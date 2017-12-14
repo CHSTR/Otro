@@ -195,7 +195,7 @@
         <div class="col-md-9 margen">
           <h3 class="text-left">
             <%= f.label :año_del_centro %>
-            <%= f.number_field :anio %>
+            <%= f.number_field :anio, :max => Time.now.strftime("%Y") %>
           </h3>
           <br>
           <h3 class="text-left">

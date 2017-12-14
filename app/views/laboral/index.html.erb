@@ -190,7 +190,9 @@
             <% unless @oferta_laborals.nil?%>
               <% @oferta_laborals.each do |i| %>
               <tr>
-                <th scope="row"><%= i.created_at %></th>
+                <th scope="row"><%= t= i.created_at
+                      t.to_s
+                      t.strftime "%d-%m-%Y" %></th>
                 <td><a href="laboral/mostrar/<%= i.id %>"><%= i.cargo %></a></td>
                 <td><%= i.empresa %></td>
               </tr>

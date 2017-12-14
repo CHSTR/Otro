@@ -186,6 +186,9 @@
               <%= f.text_field :correo %>
             </h3>
             <br>
+            <h3>Imagen Actual</h3>
+              <%= image_tag @funcionario_deptos.photo.url(:thumb, :class => "img-fluid text-center") %>
+            <br>  
             <h3 class="text-left">
               <%= f.label :Imagen_Funcionario%>
               <%= f.file_field :photo %>

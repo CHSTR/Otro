@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'administrar/', to:'administrar#index', as:'administrar_inicio'
+
+  get 'administrar/:id/editar', to:'administrar#editar', as:'editar_usuarios'
+  put 'administrar/:id', to: 'administrar#update'
+  patch 'administrar/:id', to: 'administrar#update'
+
+  delete 'administrar/:id', to:'administrar#eliminar', as:'eliminar_usuario'
+
+  get 'administrar/eliminar'
+
   get 'linke/', to:'linke#inicio', as:'linke'
 
   get 'linke/:id/editar', to: 'linke#editar', as: 'linke_editar'

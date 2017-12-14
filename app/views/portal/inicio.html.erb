@@ -82,8 +82,10 @@
         <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
       </ol>
       <% if current_user%>
+      <% if current_user %>
+        <h4 class="text-right">Bienvenid@ <%= current_user.nombre%></h4>
+      <%end%>
       <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
-
       <% flash.each do |name, msg| %>
         <div class="pad margin no-print">
           <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
@@ -250,11 +252,30 @@
                     </header>
                     <div id="intranet">
                       <a href="users/sign_up">
-                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Resgistrar"></div>
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Resgistrar "></div>
                       </a>
                     </div>
                 <% end %>
-
+                <% if can? :manage, :all %>
+                    <header class="cabecera-nav-pie-pagina">
+                      <h3>ADMINISTRAR:</h3>
+                    </header>
+                    <div id="intranet">
+                      <a href="/administrar">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Administrar"></div>
+                      </a>
+                    </div>
+                <% end %>
+                <% if current_user%>
+                    <header class="cabecera-nav-pie-pagina">
+                      <h3>EDITAR CUENTA:</h3>
+                    </header>
+                    <div id="intranet">
+                      <a href="/users/edit">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Editar cuenta"></div>
+                      </a>
+                    </div>
+                <% end %>
                 <!-- Inicio Limpiar flotante -->
                 <div class="limpiar"></div>
                 <!-- Fin Limpiar flotante -->

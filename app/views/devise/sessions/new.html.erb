@@ -45,6 +45,7 @@
 
                                 <div class="actions">
                                   <%= f.submit "Entrar" , :class => "btn btn-success btn-lg float-right"%>
+                                  <%= link_to "Volver",portal_path , :class => "btn btn-primary btn-lg float-left", :style => "color: white;"%>
                                 </div>
                               <% end %>
                         </div>
@@ -63,7 +64,6 @@
     </div>
     <!--/row-->
 </div>
-<%= render "devise/shared/links" %>
 <!--/container-->
   </body>
 </html>

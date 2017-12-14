@@ -204,6 +204,8 @@
                 <%= f.cktext_area :cuerpo %>
               </h3>
               <br>
+              <h3>Imagen Actual</h3>
+              <%= image_tag @noticia_escuelas.photo.url(:thumb, :class => "img-fluid text-center") %>
               <h3 class="text-left">
                 <%= f.label :Imagen_Portada %>
                 <%= f.file_field :photo %>

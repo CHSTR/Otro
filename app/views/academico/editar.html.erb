@@ -211,7 +211,10 @@
               <%= f.select(:jornada, options_for_select([['Jornada Completa','JC'], ['Media Jornada','MJ'], ['Jornada Parcial','JP']])) %>
             </h3>
             <br>
+            <h3>Imagen Actual</h3>
+              <%= image_tag @academicos.photo.url(:thumb, :class => "img-fluid text-center") %>
             <h3 class="text-left">
+            <br>
               <%= f.label :Imagen%>
               <%= f.file_field :photo %>
             </h3>

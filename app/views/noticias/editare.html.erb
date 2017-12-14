@@ -204,6 +204,8 @@
                 <%= f.cktext_area :descripcion %>
               </h3>
               <br>
+              <h3>Imagen Actual</h3>
+              <%= image_tag @evento_escuelas.photo.url(:thumb, :class => "img-fluid text-center") %>
               <h3 class="text-left">
                 <%= f.label :Imagen%>
                 <%= f.file_field :photo %>
@@ -211,7 +213,7 @@
               <br>
               <h3 class="text-left">
                 <%= f.label :Fecha %>
-                <%= f.text_field :fecha %>
+                <%= f.text_field :fecha, :type => "date" , :min => Time.now.strftime("%Y-%m-%d")%>
               </h3>
               <br>
               <h3 class="text-left">
@@ -221,7 +223,7 @@
               <br>
               <h3 class="text-left">
                 <%= f.label :Hora %>
-                <%= f.text_field :hora %>
+                <%= f.text_field :hora, :type => "time", :value => "13:45", :id => "time" %>
               </h3>
               <br>
               <div class="actions">

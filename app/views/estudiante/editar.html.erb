@@ -191,7 +191,7 @@
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :año_del_centro %>
-              <%= f.number_field :anio %>
+              <%= f.number_field :anio, :max => Time.now.strftime("%Y") %>
             </h3>
             <br>
             <h3 class="text-left">
@@ -213,6 +213,9 @@
               <%= f.label :pagweb %>
               <%= f.text_field :pagweb %>
             </h3>
+            <br>
+            <h3>Imagen Actual</h3>
+              <%= image_tag @centro_alumnos.photo.url(:thumb, :class => "img-fluid text-center") %>
             <br>
             <h3 class="text-left">
               <%= f.label :Imagen %>

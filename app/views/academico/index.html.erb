@@ -221,11 +221,10 @@
                 <% @academicos.each do |i|%>
                 <li ><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>
                 <% if can? :manage, Academico %>
-                <%= link_to "Editar", editar_academico_path(i) %> -> <%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                <%= link_to "Editar", editar_academico_path(i),:class => 'btn btn-outline-primary' %> -> <%= link_to "Eliminar", eliminar_academico_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
                 <% end %>
                 <br>
                 <br>
-
                 <% end %>
               </ul>
             <% if can? :manage, Academico %>

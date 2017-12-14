@@ -206,7 +206,9 @@
           <hr>
           <div class="container-fluid">
             <h4 class="inter">
-              <h6><%= @noticia_escuelas.created_at%></h6>
+              <h5>Fecha publicación: <%= t = @noticia_escuelas.created_at
+                      t.to_s
+                      t.strftime "%d-%m-%Y"%></h5>
             </h4>
           </div>
           <hr>

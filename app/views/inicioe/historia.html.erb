@@ -188,8 +188,9 @@
             <% end %>
             </center>
         <% else %>
+        <% if can? :manage, Etexto %>
             <%= link_to "Nuevo", inicioe_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
-
+        <%end%>
         <%end%>
       </div>
       <center>

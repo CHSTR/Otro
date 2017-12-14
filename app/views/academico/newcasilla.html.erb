@@ -183,7 +183,7 @@
             </h3>
             <br>
             <h3 class="text-left">
-              <p><%= f.label :activo_? %></p>
+              <p><label class="control-label margenl" id="DOM" for="Empresa">Se verá? (1 = SI / 0 = NO)</label></p>
               <p><%= f.number_field :activo, {:max=>"1",:min=>"0"}%></p>
             </h3>
             <br>
@@ -193,8 +193,8 @@
             </h3>
             <br>
            <h3 class="text-left">
-              <p><%= f.label :ver %></p>
-              <p><%= f.number_field :ver, {:max=>"1",:min=>"0"} %></p>
+              <!--cambiar a hidden.-->
+              <p><%= f.hidden_field :ver, {:max=>"1",:min=>"0"} %></p>
             </h3>
             <br>
             <h3 class="text-left">
