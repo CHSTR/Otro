@@ -63,7 +63,6 @@ Rails.application.routes.draw do
   delete 'links/eliminar/:id', to: 'links#eliminar', as:'eliminar_links'
 
   get 'links/mostrar/:id', to: 'links#mostrar'
-
 #----------------------------------------------------------------------------
   get 'consulta/', to:'consulta#index', as:'consulta_index'
 
