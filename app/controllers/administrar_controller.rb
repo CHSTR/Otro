@@ -1,6 +1,6 @@
 class AdministrarController < ApplicationController
   def index
-  	@users = User.all.paginate(page: params[:page], per_page: 5)
+  	@users = User.all.order("id").paginate(page: params[:page], per_page: 5)
   end
 
   def editar
