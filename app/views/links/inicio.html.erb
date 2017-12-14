@@ -173,20 +173,22 @@
       <div class=" col-sm-12 col-md-8 margen">
         <div class="margen">
           <ul style="font-size: 16px; text-decoration-color: black;">
+            <% if can? :manage, Texto %>
+                <%= link_to "Nuevo", links_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
+            <% end %>
             <hr>
             <ul style="font-size: 16px; text-decoration-color: black;">
               <% @interes.each do |i|%>
-                  <li ><a href="/links/mostrar/<%=i.id %>"><%=i.nombre %></a>
+                  <h3><li ><a href="/links/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
+                    <br>
                     <% if can? :manage, Texto %>
-                        <%= link_to "Editar", links_editar_path(i) %> -> <%= link_to "Eliminar", eliminar_links_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                      <%= link_to "Editar", links_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_links_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
                     <%end%>
                     <br>
                     <br>
+                  <hr>
               <% end %>
             </ul>
-            <% if can? :manage, Texto %>
-                <h4 class="text-left"><%= link_to "Nuevo", links_nuevo_path %></h4>
-            <% end %>
           </ul>
         </div>
       </div>
