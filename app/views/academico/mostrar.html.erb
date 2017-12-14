@@ -248,7 +248,9 @@
             </tr>
             <tr>
               <td></td>
-              <td><a href="<%= @academicos.curriculum %>">Curriculum Vitae</a></td>
+              <td><% if  @academicos.document.url != "/documents/original/missing.png"%>
+                    <a href="<%=  @academicos.document.url %>">Curriculum</a>
+                <%end%></td>
             </tr>
           </tbody>
         </table>

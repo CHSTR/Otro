@@ -59,7 +59,7 @@ class ProgramasController < ApplicationController
   end
 
   def user_params
-    params.require(:programa).permit(:nombre,:perfil_egreso,:campo_ocupacional,:link,:descripcion,:link_malla,:tipo)
+    params.require(:programa).permit(:nombre,:perfil_egreso,:campo_ocupacional,:link,:descripcion,:link_malla,:tipo, :document, :document2, :document3)
   end
 
   def editarinicio

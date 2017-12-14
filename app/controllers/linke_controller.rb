@@ -46,6 +46,6 @@ class LinkeController < ApplicationController
   end
 
   def user_params
-    params.require(:intere).permit(:nombre,:texto,:tipo)
+    params.require(:intere).permit(:nombre,:texto,:tipo,:document)
   end
 end

@@ -207,7 +207,18 @@
       <br>
       <div class="container-fluid">
 
-      <p><a href="<%=@programas.link_malla%>" target="_blank">Malla</a></p>
+        <% if  @programas.document.url != "/documents/original/missing.png"%>
+            <a href="<%=  @programas.document.url %>">Malla Antigua</a>
+        <%end%>
+        <br>
+        <% if  @programas.document2.url != "/document2s/original/missing.png"%>
+            <a href="<%=  @programas.document2.url %>">Malla Actual</a>
+        <%end%>
+        <br>
+        <% if  @programas.document3.url != "/document3s/original/missing.png"%>
+            <a href="<%=  @programas.document3.url %>">Malla Nueva</a>
+        <%end%>
+        <br>
 
       </div>
       <hr>
