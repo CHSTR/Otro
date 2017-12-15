@@ -277,9 +277,7 @@
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                       </button>
-                      <% @oferta_laborals.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
-                      <% end %>
+                      <li>Ha Ocurrido un error.</li>
                     </div>
                 <% end %> 
                 <div class="form-group">
@@ -289,8 +287,8 @@
                 </div>         
                 <div class="form-group margen1" id="DOM">
                     <br>
-                    <%= f.hidden_field :empresa, :value => "ninguna" %>
-                    <%= f.hidden_field :cargo, :value => "ninguna" %>
+                    <%= f.hidden_field :empresa, :value => "     " %>
+                    <%= f.hidden_field :cargo, :value => "     " %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>

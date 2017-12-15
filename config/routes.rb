@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'main/welcome'
+
   get 'administrar/', to:'administrar#index', as:'administrar_inicio'
 
   get 'administrar/:id/editar', to:'administrar#editar', as:'editar_usuarios'

@@ -7,16 +7,16 @@ class ContactoController < ApplicationController
   def crear
     @oferta_laborals = OfertaLaboral.new(contacto_params)
     if @oferta_laborals.update_attributes(contacto_params)
-      redirect_to contactod_url
+      redirect_to contacto_url
     else
       render action: 'index'
     end
   end
 
-  def crear_consulta
+  def consulta_crear
     @consultas = Consulta.new(consulta_params)
     if @consultas.update_attributes(consulta_params)
-      redirect_to contactod_url
+      redirect_to contacto_url
     else
       render action: 'index'
     end
