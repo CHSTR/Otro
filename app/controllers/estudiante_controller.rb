@@ -79,7 +79,7 @@ class EstudianteController < ApplicationController
   end
 
   def reglamento_params
-    params.require(:reglamento).permit(:nombre,:link) #retorna un hash con todos los valores del academico...
+    params.require(:reglamento).permit(:nombre,:document) #retorna un hash con todos los valores del academico...
   end
 
   def centro_params

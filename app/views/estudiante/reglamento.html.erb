@@ -180,7 +180,7 @@
       <br>
       <br>
       <% @reglamentos.each do |i| %>
-          <p><h2><a href="<%= i.link %>"><%= i.nombre %></h2></p>
+          <p><h2><a target="_blank" href="<%=  i.document.url %>"><%= i.nombre %></h2></p>
           <% if can? :manage, Reglamento %>
           <%= link_to "Editar", editar_reglamento_path(i), :class => 'btn btn-outline-primary margen1' %>
           <%= link_to "Eliminar", eliminar_regla_path(i), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará, seguro?"} %>
