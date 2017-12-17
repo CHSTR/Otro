@@ -176,40 +176,12 @@
       </div>
       <div class="col-sm-12 col-md-9">
           <h1>Proyectos</h1>
-          <div class="margen">
-            Proyecto:” Modelo de depuración de datos en un ambiente de BI” - Concurso Interno de Fomento a la Investigación y Creación 2017 - Línea 2: “Proyectos de Fortalecimiento a la I+D o Creación” – UTEM 2017.
-            <ul>
-              <li>Académicos-Investigadores</li>
-              <ul>
-                <li>Investigador responsable: Dr. Víctor Escobar</li>
-                <li>Colaboradores: Dr. Oscar Magna, Ing, Jorge Morris Arredond</li>
-              </ul>
-            </ul>
-          </div>
-        <br>
-        <hr>
-          <div class="margen">
-            Proyecto:” Soporte Inteligente para la Toma de Decisiones Estratégicas (TDE) bajo Incertidumbre en la Industria” - Concurso Interno de Fomento a la Investigación y Creación 2017 - Línea 1: ““Proyectos de Iniciación en I+D o Creación” – UTEM 2017.
-            <ul>
-              <li>Académicos-Investigadores</li>
-              <ul>
-                <li>Investigador responsable: Dr. Santiago Zapata</li>
-                <li>Colaboradores: Dr. Víctor Escobar, Dr. Oscar Magna, Dr. Luis Martínez López (Departamento de Informática, Universidad de Jaén, España), Juan Olavarrieta Suarez (Máster U. Jaume I, Castellón Valencia, España).</li>
-              </ul>
-            </ul>
-          </div>
         <% @proyectos.each do |i| %>
         <hr>
             <p style="font-size: 16px;"><%= raw i.nombre %></p>
               <%= raw i['descripcion'] %>
             <ul>
-              <li>Académicos-Investigadores</li>
             <ul>
-              <ul>
-              <li><strong>Investigadores:</strong> 
-                <a href="/academico/mostrar/<%= i['id_academico'] %>" class="marginr"><%= i['nombre_academico'] %></a>
-              </li>
-              </ul>
             </ul>
               <% if can? :manage, Proyecto  %>
           <%= link_to "Editar", editar_proyecto_path(i) %>
@@ -229,9 +201,10 @@
  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
-
+<br>
+<br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>
