@@ -196,7 +196,9 @@
               <% end %>
             </center>
         <% else %>
+            <% if can? :manage, Texto %>
             <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
         <% end %>
         </div>
 
