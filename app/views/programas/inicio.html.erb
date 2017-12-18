@@ -187,7 +187,9 @@
         <% end %>
       </center>
         <% else %>
+            <% if can? :manage, Etexto %>
             <%= link_to "Nuevo", programas_nuevoinicio_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
         <%end%>
 
     </div>
