@@ -188,9 +188,19 @@
             <div class="col-md-2"></div>
           </div>
         </div>
-        <div class="container-fluid text-left margen">
-            La unidad de informática se está enfocando en distintas áreas de investigacion, ya sea como en inteligencia artificial, logica difusa, aprendizaje automático, computación científica, evaluación de rendimiento de computadoras y más. Los enfoques y paradigmas innovadores de nuestra facultad se centrarán en realizar un impacto nacional.
-        </div>
+        <% unless @textos.nil?%>
+            <p class="text-justify" >
+              <%= raw @textos.descripcion%>
+            </p>
+            <br>
+            <center>
+        <% if can? :manage, Texto %>
+            <%= link_to "Editar", investigacion_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
+        <% end %>
+      </center>
+        <% else %>
+            <%= link_to "Nuevo",investigacion_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+        <%end%>
       </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->

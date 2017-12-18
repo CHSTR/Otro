@@ -78,6 +78,19 @@ Rails.application.routes.draw do
 
   get 'egresados/', to: 'egresados#index', as:'inicio_egresados'
 
+  get 'egresados/nuevoinicio', to: 'egresados#nuevoinicio', as: 'egresados_nuevoinicio'
+  post 'egresados/nuevoinicio', to: 'egresados#createinicio'
+
+  get 'egresados/editarinicio', to: 'egresados#editarinicio', as: 'egresados_editarinicio'
+  put 'egresados/editarinicio', to: 'egresados#updateinicio'
+  patch 'egresados/editarinicio', to: 'egresados#updateinicio'
+
+  get 'egresados/eliminar'
+  delete 'egresados/eliminar/:id', to: 'egresados#eeliminar', as:'eliminar_egresados'
+
+  get 'egresados/nuevo', to: 'egresados#enuevo', as: 'egresados_nuevo'
+  post 'egresados/nuevo', to: 'egresados#ecreate'
+
   get 'egresados/tituygradua', as:'tituygradua_egresados'
 
   get 'egresados/tituygradua/:id', to:'egresados#leer'
@@ -394,8 +407,16 @@ Rails.application.routes.draw do
   delete 'organizacion/:id', to: 'organizacion#eliminar', as:'eliminar_organizacion'
 
   #-----------------------------comienza investigacion inicio ---------------------
+  get 'investigacion/nuevotexto', to: 'investigacion#nuevotexto', as:'investigacion_nuevotexto'
+
+  post 'investigacion/nuevotexto', to: 'investigacion#textocreate'
+  get 'investigacion/editarinicio', to: 'investigacion#editarinicio', as: 'investigacion_editarinicio'
+
+  put 'investigacion/editarinicio', to: 'investigacion#updateinicio'
+
+  patch 'investigacion/editarinicio', to: 'investigacion#updateinicio'
   
-  get 'investigacion/', to: 'investigacion#index'
+  get 'investigacion/', to: 'investigacion#index', as:'inicio_investigacion'
 
   get 'investigacion/buscar', to: 'investigacion#buscar', as:'investigacion_buscar'
 

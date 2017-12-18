@@ -1,6 +1,35 @@
 class EgresadosController < ApplicationController
   def index
+    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+  end
 
+  def editarinicio
+    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+  end
+
+  def updateinicio
+    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+    if @etextos.update_attributes(user_paramsi)
+      redirect_to inicio_egresados_url
+    else
+      render action: 'editarinicio'
+    end
+  end
+
+  def nuevoinicio
+    @etextos = Etexto.new
+  end
+
+  def createinicio
+    @etextos = Etexto.new(user_paramsi)
+    if @etextos.save
+      redirect_to inicio_egresados_url
+    else
+      render action: 'nuevoinicio'
+    end
+  end
+  def user_paramsi
+    params.require(:etexto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 
   def tituygradua

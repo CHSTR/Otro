@@ -174,10 +174,10 @@
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">Programas</h1>
+      <h1 style="font-family: 'Junge', serif;">Inicio Egresados</h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
         <% if can? :manage, Etexto %>
-        <%= form_for(@etextos, :url => {:action => :createinicio})  do |f| %>
+        <%= form_for(@etextos, :url => {:action => :updateinicio}) do |f| %>
             <% if @etextos.errors.any? %>
                 <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -189,18 +189,13 @@
                 </div>
             <% end %>
             <div class="col-md-9 margen">
-              <h3 class="text-left">
-                <%= f.label :Nombre %>
-                <%= f.select(:nombre, options_for_select([['Inicio','egresado']])) %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Descripcion %>
+              <h2 class="text-left">
+                <%= f.label :Texto %>
                 <%= f.cktext_area :descripcion %>
-              </h3>
+              </h2>
               <br>
               <div class="actions">
-                <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
+                <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
               </div>
         <% end %>
             <% else %>
@@ -214,16 +209,17 @@
             <br>
             <% end %>
         <br>
-        <%= link_to 'Volver', programas_path, :class => 'btn btn-outline-primary margen1' %>
+        <%= link_to 'Volver', inicio_egresados_path , :class => 'btn btn-outline-primary margen1' %>
         <br>
-        </div>
       </div>
     </div>
-    <!-- Inicio Limpiar flotante -->
-    <div class="limpiar"></div>
-    <!-- Fin Limpiar flotante -->
+  </div>
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
+
 <!-- INICIO PIE -->
 <footer id="pie-pagina" class="envoltura">
   <div class="linea-inf-oscura">

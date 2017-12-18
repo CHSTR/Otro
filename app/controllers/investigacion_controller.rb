@@ -3,6 +3,45 @@ class InvestigacionController < ApplicationController
   load_and_authorize_resource :class =>  AreasDisciplinaria
   skip_authorize_resource :only => [:ADI,:ver_area,:pro,:buscar,:index]
   def index
+    @textos = Texto.where("nombre like ?", "investigacion").first
+  end
+  def editarinicio
+    @textos = Texto.where("nombre like ?", "investigacion").first
+  end
+  
+  def updateinicio
+    @textos = Texto.where("nombre like ?", "investigacion").first
+    if @textos.update_attributes(user_params)
+      redirect_to inicio_investigacion_url
+    else
+      render action: 'editarinicio'
+    end
+  end
+  
+  def nuevotexto
+    @textos = Texto.new
+  end
+
+  def textocreate
+    @textos = Texto.new(user_params)
+    if @textos.save
+      redirect_to inicio_investigacion_url
+    else
+      render action: 'nuevotexto'
+    end
+  end
+
+  def eliminartexto
+  end
+
+  def nuevopde
+  end
+
+  def eliminarpde
+  end
+
+  def user_params
+    params.require(:texto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 
   def buscar

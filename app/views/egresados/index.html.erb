@@ -174,17 +174,21 @@
       <div class=" col-sm-12 col-md-9">
       <div class="container margen">
           <h1 style="font-family: 'Junge', serif;">Egresados</h1>
+          <% unless @etextos.nil?%>
+            <p class="text-justify" >
+              <%= raw @etextos.descripcion%>
+            </p>
+            <br>
+            <center>
+        <% if can? :manage, Etexto %>
+            <%= link_to "Editar", egresados_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
+        <% end %>
+      </center>
+        <% else %>
+            <%= link_to "Nuevo", egresados_nuevoinicio_url, :class => 'btn btn-outline-primary margen1' %>
+        <%end%>
           <div class="container margen">
-            <img class="d-block img-fluid mx-auto rounded" src="https://document-export.canva.com/DACj9Gnn2Ns/4/preview/0001-421858410.png">
           </div>
-        </div>
-        <div class="container">
-          <br>
-          <h4 style="font-family: 'Junge', serif;">Nuestros egresados y títulados, son nuestra mayor fuente de orgullo y representan lo que somos como UTEM.
-          También queremos honrar a quienes están próximos a alcanzar el final de su Vida Universitaria y el comienzo de su vida laboral.
-          Nuestro agradecimiento y nuestro esfuerzo está sustentados en todos quienes confiaron en la UTEM y en su Escuela de Informática, para su formación profesional.
-          Estos son nuestros títulados, acá plasmamos nuestro legado.
-          </h4>
         </div>
       </div>
     </div>

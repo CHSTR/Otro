@@ -215,7 +215,7 @@
       </div>
       <div class="col-sm-12 col-md-9">
         <div class="container margen">
-          <h2>Lista de académicos</h2>
+          <h2></h2>
         </div>
       <div class=" col-sm-12 col-md-8 margen">
           <table class="table table-bordered margen table-responsive">
@@ -247,10 +247,13 @@
               <td><h3>Principales Cargos</h3><%=  raw @academicos.descripcion %></td>
             </tr>
             <tr>
-              <td></td>
+            <td></td>
               <td><% if  @academicos.document.url != "/documents/original/missing.png"%>
                     <a target="_blank" href="<%=  @academicos.document.url %>" target="_blank">Curriculum</a>
-                <%end%></td>
+                  <% else %>
+                    <h4>Curriculum no disponible</h4>
+                  <%end%>
+              </td>
             </tr>
           </tbody>
         </table>

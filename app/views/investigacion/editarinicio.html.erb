@@ -9,12 +9,12 @@
   <meta name="title" content="Universidad Tecnologica Metropolitana" />
   <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/00_estilos_utem.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/00_estilos_utem.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond-master/src/respond.js"></script>
@@ -68,6 +68,9 @@
     .margen {
       margin-top: 1.5em;
     }
+    .margen1 {
+      margin-top: 1em;
+    }
 
     .utem-log{
       margin-top: 1em;
@@ -91,15 +94,12 @@
   <nav id="nav-escritorio" class="envoltura-16">
     <div id="utem-toggle-escrt"></div>
     <ul id="menu-escritorio">
-      <li><a href="/inicioe/inicio">INICIO</a></li>
-      <li><a href="/noticias/inicio">NOTICIAS</a>
-      <li><a href="/estudiante">ESTUDIANTES</a>
-      <li><a href="/programas">PROGRAMAS</a>
-      <li><a href="/egresados">EGRESADOS</a>
-      <li><a href="/laboral">LABORAL</a>
-      <li><a href="/organizacione">ORGANIZACION</a>
-      <li><a href="/linke">LINKS</a>
-      <li><a href="/contacto">CONTACTO</a>
+      <li><a href="/iniciodepto/inicio">INICIO</a></li>
+      <li><a href="/academico/JC">ACADÉMICOS</a>
+      <li><a href="/investigacion">INVESTIGACIÓN</a>
+      <li><a href="/organizacion">ORGANIZACIÓN</a>
+      <li><a href="/links">LINKS</a>
+      <li><a href="/contactod">CONTACTO</a>
     </ul>
   </nav>
 </section>
@@ -129,15 +129,12 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-            <li><a href="/inicioe/inicio">INICIO</a></li>
-            <li><a href="/noticias/inicio">NOTICIAS</a>
-            <li><a href="/estudiante">ESTUDIANTES</a>
-            <li><a href="/programas">PROGRAMAS</a>
-            <li><a href="/egresados">EGRESADOS</a>
-            <li><a href="/laboral">LABORAL</a>
-            <li><a href="/organizacione">ORGANIZACION</a>
-            <li><a href="/linke">LINKS</a>
-            <li><a href="/contacto">CONTACTO</a>
+            <li class=""><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+            <li class=""><a href="/academico/JC">ACADÉMICOS</a>
+            <li class=""><a href="/investigacion">INVESTIGACIÓN</a>
+            <li class=""><a href="/organizacion">ORGANIZACIÓN</a>
+            <li class=""><a href="/links">LINKS</a>
+            <li class=""><a href="/contactod">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -149,7 +146,6 @@
   </section>
 </div>
 <!-- FIN MENU PRINCIPAL RESPONSIVO -->
-
 <!-- INICIO CONTENIDO PRINCIPAL -->
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
@@ -158,44 +154,45 @@
       <div class="container-fluid">
         <ol class="breadcrumb margen">
           <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
-          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen" id="menu-escritorio">
         <div class="list-group">
-          <a href="../programas/pregrado" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Pregrado</h4></a>
-          <a href="../programas/postgrado" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;">
-            <h4>Postgrado</h4>
+          <a href="../iniciodepto/inicio" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
+          <a href="../iniciodepto/historia" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Historia</h4></a>
           </a>
-          <a href="../programas/otros" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Otros</h4></a>
+          <a href="../iniciodepto/misionvision" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
+          <a href="../iniciodepto/pde" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
         </div>
       </div>
       <!-- HASTA ACA -->
     </div>
+
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">Programas</h1>
+      <h1 style="font-family: 'Junge', serif;"></h1>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% if can? :manage, Etexto %>
-        <%= form_for(@etextos, :url => {:action => :createinicio})  do |f| %>
-            <% if @etextos.errors.any? %>
+        <% if can? :manage, Texto %>
+        <%= form_for(@textos, :url => {:action => :updateinicio})  do |f| %>
+            <% if @textos.errors.any? %>
                 <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                  <% @etextos.errors.full_messages.each do |msg| %>
+                  <% @textos.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
                   <% end %>
                 </div>
             <% end %>
             <div class="col-md-9 margen">
               <h3 class="text-left">
-                <%= f.label :Nombre %>
-                <%= f.select(:nombre, options_for_select([['Inicio','egresado']])) %>
+                <%= f.label :nombre %>
+                <%= f.select(:nombre, options_for_select([['Inicio','investigacion']])) %>
               </h3>
               <br>
               <h3 class="text-left">
-                <%= f.label :Descripcion %>
+                <%= f.label :descripcion %>
                 <%= f.cktext_area :descripcion %>
               </h3>
               <br>
@@ -212,18 +209,18 @@
               <strong>No puede ver este contenido!</strong> debe iniciar sesion.
             </div>
             <br>
-            <% end %>
+        <% end %>
         <br>
-        <%= link_to 'Volver', programas_path, :class => 'btn btn-outline-primary margen1' %>
+        <%= link_to 'Volver', inicio_investigacion_path, :class => 'btn btn-outline-primary margen1' %>
         <br>
-        </div>
-      </div>
-    </div>
-    <!-- Inicio Limpiar flotante -->
-    <div class="limpiar"></div>
-    <!-- Fin Limpiar flotante -->
+  </div>
+  </div>
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
+
 <!-- INICIO PIE -->
 <footer id="pie-pagina" class="envoltura">
   <div class="linea-inf-oscura">
@@ -329,6 +326,7 @@
   <!-- Fin Corporativo Pie Pagina -->
 </footer>
 <!-- FIN PIE -->
+
 
 </body>
 

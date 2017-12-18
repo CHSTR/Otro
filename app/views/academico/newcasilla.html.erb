@@ -162,7 +162,7 @@
         </div>
       </div>
       <div class=" col-sm-12 col-md-9 margen">
-      <h2>Agregando un nuevo académico</h2>
+      <h2>Agregando una nueva Casilla</h2>
         <% if can? :manage, Casilla %>
       <br>
           <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
@@ -183,7 +183,7 @@
             </h3>
             <br>
             <h3 class="text-left">
-              <p><label class="control-label margenl" id="DOM" for="Empresa">Se verá? (1 = SI / 0 = NO)</label></p>
+              <p><label class="control-label margenl" id="DOM" for="Empresa">Estará activo? (1 = SI / 0 = NO)</label></p>
               <p><%= f.number_field :activo, {:max=>"1",:min=>"0"}%></p>
             </h3>
             <br>
@@ -198,8 +198,7 @@
             </h3>
             <br>
             <h3 class="text-left">
-              <p><%= f.label :ubicacion %></p>
-              <p><%= f.select(:ubicacion, options_for_select([['Ubicación en académico','academico']])) %>
+              <p><%= f.hidden_field :ubicacion , :value => "academico"%>
               </p>
             </h3>
             <div class="actions">

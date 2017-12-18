@@ -215,6 +215,9 @@
         </div>
       <div class=" col-sm-12 col-md-8 margen">
           <div class="margen">
+          <% if @academicos.empty? %>
+            <h3>Sin académicos en esta modalidad</h3>
+          <%end%>
               <ul style="font-size: 16px; text-decoration-color: black;">
                 <% @academicos.each do |i|%>
                 <li ><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>
@@ -226,7 +229,7 @@
                 <% end %>
               </ul>
             <% if can? :manage, Academico %>
-          <h4 class="text-left"><%= link_to "Nuevo Academico", new_academico_path %></h4>
+          <h4 class="text-left"><%= link_to "Nuevo Académico", new_academico_path %></h4>
                 <% end %>
         </div>
       </div>
