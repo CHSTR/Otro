@@ -2,6 +2,38 @@ Rails.application.routes.draw do
 
   get 'main/welcome'
 
+  get 'dependenciasd/', to: 'dependenciasd#inicio', as:'dependenciasd'
+
+  get 'dependenciasd/nuevo', to: 'dependenciasd#nuevo', as:'dependenciasd_nuevo'
+  post 'dependenciasd/nuevo', to: 'dependenciasd#create'
+
+  get 'dependenciasd/:id/editar', to: 'dependenciasd#editar', as: 'dependenciasd_editar'
+  put 'dependenciasd/:id', to: 'dependenciasd#update'
+  patch 'dependenciasd/:id', to: 'dependenciasd#update'
+
+  get 'dependenciasd/mostrar/:id', to:'dependenciasd#mostrar'
+
+  get 'dependenciasd/eliminar'
+  delete 'dependenciasd/eliminar/:id', to: 'dependenciasd#eliminar', as:'eliminar_dependenciasd'
+
+  #---------------------------------------------------
+
+  get 'dependenciase/', to: 'dependenciase#inicio', as:'dependenciase'
+
+  get 'dependenciase/nuevo', to: 'dependenciase#nuevo', as:'dependenciase_nuevo'
+  post 'dependenciase/nuevo', to: 'dependenciase#create'
+
+  get 'dependenciase/editar', to: 'dependenciase#editar', as: 'dependenciase_editar'
+  put 'dependenciase/:id', to: 'dependenciase#update'
+  patch 'dependenciase/:id', to: 'dependenciase#update'
+
+  get 'dependenciase/mostrar/:id', to:'dependenciase#mostrar'
+
+  get 'dependenciase/eliminar'
+  delete 'dependenciase/eliminar/:id', to: 'dependenciase#eliminar', as:'eliminar_dependenciase'
+
+  #------------------------------------------------------
+
   get 'administrar/', to:'administrar#index', as:'administrar_inicio'
 
   get 'administrar/:id/editar', to:'administrar#editar', as:'editar_usuarios'

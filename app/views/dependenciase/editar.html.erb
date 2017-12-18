@@ -164,44 +164,49 @@
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action active">Organigrama</a>
-          <a href="#" class="list-group-item list-group-item-action">Dependencias</a>
+          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action">Organigrama</a>
+          <a href="#" class="list-group-item list-group-item-action active">Dependencias</a>
         </div>
       </div>
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9">
       <div class="container margen">
-        <h2>Oganigrama</h2>
+        <h2>Dependencias</h2>
         <br>
         <hr>
         <br>
-        <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <ul style="font-size: 16px; text-decoration-color: black;">
           <% if can? :manage, Etexto %>
-              <%= form_for(@etextos, :url => {:action => :createorganigrama})  do |f| %>
-                  <% if @etextos.errors.any? %>
+              <%= form_for(@oficinas, :url => {:action => :update}) do |f| %>
+                  <% if @oficinas.errors.any? %>
                       <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                        <% @etextos.errors.full_messages.each do |msg| %>
+                        <% @oficinas.errors.full_messages.each do |msg| %>
                             <li><%= msg %></li>
                         <% end %>
                       </div>
                   <% end %>
                   <div class="col-md-9 margen">
                     <h3 class="text-left">
-                      <%= f.label :nombre %>
-                      <%= f.select(:nombre, options_for_select(['organigrama'])) %>
+                      <%= f.label :Nombre %>
+                      <%= f.text_field :nombre %>
                     </h3>
                     <br>
                     <h3 class="text-left">
-                      <%= f.label :descripcion %>
-                      <%= f.cktext_area :descripcion %>
+                      <%= f.label :Texto %>
+                      <%= f.cktext_area :texto %>
+                    </h3>
+                    <br>
+                    <h3 class="text-left">
+                      <%= f.label :Ubicacion %>
+                      <%= f.select(:tipo, options_for_select(['Escuela'])) %>
                     </h3>
                     <br>
                     <div class="actions">
-                      <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
+                      <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
                     </div>
               <% end %>
           <% else %>
@@ -215,12 +220,9 @@
               <br>
           <% end %>
           <br>
-          <%= link_to 'Volver', organizacione_organigrama_path, :class => 'btn btn-outline-primary margen1' %>
-          <br>
+          <%= link_to 'Volver', dependenciase_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
           </div>
-        </div>
-
-        </div>
+        </ul>
 
         <div class="col-md-3"></div>
         </div>

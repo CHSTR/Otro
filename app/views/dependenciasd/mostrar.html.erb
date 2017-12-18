@@ -91,15 +91,12 @@
   <nav id="nav-escritorio" class="envoltura-16">
     <div id="utem-toggle-escrt"></div>
     <ul id="menu-escritorio">
-      <li><a href="/inicioe/inicio">INICIO</a></li>
-      <li><a href="/noticias/inicio">NOTICIAS</a>
-      <li><a href="/estudiante">ESTUDIANTES</a>
-      <li><a href="/programas">PROGRAMAS</a>
-      <li><a href="/egresados">EGRESADOS</a>
-      <li><a href="/laboral">LABORAL</a>
-      <li><a href="/organizacione">ORGANIZACION</a>
-      <li><a href="/linke">LINKS</a>
-      <li><a href="/contacto">CONTACTO</a>
+      <li><a href="/iniciodepto/inicio">INICIO</a></li>
+      <li><a href="/academico/JC">ACADÉMICOS</a>
+      <li><a href="/investigacion">INVESTIGACIÓN</a>
+      <li><a href="/organizacion">ORGANIZACIÓN</a>
+      <li><a href="/links">LINKS</a>
+      <li><a href="/contactod">CONTACTO</a>
     </ul>
   </nav>
 </section>
@@ -129,15 +126,12 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-              <li><a href="/inicioe/inicio">INICIO</a></li>
-              <li><a href="/noticias/inicio">NOTICIAS</a>
-              <li><a href="/estudiante">ESTUDIANTES</a>
-              <li><a href="/programas">PROGRAMAS</a>
-              <li><a href="/egresados">EGRESADOS</a>
-              <li><a href="/laboral">LABORAL</a>
-              <li><a href="/organizacione">ORGANIZACION</a>
-              <li><a href="/linke">LINKS</a>
-              <li><a href="/contacto">CONTACTO</a>
+              <li class=""><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+              <li class=""><a href="/academico/JC">ACADÉMICOS</a>
+              <li class=""><a href="/investigacion">INVESTIGACIÓN</a>
+              <li class=""><a href="/organizacion">ORGANIZACIÓN</a>
+              <li class=""><a href="/links">LINKS</a>
+              <li class=""><a href="/contactod">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -157,79 +151,43 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
-          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
         </ol>
         <hr>
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action active">Organigrama</a>
-          <a href="#" class="list-group-item list-group-item-action">Dependencias</a>
+          <a href="/organizacion/organigrama" class="list-group-item list-group-item-action ">Organigrama</a>
+          <a href="#" class="list-group-item list-group-item-action active">Dependencias</a>
         </div>
       </div>
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9">
       <div class="container margen">
-        <h2>Oganigrama</h2>
+        <h2>Dependencias</h2>
         <br>
         <hr>
         <br>
-        <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-          <% if can? :manage, Etexto %>
-              <%= form_for(@etextos, :url => {:action => :createorganigrama})  do |f| %>
-                  <% if @etextos.errors.any? %>
-                      <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <% @etextos.errors.full_messages.each do |msg| %>
-                            <li><%= msg %></li>
-                        <% end %>
-                      </div>
-                  <% end %>
-                  <div class="col-md-9 margen">
-                    <h3 class="text-left">
-                      <%= f.label :nombre %>
-                      <%= f.select(:nombre, options_for_select(['organigrama'])) %>
-                    </h3>
-                    <br>
-                    <h3 class="text-left">
-                      <%= f.label :descripcion %>
-                      <%= f.cktext_area :descripcion %>
-                    </h3>
-                    <br>
-                    <div class="actions">
-                      <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
-                    </div>
-              <% end %>
-          <% else %>
-              <br>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>No puede ver este contenido!</strong> debe iniciar sesion.
-              </div>
-              <br>
-          <% end %>
-          <br>
-          <%= link_to 'Volver', organizacione_organigrama_path, :class => 'btn btn-outline-primary margen1' %>
-          <br>
-          </div>
+        <div class="margen">
+          <ul style="font-size: 16px; text-decoration-color: black;">
+            <h1> <%= @oficinas.nombre %> </h1>
+            <hr>
+            <%= raw @oficinas.texto %>
+            <br>
+          </ul>
         </div>
-
+        <br>
+        <%= link_to 'Volver', dependenciasd_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
         </div>
-
-        <div class="col-md-3"></div>
-        </div>
-    <!-- Fin Noticias -->
-    <!-- Inicio Agenda -->
-    <!-- Fin Agenda -->
-    <!-- Inicio Limpiar flotante -->
-    <div class="limpiar"></div>
-    <!-- Fin Limpiar flotante -->
+  </div>
+  <!-- Fin Noticias -->
+  <!-- Inicio Agenda -->
+  <!-- Fin Agenda -->
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
 <br>
@@ -340,7 +298,6 @@
   <!-- Fin Corporativo Pie Pagina -->
 </footer>
 <!-- FIN PIE -->
-
 
 </body>
 

@@ -164,64 +164,34 @@
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action active">Organigrama</a>
-          <a href="#" class="list-group-item list-group-item-action">Dependencias</a>
+          <a href="/organizacione/organigrama" class="list-group-item list-group-item-action">Organigrama</a>
+          <a href="#" class="list-group-item list-group-item-action active">Dependencias</a>
         </div>
       </div>
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9">
       <div class="container margen">
-        <h2>Oganigrama</h2>
+        <h2>Dependencias</h2>
         <br>
         <hr>
         <br>
-        <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-          <% if can? :manage, Etexto %>
-              <%= form_for(@etextos, :url => {:action => :createorganigrama})  do |f| %>
-                  <% if @etextos.errors.any? %>
-                      <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <% @etextos.errors.full_messages.each do |msg| %>
-                            <li><%= msg %></li>
-                        <% end %>
-                      </div>
-                  <% end %>
-                  <div class="col-md-9 margen">
-                    <h3 class="text-left">
-                      <%= f.label :nombre %>
-                      <%= f.select(:nombre, options_for_select(['organigrama'])) %>
-                    </h3>
-                    <br>
-                    <h3 class="text-left">
-                      <%= f.label :descripcion %>
-                      <%= f.cktext_area :descripcion %>
-                    </h3>
-                    <br>
-                    <div class="actions">
-                      <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
-                    </div>
-              <% end %>
-          <% else %>
+        <% if can? :manage, Etexto %>
+            <%= link_to "Nuevo", dependenciase_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
+        <% end %>
+        <hr>
+        <ul style="font-size: 16px; text-decoration-color: black;">
+          <% @oficinas.each do |i|%>
+              <h3><li ><a href="/dependenciase/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
               <br>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>No puede ver este contenido!</strong> debe iniciar sesion.
-              </div>
+              <% if can? :manage, Etexto %>
+                  <%= link_to "Editar", dependenciase_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_dependenciase_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+              <%end%>
               <br>
+              <br>
+              <hr>
           <% end %>
-          <br>
-          <%= link_to 'Volver', organizacione_organigrama_path, :class => 'btn btn-outline-primary margen1' %>
-          <br>
-          </div>
-        </div>
-
-        </div>
-
+        </ul>
         <div class="col-md-3"></div>
         </div>
     <!-- Fin Noticias -->
