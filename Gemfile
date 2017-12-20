@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # ckeditor y mas
 gem 'jquery-rails'
-gem 'ckeditor', '4.1.3'
+gem 'ckeditor'
 gem 'paperclip'
 gem 'devise'
 gem 'cancancan'
