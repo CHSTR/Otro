@@ -48,43 +48,6 @@ ActiveRecord::Schema.define(version: 20171218194600) do
     t.datetime "document_updated_at"
   end
 
-  create_table "academicos_proyectos", id: false, force: :cascade do |t|
-    t.bigint "academico_id", null: false
-    t.bigint "proyecto_id", null: false
-    t.index ["academico_id", "proyecto_id"], name: "index_academicos_proyectos_on_academico_id_and_proyecto_id"
-    t.index ["proyecto_id", "academico_id"], name: "index_academicos_proyectos_on_proyecto_id_and_academico_id"
-  end
-
-  create_table "admin_deptos", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "cargo"
-    t.string "correo"
-    t.string "descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "admin_escuelas", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "cargo"
-    t.string "correo"
-    t.string "descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "admin_generals", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "cargo"
-    t.string "correo"
-    t.string "descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "areas_disciplinaria", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
@@ -440,7 +403,5 @@ ActiveRecord::Schema.define(version: 20171218194600) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
-  add_foreign_key "academicos_proyectos", "academicos"
-  add_foreign_key "academicos_proyectos", "proyectos"
   add_foreign_key "users", "roles"
 end
