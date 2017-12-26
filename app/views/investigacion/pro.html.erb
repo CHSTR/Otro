@@ -171,13 +171,14 @@
               <%= raw i.nombre %>
               <%= raw i['descripcion'] %>
               <% if can? :manage, Proyecto  %>
-          <%= link_to "Editar", editar_proyecto_path(i) %>
-          <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará un proyecto, seguro?"} %>
+          <%= link_to "Editar", editar_proyecto_path(i),:class => 'btn btn-outline-success' %>
+          <%= link_to "Eliminar", eliminar_proyecto_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará un proyecto, seguro?"} %>
                   <% end %>
         <% end %>
         <br>
         <% if can? :manage, Proyecto  %>
-        <%= link_to "Nuevo Proyecto", new_proyecto_path %>
+        <hr>
+        <%= link_to "Nuevo Proyecto", new_proyecto_path,:class => 'btn btn-outline-primary margen1' %>
             <% end %>
         </div>
       </div>
