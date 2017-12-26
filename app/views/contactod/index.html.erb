@@ -169,7 +169,7 @@
       </div>
       <div class="">
       </div>
-      <div class=" col-sm-12 push-md-2 col-md-6 margen">
+      <div class=" col-sm-12 col-md-12 margen">
       <!-- Button trigger modal -->
         <!-- Button trigger modal -->
         <center>
@@ -206,12 +206,12 @@
                 <div class="form-group">
                     <label class="control-label margenl" for="Nombre">Nombres</label>
                     <br>
-                  <%= f.text_field :nombre %>
+                  <%= f.text_field :nombre, :class => "form-control form-control-lg" %>
                 </div>            
                 <div class="form-group margen1" id="DOM">
                     <label class="control-label margenl" id="DOM" for="Empresa">Empresa</label>
                     <br>
-                    <%= f.text_field :empresa %>
+                    <%= f.text_field :empresa, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                 <%= f.hidden_field :oferta_d, :value => 0 %>
@@ -219,17 +219,17 @@
                 <div class="form-group" id="DOM1">
                     <label class="control-label margenl" id="DOM" for="Empresa">Cargo</label>
                     <br>
-                    <%= f.text_field :cargo %>
+                    <%= f.text_field :cargo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
                     <br>
-                    <%= f.text_field :correo %>
+                    <%= f.text_field :correo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
                     <br>
-                    <%= f.cktext_area :descripcion %>
+                    <%= f.trix_editor :descripcion %>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>
                 <div class="modal-footer">               
@@ -268,22 +268,21 @@
                 <div class="form-group">
                     <label class="control-label margenl" for="Nombre">Nombres</label>
                     <br>
-                  <%= f.text_field :nombre %>
+                  <%= f.text_field :nombre, :class => "form-control form-control-lg" %>
                 </div>         
                 <div class="form-group margen1" id="DOM">
-                    <br>
                     <%= f.hidden_field :empresa, :value => "     " %>
                     <%= f.hidden_field :cargo, :value => "     " %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
                     <br>
-                    <%= f.text_field :correo %>
+                    <%= f.text_field :correo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
                     <br>
-                    <%= f.cktext_area :descripcion %>
+                    <%= f.text_area :descripcion, :class => "form-control", :rows => "10" %>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>          
                     <%= f.hidden_field :oferta_d, :value => 1%>

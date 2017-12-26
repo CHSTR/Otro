@@ -168,10 +168,8 @@
           <h1>Proyectos</h1>
         <% @proyectos.each do |i| %>
         <hr>
-            <p style="font-size: 16px;"><%= raw i.nombre %></p>
+              <%= raw i.nombre %>
               <%= raw i['descripcion'] %>
-            <ul>
-            </ul>
               <% if can? :manage, Proyecto  %>
           <%= link_to "Editar", editar_proyecto_path(i) %>
           <%= link_to "Eliminar", eliminar_proyecto_path(i) , method: :delete, data: {confirm: "Se eliminará un proyecto, seguro?"} %>

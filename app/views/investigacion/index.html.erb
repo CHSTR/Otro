@@ -177,6 +177,7 @@
             <div class="col-md-2"></div>
           </div>
         </div>
+        <div class="container-fluid">
         <% unless @textos.nil?%>
             <p class="text-justify" >
               <%= raw @textos.descripcion%>
@@ -192,6 +193,7 @@
             <%= link_to "Nuevo",investigacion_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
             <% end %>
         <%end%>
+        </div>
       </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->

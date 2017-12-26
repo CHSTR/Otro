@@ -183,13 +183,15 @@ Rails.application.routes.draw do
 
   get 'laboral/mostrar/:id', to:'laboral#mostrar', as:'mostrar_laboral'
 
+  delete 'laboral/eliminar/:id', to:'laboral#eliminar', as:'eliminar_laboral'
+
   get 'aceptar_oferta/', to:'aceptar_oferta#index', as:'inicio'
 
   delete 'aceptar_oferta/eliminar/:id', to:'aceptar_oferta#eliminar', as:'eliminar_oferta'
 
   get 'aceptar_oferta/cambiar/:id', to:'aceptar_oferta#cambiar', as:'cambiar'
 
-  get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar'
+  get 'aceptar_oferta/mostrar/:id', to:'aceptar_oferta#mostrar', as:'ver_oferta'
 
   get 'aceptar_oferta/editar/:id', to:'aceptar_oferta#editar', as:'editar_oferta'
 

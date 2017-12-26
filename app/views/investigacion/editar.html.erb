@@ -173,12 +173,12 @@
             <br>
             <h3 class="text-left">
               <%= f.label :descripcion_del_área %>
-              <%= f.cktext_area :descripcion %>
+              <%= f.trix_editor :descripcion %>
             </h3>
             <br>
             <h3 class="text-left">
               <%= f.label :Campos_de_investigación_por_área_disciplinaria %>
-              <%= f.cktext_area :descripcion2 %>
+              <%= f.trix_editor :descripcion2 %>
             </h3>
             <div class="actions">
               <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success btn-lg margen1' %>

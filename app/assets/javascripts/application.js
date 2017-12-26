@@ -11,8 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require trix
 //= require turbolinks
-//= require ckeditor/init
-//= require ckeditor/config
-//= require_tree .
+//= require_tree 
 

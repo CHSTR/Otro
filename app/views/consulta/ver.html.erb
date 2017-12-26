@@ -185,7 +185,7 @@
                     <%= f.hidden_field :correo, :value => @consultas.correo %>
                 <div class="form-group">
                     <br>
-                    <%= f.cktext_area :descripcion, :value => "" %>
+                    <%= f.trix_editor :descripcion, :value => "" %>
                 </div>
                 <%= f.hidden_field :leido, :value => 1 %>
                 <div class="actions">

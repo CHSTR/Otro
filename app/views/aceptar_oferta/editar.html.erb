@@ -183,16 +183,16 @@
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre_empresa %>
-              <%= f.text_field :empresa %>
+              <%= f.text_field :empresa, :class => "form-control form-control-lg" %>
             </h3>
             <br>
             <h3 class="text-left">
               <%= f.label :cargo_a_ofrecer %>
-              <%= f.text_field :cargo %>
+              <%= f.text_field :cargo, :class => "form-control form-control-lg" %>
             </h3>
             <h3 class="text-left">
               <%= f.label :descripción_de_la_oferta %>
-              <%= f.cktext_area :descripcion %>
+              <%= f.trix_editor :descripcion, :class => "form-control form-control-lg" %>
             </h3>
             <br>
             <br>

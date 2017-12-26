@@ -72,7 +72,9 @@
       margin-left: 2em;
       margin-right: 1em;
     }
-
+    h4{
+      font-size: 16px;
+    }
     a:hover{
       background-color: transparent;
     }
@@ -215,25 +217,30 @@
               <%else%>
                 <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" <%= image_tag @academicos.photo.url(:medium) %></td>
               <% end %>
-                <td><h3>Titulos</h3><%= raw @academicos.titulo_profesional %>
+                <td>
+                <h3>Titulos</h3>
+                <h3><%= raw @academicos.titulo_profesional %></h3>
                 </td>
             </tr>
             <tr>
-                <td><h3>Grados academicos</h3><%= raw @academicos.grado %></td>
+                <td>
+                <h3>Grados academicos</h3>
+                <h4><%= raw @academicos.grado %></h4>
+                </td>
             </tr>
             <tr>
-              <td><h3>Areas de interes</h3><%= raw @academicos.area_interes %></td>
+              <td><h3>Areas de interes</h3><h4><%= raw @academicos.area_interes %></h4></td>
             </tr>
             <tr>
-              <td><%= @academicos.correo %></td>
+              <td><h4><%= @academicos.correo %></h4></td>
             </tr>
             <tr >
-              <td class="text-center"><%= @academicos.apellido %>, <%= @academicos.nombre %></td>
+              <td class="text-center"><h4><%= @academicos.apellido %>, <%= @academicos.nombre %></h4></td>
                       <th><a href="<%= @academicos.link1 %>"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid margenl " width="30" height="30"></a><a href="<%= @academicos.link2 %>">&nbsp;&nbsp;&nbsp;<img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid margenl " width="30" height="30"></a><a href="<%= @academicos.link3 %>">&nbsp;&nbsp;&nbsp;<img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid margenl " width="30" height="30"></a></th>
             </tr>
             <tr>
               <td></td>
-              <td><h3>Principales Cargos</h3><%=  raw @academicos.descripcion %></td>
+              <td><h3>Principales Cargos</h3><h4><%=  raw @academicos.descripcion %></h4></td>
             </tr>
             <tr>
             <td></td>

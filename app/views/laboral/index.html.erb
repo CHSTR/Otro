@@ -173,6 +173,12 @@
                 <th>FECHA</th>
                 <th>CARGO</th>
                 <th>EMPRESA</th>
+                <th></th>
+                <% if current_user %>
+                  <% if can? :manage, FuncionarioEscuela %>
+                <th></th>
+                  <%end%>
+                <%end%>
               </tr>
             </thead>
             <tbody>
@@ -182,8 +188,14 @@
                 <th scope="row"><%= t= i.created_at
                       t.to_s
                       t.strftime "%d-%m-%Y" %></th>
-                <td><a href="laboral/mostrar/<%= i.id %>"><%= i.cargo %></a></td>
+                <td><%= i.cargo %></td>
                 <td><%= i.empresa %></td>
+                <td><center><%= link_to 'VER', mostrar_laboral_path(i), :class => 'btn btn-outline-success' %></center></td>
+                <% if current_user %>
+                  <% if can? :manage, FuncionarioEscuela %>
+                <td><center><%= link_to "ELIMINAR", eliminar_laboral_path(i) , method: :delete, data: {confirm: "Se eliminará la oferta laboral, ¿seguro?"}, :class => 'btn btn-outline-danger' %></center></td>
+                  <%end%>
+                <%end%>
               </tr>
               <% end %>
             <% end %>  
@@ -201,6 +213,8 @@
  <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
+<br>
+<br>
 <br>
 <br>
 <br>

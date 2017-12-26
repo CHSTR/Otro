@@ -67,7 +67,10 @@
       margin-left: 2em;
       margin-right: 1em;
     }
-
+    img{
+      max-width: 100%;
+      height: auto;
+    }
     a:hover{
       background-color: transparent;
     }
@@ -159,7 +162,7 @@
         <h2>Documentos y links de interes</h2>
       </div>
       <div class=" col-sm-12 col-md-8 margen">
-        <div class="margen">
+        <div class="">
           <ul style="font-size: 16px; text-decoration-color: black;">
             <% if can? :manage, Texto %>
                 <%= link_to "Nuevo", links_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
@@ -167,15 +170,16 @@
             <hr>
             <ul style="font-size: 16px; text-decoration-color: black;">
               <% @interes.each do |i|%>
-                  <h3><li ><a href="/links/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
-                    <br>
+                  <br>
+                  <h3><li ><a href="/links/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>       
                     <% if can? :manage, Texto %>
+                    <br>
                       <%= link_to "Editar", links_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_links_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                    <br>
                     <%end%>
                     <br>
-                    <br>
-                  <hr>
               <% end %>
+            <hr>
             </ul>
           </ul>
         </div>

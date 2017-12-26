@@ -64,7 +64,10 @@
       margin-left: 2em;
       margin-right: 1em;
     }
-
+    img{
+      max-width: 100%;
+      height: auto;
+    }
     a:hover{
       background-color: transparent;
     }
@@ -157,23 +160,21 @@
       <div class="container margen">
         <h2>Dependencias</h2>
         <br>
-        <hr>
-        <br>
         <% if can? :manage, Texto %>
             <%= link_to "Nuevo", dependenciasd_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
         <% end %>
         <hr>
         <ul style="font-size: 16px; text-decoration-color: black;">
           <% @oficinas.each do |i|%>
-              <h3><li ><a href="/dependenciasd/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
+          <br>
+              <h3><li ><a href="/dependenciasd/mostrar/<%=i.id %>" class="margen"><%=i.nombre %></h3></a>
               <br>
               <% if can? :manage, Texto %>
                   <%= link_to "Editar", dependenciasd_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_dependenciasd_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
               <%end%>
-              <br>
-              <br>
-              <hr>
+          <br>
           <% end %>
+        <hr>
         </ul>
         </div>
   </div>
@@ -189,7 +190,7 @@
 <br>
 <br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>

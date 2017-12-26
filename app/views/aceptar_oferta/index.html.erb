@@ -167,15 +167,19 @@
                 <th>FECHA</th>
                 <th>CARGO</th>
                 <th>EMPRESA</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
             <% unless @oferta_laborals.nil?%>
               <% @oferta_laborals.each do |i| %>
               <tr>
-                <th scope="row"><%= i.created_at %></th>
-                <td><a href="aceptar_oferta/mostrar/<%= i.id %>"><%= i.cargo %></a></td>
+                <th scope="row"><%=t= i.created_at
+                      t.to_s
+                      t.strftime "%d-%m-%Y"%></th>
+                <td><%= i.cargo %></td>
                 <td><%= i.empresa %></td>
+                <td><center><%= link_to 'VER', ver_oferta_path(i), :class => 'btn btn-outline-success' %></center></td>
               </tr>
               <% end %>
             <% end %>  

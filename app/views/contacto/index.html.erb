@@ -212,12 +212,12 @@
                 <div class="form-group">
                     <label class="control-label margenl" for="Nombre">Nombres</label>
                     <br>
-                  <%= f.text_field :nombre %>
+                  <%= f.text_field :nombre, :class => "form-control form-control-lg" %>
                 </div>            
                 <div class="form-group margen1" id="DOM">
                     <label class="control-label margenl" id="DOM" for="Empresa">Empresa</label>
                     <br>
-                    <%= f.text_field :empresa %>
+                    <%= f.text_field :empresa, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                 <%= f.hidden_field :oferta_d, :value => 0%>
@@ -225,17 +225,17 @@
                 <div class="form-group" id="DOM1">
                     <label class="control-label margenl" id="DOM" for="Empresa">Cargo a ofrecer</label>
                     <br>
-                    <%= f.text_field :cargo %>
+                    <%= f.text_field :cargo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
                     <br>
-                    <%= f.text_field :correo %>
+                    <%= f.text_field :correo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
                     <br>
-                    <%= f.cktext_area :descripcion %>
+                    <%= f.trix_editor :descripcion %>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>
                 <div class="modal-footer">               
@@ -272,7 +272,7 @@
                 <div class="form-group">
                     <label class="control-label margenl" for="Nombre">Nombres</label>
                     <br>
-                  <%= f.text_field :nombre %>
+                  <%= f.text_field :nombre, :class => "form-control form-control-lg" %>
                 </div>         
                 <div class="form-group margen1" id="DOM">
                     <br>
@@ -282,12 +282,12 @@
                 <div class="form-group">
                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
                     <br>
-                    <%= f.text_field :correo %>
+                    <%= f.text_field :correo, :class => "form-control form-control-lg" %>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
                     <br>
-                    <%= f.cktext_area :descripcion, size: "60x6" %>
+                    <%= f.text_area :descripcion, :class => "form-control", :rows => "3"%>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>           
                 <div class="form-group">

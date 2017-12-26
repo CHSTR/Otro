@@ -60,7 +60,10 @@
     .margen1 {
       margin-top: 1em;
     }
-
+    img{
+      max-width: 100%;
+      height: auto;
+    }
     .utem-log{
       margin-top: 1em;
       margin-bottom: 1em;
@@ -162,16 +165,10 @@
 
     <div class=" col-sm-12 col-md-9 margen">
       <h1 style="font-family: 'Junge', serif;">Historia</h1>
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+      <div class="margen">
         <% unless @textos.nil?%>
-            <center class="margen">
-
-            </center>
-            </div>
-            <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-              <p>
-                <%= raw @textos.descripcion%>
-              </p>
+            <div class="container margen text-justify">
+                <h4><%= raw @textos.descripcion%></h4>
               <%= @textos.descripcion_imagen%>
               <center>
               <% if can? :manage, Texto %>
