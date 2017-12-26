@@ -287,7 +287,7 @@
                 <div class="form-group">
                     <label class="control-label" for="Mensaje" id="p1">Mensaje</label>
                     <br>
-                    <%= f.text_area :descripcion, :class => "form-control", :rows => "3"%>
+                    <%= f.trix_editor :descripcion, :class => "form-control", :rows => "3"%>
                 </div>
                     <%= f.hidden_field :aceptado, :value => '0'%>           
                 <div class="form-group">
