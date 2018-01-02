@@ -120,7 +120,7 @@ Rails.application.routes.draw do
   get 'egresados/eliminar'
   delete 'egresados/eliminar/:id', to: 'egresados#eeliminar', as:'eliminar_egresados'
 
-  get 'egresados/nuevo', to: 'egresados#enuevo', as: 'egresados_nuevo'
+  get 'egresados/nuevo', to: 'egresados#nuevo', as: 'egresados_nuevo'
   post 'egresados/nuevo', to: 'egresados#ecreate'
 
   get 'egresados/tituygradua', as:'tituygradua_egresados'

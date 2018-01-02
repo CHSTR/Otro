@@ -182,8 +182,8 @@
                 <br>
                 <br>
                   <% if can? :manage, FuncionarioEscuela %>
-                <%= link_to "Editar", editar_funcionarioe_path(i) %>
-                <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+                <%= link_to "Editar", editar_funcionarioe_path(i),:class => 'btn btn-outline-success' %>
+                <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
                       <% end %>
             <% end %>
             <% end %>
@@ -209,8 +209,8 @@
               <br>
               <br>
                     <% if can? :manage, FuncionarioEscuela %>
-              <%= link_to "Editar", editar_funcionarioe_path(i) %>
-              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+              <%= link_to "Editar", editar_funcionarioe_path(i),:class => 'btn btn-outline-success' %>
+              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
                         <% end %>
             <% end %>
             <% end %>
@@ -236,14 +236,14 @@
               <br>
               <br>
                     <% if can? :manage, FuncionarioEscuela %>
-              <%= link_to "Editar", editar_funcionarioe_path(i) %>
-              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
+              <%= link_to "Editar", editar_funcionarioe_path(i),:class => 'btn btn-outline-success' %>
+              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
                         <% end %>
             <% end %>
             <% end %>
           </div>
         <% if can? :manage, FuncionarioEscuela %>
-          <%= link_to "Nuevo", nuevo_funcionario_path %>
+          <%= link_to "Nuevo", nuevo_funcionario_path,:class => 'btn btn-outline-primary' %>
             <% end %>
       </div>
     </div>

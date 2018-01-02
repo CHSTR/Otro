@@ -184,8 +184,8 @@
               <td><%= i.contacto_empresa %></td>
               <td><%= i.correo %></td>
               <% if can? :manage, Egresado %>
-              <td><%= link_to "EDITAR", editar_egresado_path(i) %></td>
-              <td><%= link_to "Eliminar", eliminar_egresado_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %></td>
+              <td><%= link_to "EDITAR", editar_egresado_path(i),:class => 'btn btn-outline-success' %></td>
+              <td><%= link_to "ELIMINAR", eliminar_egresado_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %></td>
                   <% end %>
             </tr>
           <%end%>

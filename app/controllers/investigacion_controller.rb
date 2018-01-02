@@ -94,10 +94,8 @@ class InvestigacionController < ApplicationController
    #---------------------comienza el area de proyectos-----------------------------
 
    def pro
-   	@proyectos = Proyecto.find_by_sql("SELECT proyectos.id, proyectos.nombre as nombre_proyecto,proyectos.descripcion, academicos.id as id_academico ,academicos.nombre as nombre_academico FROM proyectos INNER JOIN academicos_proyectos on proyectos.id = academicos_proyectos.proyecto_id INNER JOIN academicos on academicos.id = academicos_proyectos.academico_id WHERE proyectos.id = 1")
-    if @proyectos.empty?
-      @proyectos = Proyecto.all
-    end
+   	#@proyectos = Proyecto.find_by_sql("SELECT proyectos.id, proyectos.nombre as nombre_proyecto,proyectos.descripcion, academicos.id as id_academico ,academicos.nombre as nombre_academico FROM proyectos INNER JOIN academicos_proyectos on proyectos.id = academicos_proyectos.proyecto_id INNER JOIN academicos on academicos.id = academicos_proyectos.academico_id WHERE proyectos.id = 1")
+    @proyectos = Proyecto.all
     #@academicos_proyectos = ProyectoAcademico.all
     #@proyectos = Proyecto.joins(:academicos, :proyectos_academicos).where("proyectos.id = 1") #solucionar problema!
    end
