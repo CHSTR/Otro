@@ -212,14 +212,14 @@
         <div class="container margen">
           <h2></h2>
         </div>
-      <div class=" col-sm-12 col-md-8 margen">
-          <table class="table table-bordered margen table-responsive">
+      <div class="">
+          <table class="table table-bordered table-responsive">
           <tbody>
             <tr>
               <% if  @academicos.photo.url(:medium) == "/images/medium/missing.png" %>
-                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" <%= image_tag("thumb/missing.png", :class => "img-fluid") %></td>
+                <td rowspan="4" width="150" height="150"><%= image_tag("thumb/missing.png", :class => "img-fluid margen mx-auto d-block") %></td>
               <%else%>
-                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" <%= image_tag @academicos.photo.url(:medium) %></td>
+                <td rowspan="4" width="150" height="150"><%= image_tag @academicos.photo.url(:medium, :class => "img-fluid rounded mx-auto d-block") %></td>
               <% end %>
                 <td>
                 <h3>Titulos</h3>
