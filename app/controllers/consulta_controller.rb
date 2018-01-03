@@ -11,9 +11,9 @@ class ConsultaController < ApplicationController
   end
 
   def crearconsu
-  	@cambio = OfertaLaboral.find(params[:id])
-  	@cambio.aceptado = 1
-  	@cambio.save
+  	#@cambio = OfertaLaboral.find(params[:id])
+  	#@cambio.aceptado = 1
+  	#@cambio.save
     @consultas = Consulta.new(user_params)
     if @consultas.save
       redirect_to consulta_index_url

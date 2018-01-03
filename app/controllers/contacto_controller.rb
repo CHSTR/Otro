@@ -1,6 +1,7 @@
 class ContactoController < ApplicationController
   def index
     @oferta_laborals = OfertaLaboral.new
+    @oferta_laborals1 = OfertaLaboral.new
     @consultas = Consulta.new
   end
 

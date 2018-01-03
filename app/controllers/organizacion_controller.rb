@@ -1,6 +1,7 @@
 class OrganizacionController < ApplicationController
   load_and_authorize_resource :class =>  FuncionarioDepto
-  skip_authorize_resource :only => [:index,:organigrama]
+  load_and_authorize_resource :class =>  Texto
+  skip_authorize_resource :only => [:index]
   def index
     @funcionario_deptos = FuncionarioDepto.all
   end
@@ -40,42 +41,6 @@ class OrganizacionController < ApplicationController
     respond_to do |format|
       format.html {redirect_to organizacion_url, notice:'fue eliminado'}
     end  
-  end
-
-  #---------------------------------------------------
-
-  def organigrama
-    @textos = Texto.where("nombre like ?", "organigrama").first
-  end
-
-  def editarorganigrama
-    @textos = Texto.where("nombre like ?", "organigrama").first
-  end
-
-  def updateorganigrama
-    @textos = Texto.where("nombre like ?", "organigrama").first
-    if @textos.update_attributes(user_paramso)
-      redirect_to organizacion_organigrama_url
-    else
-      render action: 'editarorganigrama'
-    end
-  end
-
-  def nuevoorganigrama
-    @textos = Texto.new
-  end
-
-  def createorganigrama
-    @textos = Texto.new(user_paramso)
-    if @textos.save
-      redirect_to organizacion_organigrama_url
-    else
-      render action: 'nuevoorganigrama'
-    end
-  end
-
-  def user_paramso
-    params.require(:texto).permit(:nombre, :descripcion, :imagen, :descripcion_imagen) #retorna un hash con todos los valores del academico...
   end
 
   def funcionario_params

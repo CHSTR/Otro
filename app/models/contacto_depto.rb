@@ -1,5 +1,4 @@
 class ContactoDepto < ApplicationRecord
-
 	#validates :nombre, format: { with: /\A[a-zA-Z ]+\z/,message: "¡Solo caracteres!"}, length: {minimum: 5, message:"El nombre es muy corto."},presence: { message: "No puede estar en blanco"}
 	#validates :apellido, format: { with: /\A[a-zA-Z ]+\z/,message: "¡Solo caracteres!"}, length: {minimum: 5, message:"El apellido es muy corto."},presence: { message: "No puede estar en blanco"}
 	#validates :titulo_profesional, length: {minimum: 5, message:"Ingrese un texto más largo."},presence: { message: "No puede estar en blanco"}
