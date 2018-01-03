@@ -35,13 +35,21 @@ class EgresadosController < ApplicationController
   def tituygradua
   	@egresados = Egresado.find_by_sql("select anio from egresados group by anio order by anio DESC")
     @programas = Programa.where("tipo like ?", "pregrado")
-
-  	# hacer una consulta con find_by_sql, para filtrar solo las carreras que tengan egresados.
+    @programas2 = Programa.where("tipo like ?", "postgrado")
+    # hacer una consulta con find_by_sql, para filtrar solo las carreras que tengan egresados.
   end
 
   def egredesta
   	@egresados = Egresado.where("destacado like ? ", "1").order("anio DESC")
   end
+
+  def leer2(a,b)
+    @egresados3 = Egresado.find_by_sql("select distinct (egresados.id), egresados.* from egresados, programas where egresados.anio = #{a} and egresados.programa = '#{b}'")
+    if @egresados3.empty?
+      return 0
+    end
+  end
+  helper_method :leer2
 
   def leer
   	v =[]
@@ -72,6 +80,7 @@ class EgresadosController < ApplicationController
 
   def todos
   	@egresados = Egresado.all
+    @programas = Programa.all
   end
 
   def editar

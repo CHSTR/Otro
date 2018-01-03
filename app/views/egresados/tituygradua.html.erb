@@ -166,13 +166,40 @@
       </div>
       <div class=" col-sm-12 col-md-9">
       <h1 style="font-family: 'Junge', serif;">Lista por año de todos nuestros titulados</h4>
+      <% if @egresados.empty? %>
+      <%else%>
+      <h2>Pregrado</h2>
+      <% end %>
         <div class="row">
         <%  @egresados.each do |i| %>
           <div class="col-md-6">
           <ol class="breadcrumb margen">
           <% @programas.each do |j| %>
+          <% @a = i.anio.to_s%>
+          <% @b = j.id %>
+          <% if leer2(@a,@b) != 0 %>
+            <a href="tituygradua/<%= i.anio.to_s %><%= j.id %>"><p class=""><strong><%= i.anio %> | <%= j.nombre%></strong></p></a>              
+          <%end%>  
+          <%end %>
+          </ol>
+          </div>
+         <% end %>
+         </div>
+         <% if @egresados.empty? %>
+          <%else%>
+          <h2 class="margen">Postgrado</h2>
+          <% end %>
+         <div class="row">
+         <% @egresados.each do |i| %>
+          <div class="col-md-6">
+          <ol class="breadcrumb margen">
+          <% @programas2.each do |j| %>
+          <% @f = i.anio.to_s%>
+          <% @g = j.id %>
+          <% if leer2(@f,@g) != 0 %>
             <a href="tituygradua/<%= i.anio.to_s %><%= j.id %>"><p class=""><strong><%= i.anio %> | <%= j.nombre%></strong></p></a>
           <%end %>
+          <%end%>
           </ol>
           </div>
 

@@ -172,6 +172,7 @@
               <th>Año Titulación</th>
               <th>Contacto empresa</th>
               <th>Correo</th>
+              <th>Programa</th>
               <th></th>
               <th></th>
             </tr>
@@ -183,6 +184,12 @@
               <td><%= i.anio %></td>
               <td><%= i.contacto_empresa %></td>
               <td><%= i.correo %></td>
+              <td><% @programas.each do |h| %>
+                    <% if h.id.to_s == i.programa %>
+                      <%= h.nombre %>
+                    <%end%>
+                  <%end%>  
+              </td>
               <% if can? :manage, Egresado %>
               <td><%= link_to "EDITAR", editar_egresado_path(i),:class => 'btn btn-outline-success' %></td>
               <td><%= link_to "ELIMINAR", eliminar_egresado_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %></td>
