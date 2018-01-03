@@ -60,7 +60,7 @@ class EgresadosController < ApplicationController
   def crear
   	@egresados = Egresado.new(egresado_params)
   	if @egresados.save
-      redirect_to inicio_egresados_url
+      redirect_to tituygradua_egresados_url
     else
       render action: 'nuevo'
     end
