@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'dependenciase/nuevo', to: 'dependenciase#nuevo', as:'dependenciase_nuevo'
   post 'dependenciase/nuevo', to: 'dependenciase#create'
 
-  get 'dependenciase/editar', to: 'dependenciase#editar', as: 'dependenciase_editar'
+  get 'dependenciase/:id/editar', to: 'dependenciase#editar', as: 'dependenciase_editar'
   put 'dependenciase/:id', to: 'dependenciase#update'
   patch 'dependenciase/:id', to: 'dependenciase#update'
 
