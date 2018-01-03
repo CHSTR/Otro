@@ -2,7 +2,7 @@ class ProgramasController < ApplicationController
   #load_and_authorize_resource :class => Programa
   skip_authorize_resource :only => [:inicio,:mostrar,:pregrado,:postgrado,:otros]
   def inicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
+    @etextos = Etexto.where("nombre like ?", "programa").first
   end
 
   def mostrar
@@ -63,11 +63,11 @@ class ProgramasController < ApplicationController
   end
 
   def editarinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
+    @etextos = Etexto.where("nombre like ?", "programa").first
   end
 
   def updateinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "programa").first
+    @etextos = Etexto.where("nombre like ?", "programa").first
     if @etextos.update_attributes(user_paramsi)
       redirect_to programas_url
     else
