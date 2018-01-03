@@ -1,14 +1,14 @@
 class EgresadosController < ApplicationController
   def index
-    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+    @etextos = Etexto.where("nombre like ?", "egresado").first
   end
 
   def editarinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+    @etextos = Etexto.where("nombre like ?", "egresado").first
   end
 
   def updateinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "egresado").first
+    @etextos = Etexto.where("nombre like ?", "egresado").first
     if @etextos.update_attributes(user_paramsi)
       redirect_to inicio_egresados_url
     else
