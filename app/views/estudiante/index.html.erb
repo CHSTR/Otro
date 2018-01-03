@@ -183,18 +183,14 @@
                 <p><h5>Presidente: <%= i.presidente %></h5></p>
                 <p><h5>Vicepresidente: <%= i.vicepresidente %></h5></p>
                 <p><h5>Otros: <%= i.otros %></h5></p>
-                <p><h5><a href="<%= i.pagweb %>" target="_blank">Pagina Web</h5></p>
+                <p><h5><a href="<%= i.pagweb %>" target="_blank">Pagina Web</a></h5></p>
               </div>
             </div>
-            <div class="col-md-3 margen">
-              <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
-                  <div class="col-md-3 margen">
-                    <%= image_tag("thumb/missing.png", :class => "img-fluid") %>
-                  </div>
+            <div class="col-md-3">
+              <% if i.photo.url(:medium) == "/images/thumb/missing.png"%>
+                    <%= image_tag("thumb/missing.png", :class => "img-fluid rounded mx-auto d-block float-right") %>
               <% else %>
-                  <div class="col-md-3 margen">
-                    <%= image_tag i.photo.url(:thumb, :class => "img-fluid") %>
-                  </div>
+                    <%= image_tag i.photo.url(:medium), :class => "img-fluid rounded mx-auto d-block float-right" %>
               <% end %>
             </div>
           </div>
