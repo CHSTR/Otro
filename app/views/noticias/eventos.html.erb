@@ -188,12 +188,12 @@
               <div class="row">
                 <div class="col-md-2">
                   <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
-                      <div class="col-md-3 margen">
+                      <div class="">
                         <%= image_tag("thumb/missing.png", :class => "img-fluid") %>
                       </div>
                   <% else %>
-                      <div class="col-md-3 margen">
-                        <%= image_tag i.photo.url(:thumb, :class => "img-fluid") %>
+                      <div class="">
+                        <%= image_tag i.photo.url(:medium), :class => "img-fluid" %>
                       </div>
                   <% end %>
                 </div>
