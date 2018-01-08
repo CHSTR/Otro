@@ -155,6 +155,20 @@ Rails.application.routes.draw do
   get 'portal/editar'
 
   get 'portal/eliminar'
+
+  get 'portal/:id/casilla', to: 'portal#ecasilla', as:'editar_portal'
+
+  delete 'portal/:id/casilla', to: 'portal#eliminarc', as:'eliminar_portal'
+
+  get 'portal/:id/editar', to: 'portal#editar', as:'editar_portal_casilla'
+
+  put 'portal/:id', to: 'portal#update'
+
+  patch 'portal/:id', to: 'portal#update'
+
+  get 'portal/newc', to: 'portal#nuevacasilla', as: 'portal_casilla'
+
+  post 'portal/newc', to: 'portal#createcasilla'
 #----------------------------------------------------------------
 
 

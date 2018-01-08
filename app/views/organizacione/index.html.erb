@@ -219,28 +219,7 @@
       <div class="col-md-3"></div>
       <div class="col-md-9">
           <div class="container margen">
-            <h2>Académicos</h2>
-            <% @funcionario_escuelas.each do |i| %>
-            <% if i.funcion == 2 %>
-                    <hr>
-                    <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
-                        <%= image_tag("thumb/missing.png", :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
-                    <% else %>
-                        <%= image_tag i.photo.url(:thumb, :class => "float-left rounded-circle img-fluid", height: '130', width: '130') %>
-                    <% end %>
-                    <br>
-              <br>
-              <h4 class="text-left"><%= raw i.cargo%></h4>
-              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
-              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
-              <br>
-              <br>
-                    <% if can? :manage, FuncionarioEscuela %>
-              <%= link_to "Editar", editar_funcionarioe_path(i),:class => 'btn btn-outline-success' %>
-              <p class="text-right"><%= link_to "Eliminar", organizacione_eliminar_path(i),:class => 'btn btn-outline-danger' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p>
-                        <% end %>
-            <% end %>
-            <% end %>
+            <h2 style="font-family: 'Junge', serif;"><%= link_to "Académicos", academico_path, :style => "font-family: 'Junge', serif;" %></h2>
           </div>
         <% if can? :manage, FuncionarioEscuela %>
           <%= link_to "Nuevo", nuevo_funcionario_path,:class => 'btn btn-outline-primary' %>

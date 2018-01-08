@@ -57,145 +57,73 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 margen3">
-      <br>
-      <br>
-      <nav class="nav flex-column margen">
-      <% if can? :manage, :all %> <!-- SOLO PARA EL ADMINISTRADORGENERAL -->
-        <h4 class="nav-link text-left"><a href="aceptar_oferta">Ofertas Laborales <span class="badge badge-default"><%= @oferta_laborals %></span></a></h4>
-      <% end %>
-      <% if current_user %>
-        <h4 class="nav-link text-left"><a href="consulta">Consultas <span class="badge badge-default"><%= @consulta %></span></a></h4>
-        <% end %>
-        <% if can? :manage, :all %>
-          <% @casillas.each do |i|%>
-              <% if i.activo == 1 %>
-                <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <%end%>
-              <% else %>
-                <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary margen1"  %>
-                <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger margen1"  , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <% end %>
-              <% end %>
-          <% end %>
-        <% else %>
-          <% @casillas.each do |i|%>
-              <% if i.activo ==  1 %>
-                <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary"  %>
-                <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger"  , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <% end %>
-              <% end %>
-            <%end%>
-        <%end%>
-        <hr>
+    <div class="col-md-3 text-center margen3">
+    </div>
+    <div class="col-md-9 margen">
+    <br>
+    <br>
+        <h2>Agregando una nueva Casilla</h2>
         <% if can? :manage, Casilla %>
-          <%= link_to "Nueva Casilla", portal_casilla_path, :class => "btn btn-outline-primary" %>
-        <% end %>
-      </nav>
-    </div>
-    <div class="col-md-9">
-      <ol class="">
-        <h2 class="text-center margen">PORTAL UNIDAD DE INFORMÁTICA</h2>
-      </ol>
-      <% if current_user%>
-      <% if current_user %>
-        <h4 class="text-right">Bienvenid@ <%= current_user.nombre%></h4>
-      <%end%>
-      <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
-      <% flash.each do |name, msg| %>
-        <div class="pad margin no-print">
-          <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <%= msg %>
+      <br>
+          <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
+        <% if @casillas.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @casillas.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
           <% end %>
         </div>
         <% end %>
-          <% end %>
-      <center>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block mx-auto rounded img-fluid" width="1400" height="520" src="https://document-export.canva.com/DACj9XMt7k0/4/preview/0001-421868759.png" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block  mx-auto rounded img-fluid" width="1400" height="520" src="https://document-export.canva.com/DAClYJZcy20/1/preview/0001-469356270.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block  mx-auto rounded img-fluid" width="1400" height="520" src="https://document-export.canva.com/DACj9UONa9A/3/preview/0001-421887032.png" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </center>
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-9 margen">
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-9 margen">
-      <div class="row">
-        <div class="col-md-6">
-          <ol class="breadcrumb">
-            <h3 class="text-left">NOTICIAS</h3>
-            <% @noticia_escuelas.each do |i|%>
-            <div class="row">
-              <% if i.photo.url(:thumb) == "/images/thumb/missing.png"%>
-              <div class="col-md-3 margen">
-                <%= image_tag("thumb/missing.png", :class => "img-fluid rounded mx-auto d-block", height: '110', width: '110') %>
-              </div>
-              <% else %>
-              <div class="col-md-3 margen">
-                <%= image_tag i.photo.url(:thumb, :class => "img-fluid") %>
-              </div>
-              <% end %>
-              <div class="col-md-8 margen">
-                <h4><a href="../noticias/mostrarn/<%=i.id%>"><%= i.nombre%></a></h4>
-              </div>
-            </div>
-                <% end %>
-            <a href="noticias/inicio.html"><h5 class="text-right">Ver mas noticias</h5></a>
-          </ol>
-        </div>
-        <div class="col-md-6">
-          <ol class="breadcrumb">
-            <h3 class="text-left">EVENTOS</h3>
-            <% @evento_escuelas.each do |j|%>
-            <div class="row">
-              <div class="col-md-3 margen">
-                <h4 class="text-center"><%= t = j.fecha
-                      t.to_s
-                      t.strftime "%d-%m-%Y"%></h4>
-              </div>
-              <div class="col-md-9 margen">
-                <h4 class="text-left"><%= j.nombre%></h4>
-              </div>
+          <div class="col-md-9 margen">
+            <h3 class="text-left">
+              <p><%= f.label :nombre_de_la_casilla %></p>
+              <p><%= f.text_field :nombre, :class => "form-control form-control-lg" %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.hidden_field :activo , :value => "0"%>
+            </h3>
+            <br>
+            <h3 class="text-left form-group">
+              <p><%= f.label :Donde_redireccionará_? %></p>
+              <%= f.select(:link, options_for_select([['Inicio Departamento','iniciodepto/inicio'],['Académicos','academico/JC'],['Investigación','investigacion'],['Organización Departamento','organizacion'],['Links Departamento','links'],['Contacto Departamento','contactod'],['Inicio Escuela','inicioe/inicio'],['Noticias','noticias/inicio'],['Estudiantes','estudiante'],['Programas','programas'],['Egresados','egresados'],['Ofertas Laborales','laboral'],['Organizacion Escuela','organizacione'],['Links Escuela','linke'],['Contacto Escuela','contacto']]), {:class => "form-control"}) %>
+            </h3>
+            <br>
+           <h3 class="text-left">
+              <!--cambiar a hidden.-->
+              <p><%= f.hidden_field :ver, {:max=>"1",:min=>"0"} %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <p><%= f.hidden_field :ubicacion , :value => "portal"%>
+              </p>
+            </h3>
+            <div class="actions">
+              <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
             </div>
             <% end %>
-            <a href="noticias/eventos.html"><h5 class="text-right">Ver mas eventos</h5></a>
-          </ol>
-        </div>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+
+        <% end %>
+            <br>
+
+            <%= link_to 'Volver', portal_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-9 margen">
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-9 margen">
       </div>
     </div>
     <br>
