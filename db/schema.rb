@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218194600) do
+ActiveRecord::Schema.define(version: 20180108215535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -203,6 +203,44 @@ ActiveRecord::Schema.define(version: 20171218194600) do
     t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "imagenes", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo1_file_name"
+    t.string "photo1_content_type"
+    t.integer "photo1_file_size"
+    t.datetime "photo1_updated_at"
+    t.string "photo2_file_name"
+    t.string "photo2_content_type"
+    t.integer "photo2_file_size"
+    t.datetime "photo2_updated_at"
+    t.string "photo3_file_name"
+    t.string "photo3_content_type"
+    t.integer "photo3_file_size"
+    t.datetime "photo3_updated_at"
+    t.string "photo4_file_name"
+    t.string "photo4_content_type"
+    t.integer "photo4_file_size"
+    t.datetime "photo4_updated_at"
+    t.string "photo5_file_name"
+    t.string "photo5_content_type"
+    t.integer "photo5_file_size"
+    t.datetime "photo5_updated_at"
+    t.string "photo6_file_name"
+    t.string "photo6_content_type"
+    t.integer "photo6_file_size"
+    t.datetime "photo6_updated_at"
+    t.string "photo7_file_name"
+    t.string "photo7_content_type"
+    t.integer "photo7_file_size"
+    t.datetime "photo7_updated_at"
+    t.string "photo8_file_name"
+    t.string "photo8_content_type"
+    t.integer "photo8_file_size"
+    t.datetime "photo8_updated_at"
   end
 
   create_table "interes", force: :cascade do |t|

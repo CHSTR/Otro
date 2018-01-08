@@ -2,6 +2,22 @@ Rails.application.routes.draw do
 
   get 'main/welcome'
 
+  get 'imagenes/', to: 'imagenes#inicio', as:'imagenes'
+
+  get 'imagenes/nuevo', to: 'imagenes#nuevo', as:'imagenes_nuevo'
+  post 'imagenes/nuevo', to: 'imagenes#create'
+
+  get 'imagenes/:id/editar', to: 'imagenes#editar', as: 'imagenes_editar'
+  put 'imagenes/:id', to: 'imagenes#update'
+  patch 'imagenes/:id', to: 'imagenes#update'
+
+  get 'imagenes/mostrar/:id', to:'imagenes#mostrar'
+
+  get 'imagenes/eliminar'
+  delete 'imagenes/eliminar/:id', to: 'imagenes#eliminar', as:'eliminar_imagenes'
+
+  #-------------------------------------------------------------------------------------------
+
   get 'dependenciasd/', to: 'dependenciasd#inicio', as:'dependenciasd'
 
   get 'dependenciasd/nuevo', to: 'dependenciasd#nuevo', as:'dependenciasd_nuevo'

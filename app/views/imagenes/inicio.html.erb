@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond-master/src/respond.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+      document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
+      document.body.style.fontSize = '1.6rem';
+  </script>
+  <meta charset="utf-8">
+  <title>Universidad Tecnol&oacute;gica Metropolitana</title>
+  <style type="text/css">
+    a:link, li {
+      text-decoration:none;
+      margin-bottom: -5px;
+    }
+    body {
+      font-family: 'Junge', serif;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size:
+    }
+    .margen {
+      margin-top: 1.5em;
+    }
+    .margen1 {
+      margin-top: 1em;
+    }
+    .utem-log{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 2em;
+      margin-right: 1em;
+    }
+
+    a:hover{
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12"></div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-3">
+      <img  width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 text-center margen3">
+      <br>
+      <br>
+      <nav class="nav flex-column margen">
+        <% if current_user %>
+            <%= form_tag imagenes_path,:class =>'margen' ,:method => :get do %>
+
+                <%= text_field_tag :search %>
+
+                <%= submit_tag "Buscar", :class => 'btn btn-outline-success margen1'%>
+
+            <% end %>
+        <% end %>
+        <hr>
+      </nav>
+    </div>
+    <div class="col-md-9">
+      <ol class="">
+        <h2 class="text-center margen">Imagenes subidas al servidor</h2>
+      </ol>
+      <% if current_user%>
+          <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
+      <% end %>
+    </div>
+
+    <div class="col-sm-12 col-md-9">
+      <div class=" col-sm-12 col-md-8 margen">
+        <div class="margen">
+          <ul style="font-size: 16px; text-decoration-color: black;">
+            <% if current_user %>
+                <%= link_to "Nuevo", imagenes_nuevo_url,:class => 'btn btn-outline-primary margen1'  %>
+            <hr>
+            <ul style="font-size: 16px; text-decoration-color: black;">
+              <% @imagenes.each do |i|%>
+                  <h3><li ><a href="/imagenes/mostrar/<%=i.id %>"><%=i.nombre %></h3></a>
+                  <br>
+                      <%= link_to "Editar", imagenes_editar_path(i),:class => 'btn btn-outline-success margen1'  %>      <%= link_to "Eliminar", eliminar_imagenes_path(i),:class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></li>
+                  <br>
+                  <br>
+                  <hr>
+              <% end %>
+            <% end %>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- INICIO PIE -->
+    <footer id="pie-pagina" class="envoltura">
+      <div class="linea-inf-oscura">
+        <div id="menu-pie-pagina" class="envoltura-16">
+          <ul>
+            <li class="col-4-pie">
+              <div class="borde-menu-pie-pagina">
+                <header class="cabecera-nav-pie-pagina">
+                  <h3>NUESTRAS REDES:</h3>
+                </header>
+                <nav class="nav-pie-pagina">
+                  <ul>
+                    <li><a href="https://www.facebook.com/utem.cl/" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/utem" target="_blank">Twitter</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Inicio Limpiar flotante -->
+              <div class="limpiar"></div>
+              <!-- Fin Limpiar flotante -->
+            </li>
+            <li class="col-4-pie">
+              <div class="borde-menu-pie-pagina">
+                <header class="cabecera-nav-pie-pagina">
+                  <h3>SERVICIOS:</h3>
+                </header>
+                <nav class="nav-pie-pagina">
+                  <ul>
+                    <li><a href="https://dirdoc.utem.cl/" target="_blank">Dirdoc</a></li>
+                    <li><a href="http://reko.utem.cl/portal/" target="_blank">Reko</a></li>
+                    <li><a href="https://mi.utem.cl/" target="_blank">Mi UTEM</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Inicio Limpiar flotante -->
+              <div class="limpiar"></div>
+              <!-- Fin Limpiar flotante -->
+            </li>
+            <li class="col-4-pie">
+              <div class="borde-menu-pie-pagina">
+                <header class="cabecera-nav-pie-pagina">
+                  <h3>NUESTRO SITIO:</h3>
+                </header>
+                <nav class="nav-pie-pagina">
+                  <ul>
+                    <li><a href="http://transparencia.utem.cl/politica-de-privacidad/" target="_blank">Pol&iacute;ticas de Privacidad</a></li>
+                    <li><a href="https://www.google.cl/maps/place/Universidad+Tecnol%C3%B3gica+Metropolitana+-+Campus+Macul/@-33.466645,-70.5995255,17z/data=!4m8!1m2!2m1!1sestadio+nacional!3m4!1s0x9662cfc270900eb7:0x330e0d87329f4a5f!8m2!3d-33.4661882!4d-70.5970763" target="_blank">Mapa del sitio</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Inicio Limpiar flotante -->
+              <div class="limpiar"></div>
+              <!-- Fin Limpiar flotante -->
+            </li>
+            <li class="col-4-pie">
+              <div class="borde-menu-pie-pagina">
+                <header class="cabecera-nav-pie-pagina">
+                  <h3>ACCESO INTRANET:</h3>
+                </header>
+                <div id="intranet">
+                  <% unless current_user %>
+                      <a href="users/sign_in">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+                      </a>
+                  <% else %>
+                      <a href="#">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+                      </a>
+                  <%end%>
+                </div>
+
+                <% if can? :manage, :all %>
+                    <header class="cabecera-nav-pie-pagina">
+                      <h3>REGISTRAR USUARIO:</h3>
+                    </header>
+                    <div id="intranet">
+                      <a href="users/sign_up">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Resgistrar "></div>
+                      </a>
+                    </div>
+                <% end %>
+                <% if can? :manage, :all %>
+                    <header class="cabecera-nav-pie-pagina">
+                      <h3>ADMINISTRAR:</h3>
+                    </header>
+                    <div id="intranet">
+                      <a href="/administrar">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Administrar"></div>
+                      </a>
+                    </div>
+                <% end %>
+                <% if current_user%>
+                    <header class="cabecera-nav-pie-pagina">
+                      <h3>EDITAR CUENTA:</h3>
+                    </header>
+                    <div id="intranet">
+                      <a href="/users/edit">
+                        <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Editar cuenta"></div>
+                      </a>
+                    </div>
+                <% end %>
+                <!-- Inicio Limpiar flotante -->
+                <div class="limpiar"></div>
+                <!-- Fin Limpiar flotante -->
+            </li>
+          </ul>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </div>
+      </div>
+      <!-- Inicio Corporativo Pie Pagina -->
+      <div id="corporativo-pie-pagina">
+        <div class="contenedor-crpvo-pie-pagina envoltura-16">
+          <div class="meta-autor">
+            <div class="copyright">
+              <p>Av. José Pedro Alessandri 1242, Ñuñoa, Región Metropolitana<br>
+              <p class="cp">  2017 Universidad Tecnológica Metropolitana. - Todos los derechos reservados.<p>
+            </div>
+          </div>
+          <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+        </div>
+        <div class="borde-sup-crpvo-ppag">
+          <div id="logos-pie-rsp" class="envoltura-16">
+            <div class="gob-pie-rsp"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </div>
+      </div>
+      <!-- Fin Corporativo Pie Pagina -->
+    </footer>
+    <!-- FIN PIE -->
+  </div>
+</body>
+</div>
+</html>
