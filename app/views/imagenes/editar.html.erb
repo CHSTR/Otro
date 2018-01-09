@@ -61,10 +61,9 @@
       <br>
       <br>
       <nav class="nav flex-column margen">
-        <hr>
       </nav>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <ol class="">
         <h2 class="text-center margen"> </h2>
       </ol>
@@ -72,12 +71,12 @@
           <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
       <% end %>
     </div>
-
-    <div class="col-sm-12 col-md-9">
-      <div class=" col-sm-12 col-md-8 margen">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+      <div class=" col-sm-12 col-md-12 margen">
         <div class="margen">
           <ul style="font-size: 16px; text-decoration-color: black;">
-            <h2 class="text-center margen">Cambiando imagenes</h2>
+            <h2 class="text-center margen">Subiendo imagenes</h2>
             <% if current_user %>
                 <%= form_for(@imagenes, html: { multipart: true }, :url => {:action => :update}) do |f| %>
                     <% if @imagenes.errors.any? %>
@@ -93,73 +92,64 @@
                     <div class="col-md-9 margen">
                       <h3 class="text-left">
                         <%= f.label :Nombre %>
-                        <%= f.text_field :nombre %>
+                        <%= f.text_field :nombre, :class => "form-control" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo1.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_1%>
-                        <%= f.file_field :photo1 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo1.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo1, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo2.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_2%>
-                        <%= f.file_field :photo2 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo2.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo2, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo3.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_3%>
-                        <%= f.file_field :photo3 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo3.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo3, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo4.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_4%>
-                        <%= f.file_field :photo4 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo4.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo4, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo5.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_5%>
-                        <%= f.file_field :photo5 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo5.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo5, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo6.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_6%>
-                        <%= f.file_field :photo6 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo6.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo6, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo7.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_7%>
-                        <%= f.file_field :photo7 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo7.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo7, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
-                      <h3>Imagen Actual</h3>
-                      <%= image_tag @imagenes.photo8.url(:thumb, :class => "img-fluid text-center") %>
                       <h3 class="text-left">
                         <%= f.label :Imagen_8%>
-                        <%= f.file_field :photo8 %>
+                        <h4>Imagen Actual</h4>
+                        <%= image_tag @imagenes.photo8.url(:thumb, :class => "img-fluid text-center") %>
+                        <%= f.file_field :photo8, :class => "form-control-file", :type => "file" %>
                       </h3>
-                      <hr>
                       <br>
                       <div class="actions">
                         <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
@@ -179,11 +169,12 @@
             <%= link_to 'Volver', imagenes_path, :class => 'btn btn-outline-primary margen1' %>
             <br>
             </div>
-          </ul>
+            </ul>
           </ul>
         </div>
       </div>
     </div>
+    <div class="col-md-2"></div>
     <br>
     <br>
     <br>
@@ -325,4 +316,3 @@
 </body>
 </div>
 </html>
-

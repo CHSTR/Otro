@@ -57,23 +57,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 text-center margen3">
-      <br>
-      <br>
-      <nav class="nav flex-column margen">
-        <% if current_user %>
-            <%= form_tag imagenes_path,:class =>'margen' ,:method => :get do %>
-
-                <%= text_field_tag :search %>
-
-                <%= submit_tag "Buscar", :class => 'btn btn-outline-success margen1'%>
-
-            <% end %>
-        <% end %>
-        <hr>
-      </nav>
+    <div class=" text-center margen3">
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <ol class="">
         <h2 class="text-center margen">Imagenes subidas al servidor</h2>
       </ol>
@@ -81,18 +67,15 @@
           <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
       <% end %>
     </div>
-    <div class=" col-sm-12 col-md-9">
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+    <div class=" col-sm-12 col-md-12">
+      <div class="container margen" style="font-family: 'Junge', serif; font-size:18px;">
         <% if current_user%>
         <hr>
-        <div class="col-md-12">
           <div class="display-4" style="color: #0275d8;">
             <%= @imagenes.nombre %>
           </div>
-          <br>
           <hr>
-          <div class="col-md-12">
-            <div class="display-4" style="color: #0275d8;">
+          <div class="col-md-12 margen">
               <%= image_tag @imagenes.photo1.url(:large) %>
               <br>
               <br>
@@ -100,11 +83,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo1.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo2.url(:large) %>
               <br>
               <br>
@@ -112,11 +93,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo2.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo3.url(:large) %>
               <br>
               <br>
@@ -124,11 +103,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo3.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo4.url(:large) %>
               <br>
               <br>
@@ -136,11 +113,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo4.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo5.url(:large) %>
               <br>
               <br>
@@ -148,11 +123,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo5.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo6.url(:large) %>
               <br>
               <br>
@@ -160,11 +133,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo6.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo7.url(:large) %>
               <br>
               <br>
@@ -172,11 +143,9 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo7.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
-            <div class="display-4" style="color: #0275d8;">
               <%= image_tag @imagenes.photo8.url(:large) %>
               <br>
               <br>
@@ -184,17 +153,12 @@
               <br>
               <br>
               <%= image_tag @imagenes.photo8.url(:thumb) %>
-            </div>
             <br>
             <hr>
             <br>
             <%end%>
             <br>
-            <hr>
-            <hr>
             <a href="/imagenes"><button type="button" class="btn btn-outline-primary">Volver</button></a>
-          </div>
-
         </div>
       </div>
     </div>

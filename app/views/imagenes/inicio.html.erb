@@ -31,6 +31,9 @@
     .margen {
       margin-top: 1.5em;
     }
+    .margen2 {
+      margin-top: 4em;
+    }
     .margen1 {
       margin-top: 1em;
     }
@@ -57,23 +60,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 text-center margen3">
-      <br>
-      <br>
-      <nav class="nav flex-column margen">
-        <% if current_user %>
-            <%= form_tag imagenes_path,:class =>'margen' ,:method => :get do %>
-
-                <%= text_field_tag :search %>
-
-                <%= submit_tag "Buscar", :class => 'btn btn-outline-success margen1'%>
-
-            <% end %>
-        <% end %>
-        <hr>
-      </nav>
+    <div class="text-center margen3">
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <ol class="">
         <h2 class="text-center margen">Imagenes subidas al servidor</h2>
       </ol>
@@ -81,9 +70,8 @@
           <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-center btn btn-danger btn-lg"%>
       <% end %>
     </div>
-
-    <div class="col-sm-12 col-md-9">
-      <div class=" col-sm-12 col-md-8 margen">
+    <div class="col-sm-12 col-md-12 margen">
+      <div class=" col-sm-12 col-md-12 margen">
         <div class="margen">
           <ul style="font-size: 16px; text-decoration-color: black;">
             <% if current_user %>
@@ -107,8 +95,20 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- INICIO PIE -->
-    <footer id="pie-pagina" class="envoltura">
+    <footer id="pie-pagina" class="envoltura margen2">
       <div class="linea-inf-oscura">
         <div id="menu-pie-pagina" class="envoltura-16">
           <ul>
