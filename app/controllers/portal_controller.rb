@@ -7,7 +7,7 @@ class PortalController < ApplicationController
   #before_action :authenticate_user!
 
   def inicio
-    @casillas = Casilla.where("ubicacion = 'portal'").order(:nombre) 
+    @casillas = Casilla.where("ubicacion = 'portal'").order(:id) 
     @oferta_laborals = OfertaLaboral.where(:aceptado => 0, :oferta_d => 0).count
     @consulta = OfertaLaboral.where(:aceptado => 0, :oferta_d => 1).count
     @noticia_escuelas = NoticiaEscuela.all.order('id DESC').limit(4)

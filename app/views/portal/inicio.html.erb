@@ -72,14 +72,14 @@
               <% if i.activo == 1 %>
                 <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                 <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-success margen1" %>
                 <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <%end%>
               <% else %>
                 <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                 <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary margen1"  %>
+                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-success  margen1"  %>
                 <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger margen1"  , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <% end %>
@@ -90,7 +90,7 @@
               <% if i.activo ==  1 %>
                 <a href="../<%= i.link %>" class="nav-link text-left"><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                   <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-primary"  %>
+                <%= link_to "Cambiar estado", editar_portal_path(i), :class => "text-center btn btn-outline-success "  %>
                 <%= link_to "Editar", editar_portal_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_casilla_path(i), :class => "text-center btn btn-outline-danger"  , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <% end %>
