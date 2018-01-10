@@ -167,10 +167,12 @@
             <% unless @consultas.nil?%>
               <% @consultas.each do |i| %>
               <tr>
-                <th scope="row"><%= i.created_at %></th>
+                <th scope="row"><%= t= i.created_at
+                      t.to_s
+                      t.strftime "%d-%m-%Y" %></th>
                 <td><%= i.nombre %></td>
                 <td><%= i.correo %></td>
-                <td><%= link_to 'RESPONDER', ver_consulta_path(i), :class => 'btn btn-outline-success' %></td>
+                <td><center><%= link_to 'RESPONDER', ver_consulta_path(i), :class => 'btn btn-outline-success' %></center></td>
               </tr>
               <% end %>
             <% end %>  
@@ -179,6 +181,9 @@
           <br>
           <br>
           <br>
+                <div class="pagination">
+            <%= will_paginate @consultas, renderer: BootstrapPagination::Rails %>
+      </div>
       </div>
     </div>
  <!-- Fin Noticias -->

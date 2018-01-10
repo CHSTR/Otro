@@ -1,6 +1,6 @@
 class ConsultaController < ApplicationController
   def index
-  	@consultas = OfertaLaboral.where("aceptado = 0 and oferta_d = 1")
+  	@consultas = OfertaLaboral.where("aceptado = 0 and oferta_d = 1").order("id DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def editar

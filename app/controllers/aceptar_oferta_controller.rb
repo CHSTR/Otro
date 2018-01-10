@@ -1,7 +1,7 @@
 class AceptarOfertaController < ApplicationController
   load_and_authorize_resource :class => OfertaLaboral
   def index
-  	@oferta_laborals = OfertaLaboral.where("oferta_d = 0 and aceptado = 0")
+  	@oferta_laborals = OfertaLaboral.where("oferta_d = 0 and aceptado = 0").order("id DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def eliminar

@@ -167,11 +167,15 @@
                   <p class="margen">
                   <%= raw @consultas.descripcion%>
                   </p>
+                  <hr class="margen">
+                  <p class=""><%= @consultas.correo%></p>
+                  <hr>
               </div>
             </div>
+            <a href="https://www.gmail.com" target="_blank"><button class="btn btn-outline-primary btn-lg">GMAIL</button></a>
           <%= form_for(@consultas1, :url => {:action => :crear}) do |f|%>
                 <% if @consultas1.errors.any? %>
-                    <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                       </button>
@@ -180,16 +184,15 @@
                       <% end %>
                     </div>
                 <% end %> 
-                <h3>Responder:</h3>
+                <h3>
+                </h3>
                   <%= f.hidden_field :nombre, :value => @consultas.nombre  %>
                     <%= f.hidden_field :correo, :value => @consultas.correo %>
                 <div class="form-group">
-                    <br>
-                    <%= f.trix_editor :descripcion, :value => "" %>
                 </div>
                 <%= f.hidden_field :leido, :value => 1 %>
                 <div class="actions">
-                  <%= f.submit 'Enviar', :class => 'btn btn-outline-success btn-lg margen1' %>
+                  <%= f.submit 'Contestado', :class => 'btn btn-outline-success btn-lg margen1' %>
                 </div>
                 <hr>
                 <% end %>   
