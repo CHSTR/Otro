@@ -199,7 +199,7 @@
           </div>
           <hr>
           <% if can? :manage, Casilla %>
-            <%= link_to "Nueva Casilla", depto_casilla_path, :class => "text-center btn btn-outline-success " %>
+            <%= link_to "Nueva Casilla", new_casilla_path, :class => "text-center btn btn-outline-success " %>
           <% end %>
         </div>
         <!-- HASTA ACA -->
@@ -220,9 +220,7 @@
               </div>
         <%end%>
             <hr>
-            <% if can? :manage, Texto %>
-            <%= link_to "Volver", opcion3_url, :class => 'btn btn-outline-primary margen1' %>
-            <% end %>
+            <%= link_to "Volver", opcion3_academico_url, :class => 'btn btn-outline-primary margen1' %>
         </div>
     </div>
 

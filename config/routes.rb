@@ -604,7 +604,41 @@ Rails.application.routes.draw do
 
   post 'academico/new', to: 'academico#academicocreate'
 
+  get 'academico/editarc/:id', to: 'academico#editarc', as:'editar_academico_casilla'
+
+  put 'academico/actualizar/:id', to: 'academico#updatec'
+
+  patch 'academico/actualizar/:id', to: 'academico#updatec'
+
   delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
+
+  get 'academico/opci1', to: 'academico#opcion1', as:'opcion1_academico'
+
+  get 'academico/opci2', to: 'academico#opcion2', as:'opcion2_academico'
+
+  get 'academico/opci3', to: 'academico#opcion3', as:'opcion3_academico'
+
+  get 'academico/nuevoopcion', to: 'academico#nuevaopcion', as:'academico_nueva_opcion'
+
+  get 'academico/nuevoopcion2', to: 'academico#nuevaopcion2', as:'academico_nueva_opcion2'
+
+  get 'academico/nuevoopcion3', to: 'academico#nuevaopcion3', as:'academico_nueva_opcion3'
+
+  post 'academico/nuevacopcion', to: 'academico#createopcion'
+
+  get 'academico/ver1/:id', to: 'academico#ver1', as:"academico_ver_1"
+
+  get 'academico/ver2/:id', to: 'academico#ver2', as:"academico_ver_2"
+
+  get 'academico/ver3/:id', to: 'academico#ver3', as:"academico_ver_3"
+
+  get 'academico/editaro/:id', to: 'academico#editaro', as:"editar_opcion_academico"
+
+  put 'academico/update/:id', to: 'academico#updateo'
+
+  patch 'academico/update/:id', to: 'academico#updateo'
+
+  delete 'academico/eliminar/:id', to: 'academico#eliminaro', as:'eliminar_opcion_academico'
 
   #Falta toda escual y contacto...
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

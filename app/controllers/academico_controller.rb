@@ -1,7 +1,4 @@
 class AcademicoController < ApplicationController
-  authorize_resource :class => Academico
-  authorize_resource :class => Casilla
-  skip_authorize_resource :only => [:index,:MJ,:JP,:mostrar]
 
   def index
     if params[:search]
@@ -124,6 +121,95 @@ class AcademicoController < ApplicationController
     respond_to do |format|
       format.html {redirect_to academico_url, notice:'fue eliminado'}
     end  
+  end
+
+  def editarc
+    @casillas = Casilla.find(params[:id])
+  end
+
+  def updatec
+    @casillas = Casilla.find(params[:id])
+    if @casillas.update_attributes(casilla_params)
+      redirect_to academico_url
+    else
+      render action: 'editarc'
+    end
+  end
+
+  def opcion1
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+    @opciones = Opcion.where("lugar = 'academico_opcion1'")
+  end
+
+  def opcion2
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+    @opciones = Opcion.where("lugar = 'academico_opcion2'")
+  end
+
+  def opcion3
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+    @opciones = Opcion.where("lugar = 'academico_opcion3'")
+  end
+
+  def nuevaopcion
+    @opciones = Opcion.new
+  end
+
+  def nuevaopcion2
+    @opciones = Opcion.new
+  end
+
+  def nuevaopcion3
+    @opciones = Opcion.new
+  end
+
+  def createopcion
+    @opciones = Opcion.new(opcion_params)
+    if @opciones.update_attributes(opcion_params)
+      redirect_to academico_url
+    else
+      render action: 'nuevaopcion'
+    end
+  end
+
+  def eliminaro
+    @opciones = Opcion.find(params[:id])
+    @opciones.destroy
+    respond_to do |format|
+      format.html {redirect_to academico_url, notice:'Casilla Eliminada.'}
+    end  
+  end
+
+  def editaro
+    @opciones = Opcion.find(params[:id])
+  end
+
+  def updateo
+    @opciones = Opcion.find(params[:id])
+    if @opciones.update_attributes(opcion_params)
+      redirect_to academico_url
+    else
+      render action: 'editaro'
+    end
+  end
+
+  def ver1
+    @opciones = Opcion.find(params[:id])
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+  end
+
+  def ver2
+    @opciones = Opcion.find(params[:id])
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+  end
+
+  def ver3
+    @opciones = Opcion.find(params[:id])
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:nombre)
+  end
+
+  def opcion_params
+    params.require(:opcion).permit(:opcion, :titulo, :texto, :document, :lugar) #retorna un hash con todos los valores del academico...
   end
 
   def user_params

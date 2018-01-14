@@ -162,9 +162,9 @@
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                 <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_academico_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <%end%>
                 <br>
                 <br>
@@ -173,9 +173,9 @@
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                 <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_academico_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <br>
                 <br>
                 </li>
@@ -188,9 +188,9 @@
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
                   <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%= link_to "Cambiar estado", editar_casilla_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_academico_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 <% end %>
                 </li>
               <% end %>
@@ -199,7 +199,7 @@
           </div>
           <hr>
           <% if can? :manage, Casilla %>
-            <%= link_to "Nueva Casilla", new_casilla_path, :class => "text-center btn btn-outline-success " %>
+            <%= link_to "Nueva Casilla", depto_casilla_path, :class => "text-center btn btn-outline-success " %>
           <% end %>
         </div>
         <!-- HASTA ACA -->
@@ -220,7 +220,7 @@
               </div>
         <%end%>
             <hr>
-            <%= link_to "Volver", opcion2_academico_url, :class => 'btn btn-outline-primary margen1' %>
+            <%= link_to "Volver", opcion1_academico_url, :class => 'btn btn-outline-primary margen1' %>
         </div>
     </div>
 

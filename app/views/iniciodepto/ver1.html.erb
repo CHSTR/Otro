@@ -186,8 +186,8 @@
           <% @casillas.each do |i|%>
               <% if i.activo ==  1 %>
                 <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
+                <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
                 <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                 <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -219,10 +219,7 @@
                 <%end%>
               </div>
         <%end%>
-            <hr>
-            <% if can? :manage, Texto %>
             <%= link_to "Volver", opcion1_url, :class => 'btn btn-outline-primary margen1' %>
-            <% end %>
         </div>
     </div>
 

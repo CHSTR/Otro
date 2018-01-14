@@ -211,8 +211,10 @@
           <% @opciones.each do |j| %>
               <% if j.opcion == 0 %>
                 <h3><a href="ver1/<%= j.id %>" ><%= j.titulo%></a></h3>
+                <% if can? :manage, Casilla %>
                 <%= link_to "Editar", editar_opcion_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
               <%else%>
               <h1 style="font-family: 'Junge', serif;"><%= j.titulo %></h1>
               <div class="container-fluid">
@@ -224,9 +226,11 @@
                 </div>
                 <%end%>
               </div>
+              <% if can? :manage, Casilla %>
                 <%= link_to "Editar", editar_opcion_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
               <%end%>
+            <%end%>
             <hr>
           <% end %>
             <% if can? :manage, Texto %>
