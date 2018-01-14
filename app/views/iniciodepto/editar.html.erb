@@ -47,7 +47,6 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
-      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -60,7 +59,6 @@
     }
     .margen1 {
       margin-top: 1em;
-      margin-bottom: 1em;
     }
 
     .utem-log{
@@ -69,10 +67,7 @@
       margin-left: 2em;
       margin-right: 1em;
     }
-    img{
-      max-width: 100%;
-      height: auto;
-    }
+
     a:hover{
       background-color: transparent;
     }
@@ -145,86 +140,78 @@
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
     <div class=" col-sm-12 col-md-3">
-        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
-        <div class="container-fluid">
-          <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
-            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
-          </ol>
-          <hr>
-        </div>
-        <div class="container-fluid margen">
-          <div class="list-group">
-        <% if can? :manage, :all %>
-          <% @casillas.each do |i|%>
-              <% if i.activo == 1 %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <%end%>
-                <br>
-                <br>
-                </li>
-              <% else %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <br>
-                <br>
-                </li>
-                <% end %>
-              <% end %>
-          <% end %>
-        <% else %>
-          <% @casillas.each do |i|%>
-              <% if i.activo ==  1 %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <% end %>
-                </li>
-              <% end %>
-            <%end%>
-        <%end%>
-          </div>
-          <hr>
-          <% if can? :manage, Casilla %>
-            <%= link_to "Nueva Casilla", depto_casilla_path, :class => "text-center btn btn-outline-success " %>
-          <% end %>
-        </div>
-        <!-- HASTA ACA -->
+      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+      <div class="container-fluid">
+        <ol class="breadcrumb margen">
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+        </ol>
+        <hr>
       </div>
+      <div class="container-fluid margen" id="menu-escritorio">
+        <div class="list-group">
+        </div>
+      </div>
+      <!-- HASTA ACA -->
+    </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">PDE</h1>
-      <div class="margen">
-        <% unless @textos.nil?%>
-            <div class="container margen text-justify">
-               <h4> <%= raw @textos.descripcion%> </h4>
-              <%= @textos.descripcion_imagen%>
-              <center>
-              <% if can? :manage, Texto %>
-                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
-              <% end %>
-            </center>
-        <% else %>
-            <% if can? :manage, Texto %>
-            <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
-            <% end %>
+      <h3 style="font-family: 'Junge', serif;">Creando Nueva Casilla</h3>
+      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, Casilla %>
+      <br>
+          <%= form_for(@casillas, :url => {:action => :update}) do |f| %>
+        <% if @casillas.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @casillas.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </div>
         <% end %>
-        </div>
+          <div class="col-md-9 margen">
+            <h3 class="text-left">
+              <p><%= f.label :nombre_de_la_casilla %></p>
+              <p><%= f.text_field :nombre, :class => "form-control form-control-lg" %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.hidden_field :activo , :value => "0"%>
+            </h3>
+            <br>
+            <h3 class="text-left form-group">
+              <p><%= f.label :Donde_redireccionará_? %></p>
+              <%= f.select(:link, options_for_select([['Inicio Departamento','iniciodepto/inicio'],['Historia','iniciodepto/historia'],['Misión y Visión','iniciodepto/misionvision'], ['PDE','iniciodepto/pde'],['Opción 1','iniciodepto/opci1'],['Opción 2','iniciodepto/opci2'],['Opción 3','iniciodepto/opci3']]), {:class => "form-control"}) %>
+            </h3>
+            <br>
+           <h3 class="text-left">
+              <!--cambiar a hidden.-->
+              <p><%= f.hidden_field :ver, {:max=>"1",:min=>"0"} %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <p><%= f.hidden_field :ubicacion , :value => "iniciodepto"%>
+              </p>
+            </h3>
+            <div class="actions">
+              <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
+            </div>
+            <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+        <% end %>
+            <br>
 
-        </div>
-
-  </div>
+            <%= link_to 'Volver', iniciodepto_inicio_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
+    </div>
   </div>
   <!-- Inicio Limpiar flotante -->
   <div class="limpiar"></div>

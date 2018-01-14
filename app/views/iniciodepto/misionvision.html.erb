@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -143,43 +144,79 @@
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
     <div class=" col-sm-12 col-md-3">
-      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
-      <div class="container-fluid">
-        <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
-          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
-        </ol>
-        <hr>
-      </div>
-      <div class="container-fluid margen" id="menu-escritorio">
-        <div class="list-group">
-          <a href="../iniciodepto/inicio" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
-          <a href="../iniciodepto/historia" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Historia</h4></a>
-          </a>
-          <a href="../iniciodepto/misionvision" class="list-group-item list-group-item-action active" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
-          <a href="../iniciodepto/pde" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
+        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+        <div class="container-fluid">
+          <ol class="breadcrumb margen">
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+          </ol>
+          <hr>
         </div>
+        <div class="container-fluid margen">
+          <div class="list-group">
+        <% if can? :manage, :all %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%end%>
+                <br>
+                <br>
+                </li>
+              <% else %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <br>
+                <br>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                  <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <% end %>
+                </li>
+              <% end %>
+            <%end%>
+        <%end%>
+          </div>
+          <hr>
+          <% if can? :manage, Casilla %>
+            <%= link_to "Nueva Casilla", depto_casilla_path, :class => "text-center btn btn-outline-success " %>
+          <% end %>
+        </div>
+        <!-- HASTA ACA -->
       </div>
-      <!-- HASTA ACA -->
-    </div>
-
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;"></h1>
       <div class="margen">
         <% unless @textos.nil?%>
-            <div class="container margen text-justify" style="font-family: 'Junge', serif;">
-              <h4><%=raw @textos.descripcion%></h4>
-              
+            <div class="container margen text-justify">
+               <h4> <%= raw @textos.descripcion%> </h4>
               <%= @textos.descripcion_imagen%>
               <center>
               <% if can? :manage, Texto %>
-                  <%= link_to "Editar", iniciodepto_editarmisionvision_url, :class => 'btn btn-outline-success margen1' %>
+                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
               <% end %>
             </center>
         <% else %>
             <% if can? :manage, Texto %>
-              <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
-          <% end %>
+            <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
         <% end %>
         </div>
 

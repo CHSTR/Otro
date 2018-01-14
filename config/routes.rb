@@ -433,6 +433,48 @@ Rails.application.routes.draw do
 
   get 'iniciodepto/misionvision', to: 'iniciodepto#misionvision', as: 'iniciodepto_misionvision'
 
+  get 'iniciodepto/:id/casilla', to: 'iniciodepto#ecasilla', as:'editar_casilla_depto'
+
+  delete 'iniciodepto/:id/casilla', to: 'iniciodepto#eliminarc', as:'eliminar_depto'
+
+  get 'iniciodepto/:id/editar', to: 'iniciodepto#editar', as:'editar_depto_casilla'
+
+  put 'iniciodepto/:id', to: 'iniciodepto#update'
+
+  patch 'iniciodepto/:id', to: 'iniciodepto#update'
+
+  get 'iniciodepto/newc', to: 'iniciodepto#nuevacasilla', as: 'depto_casilla'
+
+  post 'iniciodepto/newc', to: 'iniciodepto#createcasilla'
+
+  get 'iniciodepto/opci1', to: 'iniciodepto#opcion1', as:'opcion1'
+
+  get 'iniciodepto/opci2', to: 'iniciodepto#opcion2', as:'opcion2'
+
+  get 'iniciodepto/opci3', to: 'iniciodepto#opcion3', as:'opcion3'
+
+  get 'iniciodepto/nuevoopcion', to: 'iniciodepto#nuevaopcion', as:'iniciodepto_nueva_opcion'
+
+  get 'iniciodepto/nuevoopcion2', to: 'iniciodepto#nuevaopcion2', as:'iniciodepto_nueva_opcion2'
+
+  get 'iniciodepto/nuevoopcion3', to: 'iniciodepto#nuevaopcion3', as:'iniciodepto_nueva_opcion3'
+
+  post 'iniciodepto/nuevacopcion', to: 'iniciodepto#createopcion'
+
+  get 'iniciodepto/ver1/:id', to: 'iniciodepto#ver1', as:"ver_1"
+
+  get 'iniciodepto/ver2/:id', to: 'iniciodepto#ver2', as:"ver_2"
+
+  get 'iniciodepto/ver3/:id', to: 'iniciodepto#ver3', as:"ver_3"
+
+  get 'iniciodepto/editaro/:id', to: 'iniciodepto#editaro', as:"editar_opcion"
+
+  put 'iniciodepto/update/:id', to: 'iniciodepto#updateo'
+
+  patch 'iniciodepto/update/:id', to: 'iniciodepto#updateo'
+
+  delete 'iniciodepto/eliminar/:id', to: 'iniciodepto#eliminaro', as:'eliminar_opcion'
+
   get 'inicio/index'
 
   get 'inicio/mostrar'

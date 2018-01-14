@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="iso-8859-1" />
@@ -8,16 +9,26 @@
   <meta name="title" content="Universidad Tecnologica Metropolitana" />
   <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
   <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/00_estilos_utem.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond-master/src/respond.js"></script>
   <![endif]-->
+  <script src="js/jquery-1.12.3.min.js"></script>
   <script type="text/javascript">
       document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
       document.body.style.fontSize = '1.6rem';
   </script>
+  <script src="js/jquery-migrate-1.3.0.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery-scrolltofixed-min.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="js/utem-corp.js"></script>
   <meta charset="utf-8">
   <title>Universidad Tecnol&oacute;gica Metropolitana</title>
 </head>
@@ -47,7 +58,6 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
-      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -60,7 +70,6 @@
     }
     .margen1 {
       margin-top: 1em;
-      margin-bottom: 1em;
     }
 
     .utem-log{
@@ -69,10 +78,7 @@
       margin-left: 2em;
       margin-right: 1em;
     }
-    img{
-      max-width: 100%;
-      height: auto;
-    }
+
     a:hover{
       background-color: transparent;
     }
@@ -140,90 +146,73 @@
   </section>
 </div>
 <!-- FIN MENU PRINCIPAL RESPONSIVO -->
-
 <!-- INICIO CONTENIDO PRINCIPAL -->
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
     <div class=" col-sm-12 col-md-3">
-        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
-        <div class="container-fluid">
-          <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
-            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
-          </ol>
-          <hr>
-        </div>
-        <div class="container-fluid margen">
-          <div class="list-group">
-        <% if can? :manage, :all %>
-          <% @casillas.each do |i|%>
-              <% if i.activo == 1 %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <%end%>
-                <br>
-                <br>
-                </li>
-              <% else %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <br>
-                <br>
-                </li>
-                <% end %>
-              <% end %>
-          <% end %>
-        <% else %>
-          <% @casillas.each do |i|%>
-              <% if i.activo ==  1 %>
-                <li>
-                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
-                <%= link_to "Cambiar estado", editar_casilla_depto_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                <%= link_to "Editar", editar_depto_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                <%= link_to "Eliminar", eliminar_depto_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                <% end %>
-                </li>
-              <% end %>
-            <%end%>
-        <%end%>
-          </div>
-          <hr>
-          <% if can? :manage, Casilla %>
-            <%= link_to "Nueva Casilla", depto_casilla_path, :class => "text-center btn btn-outline-success " %>
-          <% end %>
-        </div>
-        <!-- HASTA ACA -->
+      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+      <div class="container-fluid">
+        <ol class="breadcrumb margen">
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+        </ol>
+        <hr>
       </div>
+      <div class="container-fluid margen" id="menu-escritorio">
+        <div class="list-group">
+          <a href="../iniciodepto/inicio" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Inicio</h4></a>
+          <a href="../iniciodepto/historia" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Historia</h4></a>
+          </a>
+          <a href="../iniciodepto/misionvision" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Misión y Visión</h4></a>
+          <a href="../iniciodepto/pde" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>PDE</h4></a>
+        </div>
+      </div>
+      <!-- HASTA ACA -->
+    </div>
+
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">PDE</h1>
-      <div class="margen">
-        <% unless @textos.nil?%>
-            <div class="container margen text-justify">
-               <h4> <%= raw @textos.descripcion%> </h4>
-              <%= @textos.descripcion_imagen%>
-              <center>
-              <% if can? :manage, Texto %>
-                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
-              <% end %>
-            </center>
-        <% else %>
-            <% if can? :manage, Texto %>
-            <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+      <h1 style="font-family: 'Junge', serif;"></h1>
+      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, Texto %>
+        <%= form_for(@textos, :url => {:action => :textocreate})  do |f| %>
+            <% if @textos.errors.any? %>
+                <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <% @textos.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </div>
             <% end %>
+            <div class="col-md-9 margen">
+              <h3 class="text-left">
+                <%= f.label :nombre %>
+                <%= f.select(:nombre, options_for_select([['Inicio','investigacion']])) %>
+              </h3>
+              <br>
+              <h3 class="text-left">
+                <%= f.label :descripcion %>
+                <%= f.cktext_area :descripcion %>
+              </h3>
+              <br>
+              <div class="actions">
+                <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
+              </div>
         <% end %>
-        </div>
-
-        </div>
-
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+        <% end %>
+        <br>
+        <%= link_to 'Volver', iniciodepto_inicio_path, :class => 'btn btn-outline-primary margen1' %>
+        <br>
   </div>
   </div>
   <!-- Inicio Limpiar flotante -->
@@ -313,7 +302,7 @@
       <!-- Fin Limpiar flotante -->
     </div>
   </div>
-    <!-- Inicio Corporativo Pie Pagina -->
+  <!-- Inicio Corporativo Pie Pagina -->
   <div id="corporativo-pie-pagina">
     <div class="contenedor-crpvo-pie-pagina envoltura-16">
       <div class="meta-autor">
@@ -326,7 +315,8 @@
     </div>
     <div class="borde-sup-crpvo-ppag">
       <div id="logos-pie-rsp" class="envoltura-16">
-        <div class="gob-pie-rsp"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+        <div class="acreditacion-rsp"><img src="images/00_comunes/00_portales/ico_cna_768.png" alt=""></div>
+        <div class="gob-pie-rsp"><img src="images/00_comunes/00_portales/gob_ch_768.jpg" alt=""></div>
       </div>
       <!-- Inicio Limpiar flotante -->
       <div class="limpiar"></div>
@@ -339,8 +329,5 @@
 
 
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
 </html>

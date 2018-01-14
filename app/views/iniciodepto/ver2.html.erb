@@ -49,6 +49,9 @@
       margin-bottom: -5px;
       list-style-type: none;
     }
+    ul {
+      list-style-type: none;
+    }
     body {
       font-family: 'Junge', serif;
       margin-top: 1em;
@@ -60,7 +63,6 @@
     }
     .margen1 {
       margin-top: 1em;
-      margin-bottom: 1em;
     }
 
     .utem-log{
@@ -140,7 +142,6 @@
   </section>
 </div>
 <!-- FIN MENU PRINCIPAL RESPONSIVO -->
-
 <!-- INICIO CONTENIDO PRINCIPAL -->
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
@@ -204,25 +205,26 @@
         <!-- HASTA ACA -->
       </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <h1 style="font-family: 'Junge', serif;">PDE</h1>
+      <h1 style="font-family: 'Junge', serif;"></h1>
       <div class="margen">
-        <% unless @textos.nil?%>
-            <div class="container margen text-justify">
-               <h4> <%= raw @textos.descripcion%> </h4>
-              <%= @textos.descripcion_imagen%>
-              <center>
-              <% if can? :manage, Texto %>
-                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
-              <% end %>
-            </center>
-        <% else %>
+        <% unless @opciones.nil?%>
+              <h1 style="font-family: 'Junge', serif;"><%= @opciones.titulo %></h1>
+              <div class="container-fluid">
+                <p class="">
+                  <%= raw @opciones.texto%>
+                </p>
+                <%if  @opciones.document.url != "/documents/original/missing.png"%>
+                <a target="_blank" href="<%=  j.document.url %>" target="_blank">Documento Adjunto</a>
+                </div>
+                <%end%>
+              </div>
+        <%end%>
+            <hr>
             <% if can? :manage, Texto %>
-            <%= link_to "Nuevo", iniciodepto_nuevotexto_url, :class => 'btn btn-outline-primary margen1' %>
+            <%= link_to "Volver", opcion2_url, :class => 'btn btn-outline-primary margen1' %>
             <% end %>
-        <% end %>
         </div>
-
-        </div>
+    </div>
 
   </div>
   </div>
@@ -313,7 +315,7 @@
       <!-- Fin Limpiar flotante -->
     </div>
   </div>
-    <!-- Inicio Corporativo Pie Pagina -->
+  <!-- Inicio Corporativo Pie Pagina -->
   <div id="corporativo-pie-pagina">
     <div class="contenedor-crpvo-pie-pagina envoltura-16">
       <div class="meta-autor">
