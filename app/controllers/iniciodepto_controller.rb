@@ -102,6 +102,8 @@ class IniciodeptoController < ApplicationController
     end
   end
 
+
+
   def ecasilla
     @casillas = Casilla.find(params[:id])
     if @casillas.activo == 1
