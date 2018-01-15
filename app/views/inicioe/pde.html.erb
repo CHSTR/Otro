@@ -159,12 +159,12 @@
       </div>
       <div class="container-fluid margen">
         <div class="list-group">
-          <% if can? :manage, Casilla %>
+          <% if can? :manage, Etexto %>
               <% @casillas.each do |i|%>
                   <% if i.activo == 1 %>
                       <li>
                         <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                        <% if can? :manage, Casilla %>
+                        <% if can? :manage, Etexto %>
                             <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_esc_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                             <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -176,7 +176,7 @@
                   <% else %>
                       <li>
                         <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                        <% if can? :manage, Casilla %>
+                        <% if can? :manage, Etexto %>
                             <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_depto_esc_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                             <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -191,7 +191,7 @@
                   <% if i.activo ==  1 %>
                       <li>
                         <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                        <% if can? :manage, Casilla %>
+                        <% if can? :manage, Etexto %>
                             <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_esc_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                             <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -203,7 +203,7 @@
           <%end%>
         </div>
         <hr>
-        <% if can? :manage, Casilla %>
+        <% if can? :manage, Etexto %>
             <%= link_to "Nueva Casilla", esc_casilla_path, :class => "text-center btn btn-outline-success " %>
         <% end %>
       </div>

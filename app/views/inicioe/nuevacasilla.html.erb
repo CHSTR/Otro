@@ -163,7 +163,7 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h3 style="font-family: 'Junge', serif;">Creando Nueva Casilla</h3>
       <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% if can? :manage, Casilla %>
+        <% if can? :manage, Etexto %>
       <br>
           <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
         <% if @casillas.errors.any? %>

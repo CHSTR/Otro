@@ -162,12 +162,12 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-        <% if can? :manage, Casilla %>
+        <% if can? :manage, Etexto %>
           <% @casillas.each do |i|%>
               <% if i.activo == 1 %>
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
+                <% if can? :manage, Etexto %>
                 <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                 <%= link_to "Editar", editar_esc_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -178,7 +178,7 @@
               <% else %>
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                <% if can? :manage, Casilla %>
+                <% if can? :manage, Etexto %>
                 <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                 <%= link_to "Editar", editar_esc_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -193,7 +193,7 @@
               <% if i.activo ==  1 %>
                 <li>
                 <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                  <% if can? :manage, Casilla %>
+                  <% if can? :manage, Etexto %>
                 <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                 <%= link_to "Editar", editar_esc_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                 <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
@@ -204,7 +204,7 @@
         <%end%>
           </div>
           <hr>
-          <% if can? :manage, Casilla %>
+          <% if can? :manage, Etexto %>
             <%= link_to "Nueva Casilla", esc_casilla_path, :class => "text-center btn btn-outline-success " %>
           <% end %>
         </div>
@@ -217,7 +217,7 @@
           <% @opciones.each do |j| %>
               <% if j.opcion == 0 %>
                 <h3><a href="ver3/<%= j.id %>" ><%= j.titulo%></a></h3>
-              <% if can? :manage, Casilla %>
+              <% if can? :manage, Etexto %>
                 <%= link_to "Editar", editar_opcion_esc_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_esc_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"} %>
               <%end%>
@@ -232,14 +232,14 @@
                 </div>
                 <%end%>
               </div>
-            <% if can? :manage, Casilla %>  
+            <% if can? :manage, Etexto %>
               <%= link_to "Editar", editar_opcion_esc_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_esc_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"} %>
             <%end%>
               <%end%>
             <hr>
           <% end %>
-            <% if can? :manage, Texto %>
+            <% if can? :manage, Etexto %>
             <%= link_to "Nuevo", inicioe_nueva_opcion3_url, :class => 'btn btn-outline-primary margen1' %>
             <% end %>
         <% end %>
