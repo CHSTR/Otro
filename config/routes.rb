@@ -110,9 +110,61 @@ Rails.application.routes.draw do
   post 'links/nuevo', to: 'links#create'
 
   get 'links/eliminar'
-  delete 'links/eliminar/:id', to: 'links#eliminar', as:'eliminar_links'
+  delete 'links/:id/borrar', to: 'links#eliminar', as:'eliminar_links'
 
   get 'links/mostrar/:id', to: 'links#mostrar'
+
+  get 'links/casillai/:id', to: 'links#ecasilla', as:'editar_casilla_links'
+
+  delete 'links/:id/ecasilla', to: 'links#eliminarc', as:'eliminar_casilla_links'
+
+  get 'links/:id/editar', to: 'links#editar', as:'editar_links'
+
+  put 'links/:id', to: 'links#update'
+
+  patch 'links/:id', to: 'links#update'
+
+  get 'links/new', to: 'links#new', as: 'new_links'
+
+  get 'links/newc', to: 'links#newcasilla', as: 'links_casilla'
+
+  post 'links/newc', to: 'links#createcasilla'
+
+  post 'links/new', to: 'links#investigacioncreate'
+
+  get 'links/editarc/:id', to: 'links#editarc', as:'editar_links_casilla'
+
+  put 'links/actualizar/:id', to: 'links#updatec'
+
+  patch 'links/actualizar/:id', to: 'links#updatec'
+
+  get 'links/opci1', to: 'links#opcion1', as:'opcion1_links'
+
+  get 'links/opci2', to: 'links#opcion2', as:'opcion2_links'
+
+  get 'links/opci3', to: 'links#opcion3', as:'opcion3_links'
+
+  get 'links/nuevoopcion', to: 'links#nuevaopcion', as:'links_nueva_opcion'
+
+  get 'links/nuevoopcion2', to: 'links#nuevaopcion2', as:'links_nueva_opcion2'
+
+  get 'links/nuevoopcion3', to: 'links#nuevaopcion3', as:'links_nueva_opcion3'
+
+  post 'links/nuevacopcion', to: 'links#createopcion'
+
+  get 'links/ver1/:id', to: 'links#ver1', as:"links_ver_1"
+
+  get 'links/ver2/:id', to: 'links#ver2', as:"links_ver_2"
+
+  get 'links/ver3/:id', to: 'links#ver3', as:"links_ver_3"
+
+  get 'links/editaro/:id', to: 'links#editaro', as:"editar_opcion_links"
+
+  put 'links/update/:id', to: 'links#updateo'
+
+  patch 'links/update/:id', to: 'links#updateo'
+
+  delete 'links/delete/:id', to: 'links#eliminaro', as:'eliminar_opcion_links'
 #----------------------------------------------------------------------------
   get 'consulta/', to:'consulta#index', as:'consulta_index'
 

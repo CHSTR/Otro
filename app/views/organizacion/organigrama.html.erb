@@ -146,7 +146,12 @@
     <div class=" col-sm-12 col-md-3">
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
               <div class="container-fluid margen">
-          <div class="list-group">
+              <ol class="breadcrumb margen">
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+          </ol>
+          <hr>
+          <div class="list-group margen">
         <% if can? :manage, Casilla %>
           <% @casillas.each do |i|%>
               <% if i.activo == 1 %>

@@ -151,12 +151,91 @@
         </ol>
         <hr>
       </div>
-      <div class="container-fluid margen">
-        <div class="list-group">
+        <div class="container-fluid margen">
+          <div class="list-group">
+        <% if can? :manage, Casilla %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_links_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_links_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_links_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%end%>
+                <br>
+                <br>
+                </li>
+              <% else %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_links_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_links_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_links_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <br>
+                <br>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                  <% if can? :manage, Casilla %>
+                  <%= link_to "Cambiar estado", editar_casilla_links_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_links_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_links_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                  <% end %>
+                </li>
+              <% end %>
+            <%end%>
+        <%end%>
+          </div>
+          <hr>
+          <% if can? :manage, Casilla %>
+            <%= link_to "Nueva Casilla", links_casilla_path, :class => "text-center btn btn-outline-success " %>
+          <% end %>
         </div>
+        <!-- HASTA ACA -->
       </div>
+    <div class=" col-sm-12 col-md-9 margen">
+      <h1 style="font-family: 'Junge', serif;"></h1>
+      <div class="margen">
+        <% unless @opciones.nil?%>
+          <% @opciones.each do |j| %>
+              <% if j.opcion == 0 %>
+                <h3><a href="ver1/<%= j.id %>" ><%= j.titulo%></a></h3>
+                <% if can? :manage, Texto %>
+                <%= link_to "Editar", editar_opcion_links_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_links_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
+              <%else%>
+              <h1 style="font-family: 'Junge', serif;"><%= j.titulo %></h1>
+              <div class="container-fluid">
+                <p class="">
+                  <%= raw j.texto%>
+                </p>
+                <%if  j.document.url != "/documents/original/missing.png"%>
+                <a target="_blank" href="<%=  j.document.url %>" target="_blank">Documento Adjunto</a>
+                </div>
+                <%end%>
+              </div>
+              <% if can? :manage, Texto %>
+                <%= link_to "Editar", editar_opcion_links_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_links_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
+              <%end%>
+            <hr>
+          <% end %>
+            <% if can? :manage, Texto %>
+            <%= link_to "Nuevo", links_nueva_opcion_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
+        <% end %>
+        </div>
       <!-- HASTA ACA -->
-    </div>
     <div class="col-sm-12 col-md-9">
       <div class="container margen">
         <h2>Documentos y links de interes</h2>
@@ -193,10 +272,11 @@
     <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
-
-
+<br>
+<br>
+<br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>
