@@ -382,17 +382,27 @@ Rails.application.routes.draw do
 
   #--------------------------------------------------------------------
 
-  get 'inicioe/editarhistoria', to: 'inicioe#editarhistoria', as: 'inicioe_editarhistoria'
+  get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as:'inicioe_nuevotexto'
 
-  put 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
+  post 'inicioe/nuevotexto', to: 'inicioe#textocreate'
 
-  patch 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
+  get 'inicioe/eliminartexto'
+
+  get 'inicioe/nuevopde'
+
+  get 'inicioe/eliminarpde'
 
   get 'inicioe/editarinicio', to: 'inicioe#editarinicio', as: 'inicioe_editarinicio'
 
   put 'inicioe/editarinicio', to: 'inicioe#updateinicio'
 
   patch 'inicioe/editarinicio', to: 'inicioe#updateinicio'
+
+  get 'inicioe/editarhistoria', to:'inicioe#editarhistoria', as: 'inicioe_editarhistoria'
+
+  put 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
+
+  patch 'inicioe/editarhistoria', to: 'inicioe#updatehistoria'
 
   get 'inicioe/editarmisionvision', to: 'inicioe#editarmisionvision', as: 'inicioe_editarmisionvision'
 
@@ -406,17 +416,70 @@ Rails.application.routes.draw do
 
   patch 'inicioe/editarpde', to: 'inicioe#updatepde'
 
-  get 'inicioe/historia', to: 'inicioe#historia', as: 'inicioe_historia'
+  get 'inicioe/index'
 
-  get 'inicioe/inicio', to: 'inicioe#inicio', as: 'inicioe_inicio'
+  get 'inicioe/mostrar'
 
-  get 'inicioe/misionvision', to: 'inicioe#misionvision', as: 'inicioe_misionvision'
+  get 'inicioe/eliminar'
+
+  get 'inicioe/update'
+
+  get 'inicioe/nuevo'
+
+  get 'inicioe/crear'
+
+  get 'inicioe/editar'
 
   get 'inicioe/pde', to: 'inicioe#pde', as: 'inicioe_pde'
 
-  get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as: 'inicioe_nuevotexto'
+  get 'inicioe/inicio', to: 'inicioe#inicio', as: 'inicioe_inicio'
 
-  post 'inicioe/nuevotexto', to: 'inicioe#textocreate'
+  get 'inicioe/historia', to: 'inicioe#historia', as: 'inicioe_historia'
+
+  get 'inicioe/misionvision', to: 'inicioe#misionvision', as: 'inicioe_misionvision'
+
+  get 'inicioe/:id/casilla', to: 'inicioe#ecasilla', as:'editar_casilla_esc'
+
+  delete 'inicioe/:id/casilla', to: 'inicioe#eliminarc', as:'eliminar_esc'
+
+  get 'inicioe/:id/editar', to: 'inicioe#editar', as:'editar_esc_casilla'
+
+  put 'inicioe/:id', to: 'inicioe#update'
+
+  patch 'inicioe/:id', to: 'inicioe#update'
+
+  get 'inicioe/newc', to: 'inicioe#nuevacasilla', as: 'esc_casilla'
+
+  post 'inicioe/newc', to: 'inicioe#createcasilla'
+
+  get 'inicioe/opci1', to: 'inicioe#opcion1', as:'opcion1_esc'
+
+  get 'inicioe/opci2', to: 'inicioe#opcion2', as:'opcion2_esc'
+
+  get 'inicioe/opci3', to: 'inicioe#opcion3', as:'opcion3_esc'
+
+  get 'inicioe/nuevoopcion', to: 'inicioe#nuevaopcion', as:'inicioe_nueva_opcion'
+
+  get 'inicioe/nuevoopcion2', to: 'inicioe#nuevaopcion2', as:'inicioe_nueva_opcion2'
+
+  get 'inicioe/nuevoopcion3', to: 'inicioe#nuevaopcion3', as:'inicioe_nueva_opcion3'
+
+  post 'inicioe/nuevacopcion', to: 'inicioe#createopcion'
+
+  get 'inicioe/ver1/:id', to: 'inicioe#ver1', as:"ver_1esc"
+
+  get 'inicioe/ver2/:id', to: 'inicioe#ver2', as:"ver_2esc"
+
+  get 'inicioe/ver3/:id', to: 'inicioe#ver3', as:"ver_3esc"
+
+  get 'inicioe/editaro/:id', to: 'inicioe#editaro', as:"editar_opcion_esc"
+
+  put 'inicioe/update/:id', to: 'inicioe#updateo'
+
+  patch 'inicioe/update/:id', to: 'inicioe#updateo'
+
+  delete 'inicioe/eliminar/:id', to: 'inicioe#eliminaro', as:'eliminar_opcion_esc'
+
 #---------------------------------------------
 
   #-------------------------comienza contacto---------------------
