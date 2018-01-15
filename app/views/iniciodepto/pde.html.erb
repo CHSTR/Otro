@@ -155,7 +155,7 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-        <% if can? :manage, :all %>
+        <% if can? :manage, Casilla %>
           <% @casillas.each do |i|%>
               <% if i.activo == 1 %>
                 <li>

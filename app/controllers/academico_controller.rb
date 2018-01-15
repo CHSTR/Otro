@@ -1,5 +1,4 @@
 class AcademicoController < ApplicationController
-
   def index
     if params[:search]
       @academicos = Academico.where("nombre like ? or apellido like ?", "#{params[:search]}%", "#{params[:search]}%").order('apellido ASC')

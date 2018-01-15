@@ -1,6 +1,7 @@
 class DependenciasdController < ApplicationController
   def inicio
     @oficinas = Oficina.where("tipo like ?", "Departamento").order('id DESC').paginate(page: params[:page], per_page: 10)
+    @casillas = Casilla.where("ubicacion = 'organizacion'").order("id ASC")
   end
 
   def nuevo
@@ -14,6 +15,7 @@ class DependenciasdController < ApplicationController
 
   def mostrar
     @oficinas = Oficina.find(params[:id])
+    @casillas = Casilla.where("ubicacion = 'organizacion'").order("id ASC")
   end
 
   def eliminar

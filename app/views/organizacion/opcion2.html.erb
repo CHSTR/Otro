@@ -1,0 +1,362 @@
+<html lang="es">
+<head>
+  <meta charset="iso-8859-1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="keywords" content="utem, universidad, tecnologica, metropolitana, chile, tecnologia, sustentabilidad, responsabilidad, social, talento, ingenieria, ciencias, territorial, construccion" />
+  <meta name="author" content="Comunicaciones - www.utem.cl" />
+  <meta name="title" content="Universidad Tecnologica Metropolitana" />
+  <meta name="description" content="Pioneros en Tecnologia, Sustentabilidad y Responsabilidad Social" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond-master/src/respond.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+      document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
+      document.body.style.fontSize = '1.6rem';
+  </script>
+  <meta charset="utf-8">
+  <title>Universidad Tecnol&oacute;gica Metropolitana</title>
+</head>
+
+<body class="clr-cor">
+
+<!-- INICIO CABECERA -->
+<header id="cabecera" class="envoltura" >
+  <div class="envoltura-16 posicion-relativa-cabecera">
+    <!-- Inicio Corporativo -->
+    <div class="row">
+      <div class="col-md-5 utem-log"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+    </div>
+    <div id="top-gob-escritorio"><div class="azul"></div></div>
+    <!-- Fin Corporativo -->
+    <!--
+    <div id="buscador">
+     <form method="get" id="form-buscador" action="https://www.utem.cl/">
+      <input type="text" name="s" id="s" value="Buscar..." onFocus="if (this.value == 'Buscar...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Buscar...';}" />
+      <input type="submit" id="buscar"  value="Ir" />
+     </form>
+    </div> -->
+    <!-- Inicio Barra Perfiles -->
+    <!-- Fin Barra Perfiles -->
+  </div>
+  <style type="text/css">
+    a:link, li {
+      text-decoration:none;
+      margin-bottom: -5px;
+      list-style-type: none;
+    }
+    ul {
+      list-style-type: none;
+    }
+    body {
+      font-family: 'Junge', serif;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size:
+    }
+    .margen {
+      margin-top: 1.5em;
+    }
+    .margen1 {
+      margin-top: 1em;
+    }
+
+    .utem-log{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 2em;
+      margin-right: 1em;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    a:hover{
+      background-color: transparent;
+    }
+  </style>
+</header>
+<!-- FIN CABECERA -->
+
+<!-- INICIO MENU PRINCIPAL ESCRITORIO -->
+<% if current_user  %>
+    <%= link_to "Salir",destroy_user_session_path , method: :delete , :class => "float-right btn btn-danger"%>
+<% end %>
+<section id="menu-principal-escritorio" class="envoltura" style="background-color: #044f8e; ">
+  <nav id="nav-escritorio" class="envoltura-16">
+    <div id="utem-toggle-escrt"></div>
+    <ul id="menu-escritorio">
+      <li><a href="/iniciodepto/inicio">INICIO</a></li>
+      <li><a href="/academico/JC">ACADÉMICOS</a>
+      <li><a href="/investigacion">INVESTIGACIÓN</a>
+      <li><a href="/organizacion">ORGANIZACIÓN</a>
+      <li><a href="/links">LINKS</a>
+      <li><a href="/contactod">CONTACTO</a>
+    </ul>
+  </nav>
+</section>
+<!-- FIN MENU PRINCIPAL ESCRITORIO-->
+
+<!-- Inicio Limpiar flotante -->
+<div class="limpiar"></div>
+<!-- Fin Limpiar flotante -->
+
+<!-- INICIO MENU PRINCIPAL RESPONSIVO -->
+<div class="envoltura bg-menursp" style="background-color: #044f8e;">
+  <section id="menu-principal-rsp" class="envoltura-16" style="background-color: #044f8e;">
+    <div id="contenedor-principal-rsp" >
+      <header id="top-acordeon-rsp">
+        <div id="top-gob-rsp"><div class="azul"></div></div>
+        <div id="utem-logo-rsp"><a href="">&nbsp;</a><h1>Universidad Tecnológica Metropolitana</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contenedor-menu-rsp">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="utem-toggle-rsp"></div>
+      </header>
+      <div class="collapse" id="contenedor-menu-rsp" style="background-color: #044f8e;">
+        <nav id="nav-rsp">
+          <div id="perfiles-rsp" class="envoltura">
+            <h5>MENÚ</h5>
+            <ul>
+            <li class=""><a href="/iniciodepto/inicio" class="nodesplegable">INICIO</a></li>
+            <li class=""><a href="/academico/JC">ACADÉMICOS</a>
+            <li class=""><a href="/investigacion">INVESTIGACIÓN</a>
+            <li class=""><a href="/organizacion">ORGANIZACIÓN</a>
+            <li class=""><a href="/links">LINKS</a>
+            <li class=""><a href="/contactod">CONTACTO</a>
+            </ul>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </nav>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- FIN MENU PRINCIPAL RESPONSIVO -->
+<!-- INICIO CONTENIDO PRINCIPAL -->
+<main class="envoltura-16 espacio-vinf espacio-vsup ">
+  <div class="row">
+    <div class=" col-sm-12 col-md-3">
+        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+        <div class="container-fluid">
+          <ol class="breadcrumb margen">
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+          </ol>
+          <hr>
+        </div>
+        <div class="container-fluid margen">
+          <div class="list-group">
+        <% if can? :manage, Casilla %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%end%>
+                <br>
+                <br>
+                </li>
+              <% else %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+               <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <br>
+                <br>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                  <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <% end %>
+                </li>
+              <% end %>
+            <%end%>
+        <%end%>
+          </div>
+          <hr>
+          <% if can? :manage, Casilla %>
+            <%= link_to "Nueva Casilla", organizacion_casilla_path, :class => "text-center btn btn-outline-success " %>
+          <% end %>
+        </div>
+        <!-- HASTA ACA -->
+      </div>
+    <div class=" col-sm-12 col-md-9 margen">
+      <h1 style="font-family: 'Junge', serif;"></h1>
+      <div class="margen">
+        <% unless @opciones.nil?%>
+          <% @opciones.each do |j| %>
+              <% if j.opcion == 0 %>
+                <h3><a href="ver2/<%= j.id %>" ><%= j.titulo%></a></h3>
+                <% if can? :manage, Texto %>
+                <%= link_to "Editar", editar_opcion_organizacion_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_organizacion_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
+              <%else%>
+              <h1 style="font-family: 'Junge', serif;"><%= j.titulo %></h1>
+              <div class="container-fluid">
+                <p class="">
+                  <%= raw j.texto%>
+                </p>
+                <%if  j.document.url != "/documents/original/missing.png"%>
+                <a target="_blank" href="<%=  j.document.url %>" target="_blank">Documento Adjunto</a>
+                </div>
+                <%end%>
+              </div>
+              <% if can? :manage, Texto %>
+              <%= link_to "Editar", editar_opcion_organizacion_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_organizacion_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+              <%end%>
+              <%end%>
+            <hr>
+          <% end %>
+            <% if can? :manage, Texto %>
+            <%= link_to "Nuevo", organizacion_nueva_opcion2_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
+        <% end %>
+        </div>
+    </div>
+
+  </div>
+  </div>
+  <!-- Inicio Limpiar flotante -->
+  <div class="limpiar"></div>
+  <!-- Fin Limpiar flotante -->
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+
+<!-- INICIO PIE -->
+<footer id="pie-pagina" class="envoltura">
+  <div class="linea-inf-oscura">
+    <div id="menu-pie-pagina" class="envoltura-16">
+      <ul>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTRAS REDES:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="https://www.facebook.com/utem.cl/" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/utem" target="_blank">Twitter</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>SERVICIOS:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="https://dirdoc.utem.cl/" target="_blank">Dirdoc</a></li>
+                <li><a href="http://reko.utem.cl/portal/" target="_blank">Reko</a></li>
+                <li><a href="https://mi.utem.cl/" target="_blank">Mi UTEM</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>NUESTRO SITIO:</h3>
+            </header>
+            <nav class="nav-pie-pagina">
+              <ul>
+                <li><a href="http://transparencia.utem.cl/politica-de-privacidad/" target="_blank">Pol&iacute;ticas de Privacidad</a></li>
+                <li><a href="https://www.google.cl/maps/place/Universidad+Tecnol%C3%B3gica+Metropolitana+-+Campus+Macul/@-33.466645,-70.5995255,17z/data=!4m8!1m2!2m1!1sestadio+nacional!3m4!1s0x9662cfc270900eb7:0x330e0d87329f4a5f!8m2!3d-33.4661882!4d-70.5970763" target="_blank">Mapa del sitio</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+        <li class="col-4-pie">
+          <div class="borde-menu-pie-pagina">
+            <header class="cabecera-nav-pie-pagina">
+              <h3>ACCESO INTRANET:</h3>
+            </header>
+            <div id="intranet">
+              <% unless current_user %>
+                  <a href="../../../users/sign_in">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Iniciar Sesión"></div>
+                  </a>
+              <% else %>
+                  <a href="#">
+                    <div class="campo-alt"><input type="submit" name="boton" id="entrar"  value="Usted ya está como administrador"></div>
+                  </a>
+              <%end%>
+            </div>
+          </div>
+          <!-- Inicio Limpiar flotante -->
+          <div class="limpiar"></div>
+          <!-- Fin Limpiar flotante -->
+        </li>
+      </ul>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Inicio Corporativo Pie Pagina -->
+  <div id="corporativo-pie-pagina">
+    <div class="contenedor-crpvo-pie-pagina envoltura-16">
+      <div class="meta-autor">
+        <div class="copyright">
+          <p>Av. José Pedro Alessandri 1242, Ñuñoa, Región Metropolitana<br>
+          <p class="cp">  2017 Universidad Tecnológica Metropolitana. - Todos los derechos reservados.<p>
+        </div>
+      </div>
+      <div class="gob-pie"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+    </div>
+    <div class="borde-sup-crpvo-ppag">
+      <div id="logos-pie-rsp" class="envoltura-16">
+        <div class="gob-pie-rsp"><%= image_tag("00_portales/gob_ch_768.jpg")%></div>
+      </div>
+      <!-- Inicio Limpiar flotante -->
+      <div class="limpiar"></div>
+      <!-- Fin Limpiar flotante -->
+    </div>
+  </div>
+  <!-- Fin Corporativo Pie Pagina -->
+</footer>
+<!-- FIN PIE -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</html>

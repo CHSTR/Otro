@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -58,6 +59,9 @@
       margin-top: 1.5em;
     }
 
+    .margen1 {
+      margin-top: 1em;
+    }
     .utem-log{
       margin-top: 1em;
       margin-bottom: 1em;
@@ -141,21 +145,56 @@
   <div class="row">
     <div class=" col-sm-12 col-md-3">
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
-      <div class="container-fluid">
-        <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
-          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
-        </ol>
-        <hr>
+              <div class="container-fluid margen">
+          <div class="list-group">
+        <% if can? :manage, Casilla %>
+          <% @casillas.each do |i|%>
+              <% if i.activo == 1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <%end%>
+                <br>
+                <br>
+                </li>
+              <% else %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                <% if can? :manage, Casilla %>
+                <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                <br>
+                <br>
+                </li>
+                <% end %>
+              <% end %>
+          <% end %>
+        <% else %>
+          <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                  <% if can? :manage, Casilla %>
+                  <%= link_to "Cambiar estado", editar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                <%= link_to "Editar", editar_organizacion_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                <%= link_to "Eliminar", eliminar_casilla_organizacion_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                  <% end %>
+                </li>
+              <% end %>
+            <%end%>
+        <%end%>
+          </div>
+          <hr>
+          <% if can? :manage, Casilla %>
+            <%= link_to "Nueva Casilla", organizacion_casilla_path, :class => "text-center btn btn-outline-success " %>
+          <% end %>
+          </div>
+        <!-- HASTA ACA -->
       </div>
-      <div class="container-fluid margen">
-        <div class="list-group">
-          <a href="/organizacion/organigrama" class="list-group-item list-group-item-action active">Organigrama</a>
-          <a href="/dependenciasd" class="list-group-item list-group-item-action">Dependencias</a>
-        </div>
-      </div>
-      <!-- HASTA ACA -->
-    </div>
     <div class=" col-sm-12 col-md-9">
       <div class="container margen">
         <h2>Organigrama</h2>

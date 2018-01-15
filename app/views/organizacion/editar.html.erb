@@ -158,7 +158,7 @@
           <li><%= msg %></li>
           <% end %>
         </div>
-        <% end %> 
+        <% end %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre_del_funcionario %>
@@ -175,9 +175,6 @@
               <%= f.text_field :correo %>
             </h3>
             <br>
-            <h3>Imagen Actual</h3>
-              <%= image_tag @funcionario_deptos.photo.url(:thumb, :class => "img-fluid text-center") %>
-            <br>  
             <h3 class="text-left">
               <%= f.label :Imagen_Funcionario%>
               <%= f.file_field :photo %>
@@ -185,7 +182,7 @@
             <br>
             <h3 class="text-left">
               <%= f.label :tipo_de_funcionario %>
-              <%= f.select(:funcion, options_for_select([['Administrativo',0], ['Grupo de apoyo',1])) %>
+              <%= f.select(:funcion, options_for_select([['Administrativo',0], ['Grupo de apoyo',1]])) %>
             </h3>
             <br>
             <div class="actions">
@@ -203,7 +200,8 @@
             <br>
             <% end %>
             <br>
-            <%= link_to 'Volver', organizacion_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
+            <%= link_to 'Volver', organizacion_path, :class => 'btn btn-outline-primary btn-lg  margen1' %>
+            <br>
     </div>
  <!-- Fin Noticias -->
  <!-- Inicio Agenda -->

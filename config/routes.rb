@@ -512,6 +512,58 @@ Rails.application.routes.draw do
 
   delete 'organizacion/:id', to: 'organizacion#eliminar', as:'eliminar_organizacion'
 
+  get 'organizacion/casillai/:id', to: 'organizacion#ecasilla', as:'editar_casilla_organizacion'
+
+  delete 'organizacion/:id/ecasilla', to: 'organizacion#eliminarc', as:'eliminar_casilla_organizacion'
+
+  get 'organizacion/:id/editar', to: 'organizacion#editar', as:'editar_organizacion'
+
+  put 'organizacion/:id', to: 'organizacion#update'
+
+  patch 'organizacion/:id', to: 'organizacion#update'
+
+  get 'organizacion/new', to: 'organizacion#new', as: 'new_organizacion'
+
+  get 'organizacion/newc', to: 'organizacion#newcasilla', as: 'organizacion_casilla'
+
+  post 'organizacion/newc', to: 'organizacion#createcasilla'
+
+  post 'organizacion/new', to: 'organizacion#investigacioncreate'
+
+  get 'organizacion/editarc/:id', to: 'organizacion#editarc', as:'editar_organizacion_casilla'
+
+  put 'organizacion/actualizar/:id', to: 'organizacion#updatec'
+
+  patch 'organizacion/actualizar/:id', to: 'organizacion#updatec'
+
+  get 'organizacion/opci1', to: 'organizacion#opcion1', as:'opcion1_organizacion'
+
+  get 'organizacion/opci2', to: 'organizacion#opcion2', as:'opcion2_organizacion'
+
+  get 'organizacion/opci3', to: 'organizacion#opcion3', as:'opcion3_organizacion'
+
+  get 'organizacion/nuevoopcion', to: 'organizacion#nuevaopcion', as:'organizacion_nueva_opcion'
+
+  get 'organizacion/nuevoopcion2', to: 'organizacion#nuevaopcion2', as:'organizacion_nueva_opcion2'
+
+  get 'organizacion/nuevoopcion3', to: 'organizacion#nuevaopcion3', as:'organizacion_nueva_opcion3'
+
+  post 'organizacion/nuevacopcion', to: 'organizacion#createopcion'
+
+  get 'organizacion/ver1/:id', to: 'organizacion#ver1', as:"organizacion_ver_1"
+
+  get 'organizacion/ver2/:id', to: 'organizacion#ver2', as:"organizacion_ver_2"
+
+  get 'organizacion/ver3/:id', to: 'organizacion#ver3', as:"organizacion_ver_3"
+
+  get 'organizacion/editaro/:id', to: 'organizacion#editaro', as:"editar_opcion_organizacion"
+
+  put 'organizacion/update/:id', to: 'organizacion#updateo'
+
+  patch 'organizacion/update/:id', to: 'organizacion#updateo'
+
+  delete 'organizacion/eliminar/:id', to: 'organizacion#eliminaro', as:'eliminar_opcion_organizacion'
+
   #-----------------------------comienza investigacion inicio ---------------------
   get 'investigacion/nuevotexto', to: 'investigacion#nuevotexto', as:'investigacion_nuevotexto'
 
@@ -562,6 +614,60 @@ Rails.application.routes.draw do
 
   delete 'investigacion/PRO/:id', to: 'investigacion#eliminarp', as:'eliminar_proyecto'
 
+  get 'investigacion/casillai/:id', to: 'investigacion#ecasilla', as:'editar_casilla_investigacion'
+
+  delete 'investigacion/:id/ecasilla', to: 'investigacion#eliminarc', as:'eliminar_casilla_investigacion'
+
+  get 'investigacion/:id/editar', to: 'investigacion#editar', as:'editar_investigacion'
+
+  put 'investigacion/:id', to: 'investigacion#update'
+
+  patch 'investigacion/:id', to: 'investigacion#update'
+
+  get 'investigacion/new', to: 'investigacion#new', as: 'new_investigacion'
+
+  get 'investigacion/newc', to: 'investigacion#newcasilla', as: 'investigacion_casilla'
+
+  post 'investigacion/newc', to: 'investigacion#createcasilla'
+
+  post 'investigacion/new', to: 'investigacion#investigacioncreate'
+
+  get 'investigacion/editarc/:id', to: 'investigacion#editarc', as:'editar_investigacion_casilla'
+
+  put 'investigacion/actualizar/:id', to: 'investigacion#updatec'
+
+  patch 'investigacion/actualizar/:id', to: 'investigacion#updatec'
+
+  delete 'investigacion/:id', to: 'investigacion#eliminar', as:'eliminar_investigacion'
+
+  get 'investigacion/opci1', to: 'investigacion#opcion1', as:'opcion1_investigacion'
+
+  get 'investigacion/opci2', to: 'investigacion#opcion2', as:'opcion2_investigacion'
+
+  get 'investigacion/opci3', to: 'investigacion#opcion3', as:'opcion3_investigacion'
+
+  get 'investigacion/nuevoopcion', to: 'investigacion#nuevaopcion', as:'investigacion_nueva_opcion'
+
+  get 'investigacion/nuevoopcion2', to: 'investigacion#nuevaopcion2', as:'investigacion_nueva_opcion2'
+
+  get 'investigacion/nuevoopcion3', to: 'investigacion#nuevaopcion3', as:'investigacion_nueva_opcion3'
+
+  post 'investigacion/nuevacopcion', to: 'investigacion#createopcion'
+
+  get 'investigacion/ver1/:id', to: 'investigacion#ver1', as:"investigacion_ver_1"
+
+  get 'investigacion/ver2/:id', to: 'investigacion#ver2', as:"investigacion_ver_2"
+
+  get 'investigacion/ver3/:id', to: 'investigacion#ver3', as:"investigacion_ver_3"
+
+  get 'investigacion/editaro/:id', to: 'investigacion#editaro', as:"editar_opcion_investigacion"
+
+  put 'investigacion/update/:id', to: 'investigacion#updateo'
+
+  patch 'investigacion/update/:id', to: 'investigacion#updateo'
+
+  delete 'investigacion/eliminar/:id', to: 'investigacion#eliminaro', as:'eliminar_opcion_investigacion'
+
   #------------------terminan los proyectos-----------------------------
 
   get 'tipo_texto/index'
@@ -588,7 +694,7 @@ Rails.application.routes.draw do
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
 
-  delete 'academico/:id/ecasilla', to: 'academico#eliminarc', as:'eliminar_casilla'
+  delete 'academico/eliminar/:id', to: 'academico#eliminarc', as:'eliminar_casilla'
 
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
@@ -638,7 +744,7 @@ Rails.application.routes.draw do
 
   patch 'academico/update/:id', to: 'academico#updateo'
 
-  delete 'academico/eliminar/:id', to: 'academico#eliminaro', as:'eliminar_opcion_academico'
+  delete 'academico/delete/:id', to: 'academico#eliminaro', as:'eliminar_opcion_academico'
 
   #Falta toda escual y contacto...
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

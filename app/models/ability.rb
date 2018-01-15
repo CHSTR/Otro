@@ -42,7 +42,8 @@ class Ability
             can :manage, CentroAlumno           # Secretaria #
             can :manage, Programa               # modifica   #
             can :manage, OfertaLaboral          # toda la    #
-            can :manage, FuncionarioEscuela     # escuela    #
+            can :manage, FuncionarioEscuela
+            can :manage, Opcion                 # escuela    #
         elsif user.secretaria_departamento?     ##############
             can :manage, Texto     #no
             can :manage, [Academico,Casilla] #listo
