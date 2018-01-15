@@ -159,6 +159,7 @@ class InvestigacionController < ApplicationController
   def buscar
   	if params[:search]
       @proyectos = Proyecto.where("nombre LIKE ?","%#{params[:search]}%")
+      @casillas = Casilla.where("ubicacion = 'investigacion'").order("id ASC")
     end
   end
 
