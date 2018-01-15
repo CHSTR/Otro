@@ -98,6 +98,58 @@ Rails.application.routes.draw do
 
   get 'linke/mostrar/:id', to: 'linke#mostrar'
 
+  get 'linke/casillai/:id', to: 'linke#ecasilla', as:'editar_casilla_linke'
+
+  delete 'linke/:id/ecasilla', to: 'linke#eliminarc', as:'eliminar_casilla_linke'
+
+  get 'linke/:id/editar', to: 'linke#editar', as:'editar_linke'
+
+  put 'linke/:id', to: 'linke#update'
+
+  patch 'linke/:id', to: 'linke#update'
+
+  get 'linke/new', to: 'linke#new', as: 'new_linke'
+
+  get 'linke/newc', to: 'linke#newcasilla', as: 'linke_casilla'
+
+  post 'linke/newc', to: 'linke#createcasilla'
+
+  post 'linke/new', to: 'linke#investigacioncreate'
+
+  get 'linke/editarc/:id', to: 'linke#editarc', as:'editar_linke_casilla'
+
+  put 'linke/actualizar/:id', to: 'linke#updatec'
+
+  patch 'linke/actualizar/:id', to: 'linke#updatec'
+
+  get 'linke/opci1', to: 'linke#opcion1', as:'opcion1_linke'
+
+  get 'linke/opci2', to: 'linke#opcion2', as:'opcion2_linke'
+
+  get 'linke/opci3', to: 'linke#opcion3', as:'opcion3_linke'
+
+  get 'linke/nuevoopcion', to: 'linke#nuevaopcion', as:'linke_nueva_opcion'
+
+  get 'linke/nuevoopcion2', to: 'linke#nuevaopcion2', as:'linke_nueva_opcion2'
+
+  get 'linke/nuevoopcion3', to: 'linke#nuevaopcion3', as:'linke_nueva_opcion3'
+
+  post 'linke/nuevacopcion', to: 'linke#createopcion'
+
+  get 'linke/ver1/:id', to: 'linke#ver1', as:"linke_ver_1"
+
+  get 'linke/ver2/:id', to: 'linke#ver2', as:"linke_ver_2"
+
+  get 'linke/ver3/:id', to: 'linke#ver3', as:"linke_ver_3"
+
+  get 'linke/editaro/:id', to: 'linke#editaro', as:"editar_opcion_linke"
+
+  put 'linke/update/:id', to: 'linke#updateo'
+
+  patch 'linke/update/:id', to: 'linke#updateo'
+
+  delete 'linke/delete/:id', to: 'linke#eliminaro', as:'eliminar_opcion_linke'
+
   #-----------------------------------------------------
 
   get 'links/', to:'links#inicio', as:'links'
