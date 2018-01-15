@@ -156,7 +156,7 @@
       <div class="container-fluid">
         <ol class="breadcrumb margen">
           <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
-          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+          <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
       </div>
@@ -169,7 +169,7 @@
     <div class=" col-sm-12 col-md-9 margen">
       <h3 style="font-family: 'Junge', serif;">Agregando información a la pestaña</h3>
       <div class="container text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% if can? :manage, Casilla %>
+        <% if can? :manage, NoticiaEscuela %>
       <br>
           <%= form_for(@opciones, :url => {:action => :updateo}) do |f| %>
         <% if @opciones.errors.any? %>

@@ -297,7 +297,7 @@ Rails.application.routes.draw do
 
   post 'contacto/', to:'contacto#crear'
 
-  get 'organizacione/', to:'organizacione#index', as:'organizacion_escuela'
+  get 'organizacione/', to:'organizacione#index', as:'organizacione'
 
   get 'organizacione/new', to:'organizacione#new', as:'nuevo_funcionario'
 
@@ -311,6 +311,58 @@ Rails.application.routes.draw do
   patch 'organizacione/:id', to:'organizacione#update'
 
   delete 'organizacione/:id', to: 'organizacione#eliminare', as:'organizacione_eliminar'
+
+  get 'organizacione/casillai/:id', to: 'organizacione#ecasilla', as:'editar_casilla_organizacione'
+
+  delete 'organizacione/:id/ecasilla', to: 'organizacione#eliminarc', as:'eliminar_casilla_organizacione'
+
+  get 'organizacione/:id/editar', to: 'organizacione#editar', as:'editar_organizacione'
+
+  put 'organizacione/:id', to: 'organizacione#update'
+
+  patch 'organizacione/:id', to: 'organizacione#update'
+
+  get 'organizacione/new', to: 'organizacione#new', as: 'new_organizacione'
+
+  get 'organizacione/newc', to: 'organizacione#newcasilla', as: 'organizacione_casilla'
+
+  post 'organizacione/newc', to: 'organizacione#createcasilla'
+
+  post 'organizacione/new', to: 'organizacione#investigacioncreate'
+
+  get 'organizacione/editarc/:id', to: 'organizacione#editarc', as:'editar_organizacione_casilla'
+
+  put 'organizacione/actualizar/:id', to: 'organizacione#updatec'
+
+  patch 'organizacione/actualizar/:id', to: 'organizacione#updatec'
+
+  get 'organizacione/opci1', to: 'organizacione#opcion1', as:'opcion1_organizacione'
+
+  get 'organizacione/opci2', to: 'organizacione#opcion2', as:'opcion2_organizacione'
+
+  get 'organizacione/opci3', to: 'organizacione#opcion3', as:'opcion3_organizacione'
+
+  get 'organizacione/nuevoopcion', to: 'organizacione#nuevaopcion', as:'organizacione_nueva_opcion'
+
+  get 'organizacione/nuevoopcion2', to: 'organizacione#nuevaopcion2', as:'organizacione_nueva_opcion2'
+
+  get 'organizacione/nuevoopcion3', to: 'organizacione#nuevaopcion3', as:'organizacione_nueva_opcion3'
+
+  post 'organizacione/nuevacopcion', to: 'organizacione#createopcion'
+
+  get 'organizacione/ver1/:id', to: 'organizacione#ver1', as:"organizacione_ver_1"
+
+  get 'organizacione/ver2/:id', to: 'organizacione#ver2', as:"organizacione_ver_2"
+
+  get 'organizacione/ver3/:id', to: 'organizacione#ver3', as:"organizacione_ver_3"
+
+  get 'organizacione/editaro/:id', to: 'organizacione#editaro', as:"editar_opcion_organizacione"
+
+  put 'organizacione/update/:id', to: 'organizacione#updateo'
+
+  patch 'organizacione/update/:id', to: 'organizacione#updateo'
+
+  delete 'organizacione/eliminar/:id', to: 'organizacione#eliminaro', as:'eliminar_opcion_organizacione'
 
 
   get 'laboral/', to:'laboral#index', as:'inicio_laboral'

@@ -1,11 +1,11 @@
 class DependenciaseController < ApplicationController
   def inicio
     @oficinas = Oficina.where("tipo like ?", "Escuela").order('id DESC').paginate(page: params[:page], per_page: 10)
+    @casillas = Casilla.where("ubicacion = 'organizacione'").order("id ASC") 
   end
 
   def nuevo
     @oficinas = Oficina.new
-    authorize! :nuevo, @oficinas
   end
 
   def editar
@@ -14,6 +14,7 @@ class DependenciaseController < ApplicationController
 
   def mostrar
     @oficinas = Oficina.find(params[:id])
+    @casillas = Casilla.where("ubicacion = 'organizacione'").order("id ASC") 
   end
 
   def eliminar

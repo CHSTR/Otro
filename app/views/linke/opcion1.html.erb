@@ -156,7 +156,7 @@
         <div class="container-fluid">
           <ol class="breadcrumb margen">
             <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
-            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Departamento</li>
+            <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
           </ol>
           <hr>
         </div>
@@ -217,7 +217,7 @@
           <% @opciones.each do |j| %>
               <% if j.opcion == 0 %>
                 <h3><a href="ver1/<%= j.id %>" ><%= j.titulo%></a></h3>
-                <% if can? :manage, Texto %>
+                <% if can? :manage, NoticiaEscuela %>
                 <%= link_to "Editar", editar_opcion_linke_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_linke_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
                 <%end%>
@@ -232,14 +232,14 @@
                 </div>
                 <%end%>
               </div>
-              <% if can? :manage, Texto %>
+              <% if can? :manage, NoticiaEscuela %>
                 <%= link_to "Editar", editar_opcion_linke_path(j), :class => 'btn btn-outline-success margen1' %>
                 <%= link_to "Eliminar", eliminar_opcion_linke_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
                 <%end%>
               <%end%>
             <hr>
           <% end %>
-            <% if can? :manage, Texto %>
+            <% if can? :manage, NoticiaEscuela %>
             <%= link_to "Nuevo", linke_nueva_opcion_url, :class => 'btn btn-outline-primary margen1' %>
             <% end %>
         <% end %>

@@ -6,7 +6,6 @@ class DependenciasdController < ApplicationController
 
   def nuevo
     @oficinas = Oficina.new
-    authorize! :nuevo, @oficinas
   end
 
   def editar

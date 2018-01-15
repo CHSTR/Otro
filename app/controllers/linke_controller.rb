@@ -13,7 +13,6 @@ class LinkeController < ApplicationController
 
   def nuevo
     @interes = Intere.new
-    authorize! :nuevo, @interes
   end
 
   def eliminar
