@@ -150,17 +150,58 @@
         <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
         <div class="container-fluid">
           <ol class="breadcrumb margen">
-            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href=""><%= link_to 'Portal', portal_path %></a></li>
+            <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
             <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
           </ol>
           <hr>
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="tituygradua" class="list-group-item list-group-item-action active">Titulados y graduados</a>
-            <a href="https://ret.utem.cl/"  target="_blank"  class="list-group-item list-group-item-action">Portal de Egresados</a>
-            <a href="egredesta" class="list-group-item list-group-item-action">Egresados Destacados</a>
+            <% if can? :manage, NoticiaEscuela %>
+                <% @casillas.each do |i|%>
+                    <% if i.activo == 1 %>
+                        <li>
+                          <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                          <% if can? :manage, NoticiaEscuela %>
+                              <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                              <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                              <%= link_to "Eliminar", eliminar_casilla_egresados_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                          <%end%>
+                          <br>
+                          <br>
+                        </li>
+                    <% else %>
+                        <li>
+                          <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                          <% if can? :manage, NoticiaEscuela %>
+                              <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                              <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                              <%= link_to "Eliminar", eliminar_casilla_egresados_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                              <br>
+                              <br>
+                              </li>
+                          <% end %>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <% @casillas.each do |i|%>
+                    <% if i.activo ==  1 %>
+                        <li>
+                          <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                          <% if can? :manage, NoticiaEscuela %>
+                              <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
+                              <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                              <%= link_to "Eliminar", eliminar_casilla_egresados_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
+                          <% end %>
+                        </li>
+                    <% end %>
+                <%end%>
+            <%end%>
           </div>
+          <hr>
+          <% if can? :manage, NoticiaEscuela %>
+              <%= link_to "Nueva Casilla", egresados_casilla_path, :class => "text-center btn btn-outline-success " %>
+          <% end %>
         </div>
         <!-- HASTA ACA -->
       </div>

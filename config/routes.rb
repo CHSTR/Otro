@@ -263,6 +263,59 @@ Rails.application.routes.draw do
 
   delete 'egresados/todos/:id', to:'egresados#eliminar', as:'eliminar_egresado'
 
+
+  get 'egresados/casillai/:id', to: 'egresados#ecasilla', as:'editar_casilla_egresados'
+
+  delete 'egresados/:id/ecasilla', to: 'egresados#eliminarc', as:'eliminar_casilla_egresados'
+
+  get 'egresados/:id/editar', to: 'egresados#editar', as:'editar_egresados'
+
+  put 'egresados/:id', to: 'egresados#update'
+
+  patch 'egresados/:id', to: 'egresados#update'
+
+  get 'egresados/new', to: 'egresados#new', as: 'new_egresados'
+
+  get 'egresados/newc', to: 'egresados#newcasilla', as: 'egresados_casilla'
+
+  post 'egresados/newc', to: 'egresados#createcasilla'
+
+  post 'egresados/new', to: 'egresados#investigacioncreate'
+
+  get 'egresados/editarc/:id', to: 'egresados#editarc', as:'editar_egresados_casilla'
+
+  put 'egresados/actualizar/:id', to: 'egresados#updatec'
+
+  patch 'egresados/actualizar/:id', to: 'egresados#updatec'
+
+  get 'egresados/opci1', to: 'egresados#opcion1', as:'opcion1_egresados'
+
+  get 'egresados/opci2', to: 'egresados#opcion2', as:'opcion2_egresados'
+
+  get 'egresados/opci3', to: 'egresados#opcion3', as:'opcion3_egresados'
+
+  get 'egresados/nuevoopcion', to: 'egresados#nuevaopcion', as:'egresados_nueva_opcion'
+
+  get 'egresados/nuevoopcion2', to: 'egresados#nuevaopcion2', as:'egresados_nueva_opcion2'
+
+  get 'egresados/nuevoopcion3', to: 'egresados#nuevaopcion3', as:'egresados_nueva_opcion3'
+
+  post 'egresados/nuevacopcion', to: 'egresados#createopcion'
+
+  get 'egresados/ver1/:id', to: 'egresados#ver1', as:"egresados_ver_1"
+
+  get 'egresados/ver2/:id', to: 'egresados#ver2', as:"egresados_ver_2"
+
+  get 'egresados/ver3/:id', to: 'egresados#ver3', as:"egresados_ver_3"
+
+  get 'egresados/editaro/:id', to: 'egresados#editaro', as:"editar_opcion_egresados"
+
+  put 'egresados/update/:id', to: 'egresados#updateo'
+
+  patch 'egresados/update/:id', to: 'egresados#updateo'
+
+  delete 'egresados/delete/:id', to: 'egresados#eliminaro', as:'eliminar_opcion_egresados'
+
   resources :roles
   devise_for :users, :controllers => { registrations: 'registrations' }
   root :to => "portal#inicio"
