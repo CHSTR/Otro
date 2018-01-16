@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -56,6 +57,10 @@
     }
     .margen {
       margin-top: 1.5em;
+    }
+
+    .margen1{
+      margin-top: 1em;
     }
     img{
       max-width: 100%;
@@ -122,15 +127,15 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-            <li><a href="/inicioe/inicio">INICIO</a></li>
-            <li><a href="/noticias/inicio">NOTICIAS</a>
-            <li><a href="/estudiante">ESTUDIANTES</a>
-            <li><a href="/programas">PROGRAMAS</a>
-            <li><a href="/egresados">EGRESADOS</a>
-            <li><a href="/laboral">LABORAL</a>
-            <li><a href="/organizacione">ORGANIZACION</a>
-            <li><a href="/linke">LINKS</a>
-            <li><a href="/contacto">CONTACTO</a>
+              <li><a href="../../inicioe/inicio">INICIO</a></li>
+              <li><a href="../../noticias/inicio">NOTICIAS</a>
+              <li><a href="../../estudiante">ESTUDIANTES</a>
+              <li><a href="../../programas">PROGRAMAS</a>
+              <li><a href="../../egresados">EGRESADOS</a>
+              <li><a href="../../laboral">LABORAL</a>
+              <li><a href="../../organizacione">ORGANIZACION</a>
+              <li><a href="../../links">LINKS</a>
+              <li><a href="../../contacto">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -147,7 +152,7 @@
 <main class="envoltura-16 espacio-vinf espacio-vsup ">
   <div class="row">
     <div class=" col-sm-12 col-md-3">
-      <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
+        <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
           <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
@@ -161,7 +166,7 @@
               <% @casillas.each do |i|%>
                   <% if i.activo == 1 %>
                       <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
@@ -172,7 +177,7 @@
                       </li>
                   <% else %>
                       <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
@@ -187,7 +192,7 @@
               <% @casillas.each do |i|%>
                   <% if i.activo ==  1 %>
                       <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
@@ -203,60 +208,45 @@
             <%= link_to "Nueva Casilla", programa_casilla_path, :class => "text-center btn btn-outline-success " %>
         <% end %>
       </div>
-      <!-- HASTA ACA -->
-    </div>
+        <!-- HASTA ACA -->
+      </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <div class="display-4" style="color: #0275d8;">
-          <%= @programas.nombre %>
+      <h1 style="font-family: 'Junge', serif;"></h1>
+      <div class="margen">
+        <% unless @opciones.nil?%>
+          <% @opciones.each do |j| %>
+              <% if j.opcion == 0 %>
+                <h3><a href="ver1/<%= j.id %>" ><%= j.titulo%></a></h3>
+                <% if can? :manage, NoticiaEscuela %>
+                <%= link_to "Editar", editar_opcion_programa_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_programa_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
+              <%else%>
+              <h1 style="font-family: 'Junge', serif;"><%= j.titulo %></h1>
+              <div class="container-fluid">
+                <p class="">
+                  <%= raw j.texto%>
+                </p>
+                <%if  j.document.url != "/documents/original/missing.png"%>
+                <a target="_blank" href="<%=  j.document.url %>" target="_blank">Documento Adjunto</a>
+                </div>
+                <%end%>
+              </div>
+              <% if can? :manage, NoticiaEscuela %>
+                <%= link_to "Editar", editar_opcion_programa_path(j), :class => 'btn btn-outline-success margen1' %>
+                <%= link_to "Eliminar", eliminar_opcion_programa_path(j), :class => 'btn btn-outline-danger margen1' , method: :delete, data: {confirm: "Se eliminará a #{j.titulo}, seguro?"}  %>
+                <%end%>
+              <%end%>
+            <hr>
+          <% end %>
+            <% if can? :manage, NoticiaEscuela %>
+            <%= link_to "Nuevo", programa_nueva_opcion_url, :class => 'btn btn-outline-primary margen1' %>
+            <% end %>
+        <% end %>
         </div>
-      </div>
-      <br>
-      <hr>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.perfil_egreso %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.campo_ocupacional %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.descripcion %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
-
-        <p><a href="<%=@programas.link%>" target="_blank">Link programa</a></p>
-
-      </div>
-      <br>
-      <div class="container-fluid">
-
-        <% if  @programas.document.url != "/documents/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document.url %>">Malla Antigua</a>
-        <%end%>
-        <br>
-        <% if  @programas.document2.url != "/document2s/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document2.url %>">Malla Actual</a>
-        <%end%>
-        <br>
-        <% if  @programas.document3.url != "/document3s/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document3.url %>">Malla Nueva</a>
-        <%end%>
-        <br>
-
-      </div>
-      <hr>
-      <a href="../pregrado"><button type="button" class="btn btn-outline-primary">Volver</button></a>
-      </div>
     </div>
+
+  </div>
   </div>
   <!-- Inicio Limpiar flotante -->
   <div class="limpiar"></div>
@@ -267,7 +257,7 @@
 <br>
 <br>
 <!-- INICIO PIE -->
-<footer id="pie-pagina" class="envoltura">
+<footer id="pie-pagina" class="envoltura margen">
   <div class="linea-inf-oscura">
     <div id="menu-pie-pagina" class="envoltura-16">
       <ul>
@@ -370,8 +360,9 @@
   <!-- Fin Corporativo Pie Pagina -->
 </footer>
 <!-- FIN PIE -->
-</body>
 
+
+</body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

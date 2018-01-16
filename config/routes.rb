@@ -417,7 +417,57 @@ Rails.application.routes.draw do
   post 'programas/nuevoinicio', to: 'programas#createinicio'
 
 
+  get 'programas/casillai/:id', to: 'programas#ecasilla', as:'editar_casilla_programa'
 
+  delete 'programas/:id/ecasilla', to: 'programas#eliminarc', as:'eliminar_casilla_programa'
+
+  get 'programas/:id/editar', to: 'programas#editar', as:'editar_programa'
+
+  put 'programas/:id', to: 'programas#update'
+
+  patch 'programas/:id', to: 'programas#update'
+
+  get 'programas/new', to: 'programas#new', as: 'new_programa'
+
+  get 'programas/newc', to: 'programas#newcasilla', as: 'programa_casilla'
+
+  post 'programas/newc', to: 'programas#createcasilla'
+
+  post 'programas/new', to: 'programas#investigacioncreate'
+
+  get 'programas/editarc/:id', to: 'programas#editarc', as:'editar_programa_casilla'
+
+  put 'programas/actualizar/:id', to: 'programas#updatec'
+
+  patch 'programas/actualizar/:id', to: 'programas#updatec'
+
+  get 'programas/opci1', to: 'programas#opcion1', as:'opcion1_programa'
+
+  get 'programas/opci2', to: 'programas#opcion2', as:'opcion2_programa'
+
+  get 'programas/opci3', to: 'programas#opcion3', as:'opcion3_programa'
+
+  get 'programas/nuevoopcion', to: 'programas#nuevaopcion', as:'programa_nueva_opcion'
+
+  get 'programas/nuevoopcion2', to: 'programas#nuevaopcion2', as:'programa_nueva_opcion2'
+
+  get 'programas/nuevoopcion3', to: 'programas#nuevaopcion3', as:'programa_nueva_opcion3'
+
+  post 'programas/nuevacopcion', to: 'programas#createopcion'
+
+  get 'programas/ver1/:id', to: 'programas#ver1', as:"programa_ver_1"
+
+  get 'programas/ver2/:id', to: 'programas#ver2', as:"programa_ver_2"
+
+  get 'programas/ver3/:id', to: 'programas#ver3', as:"programa_ver_3"
+
+  get 'programas/editaro/:id', to: 'programas#editaro', as:"editar_opcion_programa"
+
+  put 'programas/update/:id', to: 'programas#updateo'
+
+  patch 'programas/update/:id', to: 'programas#updateo'
+
+  delete 'programas/delete/:id', to: 'programas#eliminaro', as:'eliminar_opcion_programa'
   # -------- comienza estudinte-------------
 
   get 'estudiante/', to:'estudiante#index', as:'centro'

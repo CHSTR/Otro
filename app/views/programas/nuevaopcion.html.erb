@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -56,6 +57,10 @@
     }
     .margen {
       margin-top: 1.5em;
+    }
+
+    .margen1{
+      margin-top: 1em;
     }
     img{
       max-width: 100%;
@@ -122,15 +127,15 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-            <li><a href="/inicioe/inicio">INICIO</a></li>
-            <li><a href="/noticias/inicio">NOTICIAS</a>
-            <li><a href="/estudiante">ESTUDIANTES</a>
-            <li><a href="/programas">PROGRAMAS</a>
-            <li><a href="/egresados">EGRESADOS</a>
-            <li><a href="/laboral">LABORAL</a>
-            <li><a href="/organizacione">ORGANIZACION</a>
-            <li><a href="/linke">LINKS</a>
-            <li><a href="/contacto">CONTACTO</a>
+              <li><a href="../../inicioe/inicio">INICIO</a></li>
+              <li><a href="../../noticias/inicio">NOTICIAS</a>
+              <li><a href="../../estudiante">ESTUDIANTES</a>
+              <li><a href="../../programas">PROGRAMAS</a>
+              <li><a href="../../egresados">EGRESADOS</a>
+              <li><a href="../../laboral">LABORAL</a>
+              <li><a href="../../organizacione">ORGANIZACION</a>
+              <li><a href="../../links">LINKS</a>
+              <li><a href="../../contacto">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -150,112 +155,77 @@
       <!-- DE ACA SE PUEDE PEGAR LAS CASILLAS -->
       <div class="container-fluid">
         <ol class="breadcrumb margen">
-          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="/portal"><%= link_to 'Portal', portal_path %></a></li>
+          <li class="breadcrumb-item" style="font-family: 'Junge', serif; font-size:15px;"><a href="../portal">Portal</a></li>
           <li class="breadcrumb-item active" style="font-family: 'Junge', serif; font-size:15px;">Escuela</li>
         </ol>
         <hr>
       </div>
-      <div class="container-fluid margen">
+      <div class="container-fluid margen" id="menu-escritorio">
         <div class="list-group">
-          <% if can? :manage, NoticiaEscuela %>
-              <% @casillas.each do |i|%>
-                  <% if i.activo == 1 %>
-                      <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                        <% if can? :manage, NoticiaEscuela %>
-                            <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                            <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                            <%= link_to "Eliminar", eliminar_casilla_programa_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                        <%end%>
-                        <br>
-                        <br>
-                      </li>
-                  <% else %>
-                      <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
-                        <% if can? :manage, NoticiaEscuela %>
-                            <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                            <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                            <%= link_to "Eliminar", eliminar_casilla_programa_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                            <br>
-                            <br>
-                            </li>
-                        <% end %>
-                  <% end %>
-              <% end %>
-          <% else %>
-              <% @casillas.each do |i|%>
-                  <% if i.activo ==  1 %>
-                      <li>
-                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
-                        <% if can? :manage, NoticiaEscuela %>
-                            <%= link_to "Cambiar estado", editar_casilla_programa_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                            <%= link_to "Editar", editar_programa_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
-                            <%= link_to "Eliminar", eliminar_casilla_programa_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
-                        <% end %>
-                      </li>
-                  <% end %>
-              <%end%>
-          <%end%>
         </div>
-        <hr>
-        <% if can? :manage, NoticiaEscuela %>
-            <%= link_to "Nueva Casilla", programa_casilla_path, :class => "text-center btn btn-outline-success " %>
-        <% end %>
       </div>
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <div class="display-4" style="color: #0275d8;">
-          <%= @programas.nombre %>
+      <h3 style="font-family: 'Junge', serif;">Agregando información a la pestaña</h3>
+      <div class="container text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, NoticiaEscuela %>
+      <br>
+          <%= form_for(@opciones, :url => {:action => :createopcion}) do |f| %>
+        <% if @opciones.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @opciones.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
         </div>
-      </div>
-      <br>
-      <hr>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.perfil_egreso %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.campo_ocupacional %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
-        <h2 class="inter">
-          <%= raw @programas.descripcion %>
-        </h2>
-      </div>
-      <br>
-      <div class="container-fluid">
+        <% end %>
+          <div class="col-md-9 margen">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Lista</h3>
+              <%= f.radio_button :opcion, '0' %>
+            </div>
+            <div class="col-md-6">
+              <h3>Texto</h3>
+              <%= f.radio_button :opcion, '1' %>
+            </div>
+          </div>
+            <h3 class="text-left">
+              <p><%= f.label :Titulo%></p>
+              <p><%= f.text_field :titulo, :class => "form-control form-control-lg" %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.hidden_field :lugar , :value => "opcion1_programa"%> <!-- esto varía, nada más...-->
+            </h3>
+            <h3 class="text-left">
+              <p><%= f.label :Texto%>
+              </p><%= f.trix_editor :texto %>
+            </h3>
+            <h3 class="text-left">
+              <%= f.label :documento   %>
+              <%= f.file_field :document %>
+            </h3>
+            <div class="actions">
+              <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
+            </div>
+            <% end %>
+            <% else %>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>No puede ver este contenido!</strong> debe iniciar sesion.
+            </div>
+            <br>
+        <% end %>
+            <br>
 
-        <p><a href="<%=@programas.link%>" target="_blank">Link programa</a></p>
-
-      </div>
-      <br>
-      <div class="container-fluid">
-
-        <% if  @programas.document.url != "/documents/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document.url %>">Malla Antigua</a>
-        <%end%>
-        <br>
-        <% if  @programas.document2.url != "/document2s/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document2.url %>">Malla Actual</a>
-        <%end%>
-        <br>
-        <% if  @programas.document3.url != "/document3s/original/missing.png"%>
-            <a target="_blank" href="<%=  @programas.document3.url %>">Malla Nueva</a>
-        <%end%>
-        <br>
-
-      </div>
-      <hr>
-      <a href="../pregrado"><button type="button" class="btn btn-outline-primary">Volver</button></a>
-      </div>
+            <%= link_to 'Volver', centro_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
     </div>
   </div>
   <!-- Inicio Limpiar flotante -->
@@ -263,9 +233,7 @@
   <!-- Fin Limpiar flotante -->
 </main>
 <!-- FIN CONTENIDO PRINCIPAL -->
-<br>
-<br>
-<br>
+
 <!-- INICIO PIE -->
 <footer id="pie-pagina" class="envoltura">
   <div class="linea-inf-oscura">
@@ -347,7 +315,7 @@
       <!-- Fin Limpiar flotante -->
     </div>
   </div>
-  <!-- Inicio Corporativo Pie Pagina -->
+    <!-- Inicio Corporativo Pie Pagina -->
   <div id="corporativo-pie-pagina">
     <div class="contenedor-crpvo-pie-pagina envoltura-16">
       <div class="meta-autor">
@@ -370,8 +338,9 @@
   <!-- Fin Corporativo Pie Pagina -->
 </footer>
 <!-- FIN PIE -->
-</body>
 
+
+</body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
