@@ -450,6 +450,59 @@ Rails.application.routes.draw do
 
   delete 'estudiante/reglamento/:id', to:'estudiante#eliminarregla'
 
+
+  get 'estudiante/casillai/:id', to: 'estudiante#ecasilla', as:'editar_casilla_estudiante'
+
+  delete 'estudiante/:id/ecasilla', to: 'estudiante#eliminarc', as:'eliminar_casilla_estudiante'
+
+  get 'estudiante/:id/editar', to: 'estudiante#editar', as:'editar_estudiante'
+
+  put 'estudiante/:id', to: 'estudiante#update'
+
+  patch 'estudiante/:id', to: 'estudiante#update'
+
+  get 'estudiante/new', to: 'estudiante#new', as: 'new_estudiante'
+
+  get 'estudiante/newc', to: 'estudiante#newcasilla', as: 'estudiante_casilla'
+
+  post 'estudiante/newc', to: 'estudiante#createcasilla'
+
+  post 'estudiante/new', to: 'estudiante#investigacioncreate'
+
+  get 'estudiante/editarc/:id', to: 'estudiante#editarc', as:'editar_estudiante_casilla'
+
+  put 'estudiante/actualizar/:id', to: 'estudiante#updatec'
+
+  patch 'estudiante/actualizar/:id', to: 'estudiante#updatec'
+
+  get 'estudiante/opci1', to: 'estudiante#opcion1', as:'opcion1_estudiante'
+
+  get 'estudiante/opci2', to: 'estudiante#opcion2', as:'opcion2_estudiante'
+
+  get 'estudiante/opci3', to: 'estudiante#opcion3', as:'opcion3_estudiante'
+
+  get 'estudiante/nuevoopcion', to: 'estudiante#nuevaopcion', as:'estudiante_nueva_opcion'
+
+  get 'estudiante/nuevoopcion2', to: 'estudiante#nuevaopcion2', as:'estudiante_nueva_opcion2'
+
+  get 'estudiante/nuevoopcion3', to: 'estudiante#nuevaopcion3', as:'estudiante_nueva_opcion3'
+
+  post 'estudiante/nuevacopcion', to: 'estudiante#createopcion'
+
+  get 'estudiante/ver1/:id', to: 'estudiante#ver1', as:"estudiante_ver_1"
+
+  get 'estudiante/ver2/:id', to: 'estudiante#ver2', as:"estudiante_ver_2"
+
+  get 'estudiante/ver3/:id', to: 'estudiante#ver3', as:"estudiante_ver_3"
+
+  get 'estudiante/editaro/:id', to: 'estudiante#editaro', as:"editar_opcion_estudiante"
+
+  put 'estudiante/update/:id', to: 'estudiante#updateo'
+
+  patch 'estudiante/update/:id', to: 'estudiante#updateo'
+
+  delete 'estudiante/delete/:id', to: 'estudiante#eliminaro', as:'eliminar_opcion_estudiante'
+
   #----------------------------------------------------------------
 
   get 'noticias/buscarnoticia', to: 'noticias#buscarnoticia', as: 'noticias_buscarnoticia'
