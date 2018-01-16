@@ -157,7 +157,7 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <% if can? :manage, NoticiaEscuela %>
+            <a href="https://ret.utem.cl/" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Portal de egresados</h4></a>              <% if can? :manage, NoticiaEscuela %>
                 <% @casillas.each do |i|%>
                     <% if i.activo == 1 %>
                         <li>
