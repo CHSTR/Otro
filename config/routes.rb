@@ -484,6 +484,60 @@ Rails.application.routes.draw do
   get 'noticias/eliminare'
   delete 'noticias/eliminare/:id', to: 'noticias#eliminare', as:'eliminar_evento'
 
+
+
+  get 'noticias/casillai/:id', to: 'noticias#ecasilla', as:'editar_casilla_noticias'
+
+  delete 'noticias/:id/ecasilla', to: 'noticias#eliminarc', as:'eliminar_casilla_noticias'
+
+  get 'noticias/:id/editar', to: 'noticias#editar', as:'editar_noticias'
+
+  put 'noticias/:id', to: 'noticias#update'
+
+  patch 'noticias/:id', to: 'noticias#update'
+
+  get 'noticias/new', to: 'noticias#new', as: 'new_noticias'
+
+  get 'noticias/newc', to: 'noticias#newcasilla', as: 'noticias_casilla'
+
+  post 'noticias/newc', to: 'noticias#createcasilla'
+
+  post 'noticias/new', to: 'noticias#investigacioncreate'
+
+  get 'noticias/editarc/:id', to: 'noticias#editarc', as:'editar_noticias_casilla'
+
+  put 'noticias/actualizar/:id', to: 'noticias#updatec'
+
+  patch 'noticias/actualizar/:id', to: 'noticias#updatec'
+
+  get 'noticias/opci1', to: 'noticias#opcion1', as:'opcion1_noticias'
+
+  get 'noticias/opci2', to: 'noticias#opcion2', as:'opcion2_noticias'
+
+  get 'noticias/opci3', to: 'noticias#opcion3', as:'opcion3_noticias'
+
+  get 'noticias/nuevoopcion', to: 'noticias#nuevaopcion', as:'noticias_nueva_opcion'
+
+  get 'noticias/nuevoopcion2', to: 'noticias#nuevaopcion2', as:'noticias_nueva_opcion2'
+
+  get 'noticias/nuevoopcion3', to: 'noticias#nuevaopcion3', as:'noticias_nueva_opcion3'
+
+  post 'noticias/nuevacopcion', to: 'noticias#createopcion'
+
+  get 'noticias/ver1/:id', to: 'noticias#ver1', as:"noticias_ver_1"
+
+  get 'noticias/ver2/:id', to: 'noticias#ver2', as:"noticias_ver_2"
+
+  get 'noticias/ver3/:id', to: 'noticias#ver3', as:"noticias_ver_3"
+
+  get 'noticias/editaro/:id', to: 'noticias#editaro', as:"editar_opcion_noticias"
+
+  put 'noticias/update/:id', to: 'noticias#updateo'
+
+  patch 'noticias/update/:id', to: 'noticias#updateo'
+
+  delete 'noticias/delete/:id', to: 'noticias#eliminaro', as:'eliminar_opcion_noticias'
+
   #--------------------------------------------------------------------
 
   get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as:'inicioe_nuevotexto'

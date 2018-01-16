@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
       font-family: 'Junge', serif;
@@ -57,9 +58,14 @@
     .margen {
       margin-top: 1.5em;
     }
-  .margen1{
-    margin-top: 1em;
-  }
+
+    .margen1{
+      margin-top: 1em;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
 
     .utem-log{
       margin-top: 1em;
@@ -121,15 +127,15 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-            <li><a href="/inicioe/inicio">INICIO</a></li>
-            <li><a href="/noticias/inicio">NOTICIAS</a>
-            <li><a href="/estudiante">ESTUDIANTES</a>
-            <li><a href="/programas">PROGRAMAS</a>
-            <li><a href="/egresados">EGRESADOS</a>
-            <li><a href="/laboral">LABORAL</a>
-            <li><a href="/organizacione">ORGANIZACION</a>
-            <li><a href="/linke">LINKS</a>
-            <li><a href="/contacto">CONTACTO</a>
+              <li><a href="../../inicioe/inicio">INICIO</a></li>
+              <li><a href="../../noticias/inicio">NOTICIAS</a>
+              <li><a href="../../estudiante">ESTUDIANTES</a>
+              <li><a href="../../programas">PROGRAMAS</a>
+              <li><a href="../../egresados">EGRESADOS</a>
+              <li><a href="../../laboral">LABORAL</a>
+              <li><a href="../../organizacione">ORGANIZACION</a>
+              <li><a href="../../links">LINKS</a>
+              <li><a href="../../contacto">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -161,54 +167,52 @@
       <!-- HASTA ACA -->
     </div>
     <div class=" col-sm-12 col-md-9 margen">
-      <div class="container margen text-justify" style="font-family: 'Junge', serif; font-size:18px;">
-        <% if can? :manage, EventoEscuela %>
-        <%= form_for(@evento_escuelas, html: { multipart: true }, :url => {:action => :eventocreate}) do |f| %>
-            <% if @evento_escuelas.errors.any? %>
-                <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <% @evento_escuelas.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
-                  <% end %>
-                </div>
-            <% end %>
-            <div class="col-md-9 margen">
-              <h3 class="text-left">
-                <%= f.label :Nombre %>
-                <%= f.text_field :nombre %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Descripcion %>
-                <%= f.trix_editor :descripcion %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Lugar %>
-                <%= f.text_field :lugar %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Fecha %>
-                <%= f.text_field :fecha, :type => "date" , :min => Time.now.strftime("%Y-%m-%d")%>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Imagen%>
-                <%= f.file_field :photo %>
-              </h3>
-              <br>
-              <h3 class="text-left">
-                <%= f.label :Hora %>
-                <%= f.text_field :hora, :type => "time", :value => "13:45", :id => "time" %>
-              </h3>
-              <br>
-              <div class="actions">
-                <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
-              </div>
+      <h3 style="font-family: 'Junge', serif;">Agregando información a la pestaña</h3>
+      <div class="container text-justify" style="font-family: 'Junge', serif; font-size:18px;">
+        <% if can? :manage, NoticiaEscuela %>
+      <br>
+          <%= form_for(@opciones, :url => {:action => :createopcion}) do |f| %>
+        <% if @opciones.errors.any? %>
+        <div class="margen alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <% @opciones.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </div>
         <% end %>
+          <div class="col-md-9 margen">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Lista</h3>
+              <%= f.radio_button :opcion, '0' %>
+            </div>
+            <div class="col-md-6">
+              <h3>Texto</h3>
+              <%= f.radio_button :opcion, '1' %>
+            </div>
+          </div>
+            <h3 class="text-left">
+              <p><%= f.label :Titulo%></p>
+              <p><%= f.text_field :titulo, :class => "form-control form-control-lg" %></p>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.hidden_field :lugar , :value => "opcion1_noticias"%> <!-- esto varía, nada más...-->
+            </h3>
+            <h3 class="text-left">
+              <p><%= f.label :Texto%>
+              </p><%= f.trix_editor :texto %>
+            </h3>
+            <h3 class="text-left">
+              <%= f.label :documento   %>
+              <%= f.file_field :document %>
+            </h3>
+            <div class="actions">
+              <%= f.submit 'Guardar', :class => 'btn btn-outline-success btn-lg margen1' %>
+            </div>
+            <% end %>
             <% else %>
             <br>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -218,22 +222,11 @@
               <strong>No puede ver este contenido!</strong> debe iniciar sesion.
             </div>
             <br>
-            <% end %>
-        <br>
-        <%= link_to 'Volver', noticias_eventos_url, :class => 'btn btn-outline-primary margen1' %>
-        <br>
-        </div>
+        <% end %>
+            <br>
 
-      </div>
+            <%= link_to 'Volver', noticias_inicio_path, :class => 'btn btn-outline-primary btn-lg margen1' %>
     </div>
-  </div>
-  <div class="col-md-3"></div>
-  <div class="col-md-9">
-    <br>
-    <br>
-  </div>
-  </div>
-  </div>
   </div>
   <!-- Inicio Limpiar flotante -->
   <div class="limpiar"></div>
@@ -322,7 +315,7 @@
       <!-- Fin Limpiar flotante -->
     </div>
   </div>
-  <!-- Inicio Corporativo Pie Pagina -->
+    <!-- Inicio Corporativo Pie Pagina -->
   <div id="corporativo-pie-pagina">
     <div class="contenedor-crpvo-pie-pagina envoltura-16">
       <div class="meta-autor">
@@ -348,7 +341,6 @@
 
 
 </body>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
