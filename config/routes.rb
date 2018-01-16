@@ -385,6 +385,59 @@ Rails.application.routes.draw do
 
   patch 'aceptar_oferta/editar/:id', to:'aceptar_oferta#update'
 
+
+  get 'laboral/casillai/:id', to: 'laboral#ecasilla', as:'editar_casilla_laboral'
+
+  delete 'laboral/:id/ecasilla', to: 'laboral#eliminarc', as:'eliminar_casilla_laboral'
+
+  get 'laboral/:id/editar', to: 'laboral#editar', as:'editar_laboral'
+
+  put 'laboral/:id', to: 'laboral#update'
+
+  patch 'laboral/:id', to: 'laboral#update'
+
+  get 'laboral/new', to: 'laboral#new', as: 'new_laboral'
+
+  get 'laboral/newc', to: 'laboral#newcasilla', as: 'laboral_casilla'
+
+  post 'laboral/newc', to: 'laboral#createcasilla'
+
+  post 'laboral/new', to: 'laboral#investigacioncreate'
+
+  get 'laboral/editarc/:id', to: 'laboral#editarc', as:'editar_laboral_casilla'
+
+  put 'laboral/actualizar/:id', to: 'laboral#updatec'
+
+  patch 'laboral/actualizar/:id', to: 'laboral#updatec'
+
+  get 'laboral/opci1', to: 'laboral#opcion1', as:'opcion1_laboral'
+
+  get 'laboral/opci2', to: 'laboral#opcion2', as:'opcion2_laboral'
+
+  get 'laboral/opci3', to: 'laboral#opcion3', as:'opcion3_laboral'
+
+  get 'laboral/nuevoopcion', to: 'laboral#nuevaopcion', as:'laboral_nueva_opcion'
+
+  get 'laboral/nuevoopcion2', to: 'laboral#nuevaopcion2', as:'laboral_nueva_opcion2'
+
+  get 'laboral/nuevoopcion3', to: 'laboral#nuevaopcion3', as:'laboral_nueva_opcion3'
+
+  post 'laboral/nuevacopcion', to: 'laboral#createopcion'
+
+  get 'laboral/ver1/:id', to: 'laboral#ver1', as:"laboral_ver_1"
+
+  get 'laboral/ver2/:id', to: 'laboral#ver2', as:"laboral_ver_2"
+
+  get 'laboral/ver3/:id', to: 'laboral#ver3', as:"laboral_ver_3"
+
+  get 'laboral/editaro/:id', to: 'laboral#editaro', as:"editar_opcion_laboral"
+
+  put 'laboral/update/:id', to: 'laboral#updateo'
+
+  patch 'laboral/update/:id', to: 'laboral#updateo'
+
+  delete 'laboral/delete/:id', to: 'laboral#eliminaro', as:'eliminar_opcion_laboral'
+
   #--------------------------------------------------------------------------
 
   get 'programas/', to: 'programas#inicio', as:'programas'
