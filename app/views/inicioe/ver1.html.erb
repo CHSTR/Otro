@@ -90,15 +90,15 @@
   <nav id="nav-escritorio" class="envoltura-16">
     <div id="utem-toggle-escrt"></div>
     <ul id="menu-escritorio">
-      <li><a href="../inicioe/inicio">INICIO</a></li>
-      <li><a href="../noticias/inicio">NOTICIAS</a>
-      <li><a href="../estudiante">ESTUDIANTES</a>
-      <li><a href="../programas">PROGRAMAS</a>
-      <li><a href="../egresados">EGRESADOS</a>
-      <li><a href="../laboral">LABORAL</a>
-      <li><a href="../organizacione">ORGANIZACION</a>
-      <li><a href="../linke">LINKS</a>
-      <li><a href="../contacto">CONTACTO</a>
+      <li><a href="../../inicioe/inicio">INICIO</a></li>
+      <li><a href="../../noticias/inicio">NOTICIAS</a>
+      <li><a href="../../estudiante">ESTUDIANTES</a>
+      <li><a href="../../programas">PROGRAMAS</a>
+      <li><a href="../../egresados">EGRESADOS</a>
+      <li><a href="../../laboral">LABORAL</a>
+      <li><a href="../../organizacione">ORGANIZACION</a>
+      <li><a href="../../linke">LINKS</a>
+      <li><a href="../../contacto">CONTACTO</a>
     </ul>
   </nav>
 </section>
@@ -128,15 +128,15 @@
           <div id="perfiles-rsp" class="envoltura">
             <h5>MENÚ</h5>
             <ul>
-              <li><a href="../inicioe/inicio">INICIO</a></li>
-              <li><a href="../noticias/inicio">NOTICIAS</a>
-              <li><a href="../estudiante">ESTUDIANTES</a>
-              <li><a href="../programas">PROGRAMAS</a>
-              <li><a href="../egresados">EGRESADOS</a>
-              <li><a href="../laboral">LABORAL</a>
-              <li><a href="../organizacione">ORGANIZACION</a>
-              <li><a href="../linke">LINKS</a>
-              <li><a href="../contacto">CONTACTO</a>
+              <li><a href="../../inicioe/inicio">INICIO</a></li>
+              <li><a href="../../noticias/inicio">NOTICIAS</a>
+              <li><a href="../../estudiante">ESTUDIANTES</a>
+              <li><a href="../../programas">PROGRAMAS</a>
+              <li><a href="../../egresados">EGRESADOS</a>
+              <li><a href="../../laboral">LABORAL</a>
+              <li><a href="../../organizacione">ORGANIZACION</a>
+              <li><a href="../../linke">LINKS</a>
+              <li><a href="../../contacto">CONTACTO</a>
             </ul>
           </div>
           <!-- Inicio Limpiar flotante -->
@@ -181,7 +181,7 @@
                         <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, Casilla %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                         <% if can? :manage, Etexto %>
                             <%= link_to "Cambiar estado", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-primary margen1" %>
-                            <%= link_to "Editar", editar_depto_esc_path(i), :class => "text-center btn btn-outline-warning margen1" %>
+                            <%= link_to "Editar", editar_casilla_esc_path(i), :class => "text-center btn btn-outline-warning margen1" %>
                             <%= link_to "Eliminar", eliminar_esc_path(i), :class => "text-center btn btn-outline-danger margen1" , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                             <br>
                             <br>

@@ -166,7 +166,7 @@
               <% @casillas.each do |i|%>
                   <% if i.activo == 1 %>
                       <li>
-                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
@@ -177,7 +177,7 @@
                       </li>
                   <% else %>
                       <li>
-                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
+                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-danger">inactivo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
@@ -192,7 +192,7 @@
               <% @casillas.each do |i|%>
                   <% if i.activo ==  1 %>
                       <li>
-                        <a href="../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
+                        <a href="../../<%= i.link %>" class="list-group-item "><%= i.nombre %> <% if can? :manage, NoticiaEscuela %>-> <span class="badge badge-success">activo</span> <%end%></a>
                         <% if can? :manage, NoticiaEscuela %>
                             <%= link_to "Cambiar estado", editar_casilla_egresados_path(i), :class => "text-center btn btn-outline-primary margen1" %>
                             <%= link_to "Editar", editar_egresados_casilla_path(i), :class => "text-center btn btn-outline-warning margen1" %>
