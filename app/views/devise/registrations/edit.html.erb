@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -18,11 +18,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :contraseña %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :contraseña %> <i>(Deje en blanco si no la quiere cambiar)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> caracteres mínimo</em>
     <% end %>
   </div>
 
@@ -32,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :contraseña_actual %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :contraseña_actual %> <i>(Necesitamos su contraseña actual para confirmar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -41,7 +41,7 @@
   </div>
 <% end %>
 
-<h3>Eliminar my cuenta</h3>
+<h3>Eliminar mi cuenta</h3>
 
 <p>Unhappy? <%= button_to "eliminar", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
