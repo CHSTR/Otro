@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
     font-family: 'Junge', serif;
@@ -56,6 +57,9 @@
     }
     .margen {
       margin-top: 1.5em;
+    }
+    .margen1 {
+      margin-top: 1em;
     }
     img{
       max-width: 100%;
@@ -156,7 +160,7 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="https://ret.utem.cl/" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Portal de egresados</h4></a>              <% if can? :manage, NoticiaEscuela %>
+            <a target="_blank" href="https://ret.utem.cl/" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Portal de egresados</h4></a>              <% if can? :manage, NoticiaEscuela %>
                 <% @casillas.each do |i|%>
                     <% if i.activo == 1 %>
                         <li>

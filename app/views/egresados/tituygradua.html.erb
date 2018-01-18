@@ -47,6 +47,7 @@
     a:link, li {
       text-decoration:none;
       margin-bottom: -5px;
+      list-style-type: none;
     }
     body {
     font-family: 'Junge', serif;
@@ -56,6 +57,9 @@
     }
     .margen {
       margin-top: 1.5em;
+    }
+    .margen1 {
+      margin-top: 1em;
     }
     img{
       max-width: 100%;
@@ -157,7 +161,7 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="https://ret.utem.cl/" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Portal de egresados</h4></a>              <% if can? :manage, NoticiaEscuela %>
+            <a target="_blank" href="https://ret.utem.cl/" class="list-group-item list-group-item-action" style="font-family: 'Junge', serif;"><h4>Portal de egresados</h4></a>              <% if can? :manage, NoticiaEscuela %>
                 <% @casillas.each do |i|%>
                     <% if i.activo == 1 %>
                         <li>
@@ -207,14 +211,16 @@
       </div>
       <div class=" col-sm-12 col-md-9">
       <h1 style="font-family: 'Junge', serif;">Lista por año de todos nuestros titulados</h4>
-      <% if @egresados.empty? %>
+      <% if @programas.empty? %>
       <%else%>
+      <br>
       <h2>Pregrado</h2>
+      <hr>
       <% end %>
         <div class="row">
         <%  @egresados.each do |i| %>
           <div class="col-md-6">
-          <ol class="breadcrumb margen">
+          <ol class="margen">
           <% @programas.each do |j| %>
           <% @a = i.anio.to_s%>
           <% @b = j.id %>
@@ -222,18 +228,20 @@
             <a href="tituygradua/<%= i.anio.to_s %><%= j.id %>"><p class=""><strong><%= i.anio %> | <%= j.nombre%></strong></p></a>              
           <%end%>  
           <%end %>
+          <br>
           </ol>
           </div>
+          <hr>
          <% end %>
          </div>
-         <% if @egresados.empty? %>
+         <% if @programas2.empty? %>
           <%else%>
           <h2 class="margen">Postgrado</h2>
-          <% end %>
+          <hr>
          <div class="row">
          <% @egresados.each do |i| %>
           <div class="col-md-6">
-          <ol class="breadcrumb margen">
+          <ol class="margen">
           <% @programas2.each do |j| %>
           <% @f = i.anio.to_s%>
           <% @g = j.id %>
@@ -241,11 +249,12 @@
             <a href="tituygradua/<%= i.anio.to_s %><%= j.id %>"><p class=""><strong><%= i.anio %> | <%= j.nombre%></strong></p></a>
           <%end %>
           <%end%>
+          <br>
           </ol>
           </div>
-
          <% end %>
     </div>
+          <% end %>
     <% if can? :manage, Egresado %>
          <%= link_to "Nuevo Egresado", nuevo_egresado_path,:class => 'btn btn-outline-primary' %>
          <br>

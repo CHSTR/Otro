@@ -59,6 +59,7 @@ class EgresadosController < ApplicationController
   	v =[]
   	v = params[:id]
   	@egresados = Egresado.find_by_sql("select distinct (egresados.id), egresados.* from egresados, programas where egresados.anio = #{v.to(3)} and egresados.programa = '#{v[-1]}'")
+    @casillas = Casilla.where("ubicacion = 'egresados'").order("id ASC")
     if @egresados.empty?
       redirect_to tituygradua_egresados_url
     end

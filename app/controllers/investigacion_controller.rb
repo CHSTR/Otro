@@ -71,7 +71,7 @@ class InvestigacionController < ApplicationController
     if @casillas.update_attributes(casilla_params)
       redirect_to inicio_investigacion_url
     else
-      render action: 'editar'
+      render action: 'editarc'
     end
   end
 

@@ -58,12 +58,15 @@
     .margen {
       margin-top: 1.5em;
     }
-    .margen1 {
+    .margen1{
       margin-top: 1em;
     }
     img{
       max-width: 100%;
       height: auto;
+      float: center;
+      margin: auto;
+      display: block;
     }
     .utem-log{
       margin-top: 1em;
@@ -213,7 +216,7 @@
               <%= @textos.descripcion_imagen%>
               <center>
               <% if can? :manage, Texto %>
-                  <%= link_to "Editar", iniciodepto_editarinicio_url, :class => 'btn btn-outline-success margen1' %>
+                  <%= link_to "Editar", iniciodepto_editarhistoria_url, :class => 'btn btn-outline-success margen1' %>
               <% end %>
             </center>
         <% else %>

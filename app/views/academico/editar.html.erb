@@ -210,17 +210,17 @@
             <br>
             <h3 class="text-left">
               <%= f.label :facebook %>
-              <%= f.text_field :link1 %>
+              <%= f.text_field :link1 , :placeholder => "https://www.facebook.com/...", :value => "https://"%>
             </h3>
             <br>
             <h3 class="text-left">
               <%= f.label :linkedin %>
-              <%= f.text_field :link2 %>
+              <%= f.text_field :link2, :value => "https://", :placeholder => "https://www.linkedin.com/..." %>
             </h3>
             <br>
             <h3 class="text-left">
               <%= f.label :twitter %>
-              <%= f.text_field :link3 %>
+              <%= f.text_field :link3, :value => "https://", :placeholder => "https://www.tiwtter.com/..." %>
             </h3>
             <br>
             <h3 class="text-left">
